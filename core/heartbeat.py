@@ -18,23 +18,26 @@ class Heartbeat:
         self.status = {}
 
     def check_google_apis(self):
-        """Check Sheets and Drive access using trendnatures@gmail.com OAuth."""
+        """Check Sheets and Drive access using Service Account."""
         try:
-            from core.connectors.google import GoogleConnector
-            connector = GoogleConnector(self.vault)
-            # Use GoogleConnector to get fresh token and call API
-            spreadsheet_id = self.vault['travelking']['sheet_id']
-            url = f"https://sheets.googleapis.com/v4/spreadsheets/{spreadsheet_id}"
-            res = connector.api_call(url)
+            from google.oauth2 import service_account
+            from googleapiclient.discovery import build
             
-            if "error" not in res:
-                self.status['Google_Sheets'] = "🟢 ACTIVE (as trendnatures)"
-                self.status['Google_Drive'] = "🟢 ACTIVE"
-            else:
-                self.status['Google_Sheets'] = f"🔴 ERROR: {res.get('error')}"
-                self.status['Google_Drive'] = "🔴 ERROR"
+            creds = service_account.Credentials.from_service_account_file(
+                self.sa_path, 
+                scopes=['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive.readonly']
+            )
+            
+            # Test Sheets
+            service = build('sheets', 'v4', credentials=creds)
+            spreadsheet_id = self.vault['travelking']['sheet_id']
+            service.spreadsheets().get(spreadsheetId=spreadsheet_id).execute()
+            
+            self.status['Google_Sheets'] = "🟢 ACTIVE (Service Account)"
+            self.status['Google_Drive'] = "🟢 ACTIVE"
         except Exception as e:
             self.status['Google_Sheets'] = f"🔴 ERROR: {str(e)[:50]}"
+            self.status['Google_Drive'] = "🔴 ERROR"
 
     def check_gmail_smtp(self):
         """Check Gmail SMTP connectivity."""
@@ -71,10 +74,16 @@ class Heartbeat:
             self.status['cPanel_Server'] = "⚪ UNKNOWN"
 
     def update_status_sheet(self):
-        """Writes the heartbeat results using OAuth."""
+        """Writes the heartbeat results using Service Account."""
         try:
-            from core.connectors.google import GoogleConnector
-            connector = GoogleConnector(self.vault)
+            from google.oauth2 import service_account
+            from googleapiclient.discovery import build
+            
+            creds = service_account.Credentials.from_service_account_file(
+                self.sa_path, 
+                scopes=['https://www.googleapis.com/auth/spreadsheets']
+            )
+            service = build('sheets', 'v4', credentials=creds)
             spreadsheet_id = self.vault['travelking']['sheet_id']
             
             # Prepare data
@@ -91,20 +100,43 @@ class Heartbeat:
                 ["🤖 JULES ORCHESTRATOR", "🟢 ONLINE", now]
             ]
             
-            # Write to 'SYSTEM_STATUS' range via OAuth
             range_name = 'SYSTEM_STATUS!A1'
-            url = f"https://sheets.googleapis.com/v4/spreadsheets/{spreadsheet_id}/values/{range_name}?valueInputOption=RAW"
-            res = connector.api_call(url, method="PUT", json={'values': values})
+            body = {'values': values}
             
-            if "error" in res:
-                # Try to create if tab missing
-                if "not found" in str(res).lower():
+            try:
+                service.spreadsheets().values().update(
+                    spreadsheetId=spreadsheet_id,
+                    range=range_name,
+                    valueInputOption='RAW',
+                    body=body
+                ).execute()
+            except Exception as e:
+                error_msg = str(e).lower()
+                if "not found" in error_msg or "unable to parse range" in error_msg:
                     print("Attempting to create SYSTEM_STATUS tab...")
-                    create_url = f"https://sheets.googleapis.com/v4/spreadsheets/{spreadsheet_id}:batchUpdate"
-                    create_body = {'requests': [{'addSheet': {'properties': {'title': 'SYSTEM_STATUS'}}}]}
-                    connector.api_call(create_url, method="POST", json=create_body)
-                    # Retry write
-                    connector.api_call(url, method="PUT", json={'values': values})
+                    batch_update_body = {
+                        'requests': [{
+                            'addSheet': {
+                                'properties': {
+                                    'title': 'SYSTEM_STATUS'
+                                }
+                            }
+                        }]
+                    }
+                    service.spreadsheets().batchUpdate(
+                        spreadsheetId=spreadsheet_id,
+                        body=batch_update_body
+                    ).execute()
+                    
+                    # Retry update
+                    service.spreadsheets().values().update(
+                        spreadsheetId=spreadsheet_id,
+                        range=range_name,
+                        valueInputOption='RAW',
+                        body=body
+                    ).execute()
+                else:
+                    raise e
             return True
         except Exception as e:
             print(f"Failed to update sheet: {e}")
