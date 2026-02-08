@@ -1,0 +1,25 @@
+{
+    "architecture_name": "OMEGA Modular Hierarchy",
+    "layers": {
+        "1_Access_Vault": "Encrypted credentials store (config/)",
+        "2_Connectors": {
+            "path": "core/connectors/",
+            "modules": ["google", "facebook", "server"],
+            "features": ["auto-refresh", "permanent_auth", "error_recovery"]
+        },
+        "3_Business_Logic": {
+            "path": "core/logic/",
+            "engines": ["market", "sniper"],
+            "data_flow": "Fuses API data into actionable business intelligence"
+        },
+        "4_Orchestrator": {
+            "path": "core/hub.py",
+            "role": "Single unified entry point for all sub-modules"
+        }
+    },
+    "utilization": {
+        "AirHelp_Automation": "sniper -> google -> facebook -> cpanel",
+        "Market_Analysis": "market -> google -> bing",
+        "System_Backup": "maintenance -> github"
+    }
+}

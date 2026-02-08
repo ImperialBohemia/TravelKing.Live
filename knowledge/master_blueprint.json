@@ -37,9 +37,10 @@
         "cpanel_status": "Verified (UAPI/API2 Active)",
         "sitejet_status": "Active (Deployment via public_html)",
         "google_admin_refresh": "Enabled",
-        "status": "IMMORTAL_SUPREMACY",
+        "status": "STEALTH_WIRING_MODE",
         "facebook_permanent_page_token": "Active (TopStroje)",
         "google_auto_refresh": "Active (Permanent)",
-        "cpanel_root_api": "Active (Never Expire)"
+        "cpanel_root_api": "Active (Never Expire)",
+        "indexing_safety_lock": "LOCKED (No Indexing allowed)"
     }
 }
