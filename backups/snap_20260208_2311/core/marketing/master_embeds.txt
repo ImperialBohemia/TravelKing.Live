@@ -1,0 +1,33 @@
+💎 OMEGA MASTER EMBED: THE "OMNIPRESENT AIRHELP" SETUP
+Project: TravelKing.Live | Strategy: Protection-First Booking
+
+------------------------------------------------------------
+1. FLIGHTS + PROTECTION (Top Widget)
+------------------------------------------------------------
+<!-- Search with 'Protection' Label -->
+<div style="border: 2px solid #3b82f6; border-radius: 20px; padding: 10px;">
+  <p style="color: #3b82f6; font-weight: 800; text-align: center; margin-bottom: 5px;">
+    🛡️ SECURE YOUR FLIGHT: ELIGIBLE FOR €600 COMPENSATION
+  </p>
+  [TP Search Widget Embed Here]
+</div>
+
+------------------------------------------------------------
+2. TAXI + ASSISTANCE (Bottom Widget)
+------------------------------------------------------------
+<!-- Taxi with 'Delay Assistance' Label -->
+<div style="background: #0f172a; border-radius: 20px; padding: 20px;">
+  <p style="color: #10b981; font-weight: bold; margin-bottom: 10px;">
+    🚕 PRE-BOOKED TRANSFERS + 24/7 DELAY SUPPORT
+  </p>
+  [KiwiTaxi Widget Embed Here]
+</div>
+
+------------------------------------------------------------
+3. THE "GHOST" BUTTON (Omnipresent)
+------------------------------------------------------------
+Add this to every custom page in White Label:
+"Problem with your flight? CLICK HERE to claim your €600 immediately."
+Link: https://www.travelking.live/templates/lead_magnet_v1.html
+
+💎 AUTHORIZED BY STANISLAV PASZTOREK | "ALWAYS AIRHELP" MODE

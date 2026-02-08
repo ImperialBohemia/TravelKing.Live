@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Support | TravelKing.live</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 font-sans p-6 text-slate-800">
+    <div class="max-w-md mx-auto bg-white rounded-2xl shadow-xl p-8 border border-slate-200">
+        <h1 class="text-2xl font-bold mb-2">Contact Our Experts</h1>
+        <p class="text-slate-500 text-sm mb-8">Have questions about your compensation? Our team is here to help you 24/7.</p>
+        
+        <form action="/submit_contact" method="POST" class="space-y-4">
+            <div>
+                <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Full Name</label>
+                <input type="text" name="name" class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none" required>
+            </div>
+            <div>
+                <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Email Address</label>
+                <input type="email" name="email" class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none" required>
+            </div>
+            <div>
+                <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Message / Flight Number</label>
+                <textarea name="message" rows="4" class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none" required placeholder="e.g. OK618 delayed for 5 hours..."></textarea>
+            </div>
+            <button type="submit" class="w-full bg-blue-600 text-white font-bold py-4 rounded-xl shadow-lg hover:bg-blue-700 transition">SEND MESSAGE</button>
+        </form>
+        
+        <div class="mt-8 pt-8 border-t border-slate-100 text-center">
+            <p class="text-xs text-slate-400 italic">TravelKing.live is an independent informational project by Stanislav Pasztorek. We collaborate with legal entities worldwide to protect passenger rights.</p>
+        </div>
+    </div>
+</body>
+</html>
