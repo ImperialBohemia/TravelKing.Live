@@ -22,26 +22,17 @@ class SheetsClient:
     def read_range(self, spreadsheet_id: str, range_name: str) -> List[List[str]]:
         """
         Read a range of cells from a spreadsheet.
+        
+        Args:
+            spreadsheet_id: The ID from the sheet URL
+            range_name: A1 notation like 'Sheet1!A1:D10'
+            
+        Returns:
+            List of rows, each row is a list of cell values
         """
         url = f"{self.BASE_URL}/{spreadsheet_id}/values/{range_name}"
         response = requests.get(url, headers=self.headers)
         
-        # OMEGA Self-Healing Auth
-        if response.status_code == 401:
-            print("⚠️ 401 Detected! Refreshing OMEGA Token...")
-            import json
-            from core.connectors.google import GoogleConnector
-            with open("config/access_vault.json") as f:
-                vault = json.load(f)
-            
-            # Using the NEW logic which forces new client ID
-            con = GoogleConnector(vault)
-            if con.refresh():
-                self.token = con.token
-                self.headers = {"Authorization": f"Bearer {self.token}"}
-                # Retry
-                response = requests.get(url, headers=self.headers)
-
         if response.status_code == 200:
             return response.json().get("values", [])
         return []

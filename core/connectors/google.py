@@ -15,9 +15,9 @@ class GoogleConnector(BaseConnector):
         self.vault_full_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'config', 'access_vault.json')
         self.token = self.config.get('access_token')
         self.refresh_token = self.config.get('refresh_token')
-        # Official Google Cloud SDK Client ID (Robust & Public)
-        self.client_id = "764086051850-6qr4p6gpi6hn506pt8ejuq83di341hur.apps.googleusercontent.com" 
-        self.client_secret = "d-ayG_F3U9yU1fT-3B-6BfE9"
+        # Official Project OAuth Client ID (TravelKing OMEGA)
+        self.client_id = self.config.get("client_id", "1009428807876-seopbefn13ev9fnot0sdsh1018fp00iu.apps.googleusercontent.com")
+        self.client_secret = self.config.get("client_secret", "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")
 
         # SDK Path Injection (SimpleCodeSpace Enterprise Foundation)
         sdk_paths = [
