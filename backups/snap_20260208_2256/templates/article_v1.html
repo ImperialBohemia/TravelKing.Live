@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}} | TravelKing.live Authority Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Inter', sans-serif; }</style>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M10,80 L10,40 L30,60 L50,20 L70,60 L90,40 L90,80 Z' fill='%23fbbf24'/></svg>">
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased">
+    <nav class="bg-white border-b border-slate-200 px-6 py-4">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <a href="/" class="text-xl font-extrabold italic tracking-tighter">TRAVELKING<span class="text-blue-600">.LIVE</span></a>
+            <a href="/" class="text-sm font-bold text-slate-500 hover:text-blue-600">← Back to Hub</a>
+        </div>
+    </nav>
+
+    <article class="max-w-3xl mx-auto bg-white my-12 p-8 md:p-16 rounded-3xl shadow-sm border border-slate-200">
+        <header class="mb-12">
+            <span class="text-blue-600 font-bold uppercase tracking-widest text-xs">Expert Guide</span>
+            <h1 class="text-3xl md:text-5xl font-black mt-4 mb-6 leading-tight">{{TITLE}}</h1>
+            <div class="flex items-center space-x-4 text-slate-400 text-sm">
+                <span>By TravelKing Editorial</span>
+                <span>•</span>
+                <span>Reading time: 6 min</span>
+            </div>
+        </header>
+
+        <div class="prose prose-slate lg:prose-xl text-slate-700 leading-relaxed space-y-6">
+            {{CONTENT}}
+        </div>
+
+        <section class="mt-16 pt-12 border-t border-slate-100">
+            <div class="bg-blue-600 rounded-3xl p-8 text-white text-center">
+                <h2 class="text-2xl font-bold mb-4 italic">Had a delay in the last 3 years?</h2>
+                <p class="mb-8 opacity-90">Don't let airlines keep your money. Check your claim for free.</p>
+                <a href="https://www.airhelp.com/en/?aid=11089" class="inline-block bg-white text-blue-600 px-10 py-4 rounded-xl font-black hover:bg-yellow-400 hover:text-slate-900 transition shadow-xl">
+                    CHECK MY COMPENSATION NOW
+                </a>
+            </div>
+        </section>
+    </article>
+
+    <footer class="text-center pb-12 text-slate-400 text-[10px] uppercase tracking-widest">
+        © 2026 TravelKing.live | Independent Authority for Passenger Rights
+    </footer>
+</body>
+</html>

@@ -1,0 +1,51 @@
+{
+    "google": {
+        "access_token": "ya29.a0AUMWg_LdImoIOTHfZnPFteM42EZ8cs7aQWG6MaPGOdt2uPBgrluiQHLkWsk2ukgTiSDNOLA6Hco_9eV9ur2AlU-11rJgVxlhkl0LhOWXHlshaYhKZwUCoYm4eUg4nFN6gFKZSKxJ6c5cnEyc8GEGtiCFdxseqbkCrcDUEcOAbgAJUmlWvzQkBLpRo547Y9qhlr188zl2x4I2aCgYKAXESARISFQHGX2Mi2-tS1JXEX43Ux6PwH8DJ5w0211",
+        "refresh_token": "1//03WHvs971XRfbCgYIARAAGAMSNwF-L9IrQPXJq5f87b8w6C0e8t5x9q906z2m29q9v5g8_6v7x8g9c5v7b8w6C0e8t5x9q906z2m29q9v5g8",
+        "client_id": "1009428807876-seopbefn13ev9fnot0sdsh1018fp00iu.apps.googleusercontent.com",
+        "client_secret": "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",
+        "project_id": "1009428807876",
+        "customer_id": "9736720625",
+        "account_email": "trendnatures@gmail.com",
+        "app_password": "zzpd unbh srxl omvu"
+    },
+    "facebook": {
+        "app_id": "696429503450342",
+        "app_secret": "cf4b4adaa2105ee96165eede1983fe29",
+        "access_token": "EAAJ5ZAiEqDOYBQqVWU6HcQyd8SgVU5dqRDbKCYe6wbM9WUTIDdSTUTqopMWbnWByur83bMLpzckZBtYVmpW3WQ8Ci2ZBNict3X1ZCsnBwH0Y4ba9uDcw4aiSLmTwMF9zkYZAJ7OHh8FbZAOMJL0TzQ9SoEoSCjxqif1z9qZCQPtG18JQ29MfiH5aFkEWqv8CbejSDfQj5ue9Gku",
+        "page_token_topstroje": "EAAJ5ZAiEqDOYBQogtaZAZAPzHmBtF8RBT4ueJQpWaImWaEN1uX6niIPO3PnStQggjvrZBqPydLSUwyGgZAcGlAqTT9drIc0ZBdgjWU3Rv0SaE5fDxx9rVIN87td1355Lex4gzJnYdXS3Ikn4tqsgcdiZBYlyPdbSLe6MctO6hifnn3ZBTZCsXxiq5h8vVzrluZCNSMmeVCDMXy2xJjKnXpyx8lfzoC"
+    },
+    "cpanel": {
+        "host": "server707.web-hosting.com",
+        "user": "imperkhx",
+        "api_token": "LUTLTTXMW901X3DUJH9FJPEM6CXNPK4D"
+    },
+    "bing": {
+        "api_key": "9308a57b97ba452cb023db493e88b265",
+        "index_now_key": "c62f2ffa0a9744cb8b0381c76fa48a05"
+    },
+    "travelpayouts": {
+        "api_token": "ae4c8d7eac860dba7ef9b0340fc4e38b",
+        "marker": "702269"
+    },
+    "github": {
+        "token": "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",
+        "repo": "ImperialBohemia/TravelKing.Live"
+    },
+    "travelking": {
+        "sheet_id": "1uvNvNKei8sgmrASHE5OpQKwEANcOFjxOCdIxMWBnOQc",
+        "form_url": "https://docs.google.com/forms/d/e/1FAIpQLSdnXrLYuhgPtFru7OWqnX8H82rB-j70G_QfFn_da0GEOma1Hw/viewform",
+        "domain": "www.travelking.live"
+    },
+    "jules": {
+        "google_token": "AQ.Ab8RN6IcqiFcShCMdzFSL0oX6v9ZKkVlNmD419WFXFGOJXlk0Q",
+        "role": "autonomous_orchestrator",
+        "permissions": "full_admin"
+    },
+    "analytics": {
+        "measurement_id": "G-CENSTCTLCW"
+    },
+    "gtm": {
+        "container_id": "GTM-WB69V297"
+    }
+}
