@@ -5,8 +5,10 @@ from core.connectors.google import GoogleConnector
 from core.connectors.facebook import FacebookConnector
 from core.connectors.server import CPanelConnector, BingConnector
 from core.connectors.travelpayouts import TravelpayoutsConnector
+from core.google.gemini import GeminiClient
 from core.services.market_intel import MarketIntelService
 from core.services.deployment import DeploymentService
+from core.logic.sniper import SniperEngine
 
 class OmegaHub:
     """
@@ -27,21 +29,31 @@ class OmegaHub:
         self.bing = BingConnector(self.vault)
         self.travelpayouts = TravelpayoutsConnector(self.vault)
 
-        # 3. Initialize Services (Strategic Business Logic)
-        self.market = MarketIntelService(self.google, self.bing)
+        # 3. Initialize Gemini (AI Brain)
+        self.gemini = GeminiClient(
+            api_key=self.vault.get("google", {}).get("api_key"),
+            access_token=self.google.token,
+            project_id=self.vault.get("google", {}).get("project_id")
+        )
+
+        # 4. Initialize Services (Strategic Business Logic)
+        self.market = MarketIntelService(self.google, self.bing, self.gemini)
         self.deployer = DeploymentService(self.cpanel, self.bing)
+        self.sniper = SniperEngine(self.google, self.cpanel, self.gemini)
         
         print("💎 OMEGA HUB: Enterprise Modular Logic Active.")
 
     def status_check(self) -> dict:
         """Performs a comprehensive health check on all permanent connections."""
         print("🔍 OMEGA: Initiating Global Connection Audit...")
+        gemini_res = self.gemini.generate_content("ping")
         return {
             "Google": "ACTIVE 🟢" if self.google.test_connection() else "OFFLINE 🔴",
             "Facebook": "ACTIVE 🟢" if self.facebook.test_connection() else "OFFLINE 🔴",
             "cPanel": "ACTIVE 🟢" if self.cpanel.test_connection() else "OFFLINE 🔴",
             "Bing": "ACTIVE 🟢" if self.bing.test_connection() else "OFFLINE 🔴",
-            "Travelpayouts": "ACTIVE 🟢" if self.travelpayouts.test_connection() else "OFFLINE 🔴"
+            "Travelpayouts": "ACTIVE 🟢" if self.travelpayouts.test_connection() else "OFFLINE 🔴",
+            "Gemini": "ACTIVE 🟢" if "Error" not in gemini_res else "OFFLINE 🔴"
         }
 
 hub = OmegaHub()

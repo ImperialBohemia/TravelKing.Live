@@ -4,3 +4,4 @@ from .sheets import SheetsClient
 from .drive import DriveClient
 from .indexing import IndexingClient
 from .crm import LeadCRM
+from .gemini import GeminiClient
