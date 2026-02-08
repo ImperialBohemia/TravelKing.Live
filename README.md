@@ -25,6 +25,7 @@ The system is built on a modular, "Brain-first" architecture:
 | **Vertex AI Integration** | Real-time flight delay analysis and programmatic content generation. |
 | **FB Ads Automation** | Direct bridge to Facebook Ads Manager for surgical targeting of delayed flights. |
 | **Programmatic SEO** | Instant deployment of "Sniper Pages" for specific flight numbers (e.g., OK618). |
+| **Multi-Engine Indexing** | Automated submission to both Google and Bing for 100% visibility. |
 | **Legal Compliance** | Fully automated generation of GDPR-compliant Privacy, Terms, and Impressum pages. |
 
 ## 🛠️ Global Setup

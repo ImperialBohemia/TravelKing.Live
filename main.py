@@ -21,6 +21,17 @@ def main():
     elif cmd == "deploy":
         print("Deployment sequence initialized...")
         # engine.deploy_authority_content(...)
+    elif cmd == "sniper":
+        from core.sniper import sniper
+        targets = sniper.scan_for_chaos()
+        for t in targets:
+            pkg = sniper.generate_deployment_package(t)
+            print(f"
+🎯 TARGET FOUND: {t['event']}")
+            print(f"🔗 SITEJET URL: {pkg['sitejet_url']}")
+            print(f"📝 HEADLINE: {pkg['headline']}")
+            print(f"🖼️ IMAGE PROMPT: {pkg['nano_banana_prompt']}")
+            print(f"🛠️ SCHEMA: {json.dumps(pkg['schema_json'])}")
     else:
         print(f"Unknown command: {cmd}")
 

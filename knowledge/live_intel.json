@@ -1,0 +1,28 @@
+{
+    "hot_targets": [
+        {
+            "flight": "LH1160",
+            "route": "FRA -> PRG",
+            "issue": "Cancelled - Technical",
+            "seo_opportunity": "MAX"
+        },
+        {
+            "flight": "BA275",
+            "route": "LHR -> LAS",
+            "issue": "Delayed 5h - Crew strike",
+            "seo_opportunity": "HIGH"
+        },
+        {
+            "flight": "OK618",
+            "route": "PRG -> AMS",
+            "issue": "Delayed 4h - Weather",
+            "seo_opportunity": "MEDIUM"
+        }
+    ],
+    "top_keywords": [
+        "EU261 compensation amount 2026",
+        "how to claim flight delay refund without agency",
+        "Lufthansa flight delay compensation link"
+    ],
+    "market_volume": "High spikes detected for Frankfurt and London Heathrow routes."
+}

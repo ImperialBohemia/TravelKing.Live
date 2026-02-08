@@ -11,7 +11,11 @@
         "intelligence": "Google Vertex AI (Gemini 1.5 Pro / Flash)",
         "marketing": "Facebook Graph API / Ads Manager",
         "infrastructure": "cPanel Enterprise (server707.web-hosting.com)",
-        "logic_layer": "Python 3.12 Modular Architecture"
+        "logic_layer": "Python 3.12 Modular Architecture",
+        "indexing": [
+            "Google Search Console",
+            "Bing Webmaster Tools"
+        ]
     },
     "business_logic": {
         "primary_partner": "AirHelp",
@@ -21,6 +25,7 @@
     "active_assets": {
         "facebook_page": "TopStroje (Admin Access)",
         "google_projects": 14,
-        "server_capacity": "20GB SSD / Unlimited Bandwidth"
+        "server_capacity": "20GB SSD / Unlimited Bandwidth",
+        "bing_status": "Pending Verification"
     }
 }
