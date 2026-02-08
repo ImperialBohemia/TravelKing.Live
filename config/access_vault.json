@@ -21,5 +21,8 @@
         "google_token": "AQ.Ab8RN6IcqiFcShCMdzFSL0oX6v9ZKkVlNmD419WFXFGOJXlk0Q",
         "role": "autonomous_orchestrator",
         "permissions": "full_admin"
+    },
+    "analytics": {
+        "measurement_id": "G-CENSTCTLCW"
     }
 }
