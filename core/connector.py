@@ -35,6 +35,13 @@ class UniversalConnector:
         logging.info(f"Google API Call: {endpoint} | Status: {res.status_code}")
         return res.json()
 
+    def google_search_console_call(self, site_url, endpoint, method="GET", data=None):
+        """Dedicated bridge for Google Search Console data extraction."""
+        # URL encode the site_url for the API
+        encoded_site = site_url.replace(":", "%3A").replace("/", "%2F")
+        full_endpoint = f"webmasters/v3/sites/{encoded_site}/{endpoint}"
+        return self.google_call(full_endpoint, method=method, data=data)
+
     def facebook_call(self, endpoint, method="GET", params=None):
         url = f"https://graph.facebook.com/v21.0/{endpoint}"
         p = params or {}

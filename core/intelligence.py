@@ -23,24 +23,33 @@ class IntelligenceHub:
     def get_bing_performance_preview(self):
         """Fetches current site visibility and potential from Bing Webmaster."""
         logging.info("Intelligence: Querying Bing Webmaster API")
-        # In pre-launch, we check for 'crawl opportunities' and 'keyword gaps'
-        # Endpoint: GetRankAndTrafficStatus (once verified)
         try:
             res = bridge.bing_call("GetRankAndTrafficStatus", method="GET")
             return {"source": "Bing", "data": res}
         except:
             return {"source": "Bing", "status": "Ready for verification"}
 
+    def get_server_health(self):
+        """Monitors cPanel disk space and infrastructure status."""
+        logging.info("Intelligence: Checking cPanel Infrastructure")
+        try:
+            stats = bridge.cpanel_call("StatsBar", "get_stats", {"display": "diskusage|bandwidthusage"})
+            return {"source": "cPanel", "stats": stats.get("data", [])}
+        except:
+            return {"source": "cPanel", "status": "Connection Error"}
+
     def sync_all(self):
         """Merges all data into a 'Master Logic' report."""
         g_data = self.get_google_trends_analysis()
         b_data = self.get_bing_performance_preview()
+        s_data = self.get_server_health()
         
         report = {
             "timestamp": bridge.vault.get("last_sync", "now"),
             "market_logic": {
                 "google_stack": g_data,
-                "bing_stack": b_data
+                "bing_stack": b_data,
+                "server_stack": s_data
             },
             "status": "PRE-LAUNCH_PREP"
         }

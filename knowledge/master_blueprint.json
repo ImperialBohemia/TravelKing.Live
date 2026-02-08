@@ -16,7 +16,9 @@
             "Google Search Console",
             "Bing Webmaster Tools",
             "Bing Webmaster API"
-        ]
+        ],
+        "web_engine": "Sitejet Builder (Visual)",
+        "hosting": "cPanel Enterprise (Full API Access)"
     },
     "business_logic": {
         "primary_partner": "AirHelp",
@@ -29,6 +31,8 @@
         "server_capacity": "20GB SSD / Unlimited Bandwidth",
         "bing_status": "Verified",
         "google_console_status": "Verified",
-        "bing_api_status": "Active"
+        "bing_api_status": "Active",
+        "cpanel_status": "Verified (UAPI/API2 Active)",
+        "sitejet_status": "Active (Deployment via public_html)"
     }
 }
