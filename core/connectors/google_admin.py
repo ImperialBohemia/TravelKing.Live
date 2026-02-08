@@ -12,6 +12,7 @@ class GoogleAdmin:
         self.token = vault["google"]["access_token"]
         self.refresh_token = vault["google"].get("refresh_token")
         self.client_id = "681255809395-oo8ft2oprdrnp9e3aqf6av3hmduib135j.apps.googleusercontent.com" # From token info
+        self.session = requests.Session()
 
     def refresh_access_token(self):
         """Uses the refresh_token to get a new access_token if expired."""
@@ -22,12 +23,14 @@ class GoogleAdmin:
             "refresh_token": self.refresh_token,
             "grant_type": "refresh_token"
         }
-        res = requests.post(url, data=data).json()
+        res = self.session.post(url, data=data).json()
         if "access_token" in res:
             self.token = res["access_token"]
             # Update vault locally
             self.vault["google"]["access_token"] = self.token
-            with open("/home/q/Gemini CLI/config/access_vault.json", "w") as f:
+            base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+            vault_path = os.path.join(base_dir, "config", "access_vault.json")
+            with open(vault_path, "w") as f:
                 json.dump(self.vault, f, indent=4)
             logging.info("GoogleAdmin: Token refreshed successfully.")
             return True
@@ -36,7 +39,7 @@ class GoogleAdmin:
     def call(self, endpoint, method="GET", data=None):
         url = f"https://www.googleapis.com/{endpoint}"
         headers = {"Authorization": f"Bearer {self.token}"}
-        res = requests.request(method, url, headers=headers, json=data)
+        res = self.session.request(method, url, headers=headers, json=data)
         
         if res.status_code == 401: # Unauthorized/Expired
             if self.refresh_access_token():

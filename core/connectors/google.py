@@ -11,6 +11,7 @@ class GoogleModule:
         self.token = vault['google']['access_token']
         self.refresh_token = vault['google']['refresh_token']
         self.client_id = "681255809395-oo8ft2oprdrnp9e3aqf6av3hmduib135j.apps.googleusercontent.com"
+        self.session = requests.Session()
 
     def refresh(self):
         url = "https://oauth2.googleapis.com/token"
@@ -28,7 +29,7 @@ class GoogleModule:
             "developer-token": self.vault['google'].get('developer_token', ''),
             "login-customer-id": self.vault['google'].get('customer_id', '')
         }
-        res = requests.request(method, url, headers=headers, json=data)
+        res = self.session.request(method, url, headers=headers, json=data)
         if res.status_code == 401 and self.refresh():
             return self.call(endpoint, method, data, base)
         return res.json()

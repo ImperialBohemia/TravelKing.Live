@@ -24,5 +24,9 @@
     "bing": {
         "api_key": "9308a57b97ba452cb023db493e88b265",
         "index_now_key": "c62f2ffa0a9744cb8b0381c76fa48a05"
+    },
+    "travelpayouts": {
+        "marker": "371380",
+        "token": "68c617f168d7fd9b1c0ba629477570c2"
     }
 }

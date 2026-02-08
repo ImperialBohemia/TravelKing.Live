@@ -4,6 +4,7 @@ import os
 from core.connectors.google import GoogleModule
 from core.connectors.facebook import FacebookModule
 from core.connectors.server import ServerModule
+from core.connectors.travelpayouts import TravelpayoutsModule
 from core.logic.market import MarketEngine
 
 class OmegaHub:
@@ -19,6 +20,7 @@ class OmegaHub:
         self.google = GoogleModule(self.vault)
         self.facebook = FacebookModule(self.vault)
         self.server = ServerModule(self.vault)
+        self.travelpayouts = TravelpayoutsModule(self.vault)
 
         # 3. Logic (Engines)
         self.market = MarketEngine(self.google, self.server)

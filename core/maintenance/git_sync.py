@@ -1,9 +1,10 @@
 
 import subprocess
 import time
+import os
 
 def auto_sync(action_name):
-    root = "/home/q/Gemini CLI"
+    root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
     message = f"🤖 MODULAR-SYNC: {action_name} | {timestamp}"
     
