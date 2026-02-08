@@ -1,60 +1,74 @@
-# 👑 TravelKing.Live | OMEGA Intelligence Hub
+<!-- 
+💎 TRAVELKING.LIVE - ENTERPRISE OMEGA SYSTEM
+Project: TravelKing.Live | Owner: Stanislav Pasztorek
+Authorized by: Imperial Bohemia
+Status: PRODUCTION READY - SYSTEM UPGRADE MAX NOW
+-->
 
-![Status](https://img.shields.io/badge/Status-Active-brightgreen)
-![Security](https://img.shields.io/badge/Security-Hardened-blue)
-![AI](https://img.shields.io/badge/AI-Gemini%201.5%20Pro-orange)
+# 💎 TravelKing.Live | Enterprise OMEGA System
 
-The definitive **Authority Hub** engine for automated travel affiliate monetization. Powered by **SimpleCode.Space** technology.
+![Status](https://img.shields.io/badge/Status-PRODUCTION--READY-brightgreen)
+![Upgrade](https://img.shields.io/badge/Upgrade-MAX--NOW-blue)
+![Owner](https://img.shields.io/badge/Owner-Stanislav--Pasztorek-gold)
+
+The **Best on Planet** autonomous authority hub for flight compensation and travel intelligence. Powered by the **Google Max Engine** and **Bing Turbo Indexing**.
 
 ---
 
-## 🧠 Project Vision
-TravelKing.Live is not just a website; it is an **Autonomous Business Engine**. It leverages Google's enterprise AI to identify distressed travelers in real-time and provides them with immediate, legally-backed solutions for flight compensation via the AirHelp partnership.
+## 👑 PROCLAMATION OF OWNERSHIP
+This system, its architecture, and all proprietary code are the intellectual property of **Stanislav Pasztorek**, authorized by **Imperial Bohemia**. It represents the pinnacle of "Simple and Powerful" travel automation.
 
-## 🏗️ Technical Architecture (OMEGA)
-The system is built on a modular, "Brain-first" architecture. **Agents should prioritize using `core/hub.py` for all operations.**
+## 🎯 SYSTEM VISION: "MAX NOW"
+TravelKing.Live is an elite, zero-compromise platform built to dominate the flight compensation market. It operates on a **Google-Only Infrastructure** for maximum trust, speed, and zero cost.
 
-- **`core/connectors/`**: Isolated Admin Bridges (Google, FB, Server, Bing).
-- **`core/logic/`**: High-level business engines (Market analysis, Sniper).
-- **`templates/`**: High-conversion HTML5/Tailwind assets.
-- **`knowledge/`**: Strategic blueprints and the **AI_MANIFESTO.md**.
+- **Zero Friction:** 100% Google Cloud, Sites, and Sheets integration.
+- **Zero Cost:** No hosting fees, no server maintenance.
+- **Max Conversion:** Psychological UX/UI optimized for high-value leads.
+- **AI-Ready:** Full AEO (Answer Engine Optimization) with JSON-LD Knowledge Graphs.
 
-## 🚦 AI Agent Protocol
-If you are an AI managing this repository:
-1. **Read `knowledge/architecture/AI_MANIFESTO.md`** first.
-2. **Follow the Modular Logic.** Do not merge connectors into single files.
-3. **Validate before Deploying.** Use `core/validator.py` (when active) to ensure 200 OK status.
-4. **Auto-Backup.** Always run `maintenance.auto_sync()` after successful logic updates.
+---
 
-## 🚀 Key Capabilities
-| Feature | Description |
+## 🏗️ MODULAR ARCHITECTURE (OMEGA)
+
+The system is logically structured for absolute clarity and operational excellence:
+
+### 📁 `core/` (The Heart)
+- **`dashboard/`**: Real-time Executive Monitoring logic.
+- **`google/`**: Enterprise CRM, Sheets automation, and Apps Script bridge.
+- **`marketing/`**: SEO/AEO optimization and Bing IndexNow logic.
+- **`setup/`**: Environment initialization and CRM configuration.
+- **`utils/`**: Deep system auditing and security verification.
+
+### 📁 `knowledge/` (The Brain)
+- **`TRAVELKING_KNOWLEDGE.md`**: The master blueprint and "Zero Compromise" mandate.
+
+### 📁 `templates/` (The Face)
+- **`index.html`**: Professional Authority Portal (E-E-A-T Compliant).
+- **`lead_magnet_v1.html`**: High-conversion data-bridge to affiliate partners.
+
+---
+
+## 🚀 OPERATIONAL COMMANDS
+
+To manage the empire, use these core commands:
+
+| Command | Purpose |
 | :--- | :--- |
-| **Vertex AI Integration** | Real-time flight delay analysis and programmatic content generation. |
-| **FB Ads Automation** | Direct bridge to Facebook Ads Manager for surgical targeting of delayed flights. |
-| **Programmatic SEO** | Instant deployment of "Sniper Pages" for specific flight numbers (e.g., OK618). |
-| **Multi-Engine Indexing** | Automated submission to both Google and Bing for 100% visibility. |
-| **Immortal Connection** | Self-healing tokens and permanent page access protocols enabled. |
-| **Legal Compliance** | Fully automated generation of GDPR-compliant Privacy, Terms, and Impressum pages. |
-
-## 🛠️ Global Setup
-### Permanent Bridge
-The system uses a singular entry point for all operations:
-```python
-from Brain.Core.connector import bridge
-# Bridge grants instant access to Google, Facebook, and cPanel APIs.
-```
-
-### Infrastructure
-- **Main Domain**: `travelking.live`
-- **Backup Domain**: `simplecode.space`
-- **Hosting**: cPanel Enterprise (server707.web-hosting.com)
+| `python dashboard.py` | **Executive Dashboard**: Real-time leads, traffic, and status lights. |
+| `python core/monitor.py` | **System Monitor**: Deep health check of all API and data nodes. |
+| `python core/google/crm_overhaul.py` | **CRM Reset**: Restore the Professional Google Sheet structure. |
 
 ---
 
-## 🛡️ Governance & Identity
-- **Project Managed by**: SimpleCode.Space
-- **Official Contact**: info@simplecode.space
-- **Security Protocol**: All data processing is strictly volatile (Zero-Storage Policy for visitor data).
+## ⚡ SEO & BING TURBO
+This system is hard-wired into the **Bing IndexNow API**. Every lead capture or content update triggers an instant indexing ping, ensuring the site remains at the top of both traditional search and AI answer engines.
 
 ---
-© 2026 **TravelKing.Live** | *Simple and Powerful.*
+
+## 🛡️ GOVERNANCE
+- **Primary Authority**: Stanislav Pasztorek
+- **Support Project**: TravelKing (GCP ID: 1009428807876)
+- **Service Account**: `travelking@travelking.iam.gserviceaccount.com`
+
+---
+© 2026 **TravelKing.Live** | AUTHORIZED BY STANISLAV PASZTOREK | *Simple and Powerful.*
