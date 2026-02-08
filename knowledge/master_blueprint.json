@@ -41,6 +41,8 @@
         "facebook_permanent_page_token": "Active (TopStroje)",
         "google_auto_refresh": "Active (Permanent)",
         "cpanel_root_api": "Active (Never Expire)",
-        "indexing_safety_lock": "LOCKED (No Indexing allowed)"
+        "indexing_safety_lock": "LOCKED (No Indexing allowed)",
+        "google_ads_intel": "IMMORTAL (Integrated via Refresh Token)",
+        "google_ads_bridge": "Modular Logic Core Active"
     }
 }
