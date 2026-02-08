@@ -1,5 +1,4 @@
 # === CRITICAL: SECURITY ===
-access_vault.json
 .env
 *.pem
 *.key

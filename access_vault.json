@@ -1,0 +1,23 @@
+{
+    "google": {
+        "access_token": "ya29.a0AUMWg_Kl_CoaT9QYwW5pzSjb8eZ5JYTZuFZWSRx0Q18No1c5k6HGXLYRJsgq6QhNOcXtFUC6AX4-YZubYi9FS28xo4ja_oyOQkyRGlf4ZESc4b01M50LexlwHBeU2dsaxv7ZmhVdt_EibhHGL1-HUbUrOm-8EilfmGzrOEmfIP4Uvcvcv9vAgfG_DEuqnKn9AwPoyDiNG48kbwaCgYKATwSARISFQHGX2Mic50ExSR2uSQqX9-IXUhuaQ0213",
+        "refresh_token": "1//03EwQ53B8_9YWCgYIARAAGAMSNwF-L9IrWMdxuGljilD18YVKe21-veQwWtGZiapJW_wxHGqaI3LX7P66ISfxi1DxT1hA5wdrPOI",
+        "email": "valachman@gmail.com",
+        "scopes": [
+            "openid",
+            "https://www.googleapis.com/auth/userinfo.profile",
+            "https://www.googleapis.com/auth/userinfo.email",
+            "https://www.googleapis.com/auth/cloud-platform"
+        ]
+    },
+    "facebook": {
+        "app_id": "696429503450342",
+        "app_secret": "d5fb5cdd2e3f94bd0590d487d9f6522c",
+        "access_token": "EAAJ5ZAiEqDOYBQiNeYxzxcxzkHTlWckJ25lKr1a3ZC3xX2WQtf06iPosQVHhEMgiJDhbfEvZAbaJlRihJnxht3wRXgaFAhgYrPQvv8gpbEZAQtOgHZAyllmiBKEYF8FRtPViXaThHOkqd7DIoavGTdQLOyszRpzFQX6QwKqwiQFwZA1RtyE6yNP1dsMm1T2r9Xa4Quq74qBJyevrBBLffltdD1bAUp1SevXTzZCt32HP5YES0Dk"
+    },
+    "cpanel": {
+        "host": "server707.web-hosting.com",
+        "user": "imperkhx",
+        "api_token": "LUTLTTXMW901X3DUJH9FJPEM6CXNPK4D"
+    }
+}
