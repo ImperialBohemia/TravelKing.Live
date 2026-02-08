@@ -1,6 +1,6 @@
 {
     "google": {
-        "access_token": "ya29.a0AUMWg_Kl_CoaT9QYwW5pzSjb8eZ5JYTZuFZWSRx0Q18No1c5k6HGXLYRJsgq6QhNOcXtFUC6AX4-YZubYi9FS28xo4ja_oyOQkyRGlf4ZESc4b01M50LexlwHBeU2dsaxv7ZmhVdt_EibhHGL1-HUbUrOm-8EilfmGzrOEmfIP4Uvcvcv9vAgfG_DEuqnKn9AwPoyDiNG48kbwaCgYKATwSARISFQHGX2Mic50ExSR2uSQqX9-IXUhuaQ0213",
+        "access_token": "ya29.a0AUMWg_JbBCPBq1PWEw-HSrRhBBGv__vkHTkG4Xu94AzXG1u0F0P3pfS5TGCCqbuhriWYeEUHluaUZWLvuO9VQfdZDXgOeAXpP2DNRriIC3ftLjUtuoEWdMUL2oGnNwhGZob8aZtBRB2nTwi9VhinBrjWbxeTjSLX6qT2XEjWzDUZcLTjY1n-oU_AoXB6XmsKfAE6yW7inQnqiAaCgYKAe8SARISFQHGX2MipiOGZbifGW6V0BNxIKPs9w0213",
         "refresh_token": "1//03EwQ53B8_9YWCgYIARAAGAMSNwF-L9IrWMdxuGljilD18YVKe21-veQwWtGZiapJW_wxHGqaI3LX7P66ISfxi1DxT1hA5wdrPOI",
         "email": "valachman@gmail.com",
         "scopes": [
@@ -24,5 +24,9 @@
     "bing": {
         "api_key": "9308a57b97ba452cb023db493e88b265",
         "index_now_key": "c62f2ffa0a9744cb8b0381c76fa48a05"
+    },
+    "travelpayouts": {
+        "marker": "371380",
+        "api_token": "68c617f168d7fd9b1c0ba629477570c2"
     }
 }
