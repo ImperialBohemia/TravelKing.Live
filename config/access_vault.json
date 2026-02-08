@@ -22,6 +22,7 @@
         "api_token": "LUTLTTXMW901X3DUJH9FJPEM6CXNPK4D"
     },
     "bing": {
-        "api_key": "9308a57b97ba452cb023db493e88b265"
+        "api_key": "9308a57b97ba452cb023db493e88b265",
+        "index_now_key": "c62f2ffa0a9744cb8b0381c76fa48a05"
     }
 }

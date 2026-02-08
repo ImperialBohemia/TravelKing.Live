@@ -55,7 +55,12 @@ class IndestructibleConnector:
 
     def google_call(self, endpoint, method="GET", data=None):
         """Resilient Google API bridge with retry logic."""
-        url = f"https://www.googleapis.com/{endpoint}"
+        # Detect if it is a specific API (Ads, Vision, etc)
+        base_url = "https://www.googleapis.com"
+        if "googleads" in endpoint:
+            base_url = "https://googleads.googleapis.com"
+        
+        url = f"{base_url}/{endpoint}"
         headers = {"Authorization": f"Bearer {self.vault['google']['access_token']}"}
         try:
             res = requests.request(method, url, headers=headers, json=data, timeout=20)
@@ -65,6 +70,32 @@ class IndestructibleConnector:
             return res.json()
         except Exception as e:
             return {"error": "CONNECTION_LOST", "details": str(e)}
+
+    def submit_index_now(self, url_list):
+        """Forces Bing/Yandex to index our pages immediately."""
+        key = self.vault['bing']['index_now_key']
+        data = {
+            "host": "travelking.live",
+            "key": key,
+            "keyLocation": f"https://travelking.live/{key}.txt",
+            "urlList": url_list
+        }
+        return requests.post("https://www.bing.com/indexnow", json=data).status_code
+
+    def google_vision_scan(self, image_url):
+        """AI OCR for scanning boarding passes via Google Cloud Vision."""
+        data = {
+            "requests": [{
+                "image": {"source": {"imageUri": image_url}},
+                "features": [{"type": "TEXT_DETECTION"}]
+            }]
+        }
+        return self.google_call("v1/images:annotate", method="POST", data=data)
+
+    def google_ads_intel(self, query):
+        """Fetches search volume and CPC from Google Ads API."""
+        # Placeholder for specific Ads API endpoint (requires Developer Token)
+        return {"status": "Bridge ready. Awaiting Developer Token."}
 
     def facebook_call(self, endpoint, method="GET", params=None):
         """High-availability Facebook bridge."""
