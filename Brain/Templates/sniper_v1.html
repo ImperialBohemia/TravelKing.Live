@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{FLIGHT_ID}} Delay Compensation | TravelKing.live</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans">
+    <div class="gradient-bg text-white py-6 px-4 text-center shadow-lg">
+        <h1 class="text-2xl font-bold italic tracking-tighter">TRAVELKING<span class="text-yellow-400">.LIVE</span></h1>
+        <p class="text-sm opacity-90">Official EU 261/2004 Compensation Hub</p>
+    </div>
+
+    <main class="max-w-md mx-auto mt-8 px-4">
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-xs font-bold uppercase">Status: Delayed / Cancelled</span>
+                    <span class="text-slate-400 text-xs font-mono">{{TIMESTAMP}}</span>
+                </div>
+                
+                <h2 class="text-3xl font-extrabold text-slate-800 mb-2">{{FLIGHT_ID}}</h2>
+                <p class="text-slate-600 mb-6">{{ROUTE}}</p>
+
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8">
+                    <p class="text-yellow-800 font-bold text-lg">💰 Estimated: €600.00</p>
+                    <p class="text-yellow-700 text-sm">Potential compensation per passenger based on EU law.</p>
+                </div>
+
+                <a href="https://www.airhelp.com/en/?aid=11089" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-5 rounded-xl font-bold text-xl transition shadow-lg active:scale-95">
+                    CLAIM MY MONEY NOW →
+                </a>
+                
+                <p class="text-center text-slate-400 text-[10px] mt-4 italic">No win, no fee. Legal check takes 2 minutes.</p>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center text-slate-400 text-sm">
+            <p>© 2026 TravelKing.live - Authorized Authority Hub</p>
+        </div>
+    </main>
+</body>
+</html>

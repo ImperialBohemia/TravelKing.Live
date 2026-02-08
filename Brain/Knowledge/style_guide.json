@@ -1,0 +1,27 @@
+{
+    "brand_name": "TravelKing.live",
+    "typography": {
+        "primary": "Inter, sans-serif",
+        "style": "Antialiased"
+    },
+    "colors": {
+        "primary_blue": "#1e40af",
+        "accent_gold": "#fbbf24",
+        "bg_slate": "#f8fafc",
+        "text_slate": "#1e293b",
+        "hero_gradient": "radial-gradient(circle at top right, #1e293b 0%, #0f172a 100%)"
+    },
+    "ui_components": {
+        "corners": "rounded-3xl (large) / rounded-xl (medium)",
+        "shadows": "shadow-sm / shadow-2xl (hero)",
+        "buttons": "bg-blue-600, font-black, px-10, transition shadow-xl",
+        "containers": "max-w-6xl (page) / max-w-3xl (article)"
+    },
+    "mandatory_elements": [
+        "Navigation with Logo",
+        "Legal Footer with Privacy/Terms/Impressum",
+        "Cookie Banner",
+        "Affiliate Disclosure",
+        "Gold Crown Favicon"
+    ]
+}

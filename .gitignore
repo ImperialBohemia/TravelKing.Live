@@ -1,0 +1,15 @@
+# === CRITICAL: SECURITY ===
+access_vault.json
+.env
+*.pem
+*.key
+
+# === Python ===
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# === Project OMEGA ===
+.gemini/
+*.log

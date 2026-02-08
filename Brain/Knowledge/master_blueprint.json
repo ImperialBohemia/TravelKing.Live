@@ -1,0 +1,23 @@
+{
+    "identity": "Stanislav Pasztorek / imperkhx",
+    "primary_domain": "simplecode.space",
+    "infrastructure": {
+        "server": "server707.web-hosting.com (cPanel)",
+        "google_cloud": {
+            "status": "Enterprise Access",
+            "active_projects": 14,
+            "key_project": "gen-lang-client-0960488665 (Vertex AI)"
+        },
+        "facebook": {
+            "status": "Admin Access",
+            "primary_page": "TopStroje (791106764077902)",
+            "ad_account": "act_691990236721481 (CZK)"
+        }
+    },
+    "capabilities": [
+        "Full AI Orchestration (Gemini 1.5 Pro)",
+        "Massive Web Hosting (20GB Storage)",
+        "Automated Ads & Lead Gen (Facebook)",
+        "BigQuery Data Analytics"
+    ]
+}
