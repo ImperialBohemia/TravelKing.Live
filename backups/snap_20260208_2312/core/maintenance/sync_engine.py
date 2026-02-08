@@ -29,12 +29,18 @@ def auto_sync():
     
     if code != 0:
         print(f"   ⚠️ CONFLICT DETECTED! Initiating Auto-Repair...")
-        # Auto-Repair Logic: Favor LOCAL changes in case of conflict during rebase
         run_cmd("git rebase --abort")
         run_cmd("git pull -s recursive -X ours origin main")
         print("   ✅ Auto-Repair: Remote merged with LOCAL priority.")
 
-    # 3. GIT PUSH
+    # 3. BRAIN LOGGING (Do this BEFORE commit)
+    now_iso = datetime.now().isoformat()
+    log_entry = f"\n- {now_iso} | SYNC PREP | Snapshot: {backup_folder}"
+    with open("knowledge/TRAVELKING_KNOWLEDGE.md", "a") as f:
+        f.write(log_entry)
+    print("   ✅ Brain Logged.")
+
+    # 4. GIT PUSH
     print("   🚀 Synchronizing to GitHub...")
     run_cmd("git add .")
     run_cmd(f'git commit -m "💎 OMEGA AUTO-SYNC: Permanent Snapshot {datetime.now().strftime("%Y-%m-%d %H:%M")}"')
@@ -44,13 +50,6 @@ def auto_sync():
         print("   ✅ GitHub Sync: SUCCESS")
     else:
         print("   ❌ GitHub Sync: FAILED (Check network/auth)")
-
-    # 4. BRAIN LOGGING
-    now_iso = datetime.now().isoformat()
-    log_entry = f"\n- {now_iso} | SYNC SUCCESS | Snapshot: {backup_folder}"
-    with open("knowledge/TRAVELKING_KNOWLEDGE.md", "a") as f:
-        f.write(log_entry)
-    print("   ✅ Brain Updated with Sync Log.")
 
 if __name__ == "__main__":
     auto_sync()
