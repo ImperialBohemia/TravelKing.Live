@@ -27,7 +27,10 @@ class GoogleAdmin:
             self.token = res["access_token"]
             # Update vault locally
             self.vault["google"]["access_token"] = self.token
-            with open("/home/q/Gemini CLI/config/access_vault.json", "w") as f:
+            current_dir = os.path.dirname(os.path.abspath(__file__))
+            root = os.path.abspath(os.path.join(current_dir, "..", ".."))
+            vault_path = os.path.join(root, "config", "access_vault.json")
+            with open(vault_path, "w") as f:
                 json.dump(self.vault, f, indent=4)
             logging.info("GoogleAdmin: Token refreshed successfully.")
             return True
