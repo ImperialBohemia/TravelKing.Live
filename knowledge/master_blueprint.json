@@ -18,7 +18,8 @@
             "Bing Webmaster API"
         ],
         "web_engine": "Sitejet Builder (Visual)",
-        "hosting": "cPanel Enterprise (Full API Access)"
+        "hosting": "cPanel Enterprise (Full API Access)",
+        "architecture": "Modular Admin Core"
     },
     "business_logic": {
         "primary_partner": "AirHelp",
@@ -33,6 +34,8 @@
         "google_console_status": "Verified",
         "bing_api_status": "Active",
         "cpanel_status": "Verified (UAPI/API2 Active)",
-        "sitejet_status": "Active (Deployment via public_html)"
+        "sitejet_status": "Active (Deployment via public_html)",
+        "google_admin_refresh": "Enabled",
+        "status": "SUPER_ADMIN_MODE"
     }
 }
