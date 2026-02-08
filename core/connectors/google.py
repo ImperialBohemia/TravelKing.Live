@@ -85,6 +85,48 @@ class GoogleConnector(BaseConnector):
         if self._refresh_via_gcloud_cli():
             return True
 
+        # 4. Standard SDK Refresh
+        return self._refresh_via_sdk()
+
+    def _refresh_via_sdk(self) -> bool:
+        """Standard OAuth2 Refresh using SDK or requests."""
+        try:
+            from google.oauth2.credentials import Credentials
+            from google.auth.transport.requests import Request
+
+            creds = Credentials(
+                token=self.token,
+                refresh_token=self.refresh_token,
+                client_id=self.client_id,
+                client_secret=self.client_secret,
+                token_uri="https://oauth2.googleapis.com/token"
+            )
+
+            creds.refresh(Request())
+
+            if creds.token:
+                self.token = creds.token
+                self.vault_full['google']['access_token'] = self.token
+                self._save_vault()
+                return True
+        except Exception as e:
+            self.logger.error(f"Google SDK Refresh failed: {e}")
+            # Fallback to manual requests if SDK fails
+            url = "https://oauth2.googleapis.com/token"
+            data = {
+                "client_id": self.client_id,
+                "client_secret": self.client_secret,
+                "refresh_token": self.refresh_token,
+                "grant_type": "refresh_token"
+            }
+            res = requests.post(url, data=data).json()
+            if "access_token" in res:
+                self.token = res["access_token"]
+                self.vault_full['google']['access_token'] = self.token
+                self._save_vault()
+                return True
+        return False
+
     def _refresh_via_gcloud_cli(self) -> bool:
         """Attempts to get a fresh token directly from gcloud CLI."""
         try:
@@ -124,42 +166,6 @@ class GoogleConnector(BaseConnector):
         except:
             pass
 
-        return False
-
-        # 3. Standard SDK Refresh
-        try:
-            from google.oauth2.credentials import Credentials
-            from google.auth.transport.requests import Request
-
-            creds = Credentials(
-                token=self.token,
-                refresh_token=self.refresh_token,
-                client_id=self.client_id,
-                client_secret=self.client_secret,
-                token_uri="https://oauth2.googleapis.com/token"
-            )
-            
-            creds.refresh(Request())
-            
-            if creds.token:
-                self.token = creds.token
-                self.vault_full['google']['access_token'] = self.token
-                self._save_vault()
-                return True
-        except Exception as e:
-            self.logger.error(f"Google SDK Refresh failed: {e}")
-            # Fallback to manual requests if SDK fails
-            url = "https://oauth2.googleapis.com/token"
-            data = {
-                "client_id": self.client_id, 
-                "client_secret": self.client_secret,
-                "refresh_token": self.refresh_token, 
-                "grant_type": "refresh_token"
-            }
-            res = requests.post(url, data=data).json()
-            if "access_token" in res:
-                self.token = res["access_token"]
-                return True
         return False
 
     def _save_vault(self):
