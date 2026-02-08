@@ -12,3 +12,4 @@ venv/
 # === Project OMEGA ===
 .gemini/
 *.log
+CREDENTIALS.md
