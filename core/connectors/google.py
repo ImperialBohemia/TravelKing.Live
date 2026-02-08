@@ -12,21 +12,17 @@ class GoogleConnector(BaseConnector):
     def __init__(self, vault):
         super().__init__("Google", vault.get("google", {}))
         self.vault_full = vault
-        self.vault_full_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'config', 'access_vault.json')
+        # Dynamic path resolution to avoid hardcoded /home/q/ issues
+        self.repo_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        self.vault_full_path = os.path.join(self.repo_root, 'config', 'access_vault.json')
+
         self.token = self.config.get('access_token')
         self.refresh_token = self.config.get('refresh_token')
-        # Official Project OAuth Client ID (TravelKing OMEGA)
-        self.client_id = self.config.get("client_id", "1009428807876-seopbefn13ev9fnot0sdsh1018fp00iu.apps.googleusercontent.com")
-        self.client_secret = self.config.get("client_secret", "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")
 
-        # SDK Path Injection (SimpleCodeSpace Enterprise Foundation)
-        sdk_paths = [
-            '/home/q/SimpleCodeSpace/venv/lib/python3.12/site-packages',
-            '/home/q/SimpleCodeSpace/.venv/lib/python3.12/site-packages'
-        ]
-        for path in sdk_paths:
-            if os.path.exists(path) and path not in sys.path:
-                sys.path.append(path)
+        # Official Project OAuth Client ID (TravelKing OMEGA)
+        # Defaults removed for security - MUST be in vault
+        self.client_id = self.config.get("client_id")
+        self.client_secret = self.config.get("client_secret")
 
         # Permanent Brain Link (ADC)
         self.use_adc = False
@@ -58,16 +54,21 @@ class GoogleConnector(BaseConnector):
         """Refreshes the Google access token using SDK, Environment Sync, or ADC."""
         # 1. Environment Sync (Agent Supremacy)
         try:
-            env_creds_path = "/home/q/.gemini/oauth_creds.json"
-            if os.path.exists(env_creds_path):
-                with open(env_creds_path, 'r') as f:
-                    env_data = json.load(f)
-                    if env_data.get("access_token") and env_data.get("access_token") != self.token:
-                        self.logger.info("⚡ Environment Sync: Regenerating Google link from Brain...")
-                        self.token = env_data["access_token"]
-                        self.vault_full['google']['access_token'] = self.token
-                        self._save_vault()
-                        return True
+            # Check for local .gemini folder in repo root or home
+            possible_env_paths = [
+                os.path.join(self.repo_root, ".gemini", "oauth_creds.json"),
+                os.path.expanduser("~/.gemini/oauth_creds.json")
+            ]
+            for env_creds_path in possible_env_paths:
+                if os.path.exists(env_creds_path):
+                    with open(env_creds_path, 'r') as f:
+                        env_data = json.load(f)
+                        if env_data.get("access_token") and env_data.get("access_token") != self.token:
+                            self.logger.info(f"⚡ Environment Sync: Regenerating Google link from {env_creds_path}...")
+                            self.token = env_data["access_token"]
+                            self.vault_full['google']['access_token'] = self.token
+                            self._save_vault()
+                            return True
         except Exception as e:
             self.logger.debug(f"Environment Sync failed: {e}")
 
@@ -130,8 +131,11 @@ class GoogleConnector(BaseConnector):
     def _refresh_via_gcloud_cli(self) -> bool:
         """Attempts to get a fresh token directly from gcloud CLI."""
         try:
-            # Try standard gcloud path first, then local one
-            gcloud_cmds = ["gcloud", "/home/q/SimpleCodeSpace/0/google-cloud-sdk/bin/gcloud"]
+            # Try standard gcloud path first, then common local paths
+            gcloud_cmds = [
+                "gcloud",
+                os.path.join(self.repo_root, "google-cloud-sdk", "bin", "gcloud")
+            ]
             
             for cmd in gcloud_cmds:
                 try:
@@ -170,8 +174,7 @@ class GoogleConnector(BaseConnector):
 
     def _save_vault(self):
         """Internal helper to persist vault changes."""
-        vault_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'config', 'access_vault.json')
-        with open(vault_path, 'w') as f:
+        with open(self.vault_full_path, 'w') as f:
             json.dump(self.vault_full, f, indent=4)
 
     def api_call(self, url, method="GET", **kwargs):

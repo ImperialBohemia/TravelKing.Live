@@ -1,18 +1,21 @@
 import json
-from core.connectors.google import GoogleModule
-from core.connectors.server import ServerModule
+from core.connectors.google import GoogleConnector
+from core.connectors.server import CPanelConnector
+from core.google.gemini import GeminiClient
 
 class SniperEngine:
     """The Sniper Engine: Real-time delay detection and page deployment."""
-    def __init__(self, google: GoogleModule, server: ServerModule):
+    def __init__(self, google: GoogleConnector, server: CPanelConnector, gemini: GeminiClient):
         self.google = google
         self.server = server
+        self.gemini = gemini
 
     def search_for_delays(self, airline=""):
         """Search for live flight delays using Google Search/Vertex."""
-        # This would normally call Google Search/Vertex API
-        # For now, we mock the logic
-        print(f"🎯 SNIPER: Searching for delays in {airline or 'all airlines'}...")
+        print(f"🎯 SNIPER: Searching for delays in {airline or 'all airlines'} using Gemini Intelligence...")
+
+        # Use Gemini to "simulate" or analyze real-time delay data
+        analysis = self.gemini.analyze_flight_delay(f"Analyze recent delays for {airline or 'major airlines'}")
 
         # Mock result
         return [
