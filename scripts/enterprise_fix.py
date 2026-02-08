@@ -1,76 +1,111 @@
 
-import asyncio
-from playwright.async_api import async_playwright
-import time
-import json
+import os
+from googleapiclient.discovery import build
+from google.oauth2 import service_account
 
-async def run():
-    async with async_playwright() as p:
-        # 1. Launch Browser
-        browser = await p.chromium.launch(headless=True)
-        context = await browser.new_context()
-        page = await context.new_page()
+def overhaul_crm():
+    print("💎 OMEGA ENTERPRISE OVERHAUL: Building Profi CRM...")
+    
+    try:
+        creds = service_account.Credentials.from_service_account_file(
+            'config/service_account.json',
+            scopes=['https://www.googleapis.com/auth/spreadsheets']
+        )
+        service = build('sheets', 'v4', credentials=creds)
+        spreadsheet_id = "1uvNvNKei8sgmrASHE5OpQKwEANcOFjxOCdIxMWBnOQc"
 
-        # 2. Login to Google
-        print("Logging in to trendnatures@gmail.com...")
-        await page.goto("https://accounts.google.com/signin")
-        await page.fill('input[type="email"]', "trendnatures@gmail.com")
-        await page.click('button:has-text("Next")')
-        await page.wait_for_timeout(2000)
+        # 1. Create the Structure (Requests)
+        requests = [
+            # B. Set Professional Headers for LEADS
+            {
+                "updateCells": {
+                    "range": {"sheetId": 0, "startRowIndex": 0, "endRowIndex": 1, "startColumnIndex": 0, "endColumnIndex": 12},
+                    "rows": [{
+                        "values": [
+                            {"userEnteredValue": {"stringValue": "ID"}},
+                            {"userEnteredValue": {"stringValue": "TIMESTAMP"}},
+                            {"userEnteredValue": {"stringValue": "FULL NAME"}},
+                            {"userEnteredValue": {"stringValue": "EMAIL"}},
+                            {"userEnteredValue": {"stringValue": "FLIGHT NO."}},
+                            {"userEnteredValue": {"stringValue": "STATUS"}},
+                            {"userEnteredValue": {"stringValue": "PRIORITY"}},
+                            {"userEnteredValue": {"stringValue": "VALUATION (€)"}},
+                            {"userEnteredValue": {"stringValue": "NEXT ACTION"}},
+                            {"userEnteredValue": {"stringValue": "LAST CONTACT"}},
+                            {"userEnteredValue": {"stringValue": "PROCESSED BY"}},
+                            {"userEnteredValue": {"stringValue": "INTERNAL NOTES"}}
+                        ]
+                    }],
+                    "fields": "userEnteredValue"
+                }
+            },
+            # C. Professional Formatting: Freeze Top Row
+            {
+                "updateSheetProperties": {
+                    "properties": {
+                        "sheetId": 0,
+                        "gridProperties": {"frozenRowCount": 1}
+                    },
+                    "fields": "gridProperties.frozenRowCount"
+                }
+            },
+            # D. Bold Headers & Dark Background
+            {
+                "repeatCell": {
+                    "range": {"sheetId": 0, "startRowIndex": 0, "endRowIndex": 1},
+                    "cell": {
+                        "userEnteredFormat": {
+                            "backgroundColor": {"red": 0.05, "green": 0.1, "blue": 0.2},
+                            "textFormat": {"foregroundColor": {"red": 1, "green": 1, "blue": 1}, "bold": True, "fontSize": 10},
+                            "horizontalAlignment": "CENTER"
+                        }
+                    },
+                    "fields": "userEnteredFormat(backgroundColor,textFormat,horizontalAlignment)"
+                }
+            },
+            # E. Dropdowns for STATUS
+            {
+                "setDataValidation": {
+                    "range": {"sheetId": 0, "startRowIndex": 1, "endRowIndex": 1000, "startColumnIndex": 5, "endColumnIndex": 6},
+                    "rule": {
+                        "condition": {"type": "ONE_OF_LIST", "values": [
+                            {"userEnteredValue": "0_NEW"}, 
+                            {"userEnteredValue": "1_CONTACTED"}, 
+                            {"userEnteredValue": "2_LEGAL_REVIEW"}, 
+                            {"userEnteredValue": "3_FILED"}, 
+                            {"userEnteredValue": "4_WON_PAID"}, 
+                            {"userEnteredValue": "5_LOST_REJECTED"}
+                        ]},
+                        "showCustomUi": True
+                    }
+                }
+            },
+            # F. Dropdowns for PRIORITY
+            {
+                "setDataValidation": {
+                    "range": {"sheetId": 0, "startRowIndex": 1, "endRowIndex": 1000, "startColumnIndex": 6, "endColumnIndex": 7},
+                    "rule": {
+                        "condition": {"type": "ONE_OF_LIST", "values": [
+                            {"userEnteredValue": "🔥 HIGH"}, 
+                            {"userEnteredValue": "⚡ MEDIUM"}, 
+                            {"userEnteredValue": "❄️ LOW"}
+                        ]},
+                        "showCustomUi": True
+                    }
+                }
+            }
+        ]
+
+        body = {'requests': requests}
+        service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet_id, body=body).execute()
         
-        await page.fill('input[type="password"]', "Brasco2026@@~~")
-        await page.click('button:has-text("Next")')
-        
-        # Check for 2FA or successful login
-        await page.wait_for_timeout(5000)
-        if "challenge" in page.url:
-            print("🚨 2FA BLOCKED: User intervention required for login!")
-            await browser.close()
-            return
+        print("✅ CRM OVERHAUL COMPLETE.")
+        print("   - Professional Dark Headers (Frozen)")
+        print("   - Sales Pipelines (NEW -> WON)")
+        print("   - Priority Scoring (HIGH/MEDIUM/LOW)")
 
-        print("✅ Login Successful!")
-
-        # 3. Open the Sheet
-        sheet_id = "1uvNvNKei8sgmrASHE5OpQKwEANcOFjxOCdIxMWBnOQc"
-        print(f"Opening Sheet: {sheet_id}")
-        await page.goto(f"https://docs.google.com/spreadsheets/d/{sheet_id}/edit")
-        await page.wait_for_timeout(5000)
-
-        # 4. Create SYSTEM_STATUS tab if it doesn't exist
-        print("Checking for SYSTEM_STATUS tab...")
-        tabs = await page.query_selector_all('.docs-sheet-tab-name')
-        tab_names = [await t.inner_text() for t in tabs]
-        if "SYSTEM_STATUS" not in tab_names:
-            print("Creating SYSTEM_STATUS tab...")
-            await page.click('[aria-label="Insert sheet"]')
-            await page.wait_for_timeout(2000)
-            # Rename the new sheet
-            # This is complex in headless, but let's try to just share first
-        else:
-            print("✅ SYSTEM_STATUS tab already exists.")
-
-        # 5. Share with Service Account
-        print("Sharing with Service Account...")
-        try:
-            await page.click('button:has-text("Share")')
-            await page.wait_for_timeout(2000)
-            
-            sa_email = "travelking@travelking.iam.gserviceaccount.com"
-            await page.fill('input[aria-label="Add people and groups"]', sa_email)
-            await page.wait_for_timeout(1000)
-            await page.keyboard.press("Enter")
-            
-            # Ensure Editor role
-            # It's usually default, but we can verify if needed
-            
-            await page.click('button:has-text("Send"), button:has-text("Done")')
-            print(f"✅ Shared with {sa_email}!")
-        except Exception as e:
-            print(f"❌ Sharing failed: {e}")
-
-        await page.wait_for_timeout(2000)
-        await browser.close()
-        print("🚀 Enterprise Fix Completed Headless!")
+    except Exception as e:
+        print(f"❌ Error during overhaul: {e}")
 
 if __name__ == "__main__":
-    asyncio.run(run())
+    overhaul_crm()

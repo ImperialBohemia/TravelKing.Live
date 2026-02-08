@@ -1,117 +1,73 @@
-# TravelKing.Live - Enterprise Knowledge Base
+# TravelKing.Live - SYSTEM UPGRADE MAX NOW 🚀
 
-**Last Updated:** 2026-02-08  
-**Status:** Production Ready  
-**Architecture:** OMEGA Enterprise Autonomous Console
-
----
-
-## 🎯 PROJECT OVERVIEW
-
-**Mission:** Zero-cost lead generation funnel for travel deals using Google ecosystem + Travelpayouts affiliate network.
-
-**Strategy:** "Zero Cost / Max Yield"
-- No hosting fees
-- No API costs
-- 100% free infrastructure
-- Revenue via affiliate commissions
+**Last Updated:** 2026-02-08 (Post-Overhaul)
+**Status:** SYSTEM UPGRADE MAX NOW - READY FOR MISSION
+**Architecture:** Google-Only Authority Stack + Bing Turbo Bonus
 
 ---
 
-## 🏗️ ARCHITECTURE
+## 🎯 THE "MAX NOW" STRATEGY
 
-### Tech Stack
-```
-Landing Page:    Google Sites (www.travelking.live)
-Lead Capture:    Google Forms (public)
-Data Storage:    Google Sheets (private)
-Processing:      OMEGA Concierge Engine (Enterprise)
-Flight Search:   Travelpayouts API
-Email Delivery:  Gmail API
-Indexing:        Google Indexing API
-```
+**Mission:** Complete dominance in flight compensation leads using 100% Google infrastructure and instant Bing indexing.
 
-### Data Flow
-```
-User visits Landing Page
-    ↓
-Fills Google Form
-    ↓
-Data saved to Google Sheet
-    ↓
-Concierge Bot reads Sheet
-    ↓
-Searches flights on Travelpayouts
-    ↓
-Sends personalized email via Gmail
-    ↓
-User clicks affiliate link
-    ↓
-Commission earned
-```
+**Zero-Friction Funnel:**
+- **Google Sites:** Authority Front-end.
+- **Google Forms:** Trusted Lead Capture.
+- **Google Sheets:** Professional Enterprise CRM.
+- **Apps Script:** The "Brain" (Auto-emails + Affiliate Redirects).
+- **Bing IndexNow:** Instant SEO visibility.
 
 ---
 
-## 🔐 CREDENTIALS
+## 🏗️ SYSTEM ARCHITECTURE (FRESH & NEW)
 
-### Google Account & Service Account
-- **Admin Email:** trendnatures@gmail.com
-- **Service Account Email:** travelking@travelking.iam.gserviceaccount.com
-- **OAuth Project:** TravelKing OMEGA (ID: 1009428807876)
+### 1. The Frontend (Authority Portal)
+- **Primary Web:** `www.travelking.live` (index.html is the Blue-Print).
+- **Lead Magnet:** `templates/lead_magnet_v1.html` (Integrated with Google Forms).
+- **Design:** E-E-A-T compliant, glassmorphism, mobile-first.
 
-### Travelpayouts
-- **Marker:** 497485
-- **Token:** f47a61f5c0d9f0b285fd3551cc66f69d
+### 2. The Engine (Google Apps Script)
+*Located inside the Google Sheet (Extensions -> Apps Script)*
+- **Auto-Process:** Every form submission triggers the engine.
+- **Auto-Email:** Sends personalized affiliate links via Gmail instantly.
+- **Bing Ping:** Triggers Bing IndexNow for every new lead.
 
-### Infrastructure Access
-- **cPanel/SSH:** imperkhx @ server707.web-hosting.com
-- **Gmail SMTP:** via App Password (zzpd unbh srxl omvu)
+### 3. The CRM (Profi Command Center)
+- **ID:** `1uvNvNKei8sgmrASHE5OpQKwEANcOFjxOCdIxMWBnOQc`
+- **Features:** Dark Mode headers, Frozen rows, Banded rows.
+- **Pipelines:** `0_NEW` -> `1_CONTACTED` -> `2_LEGAL_REVIEW` -> `4_WON_PAID`.
+- **Scoring:** 🔥 HIGH, ⚡ MEDIUM, ❄️ LOW priority icons.
 
----
-
-## 📊 ENABLED APIS
-
-- ✅ Gmail API (SMTP Relay)
-- ✅ Google Sheets API (v4)
-- ✅ Google Drive API
-- ✅ Google Indexing API
-- ✅ Google Analytics GA4 (G-CENSTCTLCW)
-
----
-
-## 🤖 CONCIERGE BOT (ENTERPRISE)
-
-**Location:** `/home/q/TravelKing.Live/engines/concierge_bot.py`
-
-**Key Features:**
-1. **Permanent Auth:** Uses Service Account for Sheets and App Password for Gmail.
-2. **Autonomous Notifier:** Sends alerts on system failures.
-3. **Structured Logging:** Full audit trail in `logs/omega_bot.log`.
-4. **Link Tracking:** Ready for affiliate redirection.
+### 4. The Dashboard (Executive View)
+- **Script:** `dashboard.py`
+- **Logic:** Minimalist 3-tier view:
+    1. **Traffic:** GSC/Bing Clicks & Impressions.
+    2. **Conversions:** Real Lead count from Sheets.
+    3. **System Status:** 🟢 Green-light monitoring.
 
 ---
 
-## 💓 SYSTEM HEARTBEAT
-Automated monitoring via `core/heartbeat.py`. Verifies all node connections and updates `SYSTEM_STATUS` dashboard in CRM.
+## ⚡ BING TURBO BONUS (INDEXNOW)
+
+The system is wired to **Bing IndexNow**. Every time a lead is processed or the site is updated, we "ping" Bing's crawler directly. 
+- **Key:** `c62f2ffa0a9744cb8b0381c76fa48a05`
+- **Result:** Instant indexing, bypassing traditional crawl delays.
 
 ---
 
-## 🚀 DEPLOYMENT STATUS
+## 📊 ANALYTICS & TRACKING
 
-- [x] Phase 1: Foundation (OAuth, Service Account, APIs)
-- [x] Phase 2: Core (Engine, Notifications, Heartbeat)
-- [/] Phase 3: Landing Page (Google Sites, Forms, GA4)
-- [ ] Phase 4: Launch (Test Lead, Scaling)
-
----
-
-## 📚 REFERENCES
-
-- [Google Analytics Data API](https://developers.google.com/analytics/devguides/reporting/data/v1)
-- [Google Tag Manager API](https://developers.google.com/tag-manager/api/v2)
-- [Travelpayouts v3 Docs](https://developers.travelpayouts.com/en/v3)
-- [cPanel UAPI Docs](https://api.docs.cpanel.net/uapi/introduction/)
+- **GA4:** `G-CENSTCTLCW` (Bot Integrated)
+- **GTM:** `GTM-WB69V297` (Head/Body Injected)
+- **Search Console:** Verified for `sc-domain:travelking.live`.
 
 ---
 
-**Built by OMEGA | Enterprise Architecture | 2026**
+## 🚀 OPERATIONAL COMMANDS
+
+- **Check System Health:** `python core/monitor.py`
+- **View Executive Stats:** `python dashboard.py`
+- **Push CRM Updates:** `python scripts/enterprise_fix.py`
+
+---
+**SYSTEM UPGRADE MAX NOW | Google-Only Enterprise Architecture | 2026**

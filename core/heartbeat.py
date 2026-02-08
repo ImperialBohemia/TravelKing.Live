@@ -53,7 +53,7 @@ class Heartbeat:
     def check_travelpayouts(self):
         """Check Travelpayouts API connectivity."""
         try:
-            token = self.vault['travelpayouts']['token']
+            token = self.vault['travelpayouts']['api_token']
             r = requests.get(
                 "https://api.travelpayouts.com/aviasales/v3/prices_for_dates",
                 params={'origin': 'PRG', 'destination': 'LON', 'token': token, 'limit': 1},
