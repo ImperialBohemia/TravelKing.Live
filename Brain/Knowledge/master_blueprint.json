@@ -1,23 +1,26 @@
 {
-    "identity": "Stanislav Pasztorek / imperkhx",
-    "primary_domain": "simplecode.space",
-    "infrastructure": {
-        "server": "server707.web-hosting.com (cPanel)",
-        "google_cloud": {
-            "status": "Enterprise Access",
-            "active_projects": 14,
-            "key_project": "gen-lang-client-0960488665 (Vertex AI)"
-        },
-        "facebook": {
-            "status": "Admin Access",
-            "primary_page": "TopStroje (791106764077902)",
-            "ad_account": "act_691990236721481 (CZK)"
-        }
+    "project_name": "TravelKing.Live OMEGA",
+    "version": "2026.1.0",
+    "mission": "To dominate the flight compensation market via automated authority-led affiliate conversion.",
+    "core_identity": {
+        "brand": "TravelKing.live",
+        "operator": "SimpleCode.Space",
+        "contact": "info@simplecode.space"
     },
-    "capabilities": [
-        "Full AI Orchestration (Gemini 1.5 Pro)",
-        "Massive Web Hosting (20GB Storage)",
-        "Automated Ads & Lead Gen (Facebook)",
-        "BigQuery Data Analytics"
-    ]
+    "technical_stack": {
+        "intelligence": "Google Vertex AI (Gemini 1.5 Pro / Flash)",
+        "marketing": "Facebook Graph API / Ads Manager",
+        "infrastructure": "cPanel Enterprise (server707.web-hosting.com)",
+        "logic_layer": "Python 3.12 Modular Architecture"
+    },
+    "business_logic": {
+        "primary_partner": "AirHelp",
+        "monetization": "CPA (Cost Per Action) - Flight Delay Claims",
+        "strategy": "Programmatic SEO + Social Sniper Monitoring"
+    },
+    "active_assets": {
+        "facebook_page": "TopStroje (Admin Access)",
+        "google_projects": 14,
+        "server_capacity": "20GB SSD / Unlimited Bandwidth"
+    }
 }
