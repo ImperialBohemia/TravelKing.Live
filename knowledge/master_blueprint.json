@@ -26,6 +26,7 @@
         "facebook_page": "TopStroje (Admin Access)",
         "google_projects": 14,
         "server_capacity": "20GB SSD / Unlimited Bandwidth",
-        "bing_status": "Pending Verification"
+        "bing_status": "Verified",
+        "google_console_status": "Verified"
     }
 }
