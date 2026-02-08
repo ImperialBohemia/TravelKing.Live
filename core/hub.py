@@ -1,10 +1,10 @@
-
 import json
 import os
 from core.connectors.google import GoogleModule
 from core.connectors.facebook import FacebookModule
 from core.connectors.server import ServerModule
 from core.logic.market import MarketEngine
+from core.logic.sniper import SniperEngine
 
 class OmegaHub:
     """The Maximum Modular Central Hub."""
@@ -22,6 +22,7 @@ class OmegaHub:
 
         # 3. Logic (Engines)
         self.market = MarketEngine(self.google, self.server)
+        self.sniper = SniperEngine(self.google, self.server)
         
         print("💎 OMEGA HUB: Maximum Modular Logic Active.")
 
