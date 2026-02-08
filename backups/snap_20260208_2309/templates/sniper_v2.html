@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{FLIGHT_ID}} Delay Compensation | TravelKing.live</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-900">
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 w-full bg-slate-900 text-white p-4 text-xs z-50 flex justify-between items-center">
+        <span>We use cookies to ensure you get the best experience on our authority hub. <a href="/cookies.html" class="underline">Learn more</a></span>
+        <button onclick="document.getElementById('cookie-banner').style.display='none'" class="bg-blue-600 px-4 py-2 rounded font-bold">Accept</button>
+    </div>
+
+    <div class="gradient-bg text-white py-4 px-4 text-center shadow-lg">
+        <h1 class="text-xl font-bold italic tracking-tighter">TRAVELKING<span class="text-blue-400">.LIVE</span></h1>
+        <p class="text-[10px] uppercase tracking-widest opacity-70">Independent Passenger Rights Authority</p>
+    </div>
+
+    <main class="max-w-md mx-auto mt-8 px-4 mb-20">
+        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-200">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-tight">Reg: EC No 261/2004 Verified</span>
+                    <span class="text-slate-400 text-[10px] font-mono">{{TIMESTAMP}}</span>
+                </div>
+                
+                <h2 class="text-3xl font-extrabold text-slate-800 mb-1">{{FLIGHT_ID}}</h2>
+                <p class="text-slate-500 text-sm mb-6">{{ROUTE}}</p>
+
+                <div class="bg-blue-50 border-l-4 border-blue-600 p-4 mb-8">
+                    <p class="text-blue-900 font-bold text-2xl">UP TO €600.00</p>
+                    <p class="text-blue-700 text-xs mt-1">Legally mandated compensation for delays over 3 hours.</p>
+                </div>
+
+                <a href="https://www.airhelp.com/en/?aid=11089" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-5 rounded-xl font-bold text-xl transition shadow-lg active:scale-95">
+                    START LEGAL CLAIM →
+                </a>
+                
+                <p class="text-center text-slate-400 text-[9px] mt-6 italic leading-relaxed">
+                    *Affiliate Disclosure: TravelKing.live is a free informational hub. If you file a claim via our partner AirHelp, we may receive a commission at no extra cost to you. We only recommend verified legal services.
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer Links -->
+        <footer class="mt-12 text-center text-slate-400 text-[10px] space-x-3">
+            <a href="/privacy.html" class="hover:text-blue-600">Privacy</a>
+            <span>•</span>
+            <a href="/terms.html" class="hover:text-blue-600">Terms</a>
+            <span>•</span>
+            <a href="/cookies.html" class="hover:text-blue-600">Cookies</a>
+            <span>•</span>
+            <a href="/contact.html" class="hover:text-blue-600">Contact</a>
+        </footer>
+    </main>
+</body>
+</html>

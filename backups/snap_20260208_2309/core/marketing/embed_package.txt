@@ -1,0 +1,25 @@
+
+💎 TRAVELKING.LIVE - TRAVELPAYOUTS EMBED PACKAGE
+Project: TravelKing.Live
+Owner: Stanislav Pasztorek
+Status: MAX CONVERSION READY
+
+------------------------------------------------------------
+WIDGET 1: SEARCH FORM (Main Hero)
+------------------------------------------------------------
+<script charset="utf-8" src="https://tp.media/content?currency=eur&_as_displayid=497485&_as_marker=497485&_as_type=1&_as_width=100%25&_as_height=400&_as_product=search_form&_as_destination=&_as_origin=&_as_locale=en&_as_powered_by=true"></script>
+
+------------------------------------------------------------
+WIDGET 2: HOTELS MAP (Engagement)
+------------------------------------------------------------
+<script charset="utf-8" src="https://tp.media/content?_as_displayid=497485&_as_marker=497485&_as_type=map&_as_width=100%25&_as_height=500&_as_product=hotels_map&_as_locale=en&_as_powered_by=true"></script>
+
+------------------------------------------------------------
+INSTRUCTIONS FOR GOOGLE SITES:
+1. Open Google Sites Editor.
+2. Click "Embed" (Vložit) on the right panel.
+3. Select "Embed Code" (Vložit kód).
+4. Paste the script for the widget you want.
+5. Resize the block to fill the width of the page.
+------------------------------------------------------------
+💎 AUTHORIZED BY STANISLAV PASZTOREK | 2026

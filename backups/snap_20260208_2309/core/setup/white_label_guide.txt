@@ -1,0 +1,23 @@
+
+💎 WHITE LABEL WEB - MASTER CONFIGURATION GUIDE
+Owner: Stanislav Pasztorek | Status: READY FOR ACTIVATION
+
+1. DNS CNAME:
+   Host: booking
+   Target: whitelabel.travelpayouts.com.
+
+2. BRANDING (HEX):
+   Primary: #3b82f6
+   Secondary: #1e293b
+   Background: #020617
+
+3. INTEGRATION:
+   Header: Injected with GTM-WB69V297
+   Footer: Link back to TravelKing.live Authority
+
+4. STRATEGY:
+   The White Label handles the "Volume" (Search).
+   The Lead Magnet handles the "Value" (Compensation).
+   Combined, they form the "Money Machine".
+
+💎 AUTHORIZED BY STANISLAV PASZTOREK | 2026
