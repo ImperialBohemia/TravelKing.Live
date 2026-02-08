@@ -1,0 +1,28 @@
+
+💎 MASTER LOGICAL EMBED LIST (Travelpayouts Drive Edition)
+Project: TravelKing.Live | Owner: Stanislav Pasztorek
+
+------------------------------------------------------------
+LOGIC: "Simple & Powerful"
+Every section below is designed to be embedded in Google Sites.
+------------------------------------------------------------
+
+SECTION 1: FLIGHTS (The Searcher)
+URL: https://tp.media/content?_as_marker=497485&_as_type=1&_as_product=search_form&_as_locale=en
+
+SECTION 2: HOTELS (The Discovery)
+URL: https://tp.media/content?_as_marker=497485&_as_type=map&_as_product=hotels_map&_as_locale=en
+
+SECTION 3: TAXI / TRANSFERS (The Comfort)
+URL: https://kiwitaxi.com/affiliate/widget?marker=497485&locale=en
+
+SECTION 4: COMPENSATION (The Money Pipe)
+URL: [Link to your lead_magnet_v1.html]
+
+------------------------------------------------------------
+STRATEGY:
+1. Don't crowd the page.
+2. Use one Widget per section.
+3. Keep the Blue/Dark Grey theme for Authority.
+------------------------------------------------------------
+💎 ALL SYSTEMS MODULAR & READY.

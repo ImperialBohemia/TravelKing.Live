@@ -1,191 +1,114 @@
 <!-- 
-💎 TRAVELKING.LIVE - ENTERPRISE OMEGA SYSTEM
-Project: TravelKing.Live
-Owner: Stanislav Pasztorek
-Authorized by: Imperial Bohemia
-Status: PRODUCTION READY - SYSTEM UPGRADE MAX NOW
+💎 TRAVELKING.LIVE - THE BEST ON PLANET ARCHITECTURE
+Owner: Stanislav Pasztorek | Authorized by: Imperial Bohemia
+Psychology: Authority, Trust, High-Conversion
+Design: Enterprise Modular 2026
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TravelKing.live | Independent Flight Compensation Authority</title>
-    <meta name="description" content="Official Passenger Rights Advocate for EU 261/2004. Claim up to €600 for flight delays, cancellations, and overbookings.">
-    <meta name="robots" content="noindex, nofollow">
-
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-WB69V297');</script>
-    
+    <title>TravelKing | Global Flight Authority & Smart Booking</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
-        .hero-gradient { background: radial-gradient(at 0% 0%, #0f172a 0, transparent 50%), radial-gradient(at 50% 0%, #1e1b4b 0, transparent 50%), radial-gradient(at 100% 0%, #1e293b 0, transparent 50%); }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #020617; }
+        .glass-nav { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .gradient-text { background: linear-gradient(to right, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .action-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); transition: all 0.4s ease; }
+        .action-card:hover { background: rgba(255,255,255,0.05); border-color: #3b82f6; transform: translateY(-8px); }
+        .hero-glow { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 600px; background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15) 0%, transparent 70%); pointer-events: none; }
     </style>
 </head>
-<body class="bg-[#f8fafc] text-slate-900 antialiased">
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WB69V297" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<body class="text-slate-300">
 
-    <!-- Top Info Bar -->
-    <div class="bg-slate-950 text-white text-[10px] py-2 px-6 flex justify-between items-center font-bold tracking-[0.2em] uppercase">
-        <span>Official Regulation EU 261/2004 Information Portal</span>
-        <span class="hidden md:block">Updated: Feb 2026</span>
+    <div class="hero-glow"></div>
+
+    <!-- Top Status Bar -->
+    <div class="relative z-50 bg-blue-600 text-white text-[10px] font-black uppercase tracking-[0.3em] py-2 text-center">
+        Authorized Passenger Rights Advocate • Stanislav Pasztorek • EU 261/2004 Compliance
     </div>
 
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 glass border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-            <div class="text-2xl font-black tracking-tighter flex items-center gap-2">
-                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white text-sm italic">TK</div>
-                TRAVELKING<span class="text-blue-600">.LIVE</span>
-            </div>
-            <div class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-600">
-                <a href="#rights" class="hover:text-blue-600 transition">Passenger Rights</a>
-                <a href="#process" class="hover:text-blue-600 transition">Our Process</a>
-                <a href="#faq" class="hover:text-blue-600 transition">FAQ</a>
-                <a href="/templates/lead_magnet_v1.html" class="bg-slate-900 text-white px-6 py-2.5 rounded-full hover:bg-blue-600 transition">Check My Flight</a>
+    <nav class="sticky top-0 z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-8 h-20 flex justify-between items-center">
+            <div class="text-2xl font-black text-white tracking-tighter">TRAVELKING<span class="text-blue-500">.LIVE</span></div>
+            <div class="hidden md:flex gap-10 text-[11px] font-bold uppercase tracking-widest">
+                <a href="#flights" class="hover:text-blue-400 transition">Flights</a>
+                <a href="#hotels" class="hover:text-blue-400 transition">Hotels</a>
+                <a href="#taxi" class="hover:text-blue-400 transition">Transfers</a>
+                <a href="/templates/lead_magnet_v1.html" class="text-white bg-blue-600 px-6 py-2.5 rounded-full hover:bg-blue-700 transition">Claim €600</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Authority Section -->
-    <header class="hero-gradient text-white pt-24 pb-40 px-6 overflow-hidden">
-        <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-                <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-1.5 mb-8">
-                    <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span></span>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-blue-300">Live Case Processing</span>
-                </div>
-                <h1 class="text-5xl md:text-7xl font-extrabold mb-8 leading-[1.1] tracking-tight">
-                    Justice for <br><span class="text-blue-400">Air Passengers.</span>
-                </h1>
-                <p class="text-xl text-slate-400 mb-10 leading-relaxed font-light">
-                    Independent authority dedicated to enforcing your legal right to compensation under European law. We don't just ask; we demand.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="/templates/lead_magnet_v1.html" class="bg-blue-600 text-white px-10 py-5 rounded-2xl font-bold text-center hover:bg-blue-700 transition shadow-2xl shadow-blue-900/40">
-                        Start My Claim →
-                    </a>
-                    <div class="flex items-center gap-4 px-6 py-4 rounded-2xl bg-white/5 border border-white/10">
-                        <div class="text-sm font-medium">No Win, No Fee Guarantee</div>
-                    </div>
-                </div>
-            </div>
-            <div class="relative hidden lg:block">
-                <div class="absolute inset-0 bg-blue-500/20 blur-[100px] rounded-full"></div>
-                <div class="relative bg-white/5 border border-white/10 p-8 rounded-[40px] backdrop-blur-xl">
-                    <div class="space-y-6">
-                        <div class="p-4 bg-white/5 rounded-2xl border border-white/5 flex justify-between items-center">
-                            <span class="text-xs text-slate-400 uppercase tracking-widest">Max Compensation</span>
-                            <span class="text-2xl font-bold text-blue-400">€600</span>
-                        </div>
-                        <div class="p-4 bg-white/5 rounded-2xl border border-white/5 flex justify-between items-center">
-                            <span class="text-xs text-slate-400 uppercase tracking-widest">Processing Time</span>
-                            <span class="text-2xl font-bold text-blue-400">2-Min</span>
-                        </div>
-                        <div class="p-4 bg-blue-600 rounded-2xl flex justify-between items-center">
-                            <span class="text-xs text-white/80 uppercase tracking-widest font-bold">Claim Status</span>
-                            <span class="text-xs bg-white text-blue-600 px-3 py-1 rounded-full font-black uppercase">Active</span>
-                        </div>
-                    </div>
-                </div>
+    <!-- Hero: THE ONE SEARCH -->
+    <header class="relative max-w-5xl mx-auto px-8 pt-32 pb-40 text-center">
+        <h1 class="text-5xl md:text-8xl font-black text-white mb-8 tracking-tighter leading-none">
+            Travel <span class="gradient-text">Smarter.</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-slate-400 mb-16 font-light max-w-2xl mx-auto">
+            The world's most powerful travel engine. Flights, stays, and legal protection in one click.
+        </p>
+
+        <!-- The Engine (Search Embed will go here) -->
+        <div class="bg-white/5 p-4 rounded-[40px] border border-white/10 backdrop-blur-3xl shadow-2xl">
+            <div class="bg-slate-900 rounded-[30px] p-8 h-32 flex items-center justify-center border border-white/5 italic text-slate-500">
+                [ Travelpayouts Multi-Search Engine Active ]
             </div>
         </div>
     </header>
 
-    <!-- Trust Stats -->
-    <div class="max-w-7xl mx-auto px-6 -mt-16 mb-24">
-        <div class="bg-white rounded-[40px] p-10 shadow-xl border border-slate-100 grid md:grid-cols-3 gap-12 text-center">
-            <div>
-                <div class="text-4xl font-black text-slate-900 mb-2">€25M+</div>
-                <div class="text-xs font-bold text-slate-400 uppercase tracking-widest">Partner Payouts</div>
-            </div>
-            <div class="border-x border-slate-100 px-12">
-                <div class="text-4xl font-black text-slate-900 mb-2">100%</div>
-                <div class="text-xs font-bold text-slate-400 uppercase tracking-widest">Legal Compliance</div>
-            </div>
-            <div>
-                <div class="text-4xl font-black text-slate-900 mb-2">24h</div>
-                <div class="text-xs font-bold text-slate-400 uppercase tracking-widest">Initial Audit</div>
-            </div>
+    <!-- THE LOGICAL GRID (The Pillars) -->
+    <section class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 lg:grid-cols-4 gap-8 pb-40">
+        
+        <!-- Pillar: FLIGHTS -->
+        <div class="action-card p-10 rounded-[40px]">
+            <div class="w-12 h-12 bg-blue-500/10 text-blue-500 rounded-2xl flex items-center justify-center mb-8">✈️</div>
+            <h3 class="text-white font-bold text-2xl mb-4">Flights</h3>
+            <p class="text-sm text-slate-500 leading-relaxed mb-8">Compare 700+ airlines instantly. Best price guarantee powered by Travelpayouts.</p>
+            <button class="w-full py-4 rounded-2xl bg-white/5 border border-white/10 text-xs font-black uppercase tracking-widest hover:bg-blue-600 hover:text-white transition">Search Flights</button>
         </div>
-    </div>
 
-    <!-- Rights Section -->
-    <section id="rights" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-24 items-center">
-            <div>
-                <h2 class="text-4xl font-extrabold mb-8 tracking-tight">Know your rights <br><span class="text-blue-600">Regulation EU 261/2004</span></h2>
-                <p class="text-slate-500 mb-8 leading-relaxed">Most airlines bank on you not knowing the law. Under European Regulation 261/2004, passengers are entitled to financial compensation for flights departing from EU airports or arriving in the EU on an EU carrier.</p>
-                
-                <ul class="space-y-6">
-                    <li class="flex items-start gap-4">
-                        <div class="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-bold mt-1">✓</div>
-                        <div>
-                            <h4 class="font-bold">Delay over 3 hours</h4>
-                            <p class="text-sm text-slate-500">You are entitled to compensation if you arrive at your destination more than 3 hours late.</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-4">
-                        <div class="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-bold mt-1">✓</div>
-                        <div>
-                            <h4 class="font-bold">Cancellation</h4>
-                            <p class="text-sm text-slate-500">If informed less than 14 days before departure, you may be eligible for up to €600.</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm mt-8">
-                    <div class="text-3xl font-bold mb-2">€250</div>
-                    <div class="text-[10px] font-black text-slate-400 uppercase">Under 1,500km</div>
-                </div>
-                <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
-                    <div class="text-3xl font-bold mb-2">€400</div>
-                    <div class="text-[10px] font-black text-slate-400 uppercase">1,500km - 3,500km</div>
-                </div>
-                <div class="bg-blue-600 p-8 rounded-3xl text-white col-span-2 shadow-xl shadow-blue-100">
-                    <div class="text-5xl font-black mb-2">€600</div>
-                    <div class="text-xs font-bold uppercase tracking-widest opacity-80">Flights over 3,500km</div>
-                </div>
-            </div>
+        <!-- Pillar: HOTELS -->
+        <div class="action-card p-10 rounded-[40px]">
+            <div class="w-12 h-12 bg-purple-500/10 text-purple-500 rounded-2xl flex items-center justify-center mb-8">🏨</div>
+            <h3 class="text-white font-bold text-2xl mb-4">Hotels</h3>
+            <p class="text-sm text-slate-500 leading-relaxed mb-8">2.5M properties. Real-time availability and verified passenger reviews.</p>
+            <button class="w-full py-4 rounded-2xl bg-white/5 border border-white/10 text-xs font-black uppercase tracking-widest hover:bg-purple-600 hover:text-white transition">Find Stays</button>
         </div>
+
+        <!-- Pillar: TAXI -->
+        <div class="action-card p-10 rounded-[40px]">
+            <div class="w-12 h-12 bg-green-500/10 text-green-500 rounded-2xl flex items-center justify-center mb-8">🚕</div>
+            <h3 class="text-white font-bold text-2xl mb-4">Transfers</h3>
+            <p class="text-sm text-slate-500 leading-relaxed mb-8">Fixed-price airport transfers. Professional drivers, 24/7 support.</p>
+            <button class="w-full py-4 rounded-2xl bg-white/5 border border-white/10 text-xs font-black uppercase tracking-widest hover:bg-green-600 hover:text-white transition">Book Taxi</button>
+        </div>
+
+        <!-- Pillar: THE MONEY (Compensation) -->
+        <div class="action-card p-10 rounded-[40px] bg-blue-600/10 border-blue-500/30">
+            <div class="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-blue-600/40">⚖️</div>
+            <h3 class="text-white font-bold text-2xl mb-4">Claim €600</h3>
+            <p class="text-sm text-slate-400 leading-relaxed mb-8">Delayed or cancelled flight? Our legal team enforces your EU rights for free.</p>
+            <a href="/templates/lead_magnet_v1.html" class="block w-full py-4 rounded-2xl bg-blue-600 text-white text-center text-xs font-black uppercase tracking-widest hover:bg-blue-700 transition">Start Claim</a>
+        </div>
+
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 text-white py-24 px-6">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-16 mb-20">
-            <div class="col-span-2">
-                <div class="text-2xl font-black tracking-tighter mb-6">TRAVELKING<span class="text-blue-500">.LIVE</span></div>
-                <p class="text-slate-500 max-w-sm text-sm">Independent passenger rights authority. We operate on a 'No Win, No Fee' basis to ensure justice is accessible to everyone.</p>
-            </div>
+    <footer class="bg-slate-950 py-20 px-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
             <div>
-                <h5 class="font-bold mb-6 text-sm uppercase tracking-widest">Legal</h5>
-                <ul class="space-y-4 text-sm text-slate-400">
-                    <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:text-white">Terms of Service</a></li>
-                    <li><a href="#" class="hover:text-white">Cookie Policy</a></li>
-                </ul>
+                <div class="text-xl font-black text-white tracking-tighter mb-4 uppercase">TRAVELKING<span class="text-blue-500">.LIVE</span></div>
+                <p class="text-[10px] font-bold text-slate-600 uppercase tracking-[0.4em]">Authorized Independent Authority</p>
             </div>
-            <div>
-                <h5 class="font-bold mb-6 text-sm uppercase tracking-widest">Connect</h5>
-                <p class="text-sm text-slate-400">Independent Advocate: Stanislav Pasztorek</p>
-                <p class="text-sm text-slate-400 mt-2">Prague, Czech Republic</p>
+            <div class="text-[10px] font-black text-slate-500 uppercase tracking-widest">
+                © 2026 Stanislav Pasztorek | All Rights Reserved | Built on Google Max Engine
             </div>
-        </div>
-        <div class="pt-8 border-t border-white/5 text-[10px] text-slate-600 font-bold uppercase tracking-widest flex flex-col md:flex-row justify-between gap-4">
-            <span>© 2026 TRAVELKING.LIVE ALL RIGHTS RESERVED</span>
-            <span>Independent Legal Support for Air Passengers</span>
         </div>
     </footer>
+
 </body>
 </html>
