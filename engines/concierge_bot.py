@@ -1,128 +1,203 @@
 """
-OMEGA Concierge Bot
-The main form-processing engine that converts leads into affiliate revenue.
+TravelKing Concierge Bot - CLEAN REBUILD
+Processes leads from Google Form → Travelpayouts → Gmail
 
 Flow:
-1. Read new form submissions from Google Sheets
-2. Search Travelpayouts for matching flights/hotels
-3. Compose personalized itinerary email
+1. Read new leads from Google Sheet
+2. Search flights via Travelpayouts
+3. Generate personalized email with affiliate links
 4. Send via Gmail API
-5. Update CRM with lead status
+5. Mark lead as processed
 """
 
 import json
-import os
 import logging
-from typing import Dict, List, Optional
+import sys
+import os
+from typing import Dict, List
+from datetime import datetime
+
+# Add project root to path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from core.connectors.google import GoogleConnector
+from core.google.sheets import SheetsClient
+from core.google.gmail import GmailClient
+from core.travelpayouts.flights import FlightsClient
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - CONCIERGE - %(message)s')
-logger = logging.getLogger(__name__)
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger('ConciergeBot')
 
 
 class ConciergeBot:
-    """Automated lead processing engine."""
+    """Main lead processing engine for TravelKing."""
     
-    def __init__(self, config_path: str = "config/access_vault.json"):
-        """
-        Initialize bot with credentials from vault.
+    def __init__(self, vault_path: str = 'config/access_vault.json'):
+        """Initialize bot with credentials from vault."""
+        with open(vault_path) as f:
+            self.vault = json.load(f)
         
-        Args:
-            config_path: Path to credentials file
-        """
-        self.config_path = config_path
-        self.vault = self._load_vault()
-        
-        # Initialize clients lazily
+        # Lazy-load clients (only when needed)
+        self._google_connector = None
         self._sheets = None
         self._gmail = None
         self._flights = None
-        self._hotels = None
-        self._crm = None
+        
+        # Configuration
+        self.sheet_id = self.vault['travelking']['sheet_id']
+        self.processed_emails = set()  # Track processed leads in memory
+        
+        logger.info("🤖 Concierge Bot initialized")
     
-    def _load_vault(self) -> Dict:
-        """Load credentials from vault."""
-        if os.path.exists(self.config_path):
-            with open(self.config_path) as f:
-                return json.load(f)
-        return {}
+    @property
+    def google_connector(self):
+        """Lazy-load Google connector."""
+        if not self._google_connector:
+            self._google_connector = GoogleConnector(self.vault)
+            self._google_connector.refresh()
+        return self._google_connector
     
     @property
     def sheets(self):
         """Lazy-load Sheets client."""
         if not self._sheets:
-            from core.google.sheets import SheetsClient
-            self._sheets = SheetsClient(self.vault.get('google', {}).get('access_token'))
+            token = self.google_connector.token
+            self._sheets = SheetsClient(token)
         return self._sheets
     
     @property
     def gmail(self):
         """Lazy-load Gmail client."""
         if not self._gmail:
-            from core.google.gmail import GmailClient
-            self._gmail = GmailClient(self.vault.get('google', {}).get('access_token'))
+            token = self.google_connector.token
+            self._gmail = GmailClient(token)
         return self._gmail
     
     @property
     def flights(self):
         """Lazy-load Flights client."""
         if not self._flights:
-            from core.travelpayouts.flights import FlightsClient
-            tp = self.vault.get('travelpayouts', {})
-            self._flights = FlightsClient(tp.get('api_token'), tp.get('marker', 'travelking'))
+            self._flights = FlightsClient(
+                token=self.vault['travelpayouts']['token'],
+                marker=self.vault['travelpayouts']['marker']
+            )
         return self._flights
     
-    @property
-    def crm(self):
-        """Lazy-load CRM."""
-        if not self._crm:
-            from core.google.crm import LeadCRM
-            crm_sheet_id = self.vault.get('google', {}).get('crm_sheet_id', '')
-            self._crm = LeadCRM(self.sheets, crm_sheet_id)
-        return self._crm
-    
-    def process_new_leads(self, form_sheet_id: str) -> Dict:
+    def get_new_leads(self) -> List[Dict]:
         """
-        Process all new leads from a form responses sheet.
+        Fetch new leads from Google Sheet.
+        Returns list of lead dicts with keys: Email, Name, Destination, etc.
+        """
+        logger.info(f"📊 Reading leads from Sheet: {self.sheet_id}")
+        
+        try:
+            # Read all form responses
+            data = self.sheets.read_range(self.sheet_id, "A:Z")
+            
+            if not data or len(data) < 2:
+                logger.info("No leads found in sheet")
+                return []
+            
+            # Parse headers and rows
+            headers = data[0]
+            leads = []
+            
+            for row in data[1:]:
+                # Create lead dict
+                lead = {}
+                for i, header in enumerate(headers):
+                    lead[header] = row[i] if i < len(row) else ""
+                
+                # Skip if already processed
+                email = lead.get('Email', '').strip()
+                if email and email not in self.processed_emails:
+                    leads.append(lead)
+                    self.processed_emails.add(email)
+            
+            logger.info(f"✅ Found {len(leads)} new leads")
+            return leads
+            
+        except Exception as e:
+            logger.error(f"❌ Error reading sheet: {e}")
+            return []
+    
+    def search_flights(self, origin: str, destination: str, limit: int = 5) -> List[Dict]:
+        """Search for flights and return deals with affiliate links."""
+        logger.info(f"✈️ Searching flights: {origin} → {destination}")
+        
+        try:
+            deals = self.flights.get_deals_with_links(origin, destination, limit=limit)
+            logger.info(f"✅ Found {len(deals)} flight deals")
+            return deals
+        except Exception as e:
+            logger.error(f"❌ Flight search error: {e}")
+            return []
+    
+    def compose_email(self, lead: Dict, flights: List[Dict]) -> str:
+        """
+        Compose personalized HTML email with flight deals.
         
         Args:
-            form_sheet_id: ID of the Google Sheet linked to Form
+            lead: Lead dict with Name, Destination, etc.
+            flights: List of flight deals with prices and links
             
         Returns:
-            dict: Processing summary
+            HTML email body
         """
-        logger.info("🔍 Scanning for new leads...")
+        name = lead.get('Name', 'Traveler')
+        destination = lead.get('Destination', 'your destination')
         
-        # Get unprocessed leads (Phase = NEW)
-        new_leads = self.crm.get_leads_by_phase("NEW")
+        # Build flight list HTML
+        flight_html = ""
+        for i, flight in enumerate(flights[:5], 1):
+            price = flight.get('price', 'N/A')
+            airline = flight.get('airline', 'Airline')
+            link = flight.get('link', '#')
+            departure = flight.get('departure_at', '')[:10]
+            
+            flight_html += f"""
+            <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 8px;">
+                <h3 style="margin: 0 0 10px 0; color: #2563eb;">Option {i}: ${price}</h3>
+                <p style="margin: 5px 0;"><strong>Airline:</strong> {airline}</p>
+                <p style="margin: 5px 0;"><strong>Departure:</strong> {departure}</p>
+                <a href="{link}" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: #2563eb; color: white; text-decoration: none; border-radius: 5px;">View Details →</a>
+            </div>
+            """
         
-        if not new_leads:
-            logger.info("No new leads to process")
-            return {"processed": 0}
+        # Full email template
+        html = f"""
+        <html>
+        <body style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+            <h1 style="color: #1e40af;">Hi {name}! ✈️</h1>
+            <p style="font-size: 16px; line-height: 1.6;">
+                We found some amazing flight deals to <strong>{destination}</strong> just for you!
+            </p>
+            
+            <div style="margin: 30px 0;">
+                {flight_html}
+            </div>
+            
+            <p style="font-size: 14px; color: #666; margin-top: 30px;">
+                These prices are updated in real-time and may change. Book now to lock in the best deal!
+            </p>
+            
+            <hr style="border: none; border-top: 1px solid #ddd; margin: 30px 0;">
+            
+            <p style="font-size: 12px; color: #999;">
+                You're receiving this because you requested travel deals from TravelKing.
+                <br>Questions? Reply to this email anytime.
+            </p>
+        </body>
+        </html>
+        """
         
-        processed = 0
-        errors = []
-        
-        for lead in new_leads:
-            try:
-                result = self.process_single_lead(lead)
-                if result.get("success"):
-                    processed += 1
-                else:
-                    errors.append({"email": lead.get("Email"), "error": result.get("error")})
-            except Exception as e:
-                errors.append({"email": lead.get("Email"), "error": str(e)})
-        
-        summary = {
-            "processed": processed,
-            "errors": len(errors),
-            "error_details": errors
-        }
-        
-        logger.info(f"✅ Processed {processed} leads, {len(errors)} errors")
-        return summary
+        return html
     
-    def process_single_lead(self, lead: Dict) -> Dict:
+    def process_lead(self, lead: Dict) -> bool:
         """
         Process a single lead through the full funnel.
         
@@ -130,56 +205,77 @@ class ConciergeBot:
             lead: Lead dict with Email, Name, Destination
             
         Returns:
-            dict: Processing result
+            bool: Success status
         """
-        email = lead.get("Email")
-        name = lead.get("Name", "Traveler")
-        destination = lead.get("Destination", "")
+        email = lead.get('Email', '').strip()
+        name = lead.get('Name', 'Traveler')
+        destination = lead.get('Destination', '').strip()
         
-        logger.info(f"📧 Processing lead: {email} -> {destination}")
+        if not email or not destination:
+            logger.warning(f"⚠️ Skipping incomplete lead: {lead}")
+            return False
         
-        # Update phase to PROCESSED
-        self.crm.update_phase(email, "PROCESSED")
+        logger.info(f"📧 Processing lead: {email} → {destination}")
         
-        # Search for flights (assume origin is Prague for now)
-        origin = "PRG"  # Could be dynamic based on form
-        flights = self.flights.get_deals_with_links(origin, destination[:3].upper(), limit=5)
+        # Search flights (assume origin is Prague for now)
+        # TODO: Make origin dynamic based on form field
+        origin = "PRG"
+        flights = self.search_flights(origin, destination[:3].upper())
         
         if not flights:
-            return {"success": False, "error": "No flights found"}
+            logger.warning(f"⚠️ No flights found for {destination}")
+            return False
         
-        # Compose and send email
-        send_result = self.gmail.send_itinerary(
-            to=email,
-            destination=destination,
-            flights=self._format_flights(flights)
-        )
+        # Compose email
+        email_body = self.compose_email(lead, flights)
+        subject = f"✈️ Your {destination} Flight Deals Are Here!"
         
-        if send_result.get("success"):
-            self.crm.update_phase(email, "SENT")
-            logger.info(f"✈️ Sent itinerary to {email}")
-            return {"success": True, "message_id": send_result.get("message_id")}
-        else:
-            return {"success": False, "error": send_result.get("error")}
+        # Send email
+        try:
+            result = self.gmail.send(
+                to=email,
+                subject=subject,
+                body_html=email_body,
+                from_name="TravelKing"
+            )
+            
+            if result.get('success'):
+                logger.info(f"✅ Email sent to {email}")
+                return True
+            else:
+                logger.error(f"❌ Email failed: {result.get('error')}")
+                return False
+                
+        except Exception as e:
+            logger.error(f"❌ Send error: {e}")
+            return False
     
-    def _format_flights(self, flights: List[Dict]) -> List[Dict]:
-        """Format Travelpayouts data for email template."""
-        formatted = []
-        for f in flights:
-            formatted.append({
-                "airline": f.get("airline", "Various"),
-                "price": f.get("price", "N/A"),
-                "link": f.get("link", "#")
-            })
-        return formatted
-    
-    def run_once(self, form_sheet_id: str) -> Dict:
-        """Run one processing cycle."""
-        return self.process_new_leads(form_sheet_id)
+    def run(self, max_leads: int = 10):
+        """
+        Main bot loop: fetch leads and process them.
+        
+        Args:
+            max_leads: Maximum number of leads to process in one run
+        """
+        logger.info("🚀 Starting Concierge Bot run...")
+        
+        # Get new leads
+        leads = self.get_new_leads()
+        
+        if not leads:
+            logger.info("No new leads to process")
+            return
+        
+        # Process each lead
+        processed = 0
+        for lead in leads[:max_leads]:
+            if self.process_lead(lead):
+                processed += 1
+        
+        logger.info(f"✅ Bot run complete: {processed}/{len(leads)} leads processed")
 
 
 if __name__ == "__main__":
-    # Quick test run
+    # Run bot
     bot = ConciergeBot()
-    # bot.run_once("YOUR_FORM_SHEET_ID")
-    print("ConciergeBot ready. Set form_sheet_id to start processing.")
+    bot.run()
