@@ -14,7 +14,8 @@
         "logic_layer": "Python 3.12 Modular Architecture",
         "indexing": [
             "Google Search Console",
-            "Bing Webmaster Tools"
+            "Bing Webmaster Tools",
+            "Bing Webmaster API"
         ]
     },
     "business_logic": {
@@ -27,6 +28,7 @@
         "google_projects": 14,
         "server_capacity": "20GB SSD / Unlimited Bandwidth",
         "bing_status": "Verified",
-        "google_console_status": "Verified"
+        "google_console_status": "Verified",
+        "bing_api_status": "Active"
     }
 }

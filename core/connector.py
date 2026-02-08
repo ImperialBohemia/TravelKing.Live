@@ -43,6 +43,14 @@ class UniversalConnector:
         logging.info(f"Facebook API Call: {endpoint} | Status: {res.status_code}")
         return res.json()
 
+    def bing_call(self, endpoint, method="POST", data=None):
+        """Dedicated bridge for Bing Webmaster API (Instant Indexing)."""
+        api_key = self.vault["bing"]["api_key"]
+        url = f"https://ssl.bing.com/webmaster/api.svc/json/{endpoint}?apikey={api_key}"
+        res = requests.request(method, url, json=data)
+        logging.info(f"Bing API Call: {endpoint} | Status: {res.status_code}")
+        return res.json()
+
     def cpanel_call(self, module, function, params=None):
         url = f"{self.cp_base}/{module}/{function}"
         res = requests.get(url, headers=self.cp_headers, params=params, verify=False)

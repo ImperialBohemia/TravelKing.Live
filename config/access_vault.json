@@ -19,5 +19,8 @@
         "host": "server707.web-hosting.com",
         "user": "imperkhx",
         "api_token": "LUTLTTXMW901X3DUJH9FJPEM6CXNPK4D"
+    },
+    "bing": {
+        "api_key": "9308a57b97ba452cb023db493e88b265"
     }
 }
