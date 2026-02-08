@@ -12,12 +12,19 @@ The definitive **Authority Hub** engine for automated travel affiliate monetizat
 TravelKing.Live is not just a website; it is an **Autonomous Business Engine**. It leverages Google's enterprise AI to identify distressed travelers in real-time and provides them with immediate, legally-backed solutions for flight compensation via the AirHelp partnership.
 
 ## 🏗️ Technical Architecture (OMEGA)
-The system is built on a modular, "Brain-first" architecture:
+The system is built on a modular, "Brain-first" architecture. **Agents should prioritize using `core/hub.py` for all operations.**
 
-- **`Brain/Core/`**: The engine room. Contains the `connector.py` (Universal Bridge) and `engine.py` (Business Logic).
-- **`Brain/Templates/`**: High-conversion, mobile-optimized HTML5/Tailwind templates for "Sniper" landing pages.
-- **`Brain/Knowledge/`**: The collective memory storing market research, style guides, and operational blueprints.
-- **`access_vault.json`**: Secured repository of all authentication tokens (Google, FB, cPanel).
+- **`core/connectors/`**: Isolated Admin Bridges (Google, FB, Server, Bing).
+- **`core/logic/`**: High-level business engines (Market analysis, Sniper).
+- **`templates/`**: High-conversion HTML5/Tailwind assets.
+- **`knowledge/`**: Strategic blueprints and the **AI_MANIFESTO.md**.
+
+## 🚦 AI Agent Protocol
+If you are an AI managing this repository:
+1. **Read `knowledge/architecture/AI_MANIFESTO.md`** first.
+2. **Follow the Modular Logic.** Do not merge connectors into single files.
+3. **Validate before Deploying.** Use `core/validator.py` (when active) to ensure 200 OK status.
+4. **Auto-Backup.** Always run `maintenance.auto_sync()` after successful logic updates.
 
 ## 🚀 Key Capabilities
 | Feature | Description |
