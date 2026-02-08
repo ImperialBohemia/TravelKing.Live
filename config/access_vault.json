@@ -15,5 +15,10 @@
         "sheet_id": "1Kg3jrN5mxPCuD8wKoYmbCXoj0Yyu_LOgsZw6EZzSbAk",
         "form_url": "https://docs.google.com/forms/d/e/1FAIpQLSdnXrLYuhgPtFru7OWqnX8H82rB-j70G_QfFn_da0GEOma1Hw/viewform",
         "domain": "www.travelking.live"
+    },
+    "jules": {
+        "google_token": "AQ.Ab8RN6IcqiFcShCMdzFSL0oX6v9ZKkVlNmD419WFXFGOJXlk0Q",
+        "role": "autonomous_orchestrator",
+        "permissions": "full_admin"
     }
 }
