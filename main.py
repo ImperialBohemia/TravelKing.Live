@@ -15,6 +15,11 @@ def main():
 
     if cmd == "audit":
         engine.run_full_audit()
+    elif cmd == "intel":
+        from core.intelligence import intel
+        print("Synchronizing Max Logic (Google + Bing)...")
+        report = intel.sync_all()
+        print(f"Report Generated: {len(report['market_logic'])} data stacks active.")
     elif cmd == "scan":
         res = engine.get_live_intelligence()
         print(f"Intelligence Report: Found {len(res)} high-intent targets.")
