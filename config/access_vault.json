@@ -24,5 +24,8 @@
     },
     "analytics": {
         "measurement_id": "G-CENSTCTLCW"
+    },
+    "gtm": {
+        "container_id": "[WAITING FOR USER]"
     }
 }

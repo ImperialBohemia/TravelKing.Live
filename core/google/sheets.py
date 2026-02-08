@@ -1,23 +1,29 @@
-"""
-OMEGA Sheets Client
-Official Docs: https://developers.google.com/sheets/api/reference/rest
-Scope: https://www.googleapis.com/auth/spreadsheets
-
-Enterprise-grade Sheets API wrapper for reading form data and writing deals.
-"""
-
 import requests
 from typing import List, Dict, Any
 
 
 class SheetsClient:
-    """Read/Write Google Sheets via API."""
+    """Read/Write Google Sheets via API (supports OAuth and Service Accounts)."""
     
     BASE_URL = "https://sheets.googleapis.com/v4/spreadsheets"
     
-    def __init__(self, access_token: str):
-        self.token = access_token
-        self.headers = {"Authorization": f"Bearer {self.token}"}
+    def __init__(self, token: str = None, service_account_path: str = None):
+        """
+        Initialize with OAuth token or Service Account path.
+        """
+        self.token = token
+        self.service_account_path = service_account_path
+        self.headers = {"Authorization": f"Bearer {self.token}"} if self.token else {}
+        self.service = None
+        
+        if self.service_account_path:
+            from google.oauth2 import service_account
+            from googleapiclient.discovery import build
+            creds = service_account.Credentials.from_service_account_file(
+                self.service_account_path, 
+                scopes=['https://www.googleapis.com/auth/spreadsheets']
+            )
+            self.service = build('sheets', 'v4', credentials=creds)
     
     def read_range(self, spreadsheet_id: str, range_name: str) -> List[List[str]]:
         """

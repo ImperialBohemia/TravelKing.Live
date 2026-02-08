@@ -47,14 +47,12 @@ A **100% free** lead generation funnel for travel deals using:
 - **Old branches:** Deleted
 - **Status:** Production-ready
 
-### 4. Concierge Bot
-**Function:**
-1. Reads leads from Google Sheet
-2. Searches flights via Travelpayouts
-3. Sends personalized emails via Gmail
-4. Tracks processed leads
-
-**Test:** Ready (waiting for first form submission)
+### 5. Enterprise Cockpit
+- **Heartbeat Monitor:** `core/heartbeat.py` verifies all connections hourly.
+- **Auto-Notifications:** Integrated `Notifier` alerts admin via email on any failure.
+- **Service Account Access:** Permanent, non-expiring connection to CRM.
+- **Structured Logging:** All bot actions saved to `logs/omega_bot.log`.
+- **Looker Studio:** Ready for data visualization once Sheet permissions are finalized.
 
 ---
 
@@ -62,6 +60,8 @@ A **100% free** lead generation funnel for travel deals using:
 
 ### Google Sheet
 - **ID:** 1Kg3jrN5mxPCuD8wKoYmbCXoj0Yyu_LOgsZw6EZzSbAk
+- **Service Account Email:** travelking@travelking.iam.gserviceaccount.com
+- **Status:** Requires **EDITOR** role for full Dashboard functionality.
 - **Owner:** trendnatures@gmail.com
 - **Access:** Private (OAuth only)
 

@@ -24,58 +24,89 @@ from core.connectors.google import GoogleConnector
 from core.google.sheets import SheetsClient
 from core.google.gmail import GmailClient
 from core.travelpayouts.flights import FlightsClient
+from core.utils.notifications import Notifier
 
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler("logs/omega_bot.log"),
+        logging.StreamHandler()
+    ]
 )
 logger = logging.getLogger('ConciergeBot')
 
 
 class ConciergeBot:
-    """Main lead processing engine for TravelKing."""
+    """Main lead processing engine for TravelKing (Enterprise Edition)."""
     
-    def __init__(self, vault_path: str = 'config/access_vault.json'):
+    def __init__(self, vault_path: str = 'config/access_vault.json', sa_path: str = 'config/service_account.json'):
         """Initialize bot with credentials from vault."""
+        # Ensure logs directory exists
+        os.makedirs('logs', exist_ok=True)
+        
         with open(vault_path) as f:
             self.vault = json.load(f)
+        self.sa_path = sa_path
         
-        # Lazy-load clients (only when needed)
+        # Lazy-load clients
         self._google_connector = None
         self._sheets = None
         self._gmail = None
         self._flights = None
+        self._notifier = None
         
         # Configuration
         self.sheet_id = self.vault['travelking']['sheet_id']
-        self.processed_emails = set()  # Track processed leads in memory
+        self.processed_emails = set()
         
-        logger.info("🤖 Concierge Bot initialized")
+        logger.info("🤖 OMEGA Concierge Bot (Enterprise) initialized")
+
+    @property
+    def notifier(self):
+        """Lazy-load Notifier."""
+        if not self._notifier:
+            self._notifier = Notifier()
+        return self._notifier
     
     @property
     def google_connector(self):
         """Lazy-load Google connector."""
         if not self._google_connector:
             self._google_connector = GoogleConnector(self.vault)
-            self._google_connector.refresh()
         return self._google_connector
     
     @property
     def sheets(self):
-        """Lazy-load Sheets client."""
+        """Lazy-load Sheets client using Service Account (Permanent)."""
         if not self._sheets:
-            token = self.google_connector.token
-            self._sheets = SheetsClient(token)
+            # Use Service Account for Sheets if available, fallback to OAuth
+            if os.path.exists(self.sa_path):
+                from google.oauth2 import service_account
+                creds = service_account.Credentials.from_service_account_file(
+                    self.sa_path, 
+                    scopes=['https://www.googleapis.com/auth/spreadsheets']
+                )
+                from googleapiclient.discovery import build
+                service = build('sheets', 'v4', credentials=creds)
+                
+                # We wrap the service in a compatible client or update SheetsClient
+                # For now, let's keep it simple and update the SheetsClient to handle creds
+                self._sheets = SheetsClient(token=None, service_account_path=self.sa_path)
+            else:
+                token = self.google_connector.token
+                self._sheets = SheetsClient(token)
         return self._sheets
     
     @property
     def gmail(self):
-        """Lazy-load Gmail client."""
+        """Lazy-load Gmail client using App Password (Non-expiring)."""
         if not self._gmail:
-            token = self.google_connector.token
             app_pw = self.vault['google'].get('app_password')
             email = self.vault['google'].get('account_email', 'trendnatures@gmail.com')
+            # Fallback to token if app_pw not found
+            token = self.google_connector.token if not app_pw else None
             self._gmail = GmailClient(access_token=token, app_password=app_pw, email=email)
         return self._gmail
     
