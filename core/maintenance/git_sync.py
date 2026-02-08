@@ -1,9 +1,11 @@
-
 import subprocess
 import time
+import os
 
 def auto_sync(action_name):
-    root = "/home/q/Gemini CLI"
+    # Find the project root relative to this file
+    # core/maintenance/git_sync.py -> core/maintenance -> core -> root
+    root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
     message = f"🤖 MODULAR-SYNC: {action_name} | {timestamp}"
     
@@ -15,6 +17,7 @@ def auto_sync(action_name):
             subprocess.run(["git", "commit", "-m", message], cwd=root, check=True)
             subprocess.run(["git", "push", "origin", "main"], cwd=root, check=True)
             return True
-    except:
+    except Exception as e:
+        print(f"Sync error: {e}")
         return False
     return False

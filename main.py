@@ -1,13 +1,12 @@
-
 import sys
 from core.hub import hub
-from core.maintenance import maintenance
+from core.validator import check_status
 
 def main():
     print("👑 TRAVELKING OMEGA | Modular Supremacy")
     
     if len(sys.argv) < 2:
-        print("Usage: python3 main.py [status|market|sync]")
+        print("Usage: python3 main.py [status|market|sniper|validate|sync]")
         return
 
     cmd = sys.argv[1].lower()
@@ -17,8 +16,22 @@ def main():
         print("Facebook Ads: ACTIVE")
         print("cPanel Hosting: ACTIVE")
     elif cmd == "market":
-        res = hub.market.analyze_travel_intent("flight compensation")
+        query = sys.argv[2] if len(sys.argv) > 2 else "flight compensation"
+        res = hub.market.analyze_travel_intent(query)
         print(f"Logic Result: {res}")
+    elif cmd == "sniper":
+        airline = sys.argv[2] if len(sys.argv) > 2 else ""
+        delays = hub.sniper.search_for_delays(airline)
+        print(f"Detected Delays: {delays}")
+        if delays:
+            # Deploy for the first one as an example
+            flight = delays[0]["flight_number"]
+            res = hub.sniper.deploy_sniper_page(flight)
+            print(f"Deployment Result: {res}")
+    elif cmd == "validate":
+        url = sys.argv[2] if len(sys.argv) > 2 else "https://travelking.live"
+        is_ok = check_status(url)
+        print(f"Validation for {url}: {'✅ OK' if is_ok else '❌ FAILED'}")
     elif cmd == "sync":
         print("Manual Sync Initialized...")
     else:

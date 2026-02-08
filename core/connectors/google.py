@@ -1,4 +1,3 @@
-
 import json
 import requests
 import os
@@ -15,10 +14,13 @@ class GoogleModule:
     def refresh(self):
         url = "https://oauth2.googleapis.com/token"
         data = {"client_id": self.client_id, "refresh_token": self.refresh_token, "grant_type": "refresh_token"}
-        res = requests.post(url, data=data).json()
-        if "access_token" in res:
-            self.token = res["access_token"]
-            return True
+        try:
+            res = requests.post(url, data=data).json()
+            if "access_token" in res:
+                self.token = res["access_token"]
+                return True
+        except:
+            pass
         return False
 
     def call(self, endpoint, method="GET", data=None, base="https://www.googleapis.com"):
@@ -28,10 +30,13 @@ class GoogleModule:
             "developer-token": self.vault['google'].get('developer_token', ''),
             "login-customer-id": self.vault['google'].get('customer_id', '')
         }
-        res = requests.request(method, url, headers=headers, json=data)
-        if res.status_code == 401 and self.refresh():
-            return self.call(endpoint, method, data, base)
-        return res.json()
+        try:
+            res = requests.request(method, url, headers=headers, json=data)
+            if res.status_code == 401 and self.refresh():
+                return self.call(endpoint, method, data, base)
+            return res.json()
+        except Exception as e:
+            return {"error": str(e), "status_code": getattr(res, 'status_code', 0)}
 
     def get_keyword_intel(self, keyword):
         """Immortal Google Ads Keyword Intelligence."""
