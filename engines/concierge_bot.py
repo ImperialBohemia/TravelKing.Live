@@ -74,7 +74,9 @@ class ConciergeBot:
         """Lazy-load Gmail client."""
         if not self._gmail:
             token = self.google_connector.token
-            self._gmail = GmailClient(token)
+            app_pw = self.vault['google'].get('app_password')
+            email = self.vault['google'].get('account_email', 'trendnatures@gmail.com')
+            self._gmail = GmailClient(access_token=token, app_password=app_pw, email=email)
         return self._gmail
     
     @property

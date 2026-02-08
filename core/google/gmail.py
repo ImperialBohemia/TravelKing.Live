@@ -1,14 +1,7 @@
-"""
-OMEGA Gmail Client
-Official Docs: https://developers.google.com/gmail/api/reference/rest
-Scope: https://www.googleapis.com/auth/gmail.send
-
-Enterprise-grade Gmail API wrapper for sending affiliate itineraries.
-"""
-
 import base64
 import json
 import os
+import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
@@ -16,48 +9,47 @@ import requests
 
 
 class GmailClient:
-    """Send emails via Gmail API using OAuth2."""
+    """Send emails via Gmail API or SMTP."""
     
     # Official Gmail API endpoints
     SEND_URL = "https://gmail.googleapis.com/gmail/v1/users/me/messages/send"
     
-    def __init__(self, access_token: str):
+    def __init__(self, access_token: str = None, app_password: str = None, email: str = "trendnatures@gmail.com"):
         """
-        Initialize with valid OAuth2 access token.
-        
-        Args:
-            access_token: Bearer token from Google OAuth2 flow
+        Initialize with OAuth2 token or App Password.
         """
         self.token = access_token
+        self.app_password = app_password
+        self.email = email
         self.headers = {
             "Authorization": f"Bearer {self.token}",
             "Content-Type": "application/json"
-        }
+        } if self.token else {}
     
     def send(self, to: str, subject: str, body_html: str, from_name: str = "TravelKing") -> dict:
         """
-        Send an email via Gmail API.
-        
-        Args:
-            to: Recipient email address
-            subject: Email subject line
-            body_html: HTML content of the email
-            from_name: Display name for sender
-            
-        Returns:
-            dict: API response with message ID on success
+        Send an email via SMTP (preferred) or Gmail API.
         """
         message = MIMEMultipart("alternative")
         message["To"] = to
         message["Subject"] = subject
-        message["From"] = f"{from_name} <valachman@gmail.com>"
+        message["From"] = f"{from_name} <{self.email}>"
         
         html_part = MIMEText(body_html, "html")
         message.attach(html_part)
         
-        # Gmail API requires base64url encoding
+        # Method 1: SMTP (Bypasses API restrictions, more reliable)
+        if self.app_password:
+            try:
+                with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+                    server.login(self.email, self.app_password)
+                    server.send_message(message)
+                return {"success": True, "method": "smtp"}
+            except Exception as e:
+                return {"success": False, "error": str(e), "method": "smtp"}
+
+        # Method 2: API Fallback
         raw = base64.urlsafe_b64encode(message.as_bytes()).decode("utf-8")
-        
         response = requests.post(
             self.SEND_URL,
             headers=self.headers,
@@ -65,9 +57,9 @@ class GmailClient:
         )
         
         if response.status_code == 200:
-            return {"success": True, "message_id": response.json().get("id")}
+            return {"success": True, "message_id": response.json().get("id"), "method": "api"}
         else:
-            return {"success": False, "error": response.json()}
+            return {"success": False, "error": response.json(), "method": "api"}
     
     def send_itinerary(self, to: str, destination: str, flights: list, hotels: list = None) -> dict:
         """
