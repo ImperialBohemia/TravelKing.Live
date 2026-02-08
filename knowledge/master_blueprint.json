@@ -3,9 +3,10 @@
     "version": "2026.1.0",
     "mission": "To dominate the flight compensation market via automated authority-led affiliate conversion.",
     "core_identity": {
-        "brand": "TravelKing.live",
+        "brand": "TravelKing.Live",
         "operator": "SimpleCode.Space",
-        "contact": "info@simplecode.space"
+        "contact": "info@simplecode.space",
+        "technical_provider": "SimpleCode.Space"
     },
     "technical_stack": {
         "intelligence": "Google Vertex AI (Gemini 1.5 Pro / Flash)",
@@ -36,6 +37,9 @@
         "cpanel_status": "Verified (UAPI/API2 Active)",
         "sitejet_status": "Active (Deployment via public_html)",
         "google_admin_refresh": "Enabled",
-        "status": "SUPER_ADMIN_MODE"
+        "status": "IMMORTAL_SUPREMACY",
+        "facebook_permanent_page_token": "Active (TopStroje)",
+        "google_auto_refresh": "Active (Permanent)",
+        "cpanel_root_api": "Active (Never Expire)"
     }
 }
