@@ -4,6 +4,10 @@ import os
 import requests
 import sys
 import time
+import google.auth
+from google.oauth2 import service_account
+from googleapiclient.discovery import build
+from datetime import datetime
 from loguru import logger
 
 class Guardian:
@@ -43,9 +47,89 @@ class Guardian:
         # Save status for Dashboard integration
         with open(self.status_path, "w") as f:
             json.dump(results, f, indent=4)
+        
+        # Autonomous Update to Google Sheet
+        try:
+            self.update_dashboard(results)
+        except Exception as e:
+            logger.error(f"Failed to update Google Sheet: {e}")
             
-        logger.success("🛡️ Guardian: Full System Audit Complete.")
+        logger.success("🛡️ Guardian: Full System Audit + Dashboard Update Complete.")
         return results
+
+    def update_dashboard(self, results):
+        """Pushes health status to the specialized SYSTEM_STATUS tab."""
+        # Load Vault for Sheet ID
+        with open(self.vault_path, "r") as f:
+            vault = json.load(f)
+        
+        sheet_id = vault['travelking']['sheet_id']
+        sa_path = os.path.join(self.root, "config/service_account.json")
+        
+        creds = service_account.Credentials.from_service_account_file(
+            sa_path, scopes=['https://www.googleapis.com/auth/spreadsheets']
+        )
+        service = build('sheets', 'v4', credentials=creds)
+        
+        # 1. Update Main Dashboard Cell (B2)
+        # Check if "Dashboard" tab exists, create if not
+        sheet_metadata = service.spreadsheets().get(spreadsheetId=sheet_id).execute()
+        sheets = sheet_metadata.get('sheets', '')
+        titles = [s.get("properties", {}).get("title") for s in sheets]
+        
+        if "Dashboard" not in titles:
+            req = {"addSheet": {"properties": {"title": "Dashboard", "index": 0}}}
+            service.spreadsheets().batchUpdate(spreadsheetId=sheet_id, body={"requests": [req]}).execute()
+            # Initialize Dashboard Layout
+            service.spreadsheets().values().update(
+                spreadsheetId=sheet_id, range="Dashboard!A1:B1",
+                valueInputOption="RAW", body={"values": [["TRAVELKING ENTERPRISE STATUS", ""]]}
+            ).execute()
+
+        overall_status = "🟢 ALL SYSTEMS OPERATIONAL"
+        for s in results['services'].values():
+            if s['status'] != 'PERFECT':
+                overall_status = "🔴 SYSTEM ATTENTION REQUIRED"
+                break
+        
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        
+        # Batch Update for Dashboard
+        body_dashboard = {
+            "values": [[overall_status], [f"Last Check: {timestamp}"]]
+        }
+        service.spreadsheets().values().update(
+            spreadsheetId=sheet_id, range="Dashboard!B2:B3",
+            valueInputOption="RAW", body=body_dashboard
+        ).execute()
+
+        # 2. Log Detailed History to SYSTEM_STATUS Tab
+        if "SYSTEM_STATUS" not in titles:
+            req = {"addSheet": {"properties": {"title": "SYSTEM_STATUS"}}}
+            service.spreadsheets().batchUpdate(spreadsheetId=sheet_id, body={"requests": [req]}).execute()
+            # Add Header
+            header = [["Timestamp", "Service", "Status", "Details"]]
+            service.spreadsheets().values().update(
+                spreadsheetId=sheet_id, range="SYSTEM_STATUS!A1:D1",
+                valueInputOption="RAW", body={"values": header}
+            ).execute()
+            
+        # Prepare Rows
+        rows = []
+        for name, data in results['services'].items():
+            rows.append([
+                timestamp, 
+                name, 
+                data['status'], 
+                str(data.get('details', data.get('user', '')))
+            ])
+            
+        service.spreadsheets().values().append(
+            spreadsheetId=sheet_id, range="SYSTEM_STATUS!A:D",
+            valueInputOption="RAW", body={"values": rows}
+        ).execute()
+        
+        logger.info("📊 Dashboard & History updated successfully.")
 
     def _check_google_ai(self):
         """Checks Gemini AI connectivity."""
