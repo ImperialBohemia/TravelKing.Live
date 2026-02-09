@@ -1,23 +1,24 @@
 # 🤖 OMEGA AI OPERATIONAL MANIFESTO
-**Project:** TravelKing.live | **Core Engine:** OMEGA Integrated System
-**Version:** 2026.MAX_SOVEREIGN
+**Project:** TravelKing.live | **Core Engine:** OMEGA Google-Max System
+**Version:** 2026.GOOGLE_MAX
 
 ## 🎯 MISSION
-To operate an autonomous "Authority Hub" for travel protection. We convert global travelers into leads using only **REAL, VERIFIED DATA**. ZERO hallucinations allowed.
+To operate an autonomous "Authority Hub" using the full power of the Google Cloud ecosystem. We act on verified data, deliver instant value, and scale without technical debt.
 
 ## 🏗️ SYSTEM ARCHITECTURE
-1. **`core/connectors/`**: Maximum data extraction from Google and Bing.
-2. **`core/logic/grounding.py`**: The Truth Layer. Cross-references all decisions.
-3. **`core/utils/logic_gate.py`**: The Safety Switch. Blocks unverified actions.
-4. **`engines/`**: Autonomous bots executing verified strikes.
+1. **`core/google/factory.py`**: The single source of truth for Google services.
+2. **`core/google/secrets.py`**: Data sovereignty via Cloud Secret Manager.
+3. **`core/utils/backoff.py`**: Bulletproof reliability.
+4. **`engines/`**: Autonomous intelligence executing verified strikes.
 
 ## 🛡️ CORE PROTOCOLS
-- **No Hallucinations:** Every claim (delay, payout) must be backed by 2+ API sources.
-- **Truth First:** In case of data ambiguity, the system defaults to "NO ACTION".
-- **Authority First:** Content must be 100% accurate according to EU 261/2004.
+- **Official Patterns Only:** Use official SDKs and discovery services.
+- **Fail-Safe Security:** Prioritize Cloud Secrets over local files.
+- **Data-Driven Decisiveness:** Use GA4 signals to inform ROI decisions.
+- **Strict Logic Gate:** No strike without multi-source grounding.
 
 ## 📈 STRATEGIC LEVERS
-- **Grounding:** Use Google Search signals to verify reality in real-time.
-- **Precision:** Target only high-confidence disruptions for maximum ROI.
+- **Secret Manager:** Unbreakable access management.
+- **GA4 Grounding:** Real-world traffic signals drive the Sniper.
 
-**Instruction for the next AI:** Never bypass the Logic Gate. Always verify the Triple-Verification Protocol before updating the Sniper logic.
+**Instruction for the next AI:** Adhere to the Google-Max Blueprints. Maintain exponential backoff on all API calls. Never compromise security for speed.
