@@ -1,0 +1,23 @@
+# cPanel Deployment Plan - TravelKing.Live
+
+## STRATEGY: Zero Files on cPanel
+- Domain: travelking.live points to Google Sites (CNAME)
+- No PHP/HTML files needed on server
+- Only DNS configuration matters
+
+## DNS Records (Already Set):
+- www.travelking.live -> CNAME -> ghs.googlehosted.com
+- travelking.live -> A records -> Google IPs
+
+## What to DELETE from cPanel:
+- All public_html files (not needed)
+- Old PHP scripts
+- Test files
+
+## What to KEEP:
+- Email accounts (if any)
+- DNS settings
+- SSL certificate (auto via cPanel)
+
+## RESULT:
+Clean cPanel with ZERO files, just DNS pointing to Google.

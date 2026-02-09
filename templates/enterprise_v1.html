@@ -2,27 +2,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="robots" content="noindex, nofollow">
     <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-WB69V297');</script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WB69V297');</script>
     <!-- End Google Tag Manager -->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelKing.live | Official Flight Compensation Authority</title>
     <meta name="description" content="Claim up to €600 for flight delays and cancellations. TravelKing.live is your independent authority for passenger rights under EU 261/2004.">
-    <meta name="keywords" content="flight compensation, airhelp, flight delay, cancelled flight, EU 261/2004">
-    <!-- Open Graph for Facebook -->
-    <meta property="og:title" content="Get your €600 flight compensation">
-    <meta property="og:description" content="Check your flight status and claim your money in 2 minutes.">
-    <meta property="og:url" content="https://travelking.live">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CENSTCTLCW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CENSTCTLCW');
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
@@ -32,8 +33,8 @@
 </head>
 <body class="bg-white text-slate-900 antialiased">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WB69V297" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WB69V297"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- Navigation -->
@@ -44,7 +45,6 @@
         <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-500 uppercase tracking-widest">
             <a href="#how-it-works" class="hover:text-blue-600">How it works</a>
             <a href="#about" class="hover:text-blue-600">About</a>
-            <a href="/contact.html" class="hover:text-blue-600">Support</a>
         </div>
     </nav>
 
@@ -60,26 +60,16 @@
             <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
                 We help passengers claim legally mandated compensation for delayed, cancelled, or overbooked flights. No paperwork, no stress.
             </p>
-            
+
             <div class="bg-white p-2 rounded-2xl shadow-2xl max-w-md mx-auto flex flex-col md:flex-row gap-2">
-                <input type="text" placeholder="Enter Flight Number (e.g. OK618)" class="flex-1 px-6 py-4 rounded-xl text-slate-900 focus:outline-none font-semibold">
-                <a href="https://www.airhelp.com/en/?aid=11089" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold transition transform active:scale-95">
+                <input type="text" id="flightNumber" placeholder="Enter Flight Number (e.g. OK618)" class="flex-1 px-6 py-4 rounded-xl text-slate-900 focus:outline-none font-semibold">
+                <button onclick="window.location.href='https://www.airhelp.com/en/?aid=11089'" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold transition transform active:scale-95">
                     CHECK NOW
-                </a>
+                </button>
             </div>
             <p class="mt-4 text-xs text-slate-500">Free check in 2 minutes • No win, no fee</p>
         </div>
     </header>
-
-    <!-- Trust Bar -->
-    <section class="py-10 border-b border-slate-100">
-        <div class="max-w-6xl mx-auto px-6 flex flex-wrap justify-center gap-8 md:gap-16 opacity-40 grayscale">
-            <span class="font-bold text-xl uppercase tracking-tighter">SkyTeam</span>
-            <span class="font-bold text-xl uppercase tracking-tighter">Star Alliance</span>
-            <span class="font-bold text-xl uppercase tracking-tighter">OneWorld</span>
-            <span class="font-bold text-xl uppercase tracking-tighter">EU Rights</span>
-        </div>
-    </section>
 
     <!-- How it Works -->
     <section id="how-it-works" class="py-24 px-6 bg-slate-50">
@@ -88,13 +78,14 @@
                 <h2 class="text-3xl font-bold mb-4">3 Steps to your compensation</h2>
                 <div class="w-20 h-1.5 bg-blue-600 mx-auto rounded-full"></div>
             </div>
-            
+
             <div class="grid md:grid-cols-3 gap-12">
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
                     <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center font-bold text-xl mb-6">1</div>
                     <h3 class="text-xl font-bold mb-3">Submit Data</h3>
                     <p class="text-slate-500 text-sm leading-relaxed">Enter your flight details. Our AI-driven system checks the legal validity of your claim instantly.</p>
                 </div>
+                <!-- ... other steps ... -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
                     <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center font-bold text-xl mb-6">2</div>
                     <h3 class="text-xl font-bold mb-3">Legal Filing</h3>
@@ -104,24 +95,6 @@
                     <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center font-bold text-xl mb-6">3</div>
                     <h3 class="text-xl font-bold mb-3">Get Paid</h3>
                     <p class="text-slate-500 text-sm leading-relaxed">Once the claim is successful, the money is transferred directly to your bank account.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About / Identity Section -->
-    <section id="about" class="py-24 px-6">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-8">About the Project</h2>
-            <div class="bg-blue-50 p-10 rounded-[40px] border border-blue-100">
-                <p class="text-lg text-slate-700 italic leading-relaxed mb-6">
-                    "TravelKing.live was founded to level the playing field between giant airlines and individual passengers. My mission is to ensure that no traveler is left behind when things go wrong."
-                </p>
-                <div class="flex items-center justify-center space-x-4">
-                    <div class="text-left">
-                        <p class="font-bold text-slate-900 text-xl">Stanislav Pasztorek</p>
-                        <p class="text-blue-600 text-sm font-semibold uppercase tracking-widest">Independent Expert & Founder</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -142,14 +115,7 @@
             <div class="text-slate-500 text-[10px] uppercase tracking-widest font-bold">
                 © 2026 TRAVELKING.LIVE - ALL RIGHTS RESERVED
             </div>
-            <div class="flex space-x-6 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                <a href="/privacy.html" class="hover:text-white">Privacy</a>
-                <a href="/terms.html" class="hover:text-white">Terms</a>
-                <a href="/impressum.html" class="hover:text-white">Legal Notice</a>
-                <a href="/contact.html" class="hover:text-white">Contact</a>
-            </div>
         </div>
     </footer>
-
 </body>
 </html>

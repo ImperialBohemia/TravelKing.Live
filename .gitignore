@@ -12,3 +12,6 @@ venv/
 # === Project OMEGA ===
 .gemini/
 *.log
+CREDENTIALS.md
+service_account.json
+backups/
