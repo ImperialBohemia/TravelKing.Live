@@ -1,18 +1,41 @@
 {
-    "timestamp": 1770638586.4649894,
+    "timestamp": 1770639451.6946733,
     "services": {
-        "google": {
+        "google_ai": {
             "status": "PERFECT",
-            "mode": "Local Authorized User"
+            "details": "Connected (Gemini-API)"
+        },
+        "google_drive": {
+            "status": "PERFECT",
+            "details": "Service Account Active"
+        },
+        "google_sheets": {
+            "status": "PERFECT",
+            "details": "Sheet Accessible"
+        },
+        "gmail": {
+            "status": "PERFECT",
+            "details": "SMTP Authenticated"
         },
         "cpanel": {
             "status": "PERFECT",
             "user": "imperkhx"
         },
         "facebook": {
-            "status": "EXPIRED",
-            "payout_impact": "HIGH",
-            "action": "Re-auth required"
+            "status": "PERFECT",
+            "details": "Token valid"
+        },
+        "travelpayouts": {
+            "status": "PERFECT",
+            "details": "Data Active"
+        },
+        "github": {
+            "status": "PERFECT",
+            "user": "ImperialBohemia"
+        },
+        "bing": {
+            "status": "PERFECT",
+            "details": "Key valid"
         }
     }
 }

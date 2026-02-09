@@ -32,11 +32,24 @@ class EnterpriseController:
         table.add_column("Service", style="cyan")
         table.add_column("Status", style="magenta")
         table.add_column("Details", style="green")
+        
+        name_map = {
+            "google_ai": "Jules Google AI (Gemini)",
+            "google_drive": "Google Drive",
+            "google_sheets": "Google Sheets",
+            "gmail": "Gmail SMTP",
+            "cpanel": "cPanel Admin",
+            "facebook": "Facebook/Meta",
+            "travelpayouts": "Travelpayouts",
+            "github": "GitHub Enterprise",
+            "bing": "Bing IndexNow"
+        }
 
         for service, data in health['services'].items():
+            display_name = name_map.get(service, service.capitalize())
             status_color = "green" if data['status'] == "PERFECT" else "yellow" if data['status'] == "WARNING" else "red"
             table.add_row(
-                service.capitalize(), 
+                display_name, 
                 f"[{status_color}]{data['status']}[/{status_color}]", 
                 str(data.get('details', data.get('user', 'OK')))
             )

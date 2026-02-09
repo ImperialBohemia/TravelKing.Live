@@ -1,38 +1,25 @@
-
+#!/home/q/TravelKing.Live/venv/bin/python3
 import sys
-import json
-from core.hub import hub
+import os
+
+# Add root to sys.path
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 def main():
-    print("👑 TRAVELKING OMEGA | Enterprise Supremacy")
+    print("💎 TRAVELKING.LIVE | ENTERPRISE SUPREMACY")
+    print("------------------------------------------")
+    
+    # Forward all commands to the Enterprise Orchestrator
+    from core.enterprise.orchestrator import app as orchestrator_app
     
     if len(sys.argv) < 2:
-        print("Usage: python3 main.py [status|market|deploy|sync]")
-        return
-
-    cmd = sys.argv[1].lower()
-
-    if cmd == "status":
-        stats = hub.status_check()
-        for service, status in stats.items():
-            print(f"{service}: {status}")
-            
-    elif cmd == "market":
-        flight_id = sys.argv[2] if len(sys.argv) > 2 else "LH1160"
-        res = hub.market.analyze_flight_opportunity(flight_id)
-        print(f"Market Intel: {json.dumps(res, indent=4)}")
-        
-    elif cmd == "deploy":
-        filename = sys.argv[2] if len(sys.argv) > 2 else "test_page.html"
-        res = hub.deployer.deploy_sniper_page("<html>Test</html>", filename)
-        print(f"Deployment: {json.dumps(res, indent=4)}")
-
-    elif cmd == "sync":
-        print("Manual Sync Initialized...")
-        from core.maintenance.git_sync import auto_sync
-        auto_sync("Manual User Sync")
-    else:
-        print(f"Unknown command: {cmd}")
+        # Default to status if no command provided
+        sys.argv.append("status")
+    
+    try:
+        orchestrator_app()
+    except Exception as e:
+        print(f"❌ System Error: {e}")
 
 if __name__ == "__main__":
     main()
