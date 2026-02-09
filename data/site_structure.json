@@ -1,0 +1,44 @@
+{
+    "site_name": "TravelKing Authority Hub",
+    "pages": [
+        {
+            "title": "Home",
+            "sections": [
+                {
+                    "type": "header",
+                    "content": "Welcome to the TravelKing Authority Hub"
+                },
+                {
+                    "type": "text",
+                    "content": "Transitioning from direct sales to verified technical value and aviation education."
+                }
+            ]
+        },
+        {
+            "title": "Industry Standards",
+            "sections": [
+                {
+                    "type": "header",
+                    "content": "Aviation Maintenance & Safety Standards"
+                },
+                {
+                    "type": "text",
+                    "content": "Cross-referenced data with UK HSE and plant maintenance logs. Real-time safety verification for luxury aviation."
+                }
+            ]
+        },
+        {
+            "title": "Community Hub",
+            "sections": [
+                {
+                    "type": "header",
+                    "content": "Educational Resources & Skool Community"
+                },
+                {
+                    "type": "text",
+                    "content": "Join our network of aviation professionals and enthusiasts for verified technical insights."
+                }
+            ]
+        }
+    ]
+}
