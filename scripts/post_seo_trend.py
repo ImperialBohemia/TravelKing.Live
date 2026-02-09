@@ -15,9 +15,7 @@ def post_trend_to_bsky():
     tb = TextBuilder()
     tb.text("🚀 SEO Trend 2026: The rise of the AI Jet Concierge. 💎\n\n")
     tb.text("Private aviation is going fully autonomous with hyper-personalized AI integration. Efficiency meets peak luxury.\n\n")
-    tb.text("Secure your flight: ")
-    tb.link("Book Now ✈️", "https://villiers.ai/?id=11089")
-    tb.text("\n\n#AIAviation #LuxuryTravel #SEO #TravelKing")
+    tb.text("#AIAviation #LuxuryTravel #SEO #TravelKing")
     
     rich_text = tb.build_text()
     facets = tb.build_facets()

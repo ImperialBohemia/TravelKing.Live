@@ -11,10 +11,10 @@ Every affiliate post must implement a clickable **Link Card**.
 - **Title**: Compelling, benefit-oriented (e.g., "Luxury Private Jet Charter").
 - **Description**: Clear value proposition (EEA-T compliant text).
 
-## 2. Secondary Method: RichText Facets (Hyperlinks)
-The post text must reinforce the CTA using clickable hyperlinks.
-- **Action Text**: Use "Book Now ✈️", "Secure flight", etc.
-- **Link**: Always hidden under text. **ZERO raw URLs.**
+## 2. Standard: Clean Text Flow
+The post body should remain clean and professional, focusing on the elite experience. All calls-to-action are handled by the **Link Card**.
+- **NO duplicate links**: Do not include "Book Now" or URLs in the text.
+- **Visual Focus**: The image and card serve as the sole gateway to the affiliate partner.
 
 ## 3. Implementation (Python Reference)
 ```python
