@@ -23,6 +23,53 @@ class CRMEngine:
         )
         self.service = build('sheets', 'v4', credentials=self.creds)
 
+    def get_new_leads(self):
+        """
+        Fetches unprocessed leads from the 'Leads' sheet.
+        Assumes status column (index 5, 'F') is empty or 'NEW' for fresh leads.
+        """
+        try:
+            result = self.service.spreadsheets().values().get(
+                spreadsheetId=self.sheet_id, range="Leads!A2:F"
+            ).execute()
+            rows = result.get('values', [])
+            
+            new_leads = []
+            for i, row in enumerate(rows):
+                # Check status column (index 5). If missing or 'NEW', it's a lead.
+                status = row[5] if len(row) > 5 else "NEW"
+                if status == "NEW" or status == "":
+                    # Normalize row length
+                    while len(row) < 6:
+                        row.append("")
+                    
+                    new_leads.append({
+                        "row_id": i + 2, # 1-based index, +header
+                        "timestamp": row[0],
+                        "name": row[1],
+                        "email": row[2],
+                        "interest": row[3],
+                        "source": row[4]
+                    })
+            return new_leads
+        except Exception as e:
+            logger.error(f"❌ Failed to fetch leads: {e}")
+            return []
+
+    def update_lead_status(self, row_id, status):
+        """Updates the status of a lead processing."""
+        try:
+            body = {'values': [[status]]}
+            self.service.spreadsheets().values().update(
+                spreadsheetId=self.sheet_id, 
+                range=f"Leads!F{row_id}", 
+                valueInputOption="USER_ENTERED", 
+                body=body
+            ).execute()
+            logger.info(f"✅ Lead status updated: Row {row_id} -> {status}")
+        except Exception as e:
+            logger.error(f"❌ Failed to update status: {e}")
+
     def log_lead(self, name, email, interest, source="Form"):
         """Logs a new lead to the CRM sheet."""
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")

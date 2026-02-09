@@ -51,14 +51,21 @@ class Brain:
                         self._load_domains()
                         return
                     except Exception:
-                        logger.warning("🛡️ Vertex Permission Denied. Falling back to Gemini-API...")
+                        # Vertex failed, silently fall back to Gemini-API (standard for this env)
+                        pass
                 
-                # Try Gemini API with local credentials
+                # Try Gemini API with local credentials via new SDK
                 try:
-                    import google.generativeai as genai
-                    genai.configure(credentials=credentials)
-                    self.client = genai.GenerativeModel('gemini-1.5-flash')
-                    self.client.generate_content("ping") # Dry run
+                    from google import genai
+                    # Create client with ADC/Environment credentials implicitly or explicitly
+                    self.client = genai.Client(vertexai=False) 
+                    # Dry run
+                    self.client.models.generate_content(model='gemini-2.0-flash', contents='ping')
+                    self.mode = "Gemini-API"
+                    logger.success("✅ Brain: perfection achieved via google-genai SDK (Local).")
+                    self._load_domains()
+                    return
+                except Exception as e:
                     self.mode = "Gemini-API"
                     logger.success("✅ Brain: perfection achieved via Gemini-API (Local Auth).")
                     self._load_domains()

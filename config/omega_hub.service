@@ -1,0 +1,14 @@
+[Unit]
+Description=TravelKing OMEGA Workspace Hub
+After=network.target
+
+[Service]
+Type=simple
+User=q
+WorkingDirectory=/home/q/TravelKing.Live
+ExecStart=/home/q/TravelKing.Live/venv/bin/python3 core/enterprise/workspace_hub.py --daemon
+Restart=always
+RestartSec=60
+
+[Install]
+WantedBy=multi-user.target
