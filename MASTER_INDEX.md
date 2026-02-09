@@ -1,4 +1,4 @@
-# SIMPLECODESPACE ENTERPRISE: MASTER INDEX (v2026.MAX)
+# TRAVELKING.LIVE ENTERPRISE: MASTER INDEX (v2026.MAX)
 
 ## 1. SYSTEM ARCHITECTURE
 This system operates on the **Jules Protocol (v2026.1)**, a modular "Hexagonal" architecture designed for autonomous profit generation.

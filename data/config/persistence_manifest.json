@@ -1,0 +1,44 @@
+{
+    "last_audit": "2026-02-09 13:10:28",
+    "connections": [
+        {
+            "name": "Google Sheets (Tables)",
+            "strategy": "Service Account",
+            "status": "PERMANENT",
+            "credential_path": "/home/q/TravelKing.Live/config/service_account.json",
+            "auto_heal": true
+        },
+        {
+            "name": "Google Drive",
+            "strategy": "Service Account",
+            "status": "PERMANENT",
+            "credential_path": "/home/q/TravelKing.Live/config/service_account.json",
+            "auto_heal": true
+        },
+        {
+            "name": "Gmail SMTP",
+            "strategy": "App Password",
+            "status": "PERMANENT",
+            "account": "trendnatures@gmail.com",
+            "auto_heal": false
+        },
+        {
+            "name": "Google AI (Jules Brain)",
+            "strategy": "System ADC / Project Auth",
+            "status": "PERMANENT",
+            "project_id": "travelking"
+        },
+        {
+            "name": "cPanel API",
+            "strategy": "API Token",
+            "status": "PERMANENT",
+            "host": "server707.web-hosting.com"
+        },
+        {
+            "name": "Facebook/Instagram",
+            "strategy": "Long-Lived Page Token",
+            "status": "RENEWABLE (60 days)",
+            "auto_heal_strategy": "Token Refresh Workflow"
+        }
+    ]
+}
