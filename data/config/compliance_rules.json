@@ -1,0 +1,21 @@
+{
+    "rate_limits": {
+        "google_forms": 50,
+        "google_sheets": 100,
+        "cpanel_api": 10,
+        "git_sync": 60
+    },
+    "forbidden_patterns": [
+        "spam",
+        "bulk mail",
+        "unsolicited",
+        "attack",
+        "exploit",
+        "bypass"
+    ],
+    "safety_protocols": {
+        "check_tos": true,
+        "proxy_enabled": false,
+        "user_agent_rotation": true
+    }
+}

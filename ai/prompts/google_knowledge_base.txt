@@ -1,0 +1,751 @@
+List of Google products
+Appearance
+The following is a list of products, services, and apps provided by Google.
+Web-based products
+[edit]| Product | Description |
+|---|---|
+| Search tools | |
+| Google Search | A web search engine and Google's core product. |
+| Google Alerts | An email notification service that sends alerts based on chosen search terms whenever it finds new results. Alerts include web results, Google Groups results, news, and videos. |
+| Google Assistant | A virtual assistant. |
+| Gemini | A conversational generative artificial intelligence chatbot. |
+| Google Books | A search engine for books. |
+| Google Dataset Search | Allows searching for datasets in data repositories and local and national government websites. |
+| Google Flights | A search engine for flight tickets. |
+| Google Images | A search engine for images online. |
+| Google Shopping | A search engine to search for products across online shops. |
+| Google Travel | A trip planner service. |
+| Google Videos | A search engine for videos. |
+| Groupings of articles, creative works, documents, or media | |
+| Chrome Music Lab | A website for experimenting or creating music through interactive learning. |
+| Google Arts & Culture | An online platform to view artworks and cultural artifacts. |
+| Google Books | A website that lists published books and hosts a large, searchable selection of scanned books. |
+| Google Finance | Searchable US business news, opinions, and financial data. |
+| Google News | Automated news compilation service and search engine for news in more than 20 languages. |
+| Google News Lab | A suite of tools for journalists, including Pinpoint, a platform to collect, categorize, and analyze documents relating to certain subjects. |
+| Google Patents | A search engine to search through millions of patents, each result with its own page, including drawings, claims, and citations. |
+| Google Scholar | A search engine for the full text of scholarly literature across an array of publishing formats and scholarly fields. Includes virtually all peer-reviewed journals. |
+| YouTube | A video hosting website. |
+| Advertising services | |
+| AdMob | A mobile advertising network. |
+| Google Ads | An online advertising platform. |
+| Google AdSense | A contextual advertising program for web publishers that delivers text-based advertisements that are relevant to site content pages. |
+| Google Ad Manager | An advertisement exchange platform. |
+| Google Marketing Platform | An online advertising and analytics platform. |
+| Google Tag Manager | A tag management system to manage JavaScript and HTML tags, including web beacons, for web tracking and analytics. |
+| Local Service Ads | An online advertising platform for lead generations that provide local businesses with a Google guaranteed green check mark. |
+| Communication and publishing tools | |
+| Blogger | A weblog publishing tool. |
+| FeedBurner | A tool in web feed management services, including feed traffic analysis and advertising facilities. |
+| Google Chat | An instant messaging software with the capability of creating multi-user "rooms". |
+| Google Classroom | A content management system for schools that aids in the distribution and grading of assignments and provides in-class communication. |
+| Google Contacts | A contact management service. |
+| Google Fonts | A webfont hosting service. |
+| Google Groups | An online discussion service that also offers Usenet access. |
+| Google Meet | A video conferencing platform. |
+| Google Saved | A collections app. |
+| Google Sites | A webpage creation and publication tool. |
+| Google Voice | A VoIP system that provides a phone number that can be forwarded to actual phone lines. |
+| Productivity tools | |
+| Gmail | An email service. |
+| Google Account | Controls how a user appears and presents themselves on Google products. |
+| Google Calendar | An online calendar with Gmail integration, calendar sharing, and a "quick add" function to create events using natural language. |
+| Google Charts | An interactive, web-based chart image generation from user-supplied JavaScript. |
+| Google Docs Editors | A productivity office suite with document collaboration and publishing capabilities. |
+| Google Drawings | A diagramming software. |
+| Google Drive | A file hosting service with synchronisation option; tightly integrated with Google Docs Editors. |
+| Google Forms | A survey software. |
+| Google Keep | A note-taking service. |
+| Google Sheets | A spreadsheet editing software. |
+| Google Slides | A presentation editing software. |
+| Google Tasks | A task management service. |
+| Google Translate | A service that allows carrying out machine translation of any text or web page between pairs of languages. |
+| NotebookLM | A research and note-taking online tool. |
+| Map-related products | |
+| Google Earth | A virtual 3D globe that uses satellite imagery, aerial photography, GIS from Google's repository. |
+| Google Maps | A mapping service that indexes streets and displays satellite and street-level imagery, providing directions and local business search. |
+| Google My Maps | A social custom map making tool based on Google Maps. |
+| Google Santa Tracker | Simulates tracking Santa Claus on Christmas Eve. |
+| Google Street View | Provides interactive panoramas from positions along many streets in the world. |
+| Statistical tools | |
+| Google Activity Report | A monthly report, including statistics about a user's Google usage, such as sign-in, third party authentication changes, Gmail usage, calendar, search history and YouTube activity. |
+| Google Analytics | A web analytics service that tracks and reports website traffic and also mobile app traffic and events, currently as a platform inside the Google Marketing Platform brand. |
+| Google Ngram Viewer | A search engine that charts year-by-year frequencies of any set of comma-delimited strings in Google's text corpora. |
+| Google Public Data Explorer | A public data and forecasts from international organizations and academic institutions, including the World Bank, OECD, Eurostat and the University of Denver. |
+| Google Trends | An online tool for analyzing the popularity of top search queries in Google Search, across various regions and languages. Graphs compare the search volume of different queries over a certain period of time. |
+| Looker Studio | An online tool for converting data into customizable informative reports and dashboards. |
+| TensorFlow | A machine learning service that simplifies designing neural networks in an easier and more visible fashion. |
+| Business-oriented products | |
+| Google Business Profile | A listing service that allows business owners to create and verify their own business data including address, phone number, business category and photos. |
+| Google Workspace | A suite of web applications for businesses, education providers and nonprofits that include customizable versions of several Google products, accessible through a custom domain name. |
+| Google Opal | A No-code development tool designed to help users build AI-powered applications with ease. It simplifies the app creation process by allowing users to integrate large language models without writing a single line of code, making AI more accessible to non-developers and domain experts alike.[1] |
+| Healthcare related products | |
+| Google ARDA project | An AI tool to help doctors detect retinal disease. |
+| Google Care Studio | A tool for clinicians to search, browse and see highlights, across a patient's broader electronic health record. |
+| Google Fit | A health-tracking platform. |
+| Health Connect | An Android platform, which helps health and fitness apps to use the same on-device data, within a unified ecosystem.[2] |
+Developer tools
+[edit]| Product | Description |
+|---|---|
+| Accelerated Mobile Pages (AMP) | An open-source project and service to accelerate content on mobile devices. Provides a JavaScript library for developers and restricts the use of third-party JS.[3][4][5] |
+| ARCore | A software development kit for augmented reality applications. |
+| Google App Engine | Write and run web applications. |
+| Google Developers | Open source code and lists of API services. Provided project hosting for free and open source software until 2016. |
+| Material Design | A design language created in 2014, that focuses on creating user interfaces with a consistent visual language. |
+| Dart | A structured web programming language. |
+| Flutter | A mobile cross-platform development tool for Android and iOS. |
+| Go | A compiled, concurrent programming language. |
+| OpenSocial | APIs for building social applications on many websites. |
+| Google PageSpeed Tools | Optimize webpage performance. |
+| Google Web Toolkit | An open source Java software development framework that allows web developers to create Ajax applications in Java. |
+| Google Search Console | A web service that helps website owners, webmasters, and SEO professionals monitor and maintain a site's presence in Google Search results. |
+| GN | Meta-build system generating Ninja build configurations. Replaced GYP in Chromium.[6] |
+| Gerrit | A code collaboration tool. |
+| Googletest | Testing framework in C++.[7] |
+| Bazel | A build system. |
+| FlatBuffers | A serialization library. |
+| Protocol Buffers | A serialization library similar to FlatBuffers. |
+| Shaderc | Tools and library for compiling HLSL or GLSL into SPIRV. |
+| American fuzzy lop | A security-oriented fuzzer. |
+| Google Guava | Core libraries for Java. |
+| Google Closure Tools | JavaScript tools. |
+| Google Colaboratory | Write Python code using a Jupyter notebook. |
+| Security Tools | |
+| reCAPTCHA | A user-dialogue system used to prevent bots from accessing websites. |
+| Google Safe Browsing | A blacklist service for web resources that contain malware or phishing content. |
+| Titan | A security hardware chip.[8][9] |
+| Titan Security Key | A U2F security token.[10] |
+| Titan M | Used in Pixel smartphones starting with the Pixel 3.[11] |
+| Titan M2 | Successor starting with the Pixel 6 based on RISC-V.[12] |
+| Titan C | Used in Google-made Chromebooks such as the Pixel Slate.[13] |
+Operating systems
+[edit]| Product | Description |
+|---|---|
+| Android | A Linux-based operating system for mobile devices such as smartphones and tablets, developed by Google and the Open Handset Alliance. |
+| Android Auto | A version of Android optimized for automobiles, offering enhanced connectivity and in-car experience. |
+| Android TV | A version of Android tailored for smart TVs, offering apps, games, and content streaming. |
+| ChromeOS | A Linux-based operating system designed for web applications and lightweight devices.[14] |
+| ChromiumOS | A free and open-source Linux-based operating system designed for web applications and browsing the World Wide Web. |
+| Fitbit OS | An operating system developed for Fitbit devices. |
+| Fuchsia | An operating system based on the Zircon kernel. |
+| Google Cast | A version of Google Cast powering some Google Nest devices. |
+| Wear OS | A version of Android designed for smartwatches and other wearable items. |
+Desktop applications
+[edit]| Product | Description |
+|---|---|
+| Android Studio | An integrated development environment (IDE) designed for Android app development. |
+| Chrome Remote Desktop | A desktop and browser application enabling users to remotely access another Windows, Mac, or Linux system. |
+| Chromium | Free and open-source web browser primarily developed and maintained by Google. |
+| Google Ads Editor | A desktop application to manage Google Ads accounts; enables users to make campaign changes offline before synchronizing with the online service. |
+| Google Chrome | A popular web browser developed by Google. |
+| Google Drive for desktop | A desktop application for synchronizing files between a user’s computer and Google Drive. |
+| Google Earth Pro | A desktop application with advanced features for visualizing and analyzing geospatial data, including GIS data import/export, high-resolution satellite imagery, and historical imagery. |
+| Google IME | An input method editor allowing users to enter text in supported languages using a Roman keyboard.[15] |
+| Google Japanese Input | A Japanese input method editor. |
+| Google Trends Screensaver | A screensaver for macOS displaying the latest Google Trends in a customizable, colorful grid. |
+| Google Web Designer | A WYSIWYG editor for creating rich HTML5 pages and ads optimized for various devices. |
+| Tilt Brush | A virtual reality painting application designed for the Vive and Oculus Rift. |
+Other
+[edit]| Product | Description |
+|---|---|
+| Jigsaw | Google Jigsaw is a technology incubator that develops tools and strategies to address global security challenges, including combating online harassment, disinformation, and censorship, while promoting digital safety and open access to information. |
+Mobile applications
+[edit]Hardware
+[edit]Product families
+[edit]- Google Pixel – smartphones, tablets, laptops, earbuds, and other accessories.
+- Google Nest – smart home products including smart speakers, smart displays, digital media players, smart doorbells, smart thermostats, smoke detectors, and wireless routers.
+- Fitbit – activity trackers.
+- Stadia Controller – game controller for Stadia.
+Devices
+[edit]| Product | Description |
+|---|---|
+| Nexus One | 3.7" phone running Android 2.3 "Gingerbread" |
+| Nexus S | 4" phone running Android 4.1 "Jelly Bean" |
+| Nest Learning Thermostat (first generation) | Smart thermostat |
+| Galaxy Nexus | 4.7" phone running Android 4.3 "Jelly Bean" |
+| Nexus Q | Media streaming entertainment device in the Google Nexus product family |
+| Nexus 7 (2012) | 7" tablet running Android 5.1 "Lollipop" |
+| Nexus 10 | 10" tablet running Android 5.1 "Lollipop" |
+| Nest Learning Thermostat (second generation) | Smart thermostat |
+| Nexus 4 | 4.7" phone running Android 5.1 "Lollipop" |
+| Chromebook Pixel (2013) | Laptop running ChromeOS |
+| Nexus 7 (2013) | 7" tablet running Android 6.0 "Marshmallow" |
+| Nexus 5 | 4.95" phone running Android 6.0 "Marshmallow" |
+| Nest Protect (first generation) | Smoke alarm |
+| Nexus 6 | 5.96" phone running Android 7.1.1 "Nougat"[16] |
+| Nexus 9 | 9" tablet running Android 7.1 "Nougat" |
+| Nexus Player | Streaming media player running Android 8.0 "Oreo" |
+| Chromebook Pixel (2015) | Laptop running ChromeOS |
+| Nest Cam Indoor | Security camera |
+| Nest Protect (second generation) | Smoke alarm |
+| Nest Learning Thermostat (third generation) | Smart thermostat |
+| Nexus 5X | 5" phone running Android 8.1 "Oreo" |
+| Nexus 6P | 5.7" phone running Android 8.1 "Oreo" |
+| Pixel C | 10.2" convertible tablet running Android 8.1 "Oreo" |
+| Nest Cam Outdoor | Security camera |
+| Pixel | 5" smartphone running Android 10 |
+| Pixel XL | 5.5" smartphone running Android 10 |
+| Daydream View (first generation) | Virtual reality headset for smartphones |
+| Google Home | Smart speaker |
+| Google Wifi | Wireless router |
+| Nest Cam IQ Indoor | Security camera |
+| Nest Thermostat E | Smart thermostat |
+| Nest Hello | Smart video doorbell |
+| Nest Cam IQ Outdoor | Security camera |
+| Nest × Yale | Smart lock |
+| Pixel 2 | 5" smartphone running Android 11 |
+| Pixel 2 XL | 6" smartphone running Android 11 |
+| Daydream View (second generation) | Virtual reality headset for smartphones |
+| Home Mini | Smart speaker |
+| Home Max | Smart speaker |
+| Pixel Buds (first generation) | Wireless earbuds |
+| Pixelbook | Laptop running ChromeOS |
+| Pixel 3 | 5.5" smartphone running Android 11 |
+| Pixel 3 XL | 6.3" smartphone running Android 11 |
+| Pixel Slate | 2-in-1 PC running ChromeOS |
+| Pixel Stand | Wireless charger |
+| Nest Hub | Smart display |
+| Stadia Controller | Gaming controller for Stadia |
+| Pixel 3a | 5.6" smartphone running Android 11 |
+| Pixel 3a XL | 6" smartphone running Android 11 |
+| Nest Hub Max | Smart display |
+| Pixel 4 | 5.7" smartphone running Android 11 |
+| Pixel 4 XL | 6.3" smartphone running Android 11 |
+| Pixelbook Go | Laptop running ChromeOS |
+| Nest Mini | Smart speaker |
+| Nest Wifi | Wireless router |
+| Pixel Buds (second generation) | Wireless earbuds |
+| Pixel 4a | 5.8" smartphone running Android 11 |
+| Pixel 4a (5G) | 6.2" smartphone running Android 11 |
+| Pixel 5 | 6" smartphone running Android 11 |
+| Nest Audio | Smart speaker |
+| Nest Thermostat | Smart thermostat |
+| Pixel Buds A-Series | Wireless earbuds |
+| Pixel 5a | 6.3" smartphone running Android 11 |
+| Pixel 6 | 6.4" smartphone running Android 12 |
+| Pixel 6 Pro | 6.7" smartphone running Android 12 |
+| Pixel 6a | 6.1" smartphone running Android 12 |
+| Pixel 7 | 6.3" smartphone running Android 13 |
+| Pixel 7 Pro | 6.7" smartphone running Android 13 |
+| Pixel Watch | Smartwatch |
+| Pixel Tablet | Tablet |
+| Pixel 7a | 6.1" smartphone running Android 13 |
+| Pixel Fold | Foldable smartphone |
+| Pixel 8 | 6.2" smartphone running Android 14 |
+| Pixel 8 Pro | 6.7" smartphones running Android 14 |
+| Pixel Watch 2 | Smartwatch |
+| Pixel 8a | 6.1" smartphone running Android 14 |
+| Pixel 9 | 6.3" smartphone running Android 14 |
+| Pixel 9 Pro | 6.3" smartphone running Android 14 |
+| Pixel 9 Pro XL | 6.8" smartphone running Android 14 |
+| Pixel 9 Pro Fold | Foldable smartphone running Android 14 |
+| Pixel 10 | 6.3" smartphone running Android 16 |
+| Pixel 10 Pro | 6.3" smartphone running Android 16 |
+| Pixel 10 Pro XL | 6.8" smartphone running Android 16 |
+| Pixel 10 Pro Fold | Foldable smartphone running Android 16 |
+| Pixel Watch 3 | Smartwatch |
+| Pixel Buds Pro 2 | Wireless earbuds |
+Processors
+[edit]| Component | Year | Associated device |
+|---|---|---|
+| Pixel Visual Core | 2017 | Pixel 2 |
+| Titan M | 2018 | Pixel 3 |
+| Pixel Neural Core | 2019 | Pixel 4 |
+| Titan C | 2019 | Pixelbook Go |
+| Titan M2 | 2021 | Pixel 6 |
+| Google Tensor | 2021 | Pixel 6 |
+| Google Tensor G2 | 2022 | Pixel 7 |
+| Google Tensor G3 | 2023 | Pixel 8 |
+| Google Tensor G4 | 2024 | Pixel 9 |
+| Google Tensor G5 | 2025 | Pixel 10 |
+Services
+[edit]| Service | Description |
+|---|---|
+| Google Cast | A platform to display entertainment and apps from a phone, tablet, or laptop directly on a TV or speakers.[17] |
+| Google Cloud Platform | A modular cloud-based service for software development. |
+| Google Crisis Response | A public project covering disasters, turmoils, and other emergencies with alerts. |
+| Google Firebase | A real-time database providing an API for developers to store and sync data across multiple clients. |
+| Google Fi Wireless | A MVNO offering simple plans and pricing. |
+| Google Get Your Business Online | Aims to increase the web presence of small businesses and cities, offering advice on search engine optimization and maintaining updated business profiles.[18] |
+| Google Pay | A digital wallet platform and online payment system. |
+| Google Person Finder | An open-source tool to help people reconnect with others after a disaster. |
+| Google Public DNS | A publicly accessible DNS server. |
+| YouTube TV | An over-the-top internet television service offering live TV. |
+Scheduled to be discontinued
+[edit]Applications that are no longer in development and scheduled to be discontinued in the future:
+2026
+[edit]- Google Fit API – Will become deprecated.[19]
+- Google Assistant – After continuously removing many features from Assistant since 2023 to focus more on Gemini, Google Assistant has finally been scheduled to be retired for mobile, tablets, smartwatches, headphones and cars by the end of 2025. These devices will have Google Assistant replaced by Google Gemini in the future. Additionally, Google also recommends using Routines as an alternative to Assistant. However, the future of products such as the Google Home and Google Nest remain uncertain.[3][4]
+Discontinued products and services
+[edit]Google has retired many offerings, either because of obsolescence, integration into other Google products, or lack of interest.[20] Google's discontinued offerings are colloquially referred to as Google Graveyard.[21][22]
+2025
+[edit]- Google Tables – A business workflow automation tool. Discontinued on December 16, 2025.[23]
+- Google URL Shortener – URL shortening service. Started to turn down support on March 30, 2018, was discontinued on March 30, 2019, and stopped working on August 25.[24]
+- Firebase Dynamic Links – URL shortening service. Shut down on August 25.[25]
+2024
+[edit]- Jamboard – Discontinued on December 31.[26]
+- Stack – An app that allowed users to scan and organize documents and receipts on their mobile devices. Shut down on September 23.[27] Users were advised to switch to Google Drive's built-in document scanning features instead.
+- Google Mars – Website that offered an imagery of Mars, using the Google Maps interface. Discontinued in August. Replaced by Google Maps in Space and Google Earth Pro.[28][29]
+- Google Moon – Website that offered a NASA imagery of the moon, using the Google Maps interface. Discontinued in August. Replaced by Google Maps in Space and Google Earth Pro.[30][29]
+- Google Sky – Website that offered the view of planets, stars and galaxies. Discontinued in August. Replaced by Google Maps in Space and Google Earth Pro.[31][29]
+- Chromecast – Discontinued on August 6[32] and replaced by Google TV Streamer.[33]
+- VPN by Google One – Shut down on June 20, citing low usage.[34]
+- Google Pay (for US only) – Payment app developed by Google. Shut down on June 4 and replaced by Google Wallet.[35]
+- People Cards – New profiles couldn't be created after April 7, but gave users the option to download or save content, until they were removed the following month. Google cited that the feature wasn't that useful, as they intended it to be.[36]
+- Dropcam – Shut down on April 8.[37]
+- Nest Secure – Pulled from Google Store in October 2020. Shut down on April 8.[37]
+- Google Podcasts – Shut down on April 2 and replaced by YouTube Music.[38]
+- Keen – Shut down on March 24 and the website is no longer accessible.[39]
+- Google Search's Cache link – Discontinued in February as it was no longer necessary due to improved internet reliability.[40]
+- Google Earth View – Website with a collection of satellite-captured wallpapers and Chromecast backgrounds. Shut down in mid-January.[41]
+- Basic HTML View on Gmail – Discontinued in January.[42]
+2023
+[edit]- Google Optimize – Freemium web analytics and testing tool. Shut down on September 30.[43][44]
+- Google Glass (Enterprise Edition) – wearable computer with an optical head-mounted display and camera that allows the wearer to interact with various applications and the Internet via natural language voice commands. Discontinued on September 15.[45]
+- Google Duo – Free high quality video calling service for mobiles and desktops.
+- Google Domains – Shut down on September 7 after migrating to Squarespace.[46]
+- Google Pixel Pass – Discontinued on August 29.[47]
+- Google Cloud IoT Core Service – Shut down on August 16.[48]
+- Google Album Archive – Discontinued on July 19.[49]
+- Google Code Competitions – Discontinued on July 1.
+- Google Universal Analytics – Shut down on July 1 and replaced by Google Analytics 4.[50]
+- Conversational Actions – Extended the functionality of Google Assistant by allowing 3rd party developers to create custom experiences, or conversations, for users of Google Assistant. Shut down in June.
+- Grasshopper – Shut down on June 15.[51]
+- Google Now Launcher – Discontinued in May.[52]
+- Jacquard – Shut down in April 24.
+- Google Currents – internal enterprise communication tool, formerly Google+ for G Suite. Shut down on March, with users migrated to Spaces in Google Chat.[53]
+- Google Street View (standalone app) – Shut down on March 21.[54] The Street View Studio app and the ability to use Street View in the main Google Maps app, rendered the Street View app redundant, however it is now required to purchase a 360 camera to contribute to Street View, as the app allowed you to create photospheres with any supported smartphone camera. The "Photo Paths" feature, which allowed any smartphone to create a 2D capture of any road not yet covered by Street View was completely removed, requiring users to either purchase a 360 camera or migrate to a third-party service such as Mapillary.[55]
+- Stadia – Shut down on January 18.[56][57]
+2022
+[edit]- YouTube Originals – discontinued on December 31.[58]
+- Google OnHub – stopped receiving support on December 19.[59]
+- Google Hangouts – discontinued on November 1, after migrating all users to Google Chat.[60][61][62]
+- Google Surveys – Market research tool. Discontinued on November 1.[63][64]
+- YouTube for Wii U – Shut down in October.[65]
+- YouTube Go – An app aimed at making YouTube easier to access on mobile devices in emerging markets through special features like downloading video on WiFi for viewing later. It was shut down in August.[66]
+- Google My Business – An app that allowed businesses to manage their Google Maps Business profiles. It was shut down in July.[67][68]
+- Android Auto for phone screens – An app that allowed the screen of the phone to be used as an Android Auto interface while driving, intended for vehicles that did not have a compatible screen built in. It was shut down in July.[69][70]
+- Kormo Jobs – A service that allowed users in primarily India, Indonesia, and Bangladesh to help them find jobs nearby that match their skills and interests. It was shut down on June 30.[71][72]
+- G Suite (Legacy Free Edition) – A free tier offering some of the services included in Google's productivity suite. Discontinued on June 27.[73][74][75]
+- Google Chrome Apps – Apps hosted or packaged web applications that ran on the Google Chrome browser. Support for Windows and other Operating systems dropped in June and shut down on ChromeOS in January 2025. For ChromeOS devices enrolled in the LTS channel, Chrome apps will be supported until October 2028.[76]
+- Google Assistant Snapshot – The successor to Google Now that provided predictive cards with information and daily updates in the Google app for Android and iOS.
+- Cameos on Google – Cameos allowed celebrities, models and public figures to record video-based Q&A. Shut down on February 16.[22]
+- Android Things – A part of Google Internet of Things (IoT). Shut down on January 5.[77]
+2021
+[edit]- AngularJS – Open source web application framework. Shut down on December 31.[78]
+- Google Clips – a miniature clip-on camera device. Pulled from Google Store on October 15, 2019.[79] Discontinued on December 31.[80]
+- Google Toolbar – web browser toolbar with features such as a Google Search box, pop-up blocker and ability for website owners to create buttons. Shut down on December 12.[81]
+- My Maps – an Android app that enabled users to create custom maps for personal use or sharing on their mobile device. Shut down on October 15[82] and users were asked to migrate to the mobile web version of the app.
+- Backup and Sync – Desktop software that synchronized files between a user’s computer and Google Drive. Discontinued on October 1. Replaced by Google Drive for desktop.[83][84][85]
+- Google Bookmarks – Online bookmarking service. Discontinued on September 30.[86]
+- Tour Builder – allowed users to create and share interactive tours inside Google Earth. Shut down in July, replaced by new creation tools in Google Earth.[87]
+- Poly – a service to browse, share and download 3D models.[88] Shut down on June 30.
+- Google Expeditions – virtual reality (VR) platform designed for educational institutions. Discontinued on June 30. The majority of Expedition's tours were migrated to Google Arts & Culture.[89]
+- Tour Creator – allowed users to create immersive, 360° guided tours in the Expeditions app that could be viewed with VR devices. Shut down on June 30.[90][91]
+- Timely – an Android app that provided alarm, stopwatch and timer functions with synchronization across devices. Timely servers were shut down on May 31.[87]
+- Google Go Links – a URL shortening service that also supported custom domain for customers of Google Workspace. Discontinued on April 1.[87]
+- Google Public Alerts – an online notification service that sent safety alerts to various countries. Shut down on March 31 and functions moved to Google Search and Google Maps.[87]
+- Google Crisis Map – a service that visualized crisis and weather-related data. Shut down March 30. Improvements to Google Search and Maps rendered this service redundant.[92]
+- Google App Maker – allowed users to develop apps for businesses. Shut down on January 19[93] due to Google's acquisition of AppSheet.
+2020
+[edit]- Google Cloud Print – a cloud-based printing solution that has been in beta since 2010. Discontinued on December 31.[94][95]
+- Google Play Music – Google's music streaming service. Discontinued on December 3 and replaced by YouTube Music and Google Podcasts.[96][97]
+- Google Station – service that allowed users to Spread Wi-Fi hotspots. Shut down on September 30.[98]
+- Hire by Google – applicant tracking system and recruiting software. Shut down on September 1.[99][100]
+- Password Checkup – an extension that warned of breached third-party logins. Shut down in July after it had been integrated with Chrome.[101]
+- Google Photos Print – a subscription service that automatically selected the best ten photos from the last thirty days which were mailed to users' homes. Shut down in June.[102]
+- Shoelace – an app used to find group activities with others who share your interests. Shut down in May.[103]
+- Neighbourly – an experimental mobile app designed to help you learn about your neighborhood by asking other residents. Shut down on May 12.[104]
+- Fabric – modular SDK platform launched by Crashlytics in 2014. Google acquired Crashlytics in 2017 and announced plans to migrate all of its features to Firebase. It was shut down on May 4.[105]
+- Material Theme Editor – plugin for Sketch app which allowed you to create a material-based design system for your app. Discontinued in March.[106]
+- YouTube For Wii U Browser [107]
+- Fiber TV – an IPTV service bundled with Google Fiber. Discontinued on February 4.[108]
+- One Today – an app that allowed users to donate $1 to different organizations and discover how their donation would be used. Discontinued in January.[109]
+- Androidify – allowed users to create a custom Android avatar. Discontinued in January.[110]
+2019
+[edit]- YouTube Annotations – annotations that were displayed over videos on YouTube. On January 15, all existing annotations were removed from YouTube.[111]
+- Google Pinyin – Discontinued in March.
+- Mr. Jingles – Google's notifications widget. Discontinued on March 7.[112]
+- Google Tasks canvas – A full-screen interface of Google Tasks that was discontinued in April.[113][114]
+- Google Allo – Google's instant messaging app. Discontinued on March 12.[115]
+- Google Image Charts – a chart-making service that provided images of rendered chart data, accessed with REST calls. The service was deprecated in 2012, temporarily disabled in February 2019 and discontinued on March 18, 2019.[116][117]
+- Inbox by Gmail – an email application for Android, iOS, and web platform that organized and automated to-do lists using email content. As of April 2, accessing the Inbox subdomain redirects to Gmail proper.[118]
+- Google+ – The consumer edition of Google's social media platform. As of April 2, users receive a message stating that "Google+ is no longer available for consumer (personal) and brand accounts".[119][120]
+- Google Jump – cloud-based video stitching service. Discontinued June 28.[121]
+- Works with Nest – the smart home platform of Google brand Nest.[122] Users were asked to migrate to the Google Assistant platform.[123] Support ended on August 31.[124]
+- YouTube for Nintendo 3DS – official app for Nintendo 3DS. Discontinued on September 3.[125]
+- YouTube Messages – direct messages on YouTube – discontinued after September 18.[126]
+- YouTube Leanback – a web application for control with a remote, intended for use with smart TVs and other similar devices. Discontinued on October 2.[127]
+- Google Daydream View – Google's VR headset (first-gen in late 2016, second-gen in late 2017) was discontinued just after their "Made by Google" event in October The Google Daydream platform itself is being retired as well.[128]
+- Touring Bird – Travel website which facilitated booking tours, tickets and activities in top locations. The service was shut down on November 17.[129]
+- Google Bulletin – "Hyperlocal" news service which allowed users to post news from their neighborhood. It was shut down on November 22.[130]
+- Google Fusion Tables – A service for managing and visualizing data. The service was shut down on December 3.[131]
+- Google Translator Toolkit – An online computer-assisted translation tool designed to allow translators to edit the translations that are automatically generated by Google Translate. It was shut down on December 4, citing declining usage and the availability of other similar tools.[132]
+- Google Correlate – finds search patterns which correspond with real-world trends. It was shut down on December 15, as a result of low usage.[133]
+- Google Search Appliance – A rack mounted device used to index documents. Hardware sales ended in 2017 and initial shutdown occurred in 2018;[134] and was ultimately shut down on December 31, 2019.[135]
+- Google Native Client (NaCL/PNaCl) – sandboxing technology for running a subset of native code. It was discontinued on December 31.
+- Datally – Lets users save mobile data. Removed from Play Store in October.[136]
+- Build with Chrome – an initiative between Lego and Google to build the world using Lego.[137] It was discontinued in March.
+- Google Game Builder – A prototype program that could develop video games in real time and was released on Steam for Windows and MacOS.[138] It used card-based virtual programming and could import models from Google Poly.[139] The source code was released for free on GitHub.[140]
+2018
+[edit]- Blogger Web Comments (Firefox only) – displays related comments from other Blogger users.
+- City Tours – overlay to Maps that shows interesting tours within a city.
+- Dashboard Widgets for Mac (Mac OS X Dashboard Widgets) – suite of mini-applications including Gmail, Blogger and Search History.
+- Joga Bonito – soccer community site.
+- Local – Local listings service, merged with Google Maps.
+- MK-14 – 4U rack-mounted server for Google Radio Automation system. Google sold its Google Radio Automation business to WideOrbit Inc.[141]
+- Google Music Trends – music ranking of songs played with iTunes, Winamp, Windows Media Player and Yahoo Music. Trends were generated by Google Talk's "share your music status" feature.
+- Google Personalized Search – search results personalization, merged with Google Accounts and Web History.
+- Photos Screensaver – slideshow screensaver as part of Google Pack, which displays images sourced from a hard disk, or through RSS and Atom Web feeds.
+- Rebang (Google China) – search trend site, similar to Google Zeitgeist. As of 2010[update], part of Google Labs.[142]
+- Spreadsheets – spreadsheet management application, before it was integrated with Writely to form Google Docs & Spreadsheets.
+- University Search – search engine listing for university websites.
+- U.S. Government Search – search engine and personalized homepage that exclusively draws from sites with a .gov TLD. Discontinued June 2006.
+- Video Player – view videos from Google Video.
+- Voice Search – automated voice system for web search using the telephone. Became Google Voice Local Search and integrated on the Google Mobile web site.
+- Google X – redesigned Google search homepage. It appeared in Google Labs, but disappeared the following day for undisclosed reasons.[143]
+- Accessible Search – search engine for the visually impaired.
+- Quick Search Box – search box, based on Quicksilver, easing access to installed applications and online searches.
+- Visigami – image search application screen saver that searches files from Google Images, Picasa and Flickr.
+- Wireless access – VPN client for Google WiFi users, whose equipment does not support WPA or 802.1X protocols.
+- Google Play Newsstand – News publication and magazine store. Replaced by Google News on May 15, removed from Google Play on November 5, and magazines were no longer available on Google News since January 2020.
+- Google News & Weather – News publication app. Merged by Google News on May 15.
+- Google global market finder.
+- QPX Express API – flight search API.[144]
+- Google Contact Lens – was a smart contact lens project capable of monitoring the user's glucose level in tears. On November 16, Verily announced it has discontinued the project because of the lack of correlation between tear glucose and blood glucose.[145]
+2017
+[edit]- Google Gesture Search – Gesture search is a software that draws letters composed of the name of a program, contact or setting, it can find the latter
+- Google Nexus – Smartphone lineup, replaced by Google Pixel on October 4.
+- Trendalyzer – data trend viewing platform. Discontinued in September.[146]
+- Google Swiffy – convert Adobe Flash files (SWF) into HTML5. Discontinued on July 1.
+- Glass OS – an operating system for Google Glass. Discontinued on June 20.[147]
+- Google Spaces – group discussions and messaging. Discontinued on April 17.[148]
+- Google Map Maker – map editor with browser interface. Discontinued on April 1, replaced by Google Maps and Google Local Guides.
+- Google Hands Free – retail checkout without using your phone or watch. Pilot started in the Bay area March 2016, but discontinued on February 8.[149]
+- Google Maps Engine – develop geospatial applications. Discontinued on February 1.
+- Free Search – embed site/web search into a user's website. Replaced by Google Custom Search.[150]
+- Google Maps for PS Vita – version of Google maps for the PS Vita, discontinued in January 2015, "Sony pulls support for Vita's Maps, YouTube apps". Engadget. Retrieved July 4, 2024.
+- YouTube for PS Vita – discontinued in January 2015, "Sony pulls support for Vita's Maps, YouTube apps". Engadget. Retrieved July 4, 2024.
+2016
+[edit]- Google Code – Open source code hosting. Discontinued on January 25 and renamed to Google Developers.[151]
+- Picasa – photo organization and editing application. Closed March 15 and replaced by Google Photos.[152]
+- Google Compare – comparison-shopping site for auto insurance, credit cards and mortgages[153]
+- Google Showtimes – movie showtime search engine. Discontinued on November 1.[154]
+- MyTracks – GPS logging. Shut down April 30.[155]
+- Project Ara – an "initiative to build a phone with interchangeable modules for various components like cameras and batteries"[156] was suspended to "streamline the company's seemingly disorganized product lineup".[157] on September 2.
+- Panoramio – geolocation-oriented photo sharing website. Discontinued on November 4.[158] Google's Local Guides program as well as photo upload tools in Google Maps rendered Panoramio redundant.
+- Google Feed API – download public Atom or RSS feeds using JavaScript. Deactivated on December 15.[159]
+2015
+[edit]- Wildfire by Google – social media marketing software[160]
+- Google Earth Plugin – an application service used to customize Google Earth. Discontinued on December 15.
+- Google Flu Trends – a web service to help predict outbreaks of flu activity. Discontinued on August 9.[161]
+- Google Moderator – rank user-submitted questions, suggestions and ideas via crowdsourcing.[162] Discontinued on June 30.
+- Google Helpouts – Hangout-based live video chat with experts. Discontinued on April 20.[163]
+- Google Earth Enterprise – Google Earth for enterprise use. Discontinued on March 20.
+- BebaPay – prepaid ticket payment system. Discontinued on March 15.[164]
+- Google Glass (Consumer Edition) – wearable computer with an optical head-mounted display and camera that allows the wearer to interact with various applications and the Internet via natural language voice commands. Discontinued on January 19.[165]
+- Speak To Tweet – telephone service created in 2011 in collaboration with Twitter and SayNow allowing users to phone a specific number and leave a voicemail; a tweet was automatically posted on X. Discontinued sometime during 2015.[citation needed]
+2014
+[edit]- Freebase – an open, Creative Commons, attribution licensed collection of structured data, and a Freebase platform for accessing and manipulating that data via the Freebase API. Discontinued on December 16.
+- Google Questions and Answers – community-driven knowledge market website. Discontinued on December 1.[166][167]
+- Orkut – social networking website. Discontinued on September 30.
+- Google's "discussion search" option. Discontinued in July.[168]
+- Quickoffice – productivity suite for mobile devices. Discontinued in June, merged into Google Drive.
+- Google TV – smart TV platform based on Android. Discontinued and replaced by Android TV in June.
+- Google Offers – service offering discounts and coupons. Shut down on March 31.
+- Google Chrome Frame – plugin for Internet Explorer that allowed web pages to be viewed using WebKit and the V8 JavaScript engine. Discontinued on February 25.
+- Google Schemer – social search to find local activities. Discontinued on February 7.
+- YouTube My Speed – Discontinued in January, replaced by Google Video Quality Report.
+- Google Notifier – alerted users to new messages in their Gmail account. Discontinued on January 31.[169]
+2013
+[edit]- My Maps, GIS tools for Google Maps.
+- Google Currents – Magazine app. Merged into Google Play Newsstand on November 20.
+- Google Checkout – online payment processing service, aimed at simplifying the process of paying for online purchases. Discontinued on November 20, merged into Google Wallet.
+- iGoogle – customisable homepage, which can contain web feeds and Google Gadgets. Discontinued on November 1.[170]
+- Google Latitude – mobile geolocation tool that lets friends know where users are. Discontinued on August 9, with some functionality moved to Google+.[171]
+- Google Reader – web-based news aggregator, capable of reading Atom and RSS feeds. Discontinued on July 1.[172]
+- Meebo – A social networking website discontinued on June 6.
+- Google Building Maker – web-based building and editing tool to create 3D buildings for Google Earth. Discontinued on June 4.
+- Google Talk – instant messaging service that provided both text and voice communication. Replaced May 15 by Google Hangouts. The service was discontinued by 2017 on all platforms.
+- SMS Search – mobile phone short message service. Discontinued on May 10.[173]
+- Google Cloud Connect – Microsoft Office plugin for automatically backing up Office documents upon saving onto Google Docs. Discontinued on April 30, in favor of Google Drive.[172]
+- Picnik – online photo editor. Discontinued on April 19,[174] and moved to Google+ photo manager.
+- Google Calendar Sync – sync Microsoft Outlook email and calendar with Gmail and Google Calendar. Synchronization for existing installations stopped on August 1. Replaced with Google Sync, which does not synchronize Outlook calendars, but can sync email using IMAP or POP3. Also, Google Apps for Business, Education, and Government customers can use Google Apps Sync for Microsoft Outlook.[175]
+2012
+[edit]- Picasa Web Albums Uploader – upload images to the "Picasa Web Albums" service. It consisted of an iPhoto plug-in and a stand-alone application.[176]
+- Google Chart API – interactive Web-based chart image generator, deprecated in 2012 with service commitment to 2015 and turned off in 2019. Google promotes JavaScript-based Google Charts as a replacement, which is not backwards-compatible with the Google Chart API's HTTP methods.
+- Google Apps Standard Edition – Discontinued on December 6.[177]
+- Nexus Q – digital media player – Discontinued in November.
+- Google Refine – data cleansing and processing. It was spun off from Google on October 2, becoming open source; it is now OpenRefine.
+- TV Ads – Method to place advertising on TV networks. Discontinued on August 30,[178] with all remaining active campaigns ending December 16.[179]
+- Knol – write authoritative articles related to various topics. Discontinued October 1.[180]
+- Yinyue (Music) (Google China) – site linking to a large archive of Chinese pop-music (principally Cantopop and Mandopop), including audio streaming over Google's own player, legal lyric downloads, and in most cases legal MP3 downloads. The archive was provided by Top100.cn (i.e., this service does not search the whole Internet) and was available in mainland China only. Discontinued in September, users were given the option to download playlists until October 19.[181]
+- Google Insights for Search – insights into Google search term usage. Discontinued September 27, merged in Google Trends.
+- Listen – subscribe to and stream podcasts and Web audio. Discontinued in August.[182]
+- BumpTop – physics-based desktop application. Discontinued in August.[183]
+- Google Video – a free video hosting service. Shut down and migrated to YouTube (which Google acquired in 2006) on August 20.[184]
+- Google Notebook – online note-taking and web-clipping application.[185] Discontinued in July.
+- Google Website Optimizer – testing and optimization tool. Discontinued on August 1.[186]
+- Google Mini – reduced capacity, lower-cost version of the Google Search Appliance. Discontinued on July 31.[187]
+- Google Wave – online communication and collaborative real-time editor tool that bridge email and chat. Support ended on April 30.[180]
+- Slide.com – Discontinued on March 6.[188]
+- Google Friend Connect – add social features to websites. Discontinued on March 1, replaced by Google+'s pages and off-site Page badges.[180]
+- Jaiku – social networking, microblogging and lifestreaming service comparable to Twitter. Shut down January 15.
+- Google Code Search – software search engine. Discontinued on January 15.[189]
+- Google Health – store, manage, and share personal health information in one place. Development ceased June 24, 2011; accessible until January 1, 2012; data available for download until January 1, 2013.
+2011
+[edit]- Google Buzz – social networking service integrated with Gmail allowing users to share content immediately and make conversations. Discontinued in December and replaced by Google+.[190]
+- Google Sidewiki – browser sidebar and service that allowed contributing and reading helpful information alongside any web page. Discontinued in December.
+- Gears – web browser features, enabling some new web applications. Removed from all platforms by November.
+- Squared – creates tables of information about a subject from unstructured data. Discontinued in September.
+- Aardvark – social search utility that allowed people to ask and answer questions within their social networks. It used people's claimed expertise to match 'askers' with good 'answerers'. Discontinued on September 30.
+- Google PowerMeter – view building energy consumption. Discontinued on September 16.
+- Desktop – desktop search application that indexed emails, documents, music, photos, chats, Web history and other files. Discontinued on September 14.
+- Google Fast Flip – online news aggregator. Discontinued September 6.
+- Google Pack – application suite. Discontinued on September 2.
+- Google Directory – collection of links arranged into hierarchical subcategories. The links and their categorization were from the Open Directory Project, sorted using PageRank. Discontinued on July 20.
+- Google Blog Search – weblog search engine. Discontinued in July.
+- Google Labs – test and demonstrate new Google products. Discontinued in July.
+- Image Swirl – an enhancement for an image-search tool in Google Labs. It was built on top of image search by grouping images with similar visual and semantic qualities. Shut down in July due to discontinuation of Google Labs.
+- Google Sets – generates a list of items when users enter a few examples. For example, entering "Green, Purple, Red" emits the list "Green, Purple, Red, Blue, Black, White, Brown". Discontinued mid-year.[191]
+- Directory – navigation directory, specifically for Chinese users.[192]
+- Hotpot – local recommendation engine that allowed people to rate restaurants, hotels etc. and share them with friends. Moved to Google Places service in April.[193]
+- Real Estate – place real estate listings in Google Maps. Discontinued February 10.[194]
+2010
+[edit]- Google Base – submission database that enabled content owners to submit content, have it hosted and made searchable. Information was organized using attributes. Discontinued on December 17, replaced with Google Shopping APIs.
+- GOOG-411 (also known as Voice Local Search) – directory assistance service. Discontinued on November 12.
+- Google SearchWiki – annotate and re-order search results. Discontinued March 3, replaced by Google Stars.
+- Marratech e-Meeting – web conferencing software, used internally by Google's employees. Discontinued on February 19.
+- Living Stories – collaboration with The New York Times and The Washington Post for presenting news. Discontinued in February.
+2009
+[edit]- Audio Ads – radio advertising program for US businesses. Discontinued on February 12.
+- Catalogs – search engine for over 6,600 print catalogs, acquired through optical character recognition. Discontinued in January.
+- Dodgeball – social networking service. Users could text their location to the service, which would then notify them of nearby people or events of interest. Replaced by Google Latitude.
+- Google Mashup Editor – web mashup creation with publishing, syntax highlighting, debugging. Discontinued in July; migrated to Google App Engine.
+- Google Ride Finder – taxi and shuttle search service, using real time position of vehicles in 14 U.S. cities. Used the Google Maps interface and cooperated with any car service that wished to participate. Discontinued in October.
+- Shared Stuff – web page sharing system, incorporating a bookmarklet to share pages, and a page to view the most popular shared items. Pages could be shared through third-party applications such as Delicious or Facebook. Discontinued on March 30.
+2008
+[edit]- Google Lively – 3D animated chat. Discontinued December 31.[195]
+- SearchMash – search engine to "test innovative user interfaces". Discontinued on November 24.[196]
+- Google Page Creator – webpage publishing program that could be used to create pages and to host them on Google servers. Discontinued on September 9, with all existing content gradually transferring to Google Sites through 2009.
+- Send to Phone – send links and other information from Firefox to their phone by text message. Discontinued on August 28, replaced by Google Chrome to Phone.[134]
+- Google Browser Sync (Mozilla Firefox) – allowed Firefox users to synchronize settings across multiple computers. Discontinued in June.
+- Hello – send images across the Internet and publish them to blogs. Discontinued on May 15.[197]
+- Web Accelerator – increased load speed of web pages. No longer available for, or supported by, Google as of January 20.
+2007
+[edit]- Google Video Player – a video player that played back files in Google's own .gvi format and supported playlists in .gvp format. Shut down on August 17, 2007, due to Google's acquisition of YouTube.
+- Google Video Marketplace – discontinued on August 15.[198]
+- Google Click-to-Call – allowed a user to speak directly over the phone without charge to businesses found on Google search results pages. Discontinued on July 20.
+- Related Links – links to information related to a website's content. Discontinued on April 30.
+- Public Service Search – non-commercial organization service, which included Google Site Search, traffic reports and unlimited search queries. Discontinued on February 13, replaced by Google Custom Search.
+2006
+[edit]- Google Answers – online knowledge market that allowed users to post bounties for well-researched answers to their queries. Discontinued on November 28; still accessible (read-only).
+- Writely – web-based word processor. On October 10, Writely was merged into Google Docs & Spreadsheets.
+- Google Deskbar – desktop bar with a built-in mini browser. Replaced by a similar feature in Google Desktop. Discontinued May 8.
+See also
+[edit]- Outline of Google
+- History of Google
+- List of mergers and acquisitions by Alphabet
+- Google's hoaxes
+- X Development
+- Google.org
+References
+[edit]- ^ Adikane, Neha (2025-07-26). "Building AI Apps Without Code: Introducing Google's Opal". Science and Technology Magazine to Explore Your Passion. Retrieved 2025-07-30.
+- ^ "Health Connect". Android Developers. Retrieved 2025-05-18.
+- ^ a b "Google has a new plan to speed up the mobile web". The Verge. October 7, 2015. Archived from the original on October 9, 2015. Retrieved October 11, 2015.
+- ^ a b "Accelerated Mobile Pages Project". ampproject.org. Archived from the original on October 7, 2015. Retrieved October 7, 2015.
+- ^ Ben Fox Rubin (October 7, 2015). "Google wants news articles to load on your phone in an instant". CNET. CBS Interactive. Retrieved October 7, 2015.
+- ^ "What is GN?". Archived from the original on July 6, 2019. Retrieved July 6, 2019.
+- ^ "google/googletest". July 29, 2020 – via GitHub.
+- ^ "Titan in depth: Security in plaintext". Google Cloud Blog.
+- ^ "Titan: a custom TPM and more". March 12, 2017.
+- ^ "Titan Security Key". Google Cloud.
+- ^ "Titan M makes Pixel 3 our most secure phone yet". Google. October 17, 2018.
+- ^ Li, Amber (27 October 2021). "Pixel 6 lets you disable 2G as Tensor security core & Titan M2 with RISC-V architecture detailed". 9to5Google. Retrieved 22 August 2022.
+- ^ "Titan C – The Nucleus of Trust". cloud.withgoogle.com.
+- ^ "Samsung Chromebox". Archived from the original on March 16, 2013. Retrieved March 16, 2013.
+- ^ "Google Input Tools on Windows [Discontinued]". Google Input Tools. Archived from the original on January 15, 2016. Retrieved January 22, 2016.
+- ^ "Nexus 6P". google.com. Archived from the original on September 28, 2015. Retrieved November 11, 2016.
+- ^ "74 currently active subdomains of Google.com – MOTHOD". September 27, 2016. Archived from the original on March 25, 2017. Retrieved March 26, 2017.
+- ^ Clancy, Heather (March 6, 2012). "Google lures small businesses with free Web site offer". ZDnet
+- ^ "Google Fit Migration FAQ". Android Developers. Retrieved 2025-07-01.
+- ^ Brady, Heather; Kirk, Chris (March 15, 2013). "The Google Graveyard". Slate. Archived from the original on March 16, 2013. Retrieved March 16, 2013.
+- ^ Booker, Logan (March 17, 2013). "Google Graveyard Does Exist". Gizmodo. Archived from the original on May 18, 2018. Retrieved May 17, 2018.
+- ^ a b "Killed by Google". Google Graveyard. Killed by Google. Retrieved 22 October 2020.
+- ^ Thompson, Bill (September 11, 2025). "Google to Shut Down Tables, Its Airtable Rival". FindArticles. Archived from the original on September 12, 2025. Retrieved September 13, 2025.
+- ^ "Google URL Shortener links will no longer be available". developers.googleblog.com. Retrieved 2024-07-23.
+- ^ "Dynamic Links Deprecation FAQ". Firebase. Retrieved 2024-07-23.
+- ^ Li, Abner (2023-09-28). "Google shutting down Jamboard, offering transition to other whiteboard apps". 9to5Google. Retrieved 2023-10-04.
+- ^ "Google is shutting down this PDF scanner app in September, here's what it means for users". The Times of India. 2024-06-26. ISSN 0971-8257. Retrieved 2024-07-06.
+- ^ "Google Mars". Google Mars. Archived from the original on 2024-07-29.
+- ^ a b c "Use Google Maps in Space - Google Maps Help". Google Help. Retrieved 2025-05-17.
+- ^ "Google Moon". Google Moon. Archived from the original on 2024-07-31.
+- ^ "Google Sky". Google Sky. Archived from the original on 2024-08-04.
+- ^ Roth, Emma (August 6, 2024). "Google is discontinuing the Chromecast line". The Verge. Retrieved August 6, 2024.
+- ^ Schoon, Ben (2025-04-17). "Google TV Streamer drops to $79 in its first major discount". 9to5Google. Archived from the original on 2025-04-20. Retrieved 2025-07-07.
+- ^ "Google to shut down Google One VPN on June 20 - here are some alternatives". ZDNET. Retrieved 2024-05-17.
+- ^ "Website Tag Management Tools & Solutions - Google Tag Manager". Google Marketing Platform. Retrieved 2023-11-13.
+- ^ Pradhan, Soumya Prakash. "Google to remove People cards from search engine". Google to remove People cards from search engine. Retrieved 2024-12-28.
+- ^ a b Edwards, Nathan (2023-04-07). "Google will drop Dropcam and Nest Secure in 2024". The Verge. Retrieved 2023-09-28.
+- ^ Bonk, Lawrence (September 26, 2023). "Google Podcasts, which is an actual thing, to shut down next year". Engadget. Archived from the original on September 26, 2023. Retrieved September 26, 2023.
+- ^ Mathur, Chandraveer (2024-03-15). "Google shuts down its latest attempt at a social media app". Android Police. Retrieved 2024-05-05.
+- ^ Porter, Jon (2024-02-02). "Google Search's cache links are officially being retired". The Verge. Retrieved 2024-05-18.
+- ^ Bradshaw, Kyle (2024-01-29). "Google shuts down 'Earth View' wallpaper collection". 9to5Google. Retrieved 2024-04-09.
+- ^ Schoon, Ben (September 25, 2023). "Google is removing basic HTML view from Gmail in 2024". 9to5Google. Retrieved Oct 18, 2023.
+- ^ Schwartz, Barry (January 24, 2023). "Google Optimize To Sunset September 30, 2023". Search Engine Roundtable. Retrieved 2025-05-19.
+- ^ "[Sunset September 2023] Google Optimize - Analytics Help". Google Help. Retrieved 2025-05-19.
+- ^ Clark, Mitchell (2023-03-15). "Google Glass Enterprise Edition is no more". The Verge. Retrieved 2024-03-31.
+- ^ Schoon, Ben (2023-09-17). "Google Domains has stopped selling new domains". 9to5Google. Retrieved 2023-09-19.
+- ^ Lawler, Richard (2023-08-31). "Google kills Pixel Pass without ever upgrading subscriber's phones". The Verge. Retrieved 2023-10-24.
+- ^ "Google Cloud to discontinue IoT Core Service in 2023". 2022-08-19. Retrieved 2022-08-23.
+- ^ Rao, Chethan (2023-06-18). "Google says it is killing off Album Archive next month". Android Police. Retrieved 2023-10-09.
+- ^ Schoon, Ben (2022-03-16). "Google Analytics ending support for Universal Analytics in 2023 after over a decade". 9to5Google. Retrieved 2023-10-24.
+- ^ "Google confirms plans for the next service it's shutting down". Android Police. 2023-03-10. Retrieved 2023-06-27.
+- ^ Li, Abner (2023-04-04). "The Google Now Launcher is fully shutting down 10 years later". 9to5Google. Retrieved 2023-11-15.
+- ^ "Google will shut down Currents, the work-focused Google Plus replacement". Retrieved 2022-11-03.
+- ^ "Google is discontinuing support for the standalone Street View app and pulling it from app stores". 2022-11-03. Retrieved 2022-11-03.
+- ^ "Google is shutting down its dedicated Street View app". November 2, 2022.
+- ^ Cranz, Alex (2022-09-29). "Google is shutting down Stadia". The Verge. Retrieved 2022-09-29.
+- ^ "A message about Stadia and our long term streaming strategy". Google. 2022-09-29. Retrieved 2022-09-29.
+- ^ Spangler, Todd (2022-01-18). "YouTube Shuts Down Original Content Group". Variety. Retrieved 2024-06-25.
+- ^ "Support for OnHub routers ending in 2022". Retrieved 2022-09-24.
+- ^ "Upgrading from Google Hangouts to Google Chat". Google. 2022-06-27. Retrieved 2022-06-29.
+- ^ "Google Hangouts finally gets a shutdown date: November 2022". 2022-06-27.
+- ^ Forristal, Lauren (2022-11-01). "Google puts an end to Google Hangouts once and for all". TechCrunch.
+- ^ Ahmed, Arooj (October 2, 2022). "Google is shutting down Google Surveys as of November 1st". Digital Information World. Retrieved 2025-05-24.
+- ^ "Google Surveys Sunset - Google Surveys Help". Google Help. Retrieved 2025-05-24.
+- ^ "The YouTube & Crunchyroll apps on Wii U are shutting down". My Nintendo News. 2022-08-02. Retrieved 2022-08-23.
+- ^ Li, Abner (May 3, 2022). "YouTube Go no longer deemed necessary, app shutting down later this year". 9to5 Google.
+- ^ Schwartz, Barry (July 13, 2022). "Google My Business App No Longer Available". Search Engine Roundtable. Retrieved 2025-05-24.
+- ^ Schwartz, Barry (July 13, 2022). "Google My Business mobile app has stopped functioning forever". Search Engine Land. Retrieved 2025-05-24.
+- ^ Shakir, Umar (June 3, 2022). "Google is eliminating the most easily accessible version of Android Auto". The Verge. Retrieved 2025-05-24.
+- ^ Schoon, Ben (June 2, 2022). "Android Auto for Phone Screens is officially dying for everyone". 9to5Google. Retrieved 2025-05-24.
+- ^ "Asia – Google shuts down its Kormo jobs site in Asia". Staffing Industry Analysts. July 25, 2022. Retrieved 2025-05-24.
+- ^ "Google shuts down Kormo, its job-hunting app in Bangladesh". The Daily Star. July 15, 2022. Retrieved 2025-05-24.
+- ^ Claburn, Thomas (June 21, 2022). "G Suite legacy free edition to end for businesses this month". The Register. Retrieved 2025-05-24.
+- ^ Li, Abner (May 16, 2022). "Google lets personal users stay on 'no-cost Legacy G Suite' with custom Gmail domain". 9to5Google. Retrieved 2025-05-24.
+- ^ "Upgrade from G Suite legacy free edition - Google Workspace Admin Help". Google Help. Retrieved 2025-05-24.
+- ^ "Chrome App support ending on ChromeOS". Chrome Enterprise and Education Help.
+- ^ "An Update on Android Things". Android Developers Blog. Retrieved 2022-01-13.
+- ^ "AngularJS". docs.angularjs.org.
+- ^ "Google pulls first-gen Pixel Buds, Daydream View, and Google Clips from its Store". Android Police. October 1, 2019. Retrieved October 16, 2019.
+- ^ Peters, Jay (October 16, 2019). "Google Clips is dead". The Verge. Retrieved December 2, 2019.
+- ^ Shakir, Umar (2021-12-16). "After 21 years Google Toolbar is finally gone, so we installed it one last time". The Verge. Retrieved 2023-06-27.
+- ^ Bradshaw, Kyle (2021-07-20). "Google shutting down My Maps Android app in October in favor of web". 9 to 5 Google. Retrieved 2022-03-19.
+- ^ Li, Abner (February 4, 2021). "'Google Drive for desktop' replacing Backup and Sync in 2021, add Google Photos upload". 9to5Google. Retrieved 2025-05-19.
+- ^ Campbell, Ian Carlos (July 12, 2021). "Google shares transition plans for unified desktop file syncing Drive app". The Verge. Retrieved 2025-05-19.
+- ^ "Backup and Sync users should begin transitioning to Drive for desktop". Google Workspace Updates blog. July 12, 2021. Retrieved 2025-05-19.
+- ^ Schoon, Ben (July 20, 2021). "Google will shut down 'Bookmarks' in September, won't affect Maps 'starred' locations [U]". 9to5Google. Retrieved July 21, 2021.
+- ^ a b c d "Here's everything Google killed in 2021". Android Police. 2021-12-21. Retrieved 2022-03-19.
+- ^ Zvinakis, Andrea (November 1, 2017). "Poly: Browse, discover and download 3D objects and scenes". Google. Archived from the original on November 1, 2017. Retrieved November 1, 2017.
+- ^ "Bring your lessons to life with Expeditions". Google for Education. Retrieved 2021-05-07.
+- ^ Li, Abner (2020-11-13). "Google shutting down Expeditions app, but will bring VR tours to Arts & Culture". 9 to 5 Google. Retrieved 2022-03-19.
+- ^ Robertson, Adi (2020-11-13). "Google is shutting down its VR field trip app Expeditions". The Verge. Retrieved 2022-03-19.
+- ^ Li, Abner (2021-02-17). "Google winding down standalone Crisis Map website given Search, Maps integration". 9 to 5 Google. Retrieved 2022-03-19.
+- ^ "Google will shut down App Maker on January 19, 2021". VentureBeat. January 27, 2020.
+- ^ Hall, Stephen (2019-11-21). "Google Cloud Print is dead as of December 31, 2020". 9to5Google. Retrieved 2019-11-22.
+- ^ "Print from Chrome – Computer – Google Chrome Help". support.google.com. Retrieved 2020-12-31.
+- ^ "Info about the Google Play Music phase-out". Google Inc. Archived from the original on October 31, 2020. Retrieved October 27, 2020.
+- ^ Li, Abner (December 3, 2020). "Google fully shuts down Play Music around the world". 9to5Google. Retrieved December 4, 2020.
+- ^ "Google Station". Google Station. Archived from the original on October 8, 2019. Retrieved 30 October 2020.
+- ^ Reichert, Corrine (August 28, 2019). "Google is shutting down another service". CNET.
+- ^ "Sunsetting Hire by Google". Google Support. Archived from the original on September 9, 2020.
+- ^ Li, Abner (2020-07-30). "Google sunsetting Password Checkup extension now that it's integrated with Chrome". 9 to 5 Google. Retrieved 2022-03-19.
+- ^ "Google Photos subscription service for printed pictures is shutting down". Android Police. 2020-06-18. Retrieved 2022-03-19.
+- ^ Wood, Charlie (April 29, 2020). "Google is killing its experimental social network Shoelace less than a year after it launched because of the coronavirus". Business Insider. Retrieved 2022-03-19.
+- ^ Mehta, Ivan (2020-04-02). "Google is shutting down its Neighbourly app". The Next Web. Retrieved 2022-03-19.
+- ^ "Fabric Roadmap". Fabric. Retrieved October 9, 2019.
+- ^ Li, Abner (2020-02-20). "Google sunsetting Material Theme Editor, hints at more design tools in 2020". February 20, 2020. Retrieved 2022-03-19.
+- ^ "Browser support for YouTube ends on Wii U". Destructoid. 2020-02-06. Archived from the original on October 15, 2022. Retrieved 2022-08-23.
+- ^ Statt, Nick (2020-02-04). "Google Fiber is dropping its TV package to focus solely on high-speed internet service". The Verge. Retrieved 2022-03-19.
+- ^ Schoon, Ben (2020-01-29). "Google is killing its 'One Today' donation app w/ only one week's notice". 9 to 5 Google. Retrieved 2022-03-19.
+- ^ Li, Abner (2020-02-06). "Google removes Androidify avatar maker from Play Store". February 6, 2020. Retrieved 2022-03-19.
+- ^ "Annotations report". YouTube Help. Google Inc. Archived from the original on April 2, 2019. Retrieved March 17, 2019.
+- ^ "Google is killing its Notifications Widget". engadget. June 2, 2019. Retrieved November 30, 2019.
+- ^ "Google is Removing Its Two Rarely Used Features". February 7, 2019.
+- ^ "Good News, and Better News – GTaskD". 4 February 2019. Archived from the original on October 23, 2021.
+- ^ Welch, Chris (December 11, 2018). "Google Allo messaging app is shutting down March 12th, 2019". The Verge. Archived from the original on March 12, 2019. Retrieved February 10, 2019.
+- ^ Orwant, Jon. "Important: Google Image Charts will be turned off soon". Google Groups. Archived from the original on January 22, 2011. Retrieved April 22, 2019.
+- ^ "Image Charts". Google Developers. Retrieved October 20, 2019.
+- ^ "Google's Inbox app is shutting down in March 2019". The Verge. Archived from the original on September 16, 2018. Retrieved September 16, 2018.
+- ^ "Project Strobe: Protecting your data, improving our third-party APIs, and sunsetting consumer Google+". Google Blog. Archived from the original on October 8, 2018. Retrieved October 8, 2018.
+- ^ "Shutting down Google+ for consumer (personal) accounts on April 2, 2019". Google+ Help. January 30, 2019. Retrieved February 1, 2019.
+- ^ "Google Is Shutting Down Its Jump VR Video Program". May 18, 2019. Retrieved November 30, 2019.
+- ^ Amadeo, Ron (May 1, 2019). "Nest, the company, died at Google I/O 2019". Ars Technica. Archived from the original on May 10, 2019. Retrieved May 10, 2019.
+- ^ "What's happening at Nest?". Nest. Retrieved October 20, 2019.
+- ^ Turner, Michele (May 16, 2019). "We hear you: updates to Works with Nest". Google Nest Blog.
+- ^ "YouTube app for Nintendo 3DS shuts down on September 3rd". August 26, 2019. Retrieved November 30, 2019.
+- ^ "Heads Up – We're removing the ability to message directly on YouTube after September 18". August 21, 2019. Retrieved November 30, 2019.
+- ^ "[Update: Shutdown date] Sorry, HTPC owners: YouTube is killing its web-based TV interface". September 16, 2019. Retrieved November 30, 2019.
+- ^ "Google discontinues Daydream VR". VentureBeat. October 15, 2019. Archived from the original on July 23, 2023. Retrieved October 17, 2019.
+- ^ "Google shutting down Area 120 project Touring Bird, integrated into other Travel efforts". October 22, 2019. Retrieved November 30, 2019.
+- ^ "Google's hyperlocal news app 'Bulletin' is shutting down". Android Police. September 26, 2019. Retrieved November 30, 2019.
+- ^ Li, Abner (December 11, 2018). "Google shutting down Fusion Tables next year, teases new data visualizations tools". 9to5Google. Archived from the original on March 22, 2019. Retrieved March 22, 2019.
+- ^ "Google Translator Toolkit is shutting down". Retrieved September 23, 2019.
+- ^ "Google Correlate". www.google.com. Retrieved September 11, 2019.
+- ^ a b "So Long Google Search Appliance". Fortune. Archived from the original on December 14, 2016. Retrieved November 19, 2016.
+- ^ "Google Search Appliance End of Life – Google Search Appliance Help". support.google.com. Archived from the original on June 26, 2019. Retrieved November 17, 2017.
+- ^ "Google Datally app is dead". TheNextWeb. October 17, 2019.
+- ^ "About Build With Chrome". Build with Chrome. Archived from the original on April 2, 2015. Retrieved March 12, 2015.
+- ^ "Create 3D games with friends, no experience required". Google. 2019-06-13. Retrieved 2022-06-08.
+- ^ Singh, Dhara (2019-06-13). "Google lets you create 3D games without coding knowledge". CNET. Retrieved 2022-06-08.
+- ^ Game Builder, Google Archive, 2022-06-04, retrieved 2022-06-08
+- ^ "Radio Station Automation Software". Archived from the original on March 30, 2014. Retrieved March 28, 2014.
+- ^ "About Google Rebang Service". Archived from the original on September 25, 2010.
+- ^ "Google's X files vanish". CNET.
+- ^ "QPX Express". Archived from the original on April 2, 2019. Retrieved April 2, 2019.
+- ^ Otis, Brian (November 16, 2018). "Update on our Smart Lens program with Alcon". Verily Blog. Archived from the original on May 31, 2019. Retrieved November 21, 2018.
+- ^ "G Suite Updates: Visualize data instantly with machine learning in Google Sheets". Archived from the original on June 12, 2018. Retrieved June 10, 2018.
+- ^ "Glass OS was a product killed by Google in 2017". killedby.tech. Archived from the original on 2024-03-31. Retrieved 2024-03-31.
+- ^ "Google Spaces will be shut down on April 17th, 2017 – Spaces Help". Archived from the original on February 26, 2017. Retrieved March 26, 2017.
+- ^ "Google Shutting Down Hands Free Next Week". February 2, 2017. Archived from the original on October 16, 2018. Retrieved October 15, 2018.
+- ^ "Google Plans To Discontinue Yet Another Product". Fortune. Archived from the original on March 27, 2017. Retrieved June 2, 2018.
+- ^ "Bidding farewell to Google Code". Google Open Source Blog. March 12, 2015. Archived from the original on March 12, 2015. Retrieved March 13, 2015.
+- ^ Sabharwal, Anil. "Moving on From Picasa". Archived from the original on February 12, 2016. Retrieved February 12, 2016.
+- ^ "Google is shuttering Google Compare: WSJ". Reuters. February 23, 2017. Archived from the original on March 25, 2017. Retrieved March 26, 2017.
+- ^ Lunden, Ingrid (November 7, 2016). "Google quietly shutters standalone Google Showtimes movie site". TechCrunch. Archived from the original on January 4, 2017. Retrieved January 4, 2017.
+- ^ "Google will shut down My Tracks on April 30". Android Central. January 28, 2016. Archived from the original on November 8, 2017. Retrieved November 7, 2017.
+- ^ "Google reportedly cancels Project Ara modular smartphone plans". September 2016. Archived from the original on May 4, 2017. Retrieved March 26, 2017.
+- ^ "Google confirms the end of its modular Project Ara smartphone". September 2, 2016. Archived from the original on February 27, 2017. Retrieved March 26, 2017.
+- ^ "Panoramio – Help – Copy Photos to Google Maps". Archived from the original on November 12, 2016. Retrieved March 26, 2017.
+- ^ "Google Feed API – Google Developers". Archived from the original on March 29, 2017. Retrieved March 26, 2017.
+- ^ "Google Ends Wildfire – Business Insider". Business Insider. March 14, 2014. Archived from the original on April 14, 2015. Retrieved April 9, 2015.
+- ^ "Google Flu Trends is dead – long live Google Trends? | UCL Research Department of Primary Care and Population Health Blog". blogs.ucl.ac.uk. Retrieved 2024-07-09.
+- ^ "Moderator shutdown announcement". google.com. Archived from the original on June 9, 2015. Retrieved April 7, 2015.
+- ^ "Google Hangouts' official website". Helpouts by Google. Archived from the original on February 13, 2015. Retrieved February 13, 2015.
+- ^ Okutta, Mark (February 15, 2015). "Google quits cashless fare business after BebaPay exit". Business Daily Africa. Nation Media Group. Archived from the original on April 24, 2016. Retrieved February 11, 2016.
+- ^ "Google Will Stop Selling Glass Next Week". TIME. 2015-01-15. Retrieved 2024-03-31.
+- ^ Грег Коладонато, менеджер по продуктам (Маунтин Вью, США) (June 28, 2007). ""Вопросы и ответы" Google". Официальный блог – Google Россия. Archived from the original on July 5, 2007. Retrieved July 7, 2007.
+{{cite web}}
+: CS1 maint: multiple names: authors list (link) - ^ Chitu, Alex (July 1, 2014). "Google Discontinues Q&A Services". Google Discontinues Q&A Services. Archived from the original on April 19, 2017. Retrieved March 14, 2017.
+- ^ "Google Completely Disables Discussion Search Feature". seroundtable.com. July 16, 2014. Archived from the original on November 9, 2014. Retrieved October 25, 2014.
+- ^ Lowensohn, Josh (January 16, 2014). "Google quietly kills off its Notifier service for mail and calendar events". The Verge. Vox Media. Archived from the original on March 30, 2017. Retrieved September 3, 2017.
+- ^ "What happened to iGoogle?". google.com. Archived from the original on April 1, 2013. Retrieved August 28, 2017.
+- ^ Latitude retired – Maps for mobile Help Archived October 8, 2015, at the Wayback Machine. Support.google.com (July 10, 2013). Retrieved on July 21, 2013.
+- ^ a b Hölzle, Urs (March 13, 2013). "A second spring of cleaning". Google Blog. Archived from the original on March 14, 2013. Retrieved March 14, 2013.
+- ^ Lunden, Ingrid (May 12, 2013). "Google Quietly Kills SMS Search, Closing One Way Of Connecting With Mobile Users Who Don't Have Data Plans". AOL Inc. Archived from the original on June 28, 2013. Retrieved June 30, 2013.
+- ^ "Official Announcement: Picnik is closing". Archived from the original on January 23, 2012. Retrieved January 20, 2012.
+- ^ "Calendar Help". google.com. Archived from the original on December 25, 2014. Retrieved December 9, 2014.
+- ^ "Picasa Web Albums Uploader for Mac is no longer available for download". Google Groups. Archived from the original on February 7, 2017. Retrieved January 22, 2016.
+- ^ Lee, Michael (December 7, 2012). "Google kills off free Google Apps offering". ZDNet. Archived from the original on March 7, 2013. Retrieved March 16, 2013.
+- ^ Mehrotra, Shishir. "An update on Google TV Ads". Archived from the original on October 28, 2012. Retrieved November 11, 2012.
+- ^ "TV Ads Help". Google Support. Archived from the original on June 26, 2019. Retrieved December 28, 2018.
+- ^ a b c Hölzle, Urs (November 22, 2011). "More spring cleaning out of season". Google Blog. Archived from the original on November 24, 2011. Retrieved November 24, 2011.
+- ^ 杨文洛. "关闭在中国的音乐搜索服务" [Turning Off Music Search Service in China] (in Chinese). Retrieved 2020-10-29.
+- ^ "Giving you a better Google". August 3, 2012. Archived from the original on February 18, 2017. Retrieved February 17, 2017.
+- ^ "bumptop/BumpTop". GitHub. Archived from the original on April 4, 2017. Retrieved March 26, 2017.
+- ^ "Google Video content moving to YouTube". blog.youtube. Retrieved 2021-05-09.
+- ^ Krishnan, Raj (January 14, 2009). "Stopping development on Google notebook". Google Notebook Blog. Archived from the original on January 27, 2009. Retrieved February 18, 2009.
+- ^ "Official Google Website Optimizer Blog: Saying goodbye to the Google Website Optimizer Blog". websiteoptimizer.blogspot.com. Archived from the original on July 23, 2015. Retrieved July 21, 2015.
+- ^ Eichner, Matt (July 3, 2012). "Spring cleaning in summer". Google Blog. Archived from the original on March 12, 2015. Retrieved March 13, 2015.
+- ^ "Top 10 google product". Shoutingblogger.com. Archived from the original on January 28, 2015. Retrieved January 24, 2015.
+- ^ Horowitz, Bradley (October 14, 2011). "A fall sweep". Google Blog. Archived from the original on November 23, 2011. Retrieved November 23, 2011.
+- ^ Pepitone, Julianne (October 14, 2011). "Buzz will be replaced by Google+". CNN Money. Archived from the original on February 16, 2013. Retrieved March 16, 2013.
+- ^ "Rock the Vote: A Petition to Bring Back Google Sets". Search Engine Watch. September 22, 2011. Archived from the original on February 19, 2013. Retrieved March 16, 2013.
+- ^ Young, Rob D. (July 25, 2011). "Google Directory Has Been Shut Down". Search Engine Watch. Archived from the original on July 14, 2014. Retrieved July 10, 2014.
+- ^ Grove, Jennifer Van. "Google Goes Cold on Hotpot, Shutters the Standalone App". Mashable. Retrieved June 2, 2018.
+- ^ "Retiring Real Estate on Google Maps". January 26, 2011. Archived from the original on November 14, 2011. Retrieved November 10, 2011.
+- ^ "Lively no more". Google Blog. November 19, 2008. Archived from the original on December 18, 2008. Retrieved January 9, 2009.
+- ^ Wauters, Robin (November 24, 2008). "Why Did Google Discontinue SearchMash?". Archived from the original on February 2, 2017. Retrieved March 26, 2017.
+- ^ "Google Says Goodbye to Hello". May 8, 2008. Archived from the original on February 2, 2017. Retrieved March 26, 2017.
+- ^ "Google Closes Video Marketplace; Users Out Of Luck". TechCrunch. August 10, 2007. Archived from the original on June 28, 2013. Retrieved June 14, 2013.

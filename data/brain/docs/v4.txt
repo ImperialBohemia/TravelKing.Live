@@ -1,0 +1,5 @@
+Stay organized with collections
+Save and categorize content based on your preferences.
+The page you're looking for isn't available.
+The link you clicked was to documentation on the legacy version, Universal Analytics. Universal Analytics has sunset and is no longer available as of July 1, 2024.
+[[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]]

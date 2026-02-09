@@ -1,0 +1,18 @@
+{
+    "timestamp": 1770638586.4649894,
+    "services": {
+        "google": {
+            "status": "PERFECT",
+            "mode": "Local Authorized User"
+        },
+        "cpanel": {
+            "status": "PERFECT",
+            "user": "imperkhx"
+        },
+        "facebook": {
+            "status": "EXPIRED",
+            "payout_impact": "HIGH",
+            "action": "Re-auth required"
+        }
+    }
+}

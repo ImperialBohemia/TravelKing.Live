@@ -1,0 +1,37 @@
+[
+    {
+        "url": "https://developers.google.com/products",
+        "file": "data/brain/docs/products.txt",
+        "size": 525
+    },
+    {
+        "url": "https://cloud.google.com/products",
+        "file": "data/brain/docs/products.txt",
+        "size": 2334
+    },
+    {
+        "url": "https://workspace.google.com/products/",
+        "file": "data/brain/docs/products.txt",
+        "size": 1777
+    },
+    {
+        "url": "https://developers.google.com/forms/api/reference/rest",
+        "file": "data/brain/docs/rest.txt",
+        "size": 1911
+    },
+    {
+        "url": "https://developers.google.com/sheets/api/reference/rest",
+        "file": "data/brain/docs/rest.txt",
+        "size": 3396
+    },
+    {
+        "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+        "file": "data/brain/docs/seo-starter-guide.txt",
+        "size": 19887
+    },
+    {
+        "url": "https://developers.google.com/analytics/devguides/reporting/core/v4",
+        "file": "data/brain/docs/v4.txt",
+        "size": 734
+    }
+]

@@ -1,0 +1,34 @@
+[
+    {
+        "timestamp": 1770485127.3398535,
+        "info": {
+            "name": "Reality Praha 1",
+            "url": "http://realitypraha1.cz"
+        },
+        "verification": {
+            "is_active": true,
+            "has_ssl": false,
+            "status_code": 200
+        },
+        "strategy": {
+            "error": "400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}",
+            "status": "failed"
+        }
+    },
+    {
+        "timestamp": 1770488698.0928154,
+        "info": {
+            "name": "Reality Novak",
+            "url": "http://realitynovak.cz",
+            "pain_point": "Security Risk (No SSL)",
+            "b2b_score": 80
+        },
+        "verification": {
+            "is_active": true,
+            "has_ssl": false,
+            "status_code": 200
+        },
+        "strategy": "{\"error\": \"Brain offline (Waiting for Login)\", \"status\": \"failed\", \"fallback\": \"Use manual CLI commands.\"}",
+        "status": "Ready for Outreach"
+    }
+]

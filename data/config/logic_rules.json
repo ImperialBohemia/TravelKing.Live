@@ -1,0 +1,42 @@
+{
+    "enterprise_v2026": {
+        "priority": "profit_integrity",
+        "compliance": "max_safety",
+        "orchestration_mode": "hybrid_max"
+    },
+    "automation_rules": [
+        {
+            "id": "RULE_001_SYNC",
+            "name": "Atomic Git Sync",
+            "condition": "after_each_operation",
+            "action": "git_sync",
+            "enforce": true
+        },
+        {
+            "id": "RULE_002_CLEAN",
+            "name": "Hygiene First",
+            "condition": "before_evolution",
+            "action": "janitor_purge",
+            "enforce": true
+        },
+        {
+            "id": "RULE_003_BRAIN",
+            "name": "Intelligence Sanity",
+            "condition": "ai_response_received",
+            "action": "verify_json_integrity",
+            "enforce": true
+        }
+    ],
+    "scaling_params": {
+        "max_concurrent_leads": 50,
+        "max_video_generation_daily": 33,
+        "max_image_generation_daily": 1000,
+        "min_wait_between_api_calls_ms": 100
+    },
+    "safety_thresholds": {
+        "max_leads_failure_rate": 0.2,
+        "max_api_error_count_hourly": 5,
+        "auto_shutdown_on_security_breach": true
+    },
+    "jules_integration_status": "ACTIVE_MASTER"
+}

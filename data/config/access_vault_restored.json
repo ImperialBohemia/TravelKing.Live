@@ -1,0 +1,28 @@
+{
+    "google": {
+        "access_token": "ya29.a0AUMWg_Kl_CoaT9QYwW5pzSjb8eZ5JYTZuFZWSRx0Q18No1c5k6HGXLYRJsgq6QhNOcXtFUC6AX4-YZubYi9FS28xo4ja_oyOQkyRGlf4ZESc4b01M50LexlwHBeU2dsaxv7ZmhVdt_EibhHGL1-HUbUrOm-8EilfmGzrOEmfIP4Uvcvcv9vAgfG_DEuqnKn9AwPoyDiNG48kbwaCgYKATwSARISFQHGX2Mic50ExSR2uSQqX9-IXUhuaQ0213",
+        "refresh_token": "1//03EwQ53B8_9YWCgYIARAAGAMSNwF-L9IrWMdxuGljilD18YVKe21-veQwWtGZiapJW_wxHGqaI3LX7P66ISfxi1DxT1hA5wdrPOI",
+        "email": "valachman@gmail.com",
+        "scopes": [
+            "openid",
+            "https://www.googleapis.com/auth/userinfo.profile",
+            "https://www.googleapis.com/auth/userinfo.email",
+            "https://www.googleapis.com/auth/cloud-platform"
+        ]
+    },
+    "facebook": {
+        "app_id": "696429503450342",
+        "app_secret": "cf4b4adaa2105ee96165eede1983fe29",
+        "access_token": "EAAJ5ZAiEqDOYBQqVWU6HcQyd8SgVU5dqRDbKCYe6wbM9WUTIDdSTUTqopMWbnWByur83bMLpzckZBtYVmpW3WQ8Ci2ZBNict3X1ZCsnBwH0Y4ba9uDcw4aiSLmTwMF9zkYZAJ7OHh8FbZAOMJL0TzQ9SoEoSCjxqif1z9qZCQPtG18JQ29MfiH5aFkEWqv8CbejSDfQj5ue9Gku",
+        "page_token_topstroje": "EAAJ5ZAiEqDOYBQogtaZAZAPzHmBtF8RBT4ueJQpWaImWaEN1uX6niIPO3PnStQggjvrZBqPydLSUwyGgZAcGlAqTT9drIc0ZBdgjWU3Rv0SaE5fDxx9rVIN87td1355Lex4gzJnYdXS3Ikn4tqsgcdiZBYlyPdbSLe6MctO6hifnn3ZBTZCsXxiq5h8vVzrluZCNSMmeVCDMXy2xJjKnXpyx8lfzoC"
+    },
+    "cpanel": {
+        "host": "server707.web-hosting.com",
+        "user": "imperkhx",
+        "api_token": "LUTLTTXMW901X3DUJH9FJPEM6CXNPK4D"
+    },
+    "bing": {
+        "api_key": "9308a57b97ba452cb023db493e88b265",
+        "index_now_key": "c62f2ffa0a9744cb8b0381c76fa48a05"
+    }
+}
