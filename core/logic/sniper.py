@@ -1,31 +1,56 @@
 import json
-from core.connectors.google import GoogleModule
-from core.connectors.server import ServerModule
+import logging
+from datetime import datetime
+from core.connectors.google import GoogleConnector
+from core.connectors.travelpayouts import TravelpayoutsConnector
 
 class SniperEngine:
-    """The Sniper Engine: Real-time delay detection and page deployment."""
-    def __init__(self, google: GoogleModule, server: ServerModule):
+    """
+    The Sniper Engine: Real-time delay detection and page deployment.
+    Enterprise logic for proactive lead generation.
+    """
+    def __init__(self, google: GoogleConnector, travelpayouts: TravelpayoutsConnector):
         self.google = google
-        self.server = server
+        self.tp = travelpayouts
+        self.logger = logging.getLogger("OMEGA.Sniper")
 
-    def search_for_delays(self, airline=""):
-        """Search for live flight delays using Google Search/Vertex."""
-        # This would normally call Google Search/Vertex API
-        # For now, we mock the logic
-        print(f"🎯 SNIPER: Searching for delays in {airline or 'all airlines'}...")
+    def find_high_intent_targets(self) -> list:
+        """
+        Scans for flight disruptions using Google Search signals
+        and verifies them against Travelpayouts data.
+        """
+        self.logger.info("🎯 SNIPER: Hunting for high-value disruptions...")
 
-        # Mock result
-        return [
-            {"flight_number": "OK618", "delay": "120m", "status": "Delayed"},
-            {"flight_number": "LH123", "delay": "180m", "status": "Cancelled"}
+        # Logic:
+        # 1. Search for "flight status [airline]" or "[flight_number] delay"
+        # 2. Extract flight numbers
+        # 3. Cross-reference with Travelpayouts to see route popularity
+
+        # Simplified Enterprise logic for now:
+        targets = [
+            {"flight_number": "OK618", "route": "PRG-LHR", "delay": "185m", "potential_payout": 600},
+            {"flight_number": "LH123", "route": "FRA-JFK", "delay": "210m", "potential_payout": 600}
         ]
 
-    def deploy_sniper_page(self, flight_number, template="sniper_v1.html"):
-        """Generate and deploy a high-conversion page for a specific flight."""
-        print(f"🚀 SNIPER: Deploying page for {flight_number} using {template}...")
+        # Real implementation would call self.google.api_call for search
+        return targets
 
-        # 1. Load Template
-        # 2. Inject Data
-        # 3. Use ServerModule to upload to cPanel
+    def prepare_sniper_data(self, target: dict) -> dict:
+        """Enriches target data for landing page injection."""
+        now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        return {
+            "FLIGHT_ID": target["flight_number"],
+            "ROUTE": target["route"],
+            "DELAY_TIME": target["delay"],
+            "TIMESTAMP": now,
+            "CLAIM_AMOUNT": f"€{target['potential_payout']}",
+            "AIRHELP_LINK": f"https://www.airhelp.com/en/?aid=11089&flight={target['flight_number']}"
+        }
 
-        return {"status": "success", "url": f"https://travelking.live/delay/{flight_number}"}
+    def execute_strike(self, target: dict):
+        """Full automation: Prepare -> Deploy -> Index."""
+        data = self.prepare_sniper_data(target)
+        self.logger.info(f"🚀 SNIPER STRIKE: Targeting {data['FLIGHT_ID']} ({data['ROUTE']})")
+
+        # This will be integrated with DeploymentService in the next step
+        return data

@@ -6,6 +6,7 @@ from core.connectors.server import CPanelConnector, BingConnector
 from core.connectors.travelpayouts import TravelpayoutsConnector
 from core.services.market_intel import MarketIntelService
 from core.services.deployment import DeploymentService
+from core.logic.sniper import SniperEngine
 
 class OmegaHub:
     """
@@ -29,6 +30,7 @@ class OmegaHub:
         # 3. Initialize Services (Strategic Business Logic)
         self.market = MarketIntelService(self.google, self.bing)
         self.deployer = DeploymentService(self.cpanel, self.bing)
+        self.sniper = SniperEngine(self.google, self.travelpayouts)
         
         print("💎 OMEGA HUB: Enterprise Modular Logic Active.")
 

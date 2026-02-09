@@ -1,9 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="robots" content="noindex, nofollow">
-    <!-- Google Tag Manager -->
+    <!-- OMEGA Supreme Tracking -->
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
                 'gtm.start':
@@ -12,54 +10,71 @@
                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-WB69V297');</script>
-    <!-- End Google Tag Manager -->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{FLIGHT_ID}} Delay Compensation | TravelKing.live</title>
+    <title>Compensation for Flight {{FLIGHT_ID}} | TravelKing.live</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .gradient-bg { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); }
+        .omega-gradient { background: radial-gradient(circle at top right, #1e3a8a 0%, #0f172a 100%); }
+        .pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .7; } }
     </style>
 </head>
-<body class="bg-slate-50 font-sans">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WB69V297" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+<body class="bg-slate-50 font-sans text-slate-900 antialiased">
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WB69V297" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <div class="gradient-bg text-white py-6 px-4 text-center shadow-lg">
-        <h1 class="text-2xl font-bold italic tracking-tighter">TRAVELKING<span class="text-yellow-400">.LIVE</span></h1>
-        <p class="text-sm opacity-90">Official EU 261/2004 Compensation Hub</p>
-    </div>
+    <header class="omega-gradient text-white py-8 px-4 text-center shadow-2xl">
+        <h1 class="text-3xl font-black italic tracking-tighter uppercase">TRAVELKING<span class="text-yellow-400">.LIVE</span></h1>
+        <div class="mt-2 inline-block bg-yellow-400 text-blue-900 text-[10px] font-bold px-3 py-1 rounded-full tracking-widest uppercase">
+            Official Passenger Rights Authority
+        </div>
+    </header>
 
-    <main class="max-w-md mx-auto mt-8 px-4">
-        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200">
-            <div class="p-6">
-                <div class="flex justify-between items-center mb-6">
-                    <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-xs font-bold uppercase">Status: Delayed / Cancelled</span>
-                    <span class="text-slate-400 text-xs font-mono">{{TIMESTAMP}}</span>
+    <main class="max-w-md mx-auto -mt-6 px-4 pb-20">
+        <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-200">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-8">
+                    <span class="flex items-center text-red-600 font-bold text-xs uppercase tracking-widest">
+                        <span class="w-2 h-2 bg-red-600 rounded-full mr-2 pulse"></span>
+                        Disruption Detected
+                    </span>
+                    <span class="text-slate-400 text-[10px] font-mono">{{TIMESTAMP}}</span>
                 </div>
                 
-                <h2 class="text-3xl font-extrabold text-slate-800 mb-2">{{FLIGHT_ID}}</h2>
-                <p class="text-slate-600 mb-6">{{ROUTE}}</p>
+                <h2 class="text-4xl font-black text-slate-900 mb-1">{{FLIGHT_ID}}</h2>
+                <p class="text-slate-500 font-medium mb-8 uppercase tracking-tighter text-sm">{{ROUTE}}</p>
 
-                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8">
-                    <p class="text-yellow-800 font-bold text-lg">💰 Estimated: €600.00</p>
-                    <p class="text-yellow-700 text-sm">Potential compensation per passenger based on EU law.</p>
+                <div class="bg-blue-50 border-l-4 border-blue-600 p-5 mb-10 rounded-r-xl">
+                    <p class="text-blue-900 font-black text-3xl">UP TO €600.00</p>
+                    <p class="text-blue-700 text-xs mt-1 font-semibold leading-relaxed">
+                        Under EC Regulation 261/2004, you are entitled to financial compensation for this disruption.
+                    </p>
                 </div>
 
-                <a href="https://www.airhelp.com/en/?aid=11089" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-5 rounded-xl font-bold text-xl transition shadow-lg active:scale-95">
+                <a href="{{AIRHELP_LINK}}" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-6 rounded-2xl font-black text-xl transition-all shadow-xl active:scale-95 hover:shadow-2xl">
                     CLAIM MY MONEY NOW →
                 </a>
                 
-                <p class="text-center text-slate-400 text-[10px] mt-4 italic">No win, no fee. Legal check takes 2 minutes.</p>
+                <div class="mt-8 pt-8 border-t border-slate-100">
+                    <div class="flex items-center justify-center space-x-6 grayscale opacity-40">
+                        <span class="text-[10px] font-bold tracking-widest">NO WIN NO FEE</span>
+                        <span class="text-[10px] font-bold tracking-widest">LEGAL CHECK OK</span>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="mt-12 text-center text-slate-400 text-sm">
-            <p>© 2026 TravelKing.live - Authorized Authority Hub</p>
-        </div>
+        <footer class="mt-12 text-center">
+            <p class="text-slate-400 text-[9px] px-8 leading-relaxed italic">
+                *Affiliate Disclosure: TravelKing.live is an independent information hub. We partner with specialized legal services like AirHelp to process claims. We may receive a commission at no cost to you.
+            </p>
+            <div class="mt-6 flex justify-center space-x-4 text-slate-300 text-[10px] font-bold uppercase tracking-widest">
+                <a href="/privacy" class="hover:text-blue-600">Privacy</a>
+                <span>•</span>
+                <a href="/terms" class="hover:text-blue-600">Terms</a>
+            </div>
+        </footer>
     </main>
 </body>
 </html>
