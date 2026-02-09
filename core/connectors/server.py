@@ -1,5 +1,6 @@
 import requests
 import json
+import logging
 from core.base.connector import BaseConnector
 
 class CPanelConnector(BaseConnector):
@@ -27,7 +28,7 @@ class CPanelConnector(BaseConnector):
 class BingConnector(BaseConnector):
     """
     Enterprise Bing Webmaster & IndexNow Connector (OMEGA Architecture).
-    Permanent link for SEO and instant indexing.
+    Upgraded for Deep Data Extraction (Keyword Research & Search Trends).
     """
     def __init__(self, vault):
         super().__init__("Bing", vault.get("bing", {}))
@@ -40,13 +41,20 @@ class BingConnector(BaseConnector):
         res = self.call("GET", url)
         return isinstance(res, dict) and "error" not in res
 
+    def get_search_intelligence(self, query: str) -> dict:
+        """Extracts search volume and trend data from Bing."""
+        self.logger.info(f"📊 BING: Extracting intelligence for '{query}'...")
+        # Official Bing Webmaster API for Keyword Research
+        endpoint = f"GetKeywordStats?apikey={self.api_key}&query={query}&country=US&language=en-US"
+        return self.call("GET", f"https://ssl.bing.com/webmaster/api.svc/json/{endpoint}")
+
     def api_call(self, endpoint, method="POST", data=None):
-        """Standardized Bing API caller."""
+        """Standardized Bing API caller with BOM handling."""
         url = f"https://ssl.bing.com/webmaster/api.svc/json/{endpoint}?apikey={self.api_key}"
-        # We override the BaseConnector call slightly to handle BOM in Bing's JSON
         try:
             response = self.session.request(method, url, json=data)
             response.raise_for_status()
+            # Bing API sometimes returns a BOM (Byte Order Mark)
             return json.loads(response.text.lstrip('\ufeff')) if response.text else {}
         except Exception as e:
             self.logger.error(f"Bing API call failed: {e}")

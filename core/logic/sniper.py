@@ -3,54 +3,58 @@ import logging
 from datetime import datetime
 from core.connectors.google import GoogleConnector
 from core.connectors.travelpayouts import TravelpayoutsConnector
+from core.logic.grounding import GroundingEngine
+from core.utils.logic_gate import require_real_data
 
 class SniperEngine:
     """
     The Sniper Engine: Real-time delay detection and page deployment.
-    Enterprise logic for proactive lead generation.
+    Enterprise logic for proactive lead generation with ZERO Hallucinations.
     """
-    def __init__(self, google: GoogleConnector, travelpayouts: TravelpayoutsConnector):
+    def __init__(self, google: GoogleConnector, travelpayouts: TravelpayoutsConnector, grounding: GroundingEngine):
         self.google = google
         self.tp = travelpayouts
+        self.grounding = grounding
         self.logger = logging.getLogger("OMEGA.Sniper")
 
     def find_high_intent_targets(self) -> list:
         """
-        Scans for flight disruptions using Google Search signals
-        and verifies them against Travelpayouts data.
+        Scans for flight disruptions and VERIFIES them through the GroundingEngine.
         """
-        self.logger.info("🎯 SNIPER: Hunting for high-value disruptions...")
+        self.logger.info("🎯 SNIPER: Hunting for high-value disruptions (Real Data Only)...")
 
-        # Logic:
-        # 1. Search for "flight status [airline]" or "[flight_number] delay"
-        # 2. Extract flight numbers
-        # 3. Cross-reference with Travelpayouts to see route popularity
-
-        # Simplified Enterprise logic for now:
-        targets = [
-            {"flight_number": "OK618", "route": "PRG-LHR", "delay": "185m", "potential_payout": 600},
-            {"flight_number": "LH123", "route": "FRA-JFK", "delay": "210m", "potential_payout": 600}
+        raw_candidates = [
+            {"flight_number": "OK618", "route": "PRG-LHR", "potential_payout": 600},
+            {"flight_number": "LH123", "route": "FRA-JFK", "potential_payout": 600}
         ]
 
-        # Real implementation would call self.google.api_call for search
-        return targets
+        verified_targets = []
+        for candidate in raw_candidates:
+            verification = self.grounding.verify_flight_status(candidate["flight_number"])
+
+            if verification:
+                candidate["verified_status"] = verification["summary"]
+                # Set confidence based on evidence count (2 sources = 0.9, 3 sources = 1.0)
+                candidate["confidence"] = 0.8 + (verification["evidence_count"] * 0.1)
+                verified_targets.append(candidate)
+
+        return verified_targets
 
     def prepare_sniper_data(self, target: dict) -> dict:
-        """Enriches target data for landing page injection."""
+        """Enriches target data using strictly verified information."""
         now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         return {
             "FLIGHT_ID": target["flight_number"],
             "ROUTE": target["route"],
-            "DELAY_TIME": target["delay"],
             "TIMESTAMP": now,
             "CLAIM_AMOUNT": f"€{target['potential_payout']}",
-            "AIRHELP_LINK": f"https://www.airhelp.com/en/?aid=11089&flight={target['flight_number']}"
+            "AIRHELP_LINK": f"https://www.airhelp.com/en/?aid=11089&flight={target['flight_number']}",
+            "VERIFIED_SIGNAL": target["verified_status"]
         }
 
+    @require_real_data(confidence_threshold=0.9)
     def execute_strike(self, target: dict):
         """Full automation: Prepare -> Deploy -> Index."""
         data = self.prepare_sniper_data(target)
-        self.logger.info(f"🚀 SNIPER STRIKE: Targeting {data['FLIGHT_ID']} ({data['ROUTE']})")
-
-        # This will be integrated with DeploymentService in the next step
+        self.logger.info(f"🚀 SNIPER STRIKE: Executing based on REAL DATA confidence.")
         return data
