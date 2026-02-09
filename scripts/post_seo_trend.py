@@ -25,8 +25,15 @@ def post_trend_to_bsky():
     image_path = "/home/q/.gemini/antigravity/brain/e5440fd9-29de-4a08-b77d-358f4614ee8f/luxury_ai_aviation_trend_2026_1770640305334.png"
     alt_text = "Luxury aviation lounge with a holographic AI itinerary display during sunset."
     
-    print("Publishing SEO Trend Post (with Hyperlink) to Bluesky...")
-    response = client.post_with_image(rich_text, image_path, alt_text, facets=facets)
+    print("Publishing SEO Trend Post (Link Card) to Bluesky...")
+    response = client.post_with_link_card(
+        text=rich_text, 
+        url="https://villiers.ai/?id=11089",
+        title="Luxury Private Jet Charter | Book in 2026",
+        description="Experience the peak of aviation with AI-driven personalized scheduling. Real-time availability, global reach, 💎 excellence.",
+        thumb_path=image_path,
+        facets=facets
+    )
     print(f"Post published successfully! Uri: {response.uri}")
 
 if __name__ == "__main__":
