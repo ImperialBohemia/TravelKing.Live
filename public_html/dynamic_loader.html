@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelKing.Live - Flight Assistance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #f8f9fa;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 100px;
+            font-size: 24px;
+            color: #666;
+        }
+
+        #content {
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <div class="loading">Loading TravelKing...</div>
+    </div>
+
+    <script>
+        const SHEET_ID = '1uvNvNKei8sgmrASHE5OpQKwEANcOFjxOCdIxMWBnOQc';
+        const SHEET_NAME = 'Content';
+
+        // Fetch content from public Google Sheet
+        async function loadContent() {
+            const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${SHEET_NAME}`;
+
+            try {
+                const response = await fetch(url);
+                const text = await response.text();
+
+                // Google Sheets returns JSONP-like response, extract JSON
+                const jsonStr = text.match(/google\.visualization\.Query\.setResponse\(([\s\S]*)\);$/);
+                if (!jsonStr) throw new Error('Invalid response');
+
+                const data = JSON.parse(jsonStr[1]);
+                const rows = data.table.rows;
+
+                // Find 'home' page (first data row after header)
+                if (rows.length > 0) {
+                    // Column 0 = PageID, Column 1 = HTML_Content
+                    const htmlContent = rows[0].c[1]?.v || '<h1>No content found</h1>';
+                    document.getElementById('content').innerHTML = htmlContent;
+                }
+            } catch (error) {
+                console.error('Error loading content:', error);
+                document.getElementById('content').innerHTML = `
+                    <div style="font-family:'Outfit',sans-serif;margin:0;padding:0;">
+                        <nav style="background:black;color:white;padding:20px;text-align:center;">
+                            <h1 style="margin:0;font-size:28px;">TravelKing<span style="color:#FFD700;">.Live</span></h1>
+                        </nav>
+                        <header style="background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('https://images.unsplash.com/photo-1542296332-2e44a991b12b?w=1920');background-size:cover;padding:100px 20px;text-align:center;color:white;">
+                            <h2 style="font-size:48px;font-weight:800;margin-bottom:20px;">Flight Cancelled? Don't Panic.</h2>
+                            <p style="font-size:20px;color:#ccc;margin-bottom:30px;">Expert guidance on compensation and rebooking.</p>
+                            <a href="https://villiers.ai/?id=11089" target="_blank" style="background:#FFD700;color:black;padding:15px 30px;border-radius:30px;font-weight:bold;text-decoration:none;">Book Private Rescue</a>
+                        </header>
+                        <section style="padding:60px 20px;max-width:800px;margin:0 auto;">
+                            <h3 style="font-size:28px;text-align:center;">Loading content...</h3>
+                        </section>
+                    </div>
+                `;
+            }
+        }
+
+        loadContent();
+    </script>
+</body>
+
+</html>
