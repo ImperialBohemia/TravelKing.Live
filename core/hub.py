@@ -8,6 +8,7 @@ from core.google.gemini import GeminiClient
 from core.services.market_intel import MarketIntelService
 from core.services.deployment import DeploymentService
 from core.logic.sniper import SniperEngine
+from services.blog.engine import BlogEngine
 
 class OmegaHub:
     """
@@ -43,6 +44,7 @@ class OmegaHub:
         self.market = MarketIntelService(self.google, self.bing, self.gemini)
         self.deployer = DeploymentService(self.cpanel, self.bing)
         self.sniper = SniperEngine(self.google, self.cpanel, self.gemini)
+        self.blog_engine = BlogEngine(self.gemini)
         
         print("💎 OMEGA HUB: Enterprise Modular Logic Active.")
 
@@ -56,7 +58,8 @@ class OmegaHub:
             "cPanel": "ACTIVE 🟢" if self.cpanel.test_connection() else "OFFLINE 🔴",
             "Bing": "ACTIVE 🟢" if self.bing.test_connection() else "OFFLINE 🔴",
             "Travelpayouts": "ACTIVE 🟢" if self.travelpayouts.test_connection() else "OFFLINE 🔴",
-            "Gemini": "ACTIVE 🟢" if "Error" not in gemini_res else "OFFLINE 🔴"
+            "Gemini": "ACTIVE 🟢" if "Error" not in gemini_res else "OFFLINE 🔴",
+            "BlogEngine": "ACTIVE 🟢"
         }
 
 hub = OmegaHub()

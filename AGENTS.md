@@ -37,3 +37,8 @@ Refer to `knowledge/OMNI_VAULT_MAP.md` for a complete directory of credentials a
 - Deployment to **Netlify**, **Vercel**, or any other decentralized cloud platform is **STRICTLY PROHIBITED**.
 - This project is exclusively hosted on private cPanel infrastructure (Server 707).
 - Any attempt to configure or deploy to Netlify ("netlify bot") constitutes a policy violation.
+
+## 📝 CONTENT STANDARDS (2026)
+- **Mandatory**: All blog content must adhere to `knowledge/BLOGGING_2026.md`.
+- **Key Requirements**: E-E-A-T, AIEO (Key Takeaways box), 7-10 visuals, and personal anecdotes.
+- **Engine**: Use `services.blog.engine.BlogEngine` for generation to ensure compliance.
