@@ -6,7 +6,6 @@ Every module imports from here instead of building its own paths.
 """
 from pathlib import Path
 import json
-import os
 
 # ══════════════════════════════════════════════
 # PATHS
