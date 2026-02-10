@@ -1,4 +1,3 @@
-
 import json
 import os
 from core.connectors.google import GoogleConnector
@@ -19,8 +18,12 @@ class OmegaHub:
         # 1. Load Vault (Permanent Credentials)
         self.base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         vault_path = os.path.join(self.base_dir, "config", "access_vault.json")
-        with open(vault_path, "r") as f:
-            self.vault = json.load(f)
+        try:
+            with open(vault_path, "r") as f:
+                self.vault = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError, Exception) as e:
+            print(f"⚠️ OMEGA HUB WARNING: Could not load access vault ({e}). Initializing in degraded mode.")
+            self.vault = {}
 
         # 2. Initialize Connectors (Raw API Bridges)
         self.google = GoogleConnector(self.vault)
