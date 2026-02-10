@@ -13,8 +13,8 @@
 ## ✅ VERIFIED WORKING COMPONENTS
 
 ### 1. Google OAuth (FULL ADMIN ACCESS)
-- **Client ID:** `1009428807876-seopbefn13ev9fnot0sdsh1018fp00iu.apps.googleusercontent.com`
-- **Client Secret:** `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`
+- **Client ID:** Stored in `config/access_vault.json` or Environment Variables
+- **Client Secret:** Stored in `config/access_vault.json` or Environment Variables
 - **Refresh Token:** Stored in `config/access_vault.json`
 - **Scopes:**
   - ✅ `https://mail.google.com/` (Full Gmail)

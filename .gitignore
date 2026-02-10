@@ -5,7 +5,7 @@
 config/access_vault.json
 config/service_account.json
 config/google_creds.json
-data/config/access_vault_restored.json
+data/config/*.json
 
 # === Python ===
 __pycache__/

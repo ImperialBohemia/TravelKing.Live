@@ -16,8 +16,8 @@ class GoogleConnector(BaseConnector):
         self.token = self.config.get('access_token')
         self.refresh_token = self.config.get('refresh_token')
         # Official Project OAuth Client ID (TravelKing OMEGA)
-        self.client_id = self.config.get("client_id", "1009428807876-seopbefn13ev9fnot0sdsh1018fp00iu.apps.googleusercontent.com")
-        self.client_secret = self.config.get("client_secret", "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")
+        self.client_id = self.config.get("client_id") or os.environ.get("GOOGLE_CLIENT_ID")
+        self.client_secret = self.config.get("client_secret") or os.environ.get("GOOGLE_CLIENT_SECRET")
 
         # SDK Path Injection (SimpleCodeSpace Enterprise Foundation)
         sdk_paths = [
