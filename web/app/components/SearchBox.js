@@ -5,11 +5,22 @@ import { useState } from "react";
 export default function SearchBox() {
     const [from, setFrom] = useState("");
     const [to, setTo] = useState("");
+    const [error, setError] = useState(false);
 
     const handleSearch = () => {
-        if (!from || !to) return;
+        if (!from || !to) {
+            setError(true);
+            return;
+        }
+        setError(false);
         const url = `https://www.jetradar.com/flights/?origin=${from}&destination=${to}&origin_name=${from}&destination_name=${to}&marker=532822&locale=en`;
         window.open(url, "_blank");
+    };
+
+    const handleSwap = () => {
+        const temp = from;
+        setFrom(to);
+        setTo(temp);
     };
 
     return (
@@ -21,28 +32,45 @@ export default function SearchBox() {
 
                     <div className="flex flex-col md:flex-row items-end gap-6 relative z-10">
                         <div className="flex-1 w-full group">
-                            <label className="block text-[10px] uppercase font-black tracking-[0.2em] text-gold-soft mb-3 ml-1">Origin Port</label>
+                            <label htmlFor="origin" className="block text-[10px] uppercase font-black tracking-[0.2em] text-gold-soft mb-3 ml-1">Origin Port</label>
                             <input
+                                id="origin"
                                 type="text"
                                 placeholder="City or Airport (e.g. PRG)"
-                                className="w-full bg-white/5 border border-white/10 px-6 py-5 rounded-2xl text-white focus:outline-none focus:border-gold-bright transition-all placeholder:text-slate-600 font-display text-lg"
+                                className={`w-full bg-white/5 border px-6 py-5 rounded-2xl text-white focus:outline-none focus:border-gold-bright transition-all placeholder:text-slate-600 font-display text-lg ${error && !from ? 'border-red-500 animate-pulse' : 'border-white/10'}`}
                                 value={from}
-                                onChange={(e) => setFrom(e.target.value.toUpperCase())}
+                                onChange={(e) => {
+                                    setFrom(e.target.value.toUpperCase());
+                                    if (error && e.target.value) setError(false);
+                                }}
+                                aria-invalid={error && !from}
+                                aria-required="true"
                             />
                         </div>
 
-                        <div className="flex items-center justify-center h-16 w-16 mb-2 hidden md:flex">
+                        <button
+                            type="button"
+                            onClick={handleSwap}
+                            aria-label="Swap locations"
+                            className="group flex items-center justify-center h-16 w-16 mb-2 hidden md:flex hover:bg-white/5 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-gold-bright/50"
+                        >
                             <span className="text-2xl opacity-20 group-hover:opacity-100 transition-opacity">⇌</span>
-                        </div>
+                        </button>
 
                         <div className="flex-1 w-full">
-                            <label className="block text-[10px] uppercase font-black tracking-[0.2em] text-gold-soft mb-3 ml-1">Destination Target</label>
+                            <label htmlFor="destination" className="block text-[10px] uppercase font-black tracking-[0.2em] text-gold-soft mb-3 ml-1">Destination Target</label>
                             <input
+                                id="destination"
                                 type="text"
                                 placeholder="Target Destination (e.g. DXB)"
-                                className="w-full bg-white/5 border border-white/10 px-6 py-5 rounded-2xl text-white focus:outline-none focus:border-gold-bright transition-all placeholder:text-slate-600 font-display text-lg"
+                                className={`w-full bg-white/5 border px-6 py-5 rounded-2xl text-white focus:outline-none focus:border-gold-bright transition-all placeholder:text-slate-600 font-display text-lg ${error && !to ? 'border-red-500 animate-pulse' : 'border-white/10'}`}
                                 value={to}
-                                onChange={(e) => setTo(e.target.value.toUpperCase())}
+                                onChange={(e) => {
+                                    setTo(e.target.value.toUpperCase());
+                                    if (error && e.target.value) setError(false);
+                                }}
+                                aria-invalid={error && !to}
+                                aria-required="true"
                             />
                         </div>
 
