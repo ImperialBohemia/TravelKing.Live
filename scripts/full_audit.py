@@ -1,131 +1,114 @@
+"""
+Enterprise Full Audit — Live integration test for all connectors.
 
-import json
+Runs real API calls against every service and reports results.
+This is the master verification script.
+"""
+import sys
 import os
-import requests
-import subprocess
-from loguru import logger
-import time
+import json
+from datetime import datetime
 
-ROOT = "/home/q/TravelKing.Live"
-VAULT_PATH = "/home/q/TravelKing.Live/config/access_vault.json"
+# Ensure project root is on path
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-def load_vault():
-    with open(VAULT_PATH, "r") as f:
-        return json.load(f)
+from core.connectors import (
+    GoogleConnector, FacebookConnector, TravelpayoutsConnector,
+    BingConnector, CPanelConnector,
+)
+from core.settings import load_vault
 
-def check_google_ai():
-    logger.info("🧪 Testing Google AI (Gemini)...")
+
+def run_full_audit():
+    """Run live tests against all connectors and return results."""
+    vault = load_vault()
+    results = {}
+    total = 0
+    passed = 0
+
+    connectors = [
+        ("cPanel", CPanelConnector(vault)),
+        ("Google (SA)", GoogleConnector(vault)),
+        ("Facebook", FacebookConnector(vault)),
+        ("Travelpayouts", TravelpayoutsConnector(vault)),
+        ("Bing IndexNow", BingConnector(vault)),
+    ]
+
+    # Also test Gmail and GitHub separately
+    print("=" * 50)
+    print("  ENTERPRISE FULL AUDIT")
+    print(f"  {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print("=" * 50)
+
+    for name, connector in connectors:
+        total += 1
+        try:
+            result = connector.test_connection()
+            # Google returns sub-results (sheets, drive, gmail)
+            if isinstance(result, dict) and "status" not in result:
+                # Multi-service result: check if all sub-services are OK
+                all_ok = all(
+                    v.get("status") == "OK"
+                    for v in result.values()
+                    if isinstance(v, dict)
+                )
+                status = "OK" if all_ok else "PARTIAL"
+                result = {"status": status, "services": result}
+            status = result.get("status", "UNKNOWN")
+            ok = status == "OK"
+            if ok:
+                passed += 1
+            icon = "OK" if ok else "FAIL"
+            print(f"  [{icon}] {name:25s} | {json.dumps(result)[:80]}")
+            results[name] = result
+        except Exception as e:
+            print(f"  [FAIL] {name:25s} | {str(e)[:80]}")
+            results[name] = {"status": "ERROR", "error": str(e)[:100]}
+
+    # GitHub (separate test)
+    total += 1
     try:
-        from ai.logic.brain import Brain
-        brain = Brain()
-        if brain.mode != "Dumb":
-            return True, f"Success ({brain.mode})"
-        return False, "Auth Failed"
+        import requests
+        gh = vault.get("github", {})
+        r = requests.get(
+            "https://api.github.com/user",
+            headers={"Authorization": f"token {gh.get('token', '')}"},
+            timeout=10,
+        )
+        if r.status_code == 200:
+            passed += 1
+            user = r.json().get("login", "?")
+            print(f"  [OK]   {'GitHub':25s} | user={user}")
+            results["GitHub"] = {"status": "OK", "user": user}
+        else:
+            print(f"  [FAIL] {'GitHub':25s} | HTTP {r.status_code}")
+            results["GitHub"] = {"status": "FAIL", "http": r.status_code}
     except Exception as e:
-        return False, str(e)
+        print(f"  [FAIL] {'GitHub':25s} | {str(e)[:80]}")
+        results["GitHub"] = {"status": "ERROR", "error": str(e)[:100]}
 
-def check_google_drive():
-    logger.info("🧪 Testing Google Drive Access...")
+    # Domain + SSL
+    total += 1
     try:
-        from services.google.drive_handler import DriveHandler
-        drive = DriveHandler()
-        # Just try to list something or check quota if possible, or just init
-        return True, "Initialized"
+        import requests
+        r = requests.get("https://travelking.live", timeout=10)
+        if r.status_code == 200:
+            passed += 1
+            print(f"  [OK]   {'Domain + SSL':25s} | HTTPS 200, {len(r.text)} bytes")
+            results["Domain"] = {"status": "OK", "bytes": len(r.text)}
+        else:
+            print(f"  [FAIL] {'Domain + SSL':25s} | HTTP {r.status_code}")
+            results["Domain"] = {"status": "FAIL", "http": r.status_code}
     except Exception as e:
-        return False, str(e)
+        print(f"  [FAIL] {'Domain + SSL':25s} | {str(e)[:80]}")
+        results["Domain"] = {"status": "ERROR", "error": str(e)[:100]}
 
-def check_cpanel(vault):
-    logger.info("🧪 Testing cPanel API...")
-    try:
-        cfg = vault['cpanel']
-        url = f"https://{cfg['host']}:2083/execute/DomainInfo/domains_data"
-        headers = {"Authorization": f"cpanel {cfg['user']}:{cfg['api_token']}"}
-        res = requests.get(url, headers=headers, timeout=10)
-        if res.status_code == 200:
-            return True, f"Connected as {cfg['user']}"
-        return False, f"Status {res.status_code}"
-    except Exception as e:
-        return False, str(e)
+    print()
+    print(f"  SCORE: {passed}/{total} ({int(passed / total * 100) if total else 0}%)")
+    print("=" * 50)
 
-def check_facebook(vault):
-    logger.info("🧪 Testing Facebook Graph API...")
-    try:
-        cfg = vault['facebook']
-        url = f"https://graph.facebook.com/v19.0/me?access_token={cfg['access_token']}"
-        res = requests.get(url, timeout=10)
-        if res.status_code == 200:
-            return True, "Token Valid"
-        return False, f"Status {res.status_code} (Expired/Invalid)"
-    except Exception as e:
-        return False, str(e)
+    return {"results": results, "passed": passed, "total": total}
 
-def check_bing(vault):
-    logger.info("🧪 Testing Bing / IndexNow...")
-    try:
-        api_key = vault['bing']['api_key']
-        # Bing doesn't have a simple 'ping' without a site, but we can check if the key looks valid
-        if len(api_key) == 32:
-            return True, "Key format valid"
-        return False, "Invalid key format"
-    except Exception as e:
-        return False, str(e)
-
-def check_travelpayouts(vault):
-    logger.info("🧪 Testing Travelpayouts API...")
-    try:
-        token = vault['travelpayouts']['api_token']
-        url = "https://api.travelpayouts.com/aviasales/v3/prices_for_dates"
-        params = {'origin': 'PRG', 'destination': 'LON', 'token': token, 'limit': 1}
-        res = requests.get(url, params=params, timeout=10)
-        if res.status_code == 200:
-            return True, "Connected"
-        return False, f"Status {res.status_code}"
-    except Exception as e:
-        return False, str(e)
-
-def check_github(vault):
-    logger.info("🧪 Testing GitHub Token...")
-    try:
-        token = vault['github']['token']
-        headers = {"Authorization": f"token {token}"}
-        res = requests.get("https://api.github.com/user", headers=headers, timeout=10)
-        if res.status_code == 200:
-            user = res.json()['login']
-            return True, f"Connected as {user}"
-        return False, f"Status {res.status_code}"
-    except Exception as e:
-        return False, str(e)
-
-def check_playwright():
-    logger.info("🧪 Testing Playwright / Browser Engine...")
-    try:
-        # Check if browsers are installed
-        res = subprocess.run(["playwright", "--version"], capture_output=True, text=True)
-        if res.returncode == 0:
-            return True, res.stdout.strip()
-        return False, "Not installed"
-    except Exception as e:
-        return False, str(e)
 
 if __name__ == "__main__":
-    vault = load_vault()
-    
-    results = {
-        "Google AI": check_google_ai(),
-        "Google Drive": check_google_drive(),
-        "cPanel": check_cpanel(vault),
-        "Facebook": check_facebook(vault),
-        "Bing/IndexNow": check_bing(vault),
-        "Travelpayouts": check_travelpayouts(vault),
-        "GitHub": check_github(vault),
-        "Playwright": check_playwright()
-    }
-    
-    print("\n" + "="*50)
-    print("💎 ANTIGRAVITY ENTERPRISE - FULL SYSTEM AUDIT")
-    print("="*50)
-    
-    for service, (status, detail) in results.items():
-        icon = "✅" if status else "❌"
-        print(f"{icon} {service:<15} : {detail}")
-    print("="*50)
+    run_full_audit()

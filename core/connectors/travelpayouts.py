@@ -1,51 +1,84 @@
+"""
+Travelpayouts API Connector — per official docs.
 
-import requests
+Docs:
+ - Aviasales: https://support.travelpayouts.com/hc/en-us/articles/360057309013
+ - Hotellook: https://support.travelpayouts.com/hc/en-us/articles/360021981113
+"""
 import logging
-from core.base.connector import BaseConnector
+import requests
 
-class TravelpayoutsConnector(BaseConnector):
-    """
-    Enterprise Travelpayouts Connector (OMEGA Architecture).
-    Permanent link for flights, hotels, and partner statistics.
-    """
-    def __init__(self, vault):
-        super().__init__("Travelpayouts", vault.get("travelpayouts", {}))
-        self.api_token = self.config.get("api_token")
-        self.marker = self.config.get("marker")
-        self.base_url = "https://api.travelpayouts.com"
+from core.settings import load_vault, TRAVELPAYOUTS_BASE_URL
 
-    def test_connection(self) -> bool:
-        """Verifies API Token by fetching partner information."""
-        # Current statistics API endpoint
-        url = f"{self.base_url}/statistics/v1/get_fields_list"
-        res = self.api_call(url)
-        return isinstance(res, dict) and "error" not in res
+logger = logging.getLogger(__name__)
 
-    def api_call(self, url, method="GET", data=None, params=None):
-        """Standardized Travelpayouts API caller with permanent token handling."""
-        headers = {
-            "X-Access-Token": self.api_token,
-            "Content-Type": "application/json"
-        }
-        
-        # Ensure marker is included in params if not present
-        p = params or {}
-        if "marker" not in p:
-            p["marker"] = self.marker
-            
-        return self.call(method, url, headers=headers, json=data, params=p)
 
-    def get_flight_disruption_data(self, origin, destination):
-        """Specific helper for finding high-value disruption targets."""
-        # This is a placeholder for actual flight search/stats integration
-        endpoint = f"{self.base_url}/aviasales/v3/prices_for_dates"
+class TravelpayoutsConnector:
+    """Travelpayouts affiliate API bridge."""
+
+    def __init__(self, vault: dict = None):
+        self.vault = vault or load_vault()
+        tp_cfg = self.vault.get("travelpayouts", {})
+        self.token = tp_cfg.get("api_token", "")
+        self.marker = tp_cfg.get("marker", "")
+
+    def search_flights(self, origin: str, destination: str,
+                       departure_date: str, return_date: str = None,
+                       currency: str = "EUR") -> dict:
+        """
+        Search for cheapest flights.
+        Per: Aviasales /v3/prices_for_dates
+        """
+        url = f"{TRAVELPAYOUTS_BASE_URL}/aviasales/v3/prices_for_dates"
         params = {
             "origin": origin,
             "destination": destination,
-            "unique": "false",
+            "departure_at": departure_date,
+            "currency": currency,
             "sorting": "price",
-            "direct": "false",
-            "currency": "eur",
-            "limit": 10
+            "token": self.token,
         }
-        return self.api_call(endpoint, params=params)
+        if return_date:
+            params["return_at"] = return_date
+
+        response = requests.get(url, params=params, timeout=15)
+        response.raise_for_status()
+        return response.json()
+
+    def get_affiliate_link(self, origin: str, destination: str,
+                           departure_date: str) -> str:
+        """Build Travelpayouts affiliate link with marker tracking."""
+        return (
+            f"https://www.aviasales.com/search/"
+            f"{origin}{departure_date.replace('-', '')}"
+            f"{destination}1?marker={self.marker}"
+        )
+
+    def search_hotels(self, location: str, check_in: str,
+                      check_out: str, currency: str = "EUR") -> dict:
+        """
+        Search for hotels.
+        Per: Hotellook API
+        """
+        url = f"{TRAVELPAYOUTS_BASE_URL}/hotellook/v2/cache.json"
+        params = {
+            "location": location,
+            "checkIn": check_in,
+            "checkOut": check_out,
+            "currency": currency,
+            "token": self.token,
+        }
+        response = requests.get(url, params=params, timeout=15)
+        response.raise_for_status()
+        return response.json()
+
+    def test_connection(self) -> dict:
+        """Test API with a simple flight search."""
+        try:
+            result = self.search_flights("PRG", "BCN", "2026-06-01")
+            if result.get("success"):
+                count = len(result.get("data", []))
+                return {"status": "OK", "flights_found": count}
+            return {"status": "FAIL", "error": "API returned success=false"}
+        except Exception as e:
+            return {"status": "FAIL", "error": str(e)[:100]}
