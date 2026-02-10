@@ -250,9 +250,8 @@ class ConciergeBot:
         
         logger.info(f"📧 Processing lead: {email} → {destination}")
         
-        # Search flights (assume origin is Prague for now)
-        # TODO: Make origin dynamic based on form field
-        origin = "PRG"
+        # Search flights (now dynamic from lead form)
+        origin = (lead.get('Origin') or lead.get('Origin Port') or "PRG").strip().upper()[:3]
         flights = self.search_flights(origin, destination[:3].upper())
         
         if not flights:
