@@ -32,10 +32,10 @@ export default function Footer() {
                     <div>
                         <h4 className="text-white font-bold mb-6 uppercase tracking-widest text-xs">Navigation</h4>
                         <ul className="space-y-4 text-slate-500 text-sm">
-                            <li><a href="#" className="hover:text-amber-400 transition-colors">Flight Search</a></li>
-                            <li><a href="#" className="hover:text-amber-400 transition-colors">Private Rescue</a></li>
-                            <li><a href="#" className="hover:text-amber-400 transition-colors">EU261 Guidelines</a></li>
-                            <li><a href="#" className="hover:text-amber-400 transition-colors">Luxury Concierge</a></li>
+                            <li><a href="#search" className="hover:text-amber-400 transition-colors">Flight Search</a></li>
+                            <li><a href="#guide" className="hover:text-amber-400 transition-colors">Private Rescue</a></li>
+                            <li><a href="/eu261" className="hover:text-amber-400 transition-colors">EU261 Guidelines</a></li>
+                            <li><a href="#contact" className="hover:text-amber-400 transition-colors">Luxury Concierge</a></li>
                         </ul>
                     </div>
 
@@ -43,7 +43,7 @@ export default function Footer() {
                         <h4 className="text-white font-bold mb-6 uppercase tracking-widest text-xs">Operations</h4>
                         <ul className="space-y-4 text-slate-500 text-sm">
                             <li><a href="#" className="hover:text-amber-400 transition-colors">Claim Tracker</a></li>
-                            <li><a href="#" className="hover:text-amber-400 transition-colors">Support Center</a></li>
+                            <li><a href="#contact" className="hover:text-amber-400 transition-colors">Support Center</a></li>
                             <li><a href="#" className="hover:text-amber-400 transition-colors">Partner Program</a></li>
                             <li><a href="#" className="hover:text-amber-400 transition-colors">Omega Status</a></li>
                         </ul>
@@ -55,9 +55,9 @@ export default function Footer() {
                         © 2026 TRAVELKING.LIVE — ENTERPRISE OMEGA ECOLOGY. ALL RIGHTS RESERVED.
                     </p>
                     <div className="flex gap-8 text-xs text-slate-600 font-medium">
-                        <span className="hover:text-slate-400 transition-colors cursor-pointer">PRIVACY POLICY</span>
-                        <span className="hover:text-slate-400 transition-colors cursor-pointer">TERMS OF SERVICE</span>
-                        <span className="hover:text-slate-400 transition-colors cursor-pointer">EU261 COMPLIANCE</span>
+                        <a href="/privacy-policy" className="hover:text-slate-400 transition-colors cursor-pointer">PRIVACY POLICY</a>
+                        <a href="/terms" className="hover:text-slate-400 transition-colors cursor-pointer">TERMS OF SERVICE</a>
+                        <a href="/eu261" className="hover:text-slate-400 transition-colors cursor-pointer">EU261 COMPLIANCE</a>
                     </div>
                 </div>
             </div>

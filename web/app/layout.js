@@ -1,4 +1,5 @@
 import "./globals.css";
+import CookieBanner from "./components/CookieBanner";
 
 export const metadata = {
   title: "TravelKing.Live | Premium Flight Deals & Travel Assistance",
@@ -52,7 +53,10 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <CookieBanner />
+      </body>
     </html>
   );
 }
