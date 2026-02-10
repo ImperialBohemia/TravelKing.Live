@@ -85,8 +85,9 @@ class CPanelConnector:
 
     def mkdir(self, parent: str, name: str) -> dict:
         """Create a directory on cPanel (uses API2)."""
+        # API2 Fileman::mkdir uses 'path' for parent directory
         return self.api2_call("Fileman", "mkdir", {
-            "dir": parent, "name": name
+            "path": parent, "name": name
         })
 
     def get_domains(self) -> dict:

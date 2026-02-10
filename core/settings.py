@@ -51,15 +51,35 @@ def reload_vault() -> dict:
 # ══════════════════════════════════════════════
 def get_sa_credentials(scopes: list):
     """
-    Build Google Service Account credentials.
-    Per official docs: https://cloud.google.com/iam/docs/service-account-overview
+    Build Google credentials.
+    Try Service Account first, fallback to OAuth2 from vault if missing.
     """
     from google.oauth2 import service_account
-    if not SA_PATH.exists():
-        raise FileNotFoundError(f"Service account file not found at {SA_PATH}")
-    return service_account.Credentials.from_service_account_file(
-        str(SA_PATH), scopes=scopes
-    )
+    from google.oauth2.credentials import Credentials
+
+    # 1. Try Service Account
+    if SA_PATH.exists():
+        return service_account.Credentials.from_service_account_file(
+            str(SA_PATH), scopes=scopes
+        )
+
+    # 2. Try OAuth2 Fallback from Vault
+    try:
+        vault = load_vault()
+        g = vault.get("google", {})
+        if g.get("refresh_token"):
+            return Credentials(
+                token=g.get("access_token"),
+                refresh_token=g.get("refresh_token"),
+                token_uri="https://oauth2.googleapis.com/token",
+                client_id=g.get("client_id"),
+                client_secret=g.get("client_secret"),
+                scopes=scopes
+            )
+    except:
+        pass
+
+    raise FileNotFoundError(f"Neither Service Account ({SA_PATH}) nor valid OAuth2 credentials found in vault.")
 
 
 # ══════════════════════════════════════════════
