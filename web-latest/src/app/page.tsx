@@ -9,6 +9,7 @@ import toast from 'react-hot-toast';
 export default function Home() {
   const [flightNo, setFlightNo] = useState('');
   const [email, setEmail] = useState('');
+  const [wantsNews, setWantsNews] = useState(true);
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async () => {
@@ -21,7 +22,7 @@ export default function Home() {
       const response = await fetch('/submit_lead.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ flightNo, email }),
+        body: JSON.stringify({ flightNo, email, wantsNews }),
       });
       const data = await response.json();
       if (data.status === 'success') {
@@ -115,6 +116,18 @@ export default function Home() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
+              </div>
+              <div className="flex items-center gap-3 py-2 cursor-pointer group" onClick={() => setWantsNews(!wantsNews)}>
+                <div
+                  className={`w-10 h-5 rounded-full relative transition-colors duration-300 ${wantsNews ? 'bg-primary' : 'bg-white/10'}`}
+                >
+                  <div className={`absolute top-0.5 w-4 h-4 rounded-full bg-white transition-all duration-300 ${wantsNews ? 'left-5.5' : 'left-0.5'}`}></div>
+                </div>
+                <span className="text-[10px] uppercase font-bold text-muted-foreground tracking-widest group-hover:text-white transition-colors max-w-[300px] leading-tight">
+                  {wantsNews
+                    ? "Activate Long-Run Intelligence: Get Latest News, Safety Tips & Travel Warnings"
+                    : "One-time tactical email only. No future marketing protocol."}
+                </span>
               </div>
               <button
                 onClick={handleSubmit}

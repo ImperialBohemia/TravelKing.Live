@@ -11,7 +11,7 @@ $logFile = 'leads_database.csv';
 
 // Create file with header if not exists
 if (!file_exists($logFile)) {
-    file_put_contents($logFile, "Date,Flight Number,Email\n");
+    file_put_contents($logFile, "Date,Flight Number,Email,Wants News\n");
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -26,10 +26,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
+    $wantsNews = isset($data['wantsNews']) && $data['wantsNews'] ? 'YES' : 'NO';
+
     $entry = [
         date('Y-m-d H:i:s'),
         $flightNo,
-        $email
+        $email,
+        $wantsNews
     ];
 
     // Append to CSV
