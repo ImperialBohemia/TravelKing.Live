@@ -51,3 +51,7 @@ TravelKing.Live is the global benchmark for **Protected Travel**. Every user int
 - 2026-02-08T23:12:57.556813 | SYNC PREP | Snapshot: backups/snap_20260208_2312
 - 2026-02-10T15:55:00.000000 | TACTICAL BOOM DEPLOYED | Lead Gen system overhaul with AirHelp referral engine.
 - 2026-02-10T16:00:00.000000 | LONG-RUN INTEL ACTIVE | Marketing toggle added for news, tips, and safety warnings.
+- 2026-02-10T16:05:00.000000 | LOGO & HEADING FIX | Identity updated to TravelKing.LIVE with green pulse. Heading cutoff fixed.
+- 2026-02-10T16:10:00.000000 | BRANDING PEAK | Premium Favicon dispatched. .LIVE pulse animation intensified for max visibility.
+- 2026-02-10T16:15:00.000000 | PAYOUT ENGINE | Dynamic compensation estimation (€600 logic) integrated into tactical flow.
+- 2026-02-10T16:20:00.000000 | CORE UX FIX | Stats aligned to center. Lead form expanded with route and passenger count for precise estimation.

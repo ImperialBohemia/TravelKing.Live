@@ -8,6 +8,9 @@ import toast from 'react-hot-toast';
 
 export default function Home() {
   const [flightNo, setFlightNo] = useState('');
+  const [departure, setDeparture] = useState('');
+  const [arrival, setArrival] = useState('');
+  const [passengers, setPassengers] = useState(1);
   const [email, setEmail] = useState('');
   const [wantsNews, setWantsNews] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -22,11 +25,21 @@ export default function Home() {
       const response = await fetch('/submit_lead.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ flightNo, email, wantsNews }),
+        body: JSON.stringify({
+          flightNo,
+          departure,
+          arrival,
+          passengers,
+          email,
+          wantsNews
+        }),
       });
       const data = await response.json();
       if (data.status === 'success') {
-        toast.success('Tactical analysis dispatched. Redirecting to recommended service...');
+        toast.success(`Success! Estimated payout: ${data.estimate || '€600'}. Redirecting to AirHelp...`, {
+          duration: 5000,
+          icon: '💰'
+        });
         setFlightNo('');
         setEmail('');
         if (data.redirect) {
@@ -115,6 +128,48 @@ export default function Home() {
                     onChange={(e) => setFlightNo(e.target.value)}
                   />
                 </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="flex flex-col gap-2">
+                    <label className="text-xs uppercase font-bold text-muted-foreground tracking-widest">Departure</label>
+                    <input
+                      type="text"
+                      placeholder="From (e.g. LHR)"
+                      className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors uppercase font-mono"
+                      value={departure}
+                      onChange={(e) => setDeparture(e.target.value)}
+                    />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <label className="text-xs uppercase font-bold text-muted-foreground tracking-widest">Arrival</label>
+                    <input
+                      type="text"
+                      placeholder="To (e.g. DXB)"
+                      className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors uppercase font-mono"
+                      value={arrival}
+                      onChange={(e) => setArrival(e.target.value)}
+                    />
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label className="text-xs uppercase font-bold text-muted-foreground tracking-widest">Number of Passengers</label>
+                  <div className="flex items-center gap-4 bg-black/50 border border-white/10 rounded-lg px-4 py-2">
+                    <button
+                      onClick={() => setPassengers(Math.max(1, passengers - 1))}
+                      className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary hover:text-black transition-colors"
+                    >
+                      -
+                    </button>
+                    <span className="flex-1 text-center font-bold text-lg">{passengers}</span>
+                    <button
+                      onClick={() => setPassengers(passengers + 1)}
+                      className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary hover:text-black transition-colors"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
                 <div className="flex flex-col gap-2">
                   <label className="text-xs uppercase font-bold text-muted-foreground tracking-widest">Email Address</label>
                   <input
@@ -164,7 +219,7 @@ export default function Home() {
               { label: "Global Presence", value: "192 CTIES" },
               { label: "Concierge Status", value: "ELITE" }
             ].map((stat, i) => (
-              <motion.div key={i} variants={fadeIn}>
+              <motion.div key={i} variants={fadeIn} className="text-center">
                 <div className="text-2xl font-black text-white mb-1 tracking-tight">{stat.value}</div>
                 <div className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold">{stat.label}</div>
               </motion.div>
