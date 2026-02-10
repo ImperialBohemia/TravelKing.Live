@@ -1,130 +1,36 @@
-# Next.js 16 Boilerplate
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-<div align="center">
-  <img src="/public/images/og.png" alt="Next.js Boilerplate" width="600px" />
-  <p>A production-ready starter template with everything you need to build and deploy high-performance Next.js applications.</p>
-  
-  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-  [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue)](https://www.typescriptlang.org/)
-  [![Next.js](https://img.shields.io/badge/Next.js-16.1.4-black)](https://nextjs.org/)
-  [![React](https://img.shields.io/badge/React-19.2.3-61dafb)](https://react.dev/)
-  [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1.4-38bdf8)](https://tailwindcss.com/)
-  [![Prisma](https://img.shields.io/badge/Prisma-6.19.2-2d3748)](https://www.prisma.io/)
-</div>
+## Getting Started
 
-## ✨ Features
-
-This boilerplate is designed to give you a production-ready foundation with everything configured for optimal development experience and performance:
-
-- 🚀 **Next.js 16 & React 19** - Leveraging the latest features and performance improvements.
-- 🎨 **Tailwind CSS 4** - Modern utility-first CSS with high performance and canonical syntax.
-- 🔒 **Full Type Safety** - TypeScript 5.8 throughout the entire codebase.
-- 🛡️ **Authentication** - Pre-configured with Clerk for secure user management.
-- 🗄️ **Database Ready** - Prisma ORM with MongoDB support.
-- ⚡ **Turbopack** - Blazing fast development builds.
-- 🔄 **State Management** - TanStack Query (React Query) for efficient data fetching.
-- 🎭 **Animations** - Framer Motion 12 for smooth transitions.
-- 🔍 **SEO Optimized** - Pre-configured meta tags and social sharing assets.
-- 🛠️ **Dev Tooling** - ESLint 9, Prettier, Husky, and Commitlint pre-configured.
-
-## 📚 Tech Stack
-
-- [`Next.js 16.1.4`](https://nextjs.org/) - React framework for production with Turbopack.
-- [`React 19.2.3`](https://react.dev/) - Latest React with improved performance and new features.
-- [`Prisma 6.19.2`](https://www.prisma.io/) - Next-generation ORM for database management.
-- [`Clerk`](https://clerk.com/) - Complete user management and authentication.
-- [`Framer Motion 12`](https://www.framer.com/motion/) - Production-ready animation library.
-- [`TypeScript 5.8`](https://typescriptlang.org) - Type safety and improved developer experience.
-- [`Tailwind CSS 4.1.4`](https://tailwindcss.com/) - High-performance styling with canonical syntax.
-- [`ESLint 9`](https://eslint.org/) - Code quality and consistency.
-- [`Prettier`](https://prettier.io/) - Code formatting.
-- [`TanStack Query 5`](https://tanstack.com/query) - Powerful data fetching and state management.
-
-## 🚀 Getting Started
-
-### 1. Clone the project
-
-```bash
-git clone https://github.com/AnwarHossainSR/nextjs-16-template.git
-```
-
-### 2. Install dependencies
-
-```bash
-npm install
-```
-
-### 3. Environment Setup
-
-Create a `.env` file in the root directory and add your credentials:
-
-```env
-# Database
-MONGODB_URI=your_mongodb_connection_string
-
-# Clerk Authentication
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
-CLERK_SECRET_KEY=your_clerk_secret_key
-CLERK_WEBHOOK_SECRET=your_clerk_webhook_secret
-
-# Clerk URLs
-NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
-NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
-NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/dashboard
-NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/dashboard
-```
-
-### 4. Start Development
+First, run the development server:
 
 ```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Your application will be available at [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## 📋 Scripts
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-| Command                   | Description                      |
-| ------------------------- | -------------------------------- |
-| `npm run dev`             | Start development server         |
-| `npm run build`           | Build production application     |
-| `npm run start`           | Start production server          |
-| `npm run lint`            | Run ESLint to check code quality |
-| `npm run format`          | Format code with Prettier        |
-| `npm run prisma:generate` | Generate Prisma client           |
-| `npm run prisma:push`     | Push schema changes              |
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## 🧰 Project Structure
+## Learn More
 
-```
-src/
-├── app/              # App router pages and API routes
-├── components/       # Reusable UI components
-├── lib/              # Utility functions and library wrappers
-├── providers/        # React Context providers
-├── styles/           # Global styles and Tailwind configuration
-└── types/            # TypeScript definitions
+To learn more about Next.js, take a look at the following resources:
 
-prisma/
-├── schema.prisma     # Database schema
-└── seed.ts           # Database seeding script
-```
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## 💅 Styling with Tailwind CSS 4
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-This project utilizes the latest Tailwind CSS 4 features, including the new canonical syntax and CSS-first configuration:
+## Deploy on Vercel
 
-```tsx
-// Canonical syntax for variables
-className = 'bg-(--primary) text-(--foreground)';
-```
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
----
-
-<div align="center">
-  <p>Made with ❤️ by <a href="https://github.com/AnwarHossainSR">Anwar Hossain</a></p>
-</div>
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

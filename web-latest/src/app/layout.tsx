@@ -1,91 +1,58 @@
-// app/layout.tsx
-import { Inter, Poppins } from 'next/font/google';
-import { Toaster } from 'react-hot-toast';
+import type { Metadata } from "next";
+import { Inter, Poppins } from "next/font/google";
+import "./globals.css";
+import Script from "next/script";
 
-import MainFooter from '@/components/Footer';
-import MainNavbar from '@/components/Navbar';
-import { QueryProvider } from '@/providers/query';
-import { ThemeProvider } from '@/providers/theme';
-import '@/styles/globals.css';
-import type { ChildrenProps } from '@/types';
-
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
-  adjustFontFallback: false,
-});
-
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const poppins = Poppins({
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-poppins',
+  weight: ["400", "700", "900"],
+  subsets: ["latin"],
+  variable: "--font-poppins"
 });
 
-export const metadata = {
-  title: 'TravelKing.Live | Premium Flight Deals & Travel Assistance',
-  description:
-    'Find the cheapest flights, get expert EU261 compensation guidance, and discover luxury travel deals. AI-powered travel concierge for smart travelers.',
-  keywords: [
-    'cheap flights',
-    'flight deals',
-    'EU261 compensation',
-    'flight delay compensation',
-    'travel assistant',
-    'private jet',
-    'luxury travel',
-    'flight search',
-    'TravelKing',
-  ],
-  authors: [{ name: 'TravelKing' }],
-  robots: 'noindex, nofollow',
-  openGraph: {
-    title: 'TravelKing.Live | Premium Flight Deals & Travel Assistance',
-    description:
-      'AI-powered travel concierge. Find cheapest flights, get flight compensation, discover luxury deals.',
-    url: 'https://travelking.live',
-    siteName: 'TravelKing.Live',
-    type: 'website',
-    locale: 'en_GB',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'TravelKing.Live | Premium Travel',
-    description:
-      'AI-powered travel concierge. Flights, compensation, luxury deals.',
-  },
-  other: {
-    'theme-color': '#0a0e1a',
-  },
+export const metadata: Metadata = {
+  title: "TravelKing.Live | Travel Intelligence & Elite Logistics",
+  description: "Advanced flight hacks, safety intel, and elite travel logistics orchestration.",
+  robots: "noindex, nofollow", // As per user rules until 'Ready'
 };
 
-export default function RootLayout({ children }: ChildrenProps) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="en" suppressHydrationWarning className="overflow-x-hidden">
-      <body
-        className={`${inter.variable} ${poppins.variable} font-sans antialiased overflow-x-hidden`}
-      >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <QueryProvider>
-            <div className="flex min-h-screen bg-background w-full overflow-x-hidden">
-              <div className="flex-1 flex flex-col w-full">
-                <MainNavbar />
-                <main className="flex-1 w-full overflow-x-hidden">
-                  {children}
-                </main>
-                <MainFooter />
-              </div>
-            </div>
-            <Toaster
-              position="bottom-right"
-              toastOptions={{
-                className: 'bg-card text-foreground border-border',
-                duration: 3000,
-              }}
-            />
-          </QueryProvider>
-        </ThemeProvider>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <Script id="monetization" strategy="afterInteractive">
+          {`
+            (function () {
+                var script = document.createElement("script");
+                script.async = 1;
+                script.src = 'https://emrldtp.cc/NDk1MzY1.js?t=495365';
+                document.head.appendChild(script);
+            })();
+          `}
+        </Script>
+      </head>
+      <body className={`${inter.variable} ${poppins.variable} font-sans min-h-screen flex flex-col`}>
+        <nav className="sticky top-0 z-50 glass h-16 flex items-center px-4 md:px-8 justify-between">
+          <div className="flex items-center gap-2">
+            <span className="text-xl font-black italic tracking-tighter">TRAVELKING</span>
+            <span className="text-xl font-black text-primary animate-pulse-gold italic">.LIVE</span>
+          </div>
+          <div className="hidden md:flex gap-8 text-[10px] font-bold uppercase tracking-widest">
+            <a href="/" className="hover:text-primary transition-colors">Intelligence</a>
+            <a href="/about" className="hover:text-primary transition-colors">The Network</a>
+            <a href="/contact" className="hover:text-primary transition-colors">Contact Protocol</a>
+          </div>
+        </nav>
+        <main className="flex-1">
+          {children}
+        </main>
+        <footer className="py-12 border-t border-border bg-black text-center">
+          <p className="text-[10px] uppercase tracking-[0.4em] text-muted-foreground">© 2026 TRAVELKING OPERATIONAL INTELLIGENCE</p>
+        </footer>
       </body>
     </html>
   );

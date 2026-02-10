@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: "Poppins", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+  --color-background: #06080f;
+  --color-foreground: #f8fafc;
+
+  --color-primary: #ffd700;
+  /* Gold */
+  --color-accent: #00ff88;
+  /* Pulse Green */
+  --color-card: #0f121d;
+  --color-border: rgba(255, 255, 255, 0.08);
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif font-black uppercase tracking-tighter italic;
+  }
+}
+
+@keyframes pulse-gold {
+
+  0%,
+  100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 5px var(--color-primary));
+  }
+
+  50% {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 15px var(--color-primary));
+  }
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.glass {
+  @apply bg-card/60 backdrop-blur-xl border border-border;
+}
