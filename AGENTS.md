@@ -34,3 +34,9 @@ Refer to `knowledge/OMNI_VAULT_MAP.md` for all credentials.
 
 ---
 *Authorized by: OMEGA Intelligence Hub*
+
+## 🛠️ NEXT.JS BUILDER PROTOCOL
+- **ABSOLUTE RULE**: All web modifications MUST follow the **OMEGA Next.js Builder** standard.
+- **REFERENCE**: Check `docs/NEXTJS_BUILDER.md` for the component registry.
+- **PRECISION**: If the user asks for a UI change (e.g., "změň Hero"), you must immediately identify the file via the registry (`HeroSection.tsx`) and edit it directly.
+- **DO NOT** search for where elements are located. The registry is your source of truth.
