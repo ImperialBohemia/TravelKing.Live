@@ -35,5 +35,5 @@ Refer to `knowledge/OMNI_VAULT_MAP.md` for a complete directory of credentials a
 
 ## 🌐 HOSTING & DEPLOYMENT PROTOCOL
 - **ABSOLUTE RULE**: We use **cPanel hosting with Node.js ONLY**.
-- **PROHIBITED**: NEVER suggest or use Netlify, Vercel, or other cloud platforms.
+- **PROHIBITED**: ONLY use cPanel Node.js for hosting. All other hosting platforms are strictly forbidden.
 - All web deployments must be targeted at our cPanel server (server707.web-hosting.com) using the `CPanelConnector`.

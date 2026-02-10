@@ -167,7 +167,7 @@ TravelKing.Live/
 ## 📝 NOTES
 
 ### Why This Stack?
-1. **100% Free:** No hosting costs, no API fees
+1. **100% Free:** cPanel Node.js Hosting, no API fees
 2. **High Deliverability:** Gmail infrastructure = no spam
 3. **Scalable:** Can handle 10,000+ leads/month
 4. **Simple:** No complex infrastructure

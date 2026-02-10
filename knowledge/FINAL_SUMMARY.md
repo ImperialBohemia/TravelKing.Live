@@ -73,7 +73,7 @@ A **100% free** lead generation funnel for travel deals using:
 ### Domain
 - **Primary:** www.travelking.live
 - **DNS:** CNAME → ghs.googlehosted.com
-- **Hosting:** Google Sites (zero cost)
+- **Hosting:** cPanel Node.js Hosting
 
 ---
 
@@ -99,7 +99,7 @@ A **100% free** lead generation funnel for travel deals using:
 ## 🔑 KEY DECISIONS
 
 ### Why This Stack?
-1. **100% Free:** No hosting, no API fees
+1. **100% Free:** cPanel Node.js Hosting
 2. **High Deliverability:** Gmail = no spam
 3. **Scalable:** 10,000+ leads/month capacity
 4. **Simple:** No complex infrastructure
@@ -107,7 +107,6 @@ A **100% free** lead generation funnel for travel deals using:
 
 ### What We Avoided
 - ❌ BigQuery (overkill for start)
-- ❌ Paid hosting (unnecessary)
 - ❌ Complex CRM (Sheets is enough)
 - ❌ Old credentials (fresh start)
 

@@ -108,6 +108,4 @@ To manage the empire, use these core commands:
 
 ## 🌐 EXCLUSIVE HOSTING: cPanel Node.js
 TravelKing.Live is strictly hosted on our private **cPanel infrastructure** using **Node.js**.
-- **NO Netlify.**
-- **NO Vercel.**
 - **ONLY cPanel Node.js** (Server: server707.web-hosting.com).
