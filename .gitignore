@@ -2,6 +2,10 @@
 .env
 *.pem
 *.key
+config/access_vault.json
+config/service_account.json
+config/google_creds.json
+data/config/access_vault_restored.json
 
 # === Python ===
 __pycache__/
@@ -9,8 +13,30 @@ __pycache__/
 venv/
 .venv/
 
+# === Node.js ===
+node_modules/
+
+# === Heavy / Temporary Files ===
+tmp_profile/
+tmp/
+*.png
+*.jpg
+*.mp4
+*.webp
+*.gif
+flow_probe.png
+flow_after_click.png
+flow_app_start.png
+error_screenshot.png
+
 # === Project OMEGA ===
 .gemini/
 *.log
 CREDENTIALS.md
 service_account.json
+
+# === OS / IDE ===
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,57 @@
+{
+    "timestamp": "2026-02-10T12:00:45.481428",
+    "services": {
+        "google_service_account": {
+            "status": "PERMANENT",
+            "detail": "Sheet: TravelKing",
+            "expires": "NEVER"
+        },
+        "google_drive": {
+            "status": "PERMANENT",
+            "detail": "1 files accessible",
+            "expires": "NEVER"
+        },
+        "google_gmail_smtp": {
+            "status": "PERMANENT",
+            "detail": "trendnatures@gmail.com",
+            "expires": "NEVER (App Password)"
+        },
+        "google_user_oauth": {
+            "status": "EXPIRED",
+            "age": "infh",
+            "action": "Will auto-refresh on next daemon cycle"
+        },
+        "facebook": {
+            "status": "ACTIVE",
+            "detail": "Stanislav Pasztorek",
+            "expires": "NEVER (permanent)"
+        },
+        "cpanel": {
+            "status": "PERMANENT",
+            "detail": "imperkhx@server707.web-hosting.com",
+            "expires": "NEVER (API Token)"
+        },
+        "github": {
+            "status": "ACTIVE",
+            "detail": "ImperialBohemia",
+            "expires": "NEVER"
+        },
+        "travelpayouts": {
+            "status": "PERMANENT",
+            "detail": "Marker: 702269",
+            "expires": "NEVER"
+        },
+        "bing": {
+            "status": "PERMANENT",
+            "detail": "Key: c62f2ffa...",
+            "expires": "NEVER"
+        }
+    },
+    "summary": {
+        "permanent": 6,
+        "active": 2,
+        "errors": 1,
+        "total": 9,
+        "health": "DEGRADED"
+    }
+}

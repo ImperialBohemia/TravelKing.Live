@@ -1,0 +1,15 @@
+[Unit]
+Description=TravelKing Connection Fortress — Permanent Connection Guardian
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/home/q/TravelKing.Live/venv/bin/python3 /home/q/TravelKing.Live/core/fortress/daemon.py --daemon --interval 30
+WorkingDirectory=/home/q/TravelKing.Live
+Restart=always
+RestartSec=60
+Environment=PYTHONPATH=/home/q/TravelKing.Live
+
+[Install]
+WantedBy=default.target
