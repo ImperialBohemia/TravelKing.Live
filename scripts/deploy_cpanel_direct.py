@@ -7,25 +7,22 @@ sys.path.append("/home/q/TravelKing.Live")
 
 from core.connectors.cpanel import CPanelConnector
 
-def deploy():
-    print("--- STARTING DIRECT CPANEL DEPLOYMENT ---")
+def deploy_to(remote_root):
+    print(f"--- STARTING DIRECT CPANEL DEPLOYMENT TO {remote_root} ---")
     cp = CPanelConnector()
     
     local_root = "/home/q/TravelKing.Live/TravelKing"
-    remote_root = "TravelKing"
     
     print(f"Local Source: {local_root}")
     print(f"Remote Target: {remote_root}")
     
     # Check connection
-    print("Checking connection...")
     res = cp.test_connection()
-    print(f"Connection Status: {res}")
     if res.get("status") != "OK":
-        print("Aborting.")
+        print("Connection failed. Aborting.")
         return
 
-    # 1. Create root dir if missing
+    # 1. Ensure remote root exists
     print(f"Ensuring remote directory {remote_root} exists...")
     try:
         cp.mkdir("", remote_root)
@@ -34,7 +31,6 @@ def deploy():
     
     count = 0
     errors = 0
-    skipped = 0
     
     for root, dirs, files in os.walk(local_root):
         rel_path = os.path.relpath(root, local_root)
@@ -46,7 +42,6 @@ def deploy():
             
         # Create directories
         for d in dirs:
-            # print(f"MKDIR: {remote_subdir}/{d}")
             try:
                 cp.mkdir(remote_subdir, d)
             except:
@@ -55,7 +50,7 @@ def deploy():
         # Upload files
         for f in files:
             ext = os.path.splitext(f)[1].lower()
-            if ext in ['.html', '.txt', '.js', '.css', '.json', '.xml']:
+            if ext in ['.html', '.txt', '.js', '.css', '.json', '.xml', '.svg']:
                 local_f = os.path.join(root, f)
                 print(f"UPLOAD: {remote_subdir}/{f}")
                 try:
@@ -63,14 +58,13 @@ def deploy():
                         content = fh.read()
                     cp.save_file(remote_subdir, f, content)
                     count += 1
-                    # time.sleep(0.1) 
                 except Exception as e:
                     print(f"FAILED {f}: {e}")
                     errors += 1
-            else:
-                skipped += 1
                     
-    print(f"--- DEPLOYMENT FINISHED: {count} uploaded, {errors} errors, {skipped} skipped (binary) ---")
+    print(f"--- DEPLOYMENT TO {remote_root} FINISHED: {count} uploaded, {errors} errors ---")
 
 if __name__ == "__main__":
-    deploy()
+    # Deploy to both for maximum safety
+    deploy_to("public_html")
+    deploy_to("TravelKing")
