@@ -28,11 +28,12 @@ TravelKing.Live is the global benchmark for **Protected Travel**. Every user int
 
 ---
 
-## ⚡ REVENUE FLOW: THE TOTAL LOOP
+## ⚡ REVENUE FLOW: THE TOTAL "TACTICAL BOOM" LOOP
 1. **Inspiration:** Content on Google Sites (SEO/AI Traffic).
-2. **Protection:** Lead Capture via Google Forms ➔ Instant AirHelp Plus Upsell.
-3. **Execution:** Booking via White Label (booking.travelking.live).
-4. **Recovery:** Automated Compensation Claims for disruptions (€600 Recovery).
+2. **Lead Generation:** Tactical "FLIGHT DISRUPTED?" Hero with 100% FREE analysis promise.
+3. **Capture:** Instant Flight No. & Email capture via `submit_lead.php` (Harvested to CSV).
+4. **The Boom:** Instant redirection to AirHelp via referral protocol after data capture.
+5. **Protection:** Automated "Tactical Dossier" sent via email identifying best recovery.
 
 ---
 
@@ -48,3 +49,4 @@ TravelKing.Live is the global benchmark for **Protected Travel**. Every user int
 
 - 2026-02-08T23:12:19.373439 | SYNC SUCCESS | Snapshot: backups/snap_20260208_2312
 - 2026-02-08T23:12:57.556813 | SYNC PREP | Snapshot: backups/snap_20260208_2312
+- 2026-02-10T15:55:00.000000 | TACTICAL BOOM DEPLOYED | Lead Gen system overhaul with AirHelp referral engine.

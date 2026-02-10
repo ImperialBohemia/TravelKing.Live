@@ -83,6 +83,24 @@ class CPanelConnector:
             verify=False, timeout=15,
         ).json()
 
+    def upload_file(self, directory: str, filename: str, filepath: str) -> dict:
+        """Upload a binary file to cPanel using multipart/form-data."""
+        url = f"{self.base_url}/Fileman/upload_files"
+        with open(filepath, 'rb') as f:
+            files = {
+                'file-0': (filename, f)
+            }
+            data = {
+                'dir': directory,
+                'overwrite': 1
+            }
+            response = requests.post(
+                url, headers=self.headers, data=data, files=files,
+                verify=False, timeout=60
+            )
+        response.raise_for_status()
+        return response.json()
+
     def mkdir(self, parent: str, name: str) -> dict:
         """Create a directory on cPanel (uses API2)."""
         # API2 Fileman::mkdir uses 'path' for parent directory

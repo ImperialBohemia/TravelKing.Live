@@ -11,7 +11,7 @@ def deploy_to(remote_root):
     print(f"--- STARTING DIRECT CPANEL DEPLOYMENT TO {remote_root} ---")
     cp = CPanelConnector()
     
-    local_root = "/home/q/TravelKing.Live/TravelKing"
+    local_root = "/home/q/TravelKing.Live/web-latest/out"
     
     print(f"Local Source: {local_root}")
     print(f"Remote Target: {remote_root}")
@@ -42,25 +42,26 @@ def deploy_to(remote_root):
             
         # Create directories
         for d in dirs:
-            try:
-                cp.mkdir(remote_subdir, d)
-            except:
-                pass
+            # Recursive directory creation
+            parts = rel_path.split("/") if rel_path != "." else []
+            current_path = remote_root
+            for part in parts + [d]:
+                try:
+                    cp.mkdir(current_path, part)
+                except:
+                    pass
+                current_path = f"{current_path}/{part}"
             
         # Upload files
         for f in files:
-            ext = os.path.splitext(f)[1].lower()
-            if ext in ['.html', '.txt', '.js', '.css', '.json', '.xml', '.svg']:
-                local_f = os.path.join(root, f)
-                print(f"UPLOAD: {remote_subdir}/{f}")
-                try:
-                    with open(local_f, 'r', encoding='utf-8') as fh:
-                        content = fh.read()
-                    cp.save_file(remote_subdir, f, content)
-                    count += 1
-                except Exception as e:
-                    print(f"FAILED {f}: {e}")
-                    errors += 1
+            local_f = os.path.join(root, f)
+            print(f"UPLOAD: {remote_subdir}/{f}")
+            try:
+                cp.upload_file(remote_subdir, f, local_f)
+                count += 1
+            except Exception as e:
+                print(f"FAILED {f}: {e}")
+                errors += 1
                     
     print(f"--- DEPLOYMENT TO {remote_root} FINISHED: {count} uploaded, {errors} errors ---")
 
