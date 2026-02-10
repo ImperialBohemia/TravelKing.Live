@@ -20,34 +20,43 @@ The **Best on Planet** autonomous authority hub for flight compensation and trav
 Every node in the system is permanently linked via the Enterprise Vault.
 
 ### 📊 Google Workspace & Cloud
-*   **Google Sheets (CRM)**: Centralized Leads Database (Sheet ID: `1uvNvNKei8sgmrASHE5OpQKwEANcOFjxOCdIxMWBnOQc`).
-*   **Google Forms**: "TravelKing Inquiry" — High-conversion lead capture form linked to CRM.
-*   **Google Drive**: Enterprise Asset Management and site document storage.
-*   **Google Gmail (SMTP)**: Automated transactional email engine for lead responses.
-*   **Google Search Console**: Real-time SEO performance and indexing monitoring.
-*   **Google Sites**: Autonomous authority portal hosting.
+*   **Google Sheets (CRM Core)**: Centralized Enterprise Database.
+    *   **Main Sheet**: `TravelKing CRM` (ID: `1uvNvNKei8sgmrASHE5OpQKwEANcOFjxOCdIxMWBnOQc`)
+    *   **Tab: Leads**: Automated form response processing.
+    *   **Tab: Tasks**: Technical orchestration and maintenance logs.
+    *   **Tab: Market**: Real-time keyword and trend intelligence.
+*   **Google Forms**: "TravelKing Inquiry" — High-conversion lead capture form. Directly synced to CRM `Leads` tab.
+*   **Google Drive**: Enterprise Asset Management. Automatic storage for generated PDFs, itineraries, and SEO documents.
+*   **Google Gmail (SMTP/API)**: Automated transactional email engine. Handles welcome sequences and AI-generated responses.
+*   **Google Search Console**: Real-time monitoring of SEO performance and indexing status for `travelking.live`.
+*   **Google Sites**: Autonomous Authority Portal. Self-updating status hub and knowledge base.
 *   **Google Admin API**: Global project and permission orchestration.
 
 ### 🤖 AI & Logic (The Brain)
-*   **Gemini AI (1.5 Pro)**: Advanced reasoning engine via Google AI Studio (Free Tier) and Vertex AI fallback.
-*   **Bluesky Bot**: Automated SEO/AEO content publisher for social authority building.
+*   **Gemini AI (1.5 Pro)**: Advanced reasoning engine. Powering lead analysis, content generation, and flight disruption prediction.
+*   **Bluesky Bot**: Automated SEO/AEO content publisher for building social signals and domain authority.
 
 ### 📢 Marketing & Social
-*   **Facebook Graph API**: Direct page and content management.
-*   **Facebook Ads API**: Real-time advertising performance and ROI tracking.
-*   **Google Analytics (GA4)**: Traffic and behavioral analysis (ID: `G-CENSTCTLCW`).
-*   **Google Tag Manager (GTM)**: Universal script and event orchestration (ID: `GTM-WB69V297`).
+*   **Facebook Graph API**: Direct management of FB Pages and automated posting.
+*   **Facebook Ads API**: Precision tracking of advertising campaigns and conversion ROI.
+*   **Google Analytics (GA4)**: Enterprise traffic and user behavioral analysis (ID: `G-CENSTCTLCW`).
+*   **Google Tag Manager (GTM)**: Central orchestration for all universal tracking scripts (ID: `GTM-WB69V297`).
 
 ### 🌍 Search Engine Optimization (SEO)
-*   **Bing Webmaster API**: Deep integration for Bing search performance.
-*   **IndexNow Protocol**: Instant content indexing for Bing, Seznam, and other global engines.
+*   **Bing Webmaster API**: Deep integration with Bing search engine for rankings and crawl stats.
+*   **IndexNow Protocol**: Instant notification of content changes to Bing, Seznam, and global engines.
 
 ### 💰 Monetization (Affiliate)
-*   **Travelpayouts API**: Permanent link to Aviasales (Flights) and Hotellook (Hotels) for revenue generation.
+*   **Travelpayouts API**: Permanent high-value link to Aviasales (Flights) and Hotellook (Hotels).
 
-### 🛡️ Infrastructure & DevOps
+### 🛡️ Monitoring & Health
+*   **UptimeRobot**: External HTTP/Port monitoring (Website, cPanel, Backup Sites).
+*   **Healthchecks.io**: Heartbeat monitoring for OMEGA Python daemons (Guardian Protocol).
+*   **Guardian Protocol**: Internal health monitoring and self-healing engine.
+
+### 🛠️ Infrastructure & DevOps
 *   **cPanel (Hostinger)**: Enterprise hosting management (Server: `server707.web-hosting.com`).
-*   **GitHub**: Permanent source code repository and CI/CD (ImperialBohemia).
+*   **GitHub**: Permanent code repository and decentralized CI/CD (ImperialBohemia).
 
 ---
 
