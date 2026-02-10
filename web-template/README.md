@@ -30,9 +30,7 @@ Precedent is an opinionated collection of components, hooks, and utilities for y
 
 ## One-click Deploy
 
-You can deploy this template to Vercel with the button below:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsteven-tey%2Fprecedent&project-name=precedent&repository-name=precedent&demo-title=Precedent&demo-description=An%20opinionated%20collection%20of%20components%2C%20hooks%2C%20and%20utilities%20for%20your%20Next%20project.&demo-url=https%3A%2F%2Fprecedent.dev&demo-image=https%3A%2F%2Fprecedent.dev%2Fopengraph-image&env=NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,CLERK_SECRET_KEY&envDescription=Create%20a%20Clerk%20application%20to%20get%20these%20variables%3A&envLink=https%3A%2F%2Fdashboard.clerk.com%2Fapps%2Fnew)
 
 You can also clone & create this repo locally with the following command:
 
@@ -59,7 +57,6 @@ https://github.com/user-attachments/assets/aef3c099-e371-43bf-b426-f5ba73185a7c
 
 ### Platforms
 
-- [Vercel](https://vercel.com/) – Easily preview & deploy changes with git
 
 ### UI
 
@@ -88,7 +85,6 @@ https://github.com/user-attachments/assets/aef3c099-e371-43bf-b426-f5ba73185a7c
 
 ### Miscellaneous
 
-- [Vercel Analytics](https://vercel.com/analytics) – Track unique visitors, pageviews, and more in a privacy-friendly way
 
 ## Author
 

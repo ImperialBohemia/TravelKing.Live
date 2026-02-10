@@ -196,19 +196,14 @@ async function main() {
         updatedAt: new Date("2025-05-06T10:30:00Z")
       },
       {
-        title: "Deploying Next.js to Vercel",
-        excerpt: "Deploy Next.js apps to Vercel.",
-        content: "A guide to deploying your Next.js application to Vercel with zero configuration. Includes CI/CD setup.",
         coverImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
         category: "Technology",
-        tags: ["Next.js", "Vercel", "Deployment"],
         readTime: 4,
         viewCount: 140,
         commentCount: 10,
         featured: true,
         published: true,
         authorId: user.id,
-        slug: "deploying-next-js-to-vercel",
         createdAt: new Date("2025-05-06T12:00:00Z"),
         updatedAt: new Date("2025-05-06T12:00:00Z")
       },

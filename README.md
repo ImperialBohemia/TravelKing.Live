@@ -54,7 +54,7 @@ Every service listed below is fully integrated into the OMEGA Hub and used for d
 
 ### 🛠️ Infrastructure & DevOps
 *   **cPanel API**: Hosting and server management (Server: `server707.web-hosting.com`).
-*   **GitHub API**: Source code management and decentralized CI/CD (ImperialBohemia).
+*   **GitHub API**: Source code management and cPanel Direct Deployment (ImperialBohemia).
 
 ---
 
@@ -65,7 +65,7 @@ This system, its architecture, and all proprietary code are the intellectual pro
 TravelKing.Live is an elite, zero-compromise platform built to dominate the flight compensation market. It operates on a **Google-Only Infrastructure** for maximum trust, speed, and zero cost.
 
 - **Zero Friction:** 100% Google Cloud, Sites, and Sheets integration.
-- **Zero Cost:** No hosting fees, no server maintenance.
+- **Zero Friction:** No hosting fees, no server maintenance.
 - **Max Conversion:** Psychological UX/UI optimized for high-value leads.
 - **AI-Ready:** Full AEO (Answer Engine Optimization) with JSON-LD Knowledge Graphs.
 
@@ -103,3 +103,11 @@ To manage the empire, use these core commands:
 
 ---
 © 2026 **TravelKing.Live** | AUTHORIZED BY STANISLAV PASZTOREK | *Simple and Powerful.*
+
+---
+
+## 🌐 EXCLUSIVE HOSTING: cPanel Node.js
+TravelKing.Live is strictly hosted on our private **cPanel infrastructure** using **Node.js**.
+- **NO Netlify.**
+- **NO Vercel.**
+- **ONLY cPanel Node.js** (Server: server707.web-hosting.com).

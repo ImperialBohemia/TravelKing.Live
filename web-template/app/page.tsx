@@ -74,7 +74,6 @@ export default async function Home() {
                 strokeLinejoin="round"
               />
             </svg>
-            <p>Deploy to Vercel</p>
           </a>
           <a
             className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
@@ -127,12 +126,9 @@ const features = [
   {
     title: "One-click Deploy",
     description:
-      "Jumpstart your next project by deploying Precedent to [Vercel](https://vercel.com/) in one click.",
     demo: (
       <a href={DEPLOY_URL}>
         <Image
-          src="https://vercel.com/button"
-          alt="Deploy with Vercel"
           width={120}
           height={30}
           unoptimized
@@ -153,7 +149,6 @@ const features = [
   {
     title: "Hooks, utilities, and more",
     description:
-      "Precedent offers a collection of hooks, utilities, and `@vercel/og`",
     demo: (
       <div className="grid grid-flow-col grid-rows-3 gap-10 p-10">
         <span className="font-mono font-semibold">useIntersectionObserver</span>
