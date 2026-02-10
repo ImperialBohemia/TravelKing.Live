@@ -21,6 +21,9 @@ export default function MainNavbar() {
           <span className="text-xl sm:text-2xl font-bold font-poppins bg-linear-to-r from-primary to-accent bg-clip-text text-transparent italic">
             TRAVELKING
           </span>
+          <span className="text-xl sm:text-2xl font-black font-poppins animate-pulse-green italic ml-0.5">
+            .LIVE
+          </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">

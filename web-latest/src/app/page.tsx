@@ -76,71 +76,80 @@ export default function Home() {
         </div>
 
         <div className="container relative z-10 px-4 sm:px-6 max-w-7xl mx-auto pt-20">
-          <motion.div
-            className="flex flex-col items-start space-y-8 text-left"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <div className="flex items-center gap-4">
-              <div className="h-[1px] w-12 bg-primary"></div>
-              <span className="text-primary uppercase tracking-[0.5em] text-[10px] font-bold">Official Industry Leader</span>
-            </div>
-
-            <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-none font-poppins tracking-tighter uppercase italic pr-4">
-              FLIGHT <br />
-              <span className="bg-linear-to-r from-primary via-accent to-primary bg-clip-text text-transparent italic pr-2">DISRUPTED?</span>
-            </h1>
-
-            <p className="max-w-[700px] text-muted-foreground text-lg sm:text-xl font-light leading-relaxed">
-              Don't let airlines keep your money. Our flight analysis is <span className="text-white font-bold">100% FREE</span>. Receive an <span className="text-white font-bold">instant email response</span> identifying the absolute best recovery service for your specific disruption to ensure you get the <span className="text-white font-bold">maximum payout</span>.
-            </p>
-
-            <div className="flex flex-col w-full max-w-md bg-card/50 backdrop-blur-md border border-white/10 p-6 rounded-2xl gap-4 mt-8">
-              <div className="flex flex-col gap-2">
-                <label className="text-xs uppercase font-bold text-muted-foreground tracking-widest">Flight Number (e.g. BA123)</label>
-                <input
-                  type="text"
-                  placeholder="Flight No."
-                  className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors uppercase font-mono"
-                  value={flightNo}
-                  onChange={(e) => setFlightNo(e.target.value)}
-                />
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              className="flex flex-col items-start space-y-8 text-left"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <div className="flex items-center gap-4">
+                <div className="h-[1px] w-12 bg-primary"></div>
+                <span className="text-primary uppercase tracking-[0.5em] text-[10px] font-bold">Official Industry Leader</span>
               </div>
-              <div className="flex flex-col gap-2">
-                <label className="text-xs uppercase font-bold text-muted-foreground tracking-widest">Email Address</label>
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-              <div className="flex items-center gap-3 py-2 cursor-pointer group" onClick={() => setWantsNews(!wantsNews)}>
-                <div
-                  className={`w-10 h-5 rounded-full relative transition-colors duration-300 ${wantsNews ? 'bg-primary' : 'bg-white/10'}`}
-                >
-                  <div className={`absolute top-0.5 w-4 h-4 rounded-full bg-white transition-all duration-300 ${wantsNews ? 'left-5.5' : 'left-0.5'}`}></div>
-                </div>
-                <span className="text-[10px] uppercase font-bold text-muted-foreground tracking-widest group-hover:text-white transition-colors max-w-[300px] leading-tight">
-                  {wantsNews
-                    ? "Activate Long-Run Intelligence: Get Latest News, Safety Tips & Travel Warnings"
-                    : "One-time tactical email only. No future marketing protocol."}
-                </span>
-              </div>
-              <button
-                onClick={handleSubmit}
-                disabled={loading}
-                className="w-full h-14 rounded-full bg-primary text-black font-black uppercase tracking-widest hover:bg-accent transition-all hover:scale-105 shadow-xl shadow-primary/20 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {loading ? 'TRANSMITTING...' : 'START PROTOCOL'} <Zap className="w-4 h-4 fill-current" />
-              </button>
-              <p className="text-[10px] text-center text-muted-foreground uppercase tracking-wider">
-                100% FREE ANALYSIS. MAXIMUM PAYOUT GUARANTEED. RESPONSE TIME: <span className="text-white font-bold">INSTANT</span>.
+
+              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-none font-poppins tracking-tighter uppercase italic pr-10 overflow-visible">
+                FLIGHT <br />
+                <span className="bg-linear-to-r from-primary via-accent to-primary bg-clip-text text-transparent italic pr-6">DISRUPTED?</span>
+              </h1>
+
+              <p className="max-w-[700px] text-muted-foreground text-lg sm:text-xl font-light leading-relaxed">
+                Don't let airlines keep your money. Our flight analysis is <span className="text-white font-bold">100% FREE</span>. Receive an <span className="text-white font-bold">instant email response</span> identifying the absolute best recovery service for your specific disruption to ensure you get the <span className="text-white font-bold">maximum payout</span>.
               </p>
-            </div>
-          </motion.div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex justify-center lg:justify-end"
+            >
+              <div className="flex flex-col w-full max-w-md bg-card/50 backdrop-blur-md border border-white/10 p-6 rounded-2xl gap-4">
+                <div className="flex flex-col gap-2">
+                  <label className="text-xs uppercase font-bold text-muted-foreground tracking-widest">Flight Number (e.g. BA123)</label>
+                  <input
+                    type="text"
+                    placeholder="Flight No."
+                    className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors uppercase font-mono"
+                    value={flightNo}
+                    onChange={(e) => setFlightNo(e.target.value)}
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label className="text-xs uppercase font-bold text-muted-foreground tracking-widest">Email Address</label>
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+                <div className="flex items-center gap-3 py-2 cursor-pointer group" onClick={() => setWantsNews(!wantsNews)}>
+                  <div
+                    className={`w-10 h-5 rounded-full relative transition-colors duration-300 ${wantsNews ? 'bg-primary' : 'bg-white/10'}`}
+                  >
+                    <div className={`absolute top-0.5 w-4 h-4 rounded-full bg-white transition-all duration-300 ${wantsNews ? 'left-5.5' : 'left-0.5'}`}></div>
+                  </div>
+                  <span className="text-[10px] uppercase font-bold text-muted-foreground tracking-widest group-hover:text-white transition-colors max-w-[300px] leading-tight">
+                    {wantsNews
+                      ? "Keep me protected with latest travel news, safety guides and helpful tips"
+                      : "I only want the instant flight analysis for this single claim"}
+                  </span>
+                </div>
+                <button
+                  onClick={handleSubmit}
+                  disabled={loading}
+                  className="w-full h-14 rounded-full bg-primary text-black font-black uppercase tracking-widest hover:bg-accent transition-all hover:scale-105 shadow-xl shadow-primary/20 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {loading ? 'TRANSMITTING...' : 'START PROTOCOL'} <Zap className="w-4 h-4 fill-current" />
+                </button>
+                <p className="text-[10px] text-center text-muted-foreground uppercase tracking-wider">
+                  100% FREE ANALYSIS. MAXIMUM PAYOUT GUARANTEED. RESPONSE TIME: <span className="text-white font-bold">INSTANT</span>.
+                </p>
+              </div>
+            </motion.div>
+          </div>
 
           {/* Enterprise Stats */}
           <motion.div
