@@ -1,0 +1,53 @@
+{
+  "builder_name": "OMEGA Next.js Builder v4",
+  "version": "4.0.0",
+  "framework": "Next.js 16.1.4 (App Router)",
+  "styling": "Tailwind CSS 4",
+  "components_root": "web-latest/src/components",
+  "sections_root": "web-latest/src/components/sections",
+  "registry": {
+    "Hero": {
+      "path": "web-latest/src/components/sections/HeroSection.tsx",
+      "description": "Main landing page hero with animated headline and status badge."
+    },
+    "Search": {
+      "path": "web-latest/src/components/sections/SearchSection.tsx",
+      "description": "Global inventory scanner with MapPin and Calendar inputs."
+    },
+    "Features": {
+      "path": "web-latest/src/components/sections/FeaturesSection.tsx",
+      "description": "Grid of system capabilities (EU261, Market Sniper, Stealth Concierge)."
+    },
+    "WorldMap": {
+      "path": "web-latest/src/components/sections/MapSection.tsx",
+      "description": "Animated globe showing operational intelligence network."
+    },
+    "Pricing": {
+      "path": "web-latest/src/components/sections/PricingSection.tsx",
+      "description": "Membership tiers (Initiate, Sovereign, Omega)."
+    },
+    "CTA": {
+      "path": "web-latest/src/components/sections/CTASection.tsx",
+      "description": "Final call to action with large italic typography."
+    },
+    "Navbar": {
+      "path": "web-latest/src/components/Navbar.tsx",
+      "description": "Sticky header with logo, navigation links, and theme toggle."
+    },
+    "Footer": {
+      "path": "web-latest/src/components/Footer/index.tsx",
+      "description": "Site footer with copyright and legal links."
+    },
+    "Blog": {
+      "path": "web-latest/src/components/sections/BlogSection.tsx",
+      "description": "Elite travel blog feed with high-impact visuals and AEO-optimized cards."
+    }
+  },
+  "best_practices": [
+    "Always use 'use client' for components with motion or hooks.",
+    "Favor semantic sections with descriptive IDs for smooth scrolling.",
+    "Maintain 0.8s - 1s transition durations for motion.div elements.",
+    "Strictly adhere to 'primary' and 'accent' colors for highlights.",
+    "Use font-black and italic for OMEGA brand headlines."
+  ]
+}

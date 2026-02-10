@@ -51,3 +51,10 @@ TravelKing.Live is the global benchmark for **Protected Travel**. Every user int
 - 2026-02-08T23:12:57.556813 | SYNC PREP | Snapshot: backups/snap_20260208_2312
 - 2026-02-10T15:55:00.000000 | TACTICAL BOOM DEPLOYED | Lead Gen system overhaul with AirHelp referral engine.
 - 2026-02-10T16:00:00.000000 | LONG-RUN INTEL ACTIVE | Marketing toggle added for news, tips, and safety warnings.
+---
+
+## 🚫 CRITICAL RESTRICTION: STITCH
+- **STITCH IS STRICTLY FORBIDDEN.**
+- All UI work must be done by hand or local code generation.
+- Never connect to or use the Stitch service.
+- This is a core architectural mandate.
