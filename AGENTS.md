@@ -32,3 +32,8 @@ Refer to `knowledge/OMNI_VAULT_MAP.md` for a complete directory of credentials a
 
 ---
 *Authorized by: OMEGA Intelligence Hub*
+
+## 🚫 HOSTING RESTRICTION: NO NETLIFY/VERCEL
+- Deployment to **Netlify**, **Vercel**, or any other decentralized cloud platform is **STRICTLY PROHIBITED**.
+- This project is exclusively hosted on private cPanel infrastructure (Server 707).
+- Any attempt to configure or deploy to Netlify ("netlify bot") constitutes a policy violation.

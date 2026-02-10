@@ -129,5 +129,28 @@ def audit():
     except Exception as e:
         print(f"GitHub Audit Error: {e}")
 
+def enforce_hosting_policy():
+    """Detects and flags prohibited hosting configurations (Netlify/Vercel)."""
+    print("\n--- [10] HOSTING POLICY ENFORCEMENT ---")
+    prohibited = ["netlify.toml", ".netlify", "vercel.json", ".vercel"]
+    violations = []
+
+    for root, dirs, files in os.walk(ROOT_DIR):
+        # Skip node_modules to avoid false positives in dependencies
+        if 'node_modules' in dirs:
+            dirs.remove('node_modules')
+
+        for item in prohibited:
+            if item in files or item in dirs:
+                violations.append(os.path.join(root, item))
+
+    if violations:
+        print(f"❌ CRITICAL VIOLATION: PROHIBITED HOSTING CONFIG DETECTED!")
+        for v in violations:
+            print(f"   - {v} (DELETE IMMEDIATELY)")
+    else:
+        print("Hosting Policy : 🟢 COMPLIANT (No unauthorized cloud configs found)")
+
 if __name__ == "__main__":
     audit()
+    enforce_hosting_policy()
