@@ -1,0 +1,216 @@
+@import "tailwindcss";
+
+/* ══════════════════════════════════════════════
+   TRAVELKING.LIVE — DESIGN SYSTEM
+   Premium luxury travel brand
+   ══════════════════════════════════════════════ */
+
+:root {
+  /* Brand Palette */
+  --color-midnight: #0a0e1a;
+  --color-navy: #0f172a;
+  --color-slate: #1e293b;
+  --color-gold: #d4af37;
+  --color-gold-light: #f0d060;
+  --color-platinum: #e2e8f0;
+  --color-white: #ffffff;
+  --color-glass: rgba(15, 23, 42, 0.7);
+  --color-glass-light: rgba(255, 255, 255, 0.05);
+
+  /* Typography */
+  --font-display: "Outfit", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Spacing */
+  --section-padding: clamp(3rem, 8vw, 7rem);
+
+  /* Transitions */
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-fast: all 0.2s ease;
+}
+
+/* ── Base ── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-midnight);
+  color: var(--color-platinum);
+  overflow-x: hidden;
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+/* ── Gold Gradient Text ── */
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glassmorphic Card ── */
+.glass-card {
+  background: var(--color-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-glass-light);
+  border-radius: 1.25rem;
+  transition: var(--transition-smooth);
+}
+
+.glass-card:hover {
+  border-color: rgba(212, 175, 55, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* ── CTA Button ── */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: linear-gradient(135deg, var(--color-gold), #c5981f);
+  color: var(--color-midnight);
+  font-family: var(--font-display);
+  font-weight: 700;
+  border-radius: 9999px;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-gold:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: transparent;
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-weight: 600;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 9999px;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-white);
+}
+
+/* ── Divider ── */
+.gold-divider {
+  width: 4rem;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-gold), transparent);
+  border: none;
+  margin: 1rem 0;
+}
+
+/* ── Section pattern ── */
+.section-dark {
+  background: var(--color-navy);
+}
+
+.section-gradient {
+  background: linear-gradient(180deg, var(--color-midnight) 0%, var(--color-navy) 100%);
+}
+
+/* ── Hero Background ── */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 14, 26, 0.85) 0%,
+    rgba(10, 14, 26, 0.6) 40%,
+    rgba(10, 14, 26, 0.9) 100%
+  );
+  z-index: 1;
+}
+
+/* ── Animated Glow ── */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.glow-gold {
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+}
+
+/* ── Stats Counter ── */
+.stat-number {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-midnight);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-slate);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+/* ── Selection ── */
+::selection {
+  background: rgba(212, 175, 55, 0.3);
+  color: var(--color-white);
+}
+
+/* ── Form Inputs ── */
+.input-dark {
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: var(--transition-fast);
+  outline: none;
+}
+
+.input-dark:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.input-dark::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.25rem !important;
+  }
+}

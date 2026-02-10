@@ -1,0 +1,7 @@
+:HL["/_next/static/chunks/3fdc6230a88d3e48.css","style"]
+:HL["https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;700;800;900&display=swap","style"]
+:HL["https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=800","image"]
+:HL["https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&q=80&w=800","image"]
+:HL["https://images.unsplash.com/photo-1502014822147-1aedfb0676e0?auto=format&fit=crop&q=80&w=800","image"]
+:HL["https://images.unsplash.com/photo-1559121225-4c96207671f2?auto=format&fit=crop&q=80&w=800","image"]
+0:{"buildId":"ZKRd1QVD04XrHtDSoO7XE","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
