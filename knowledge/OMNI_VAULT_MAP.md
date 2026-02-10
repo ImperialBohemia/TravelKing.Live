@@ -33,3 +33,11 @@ This document is the **Single Source of Truth** for AI Agents to identify and ac
 
 ---
 *Authorized by: OMEGA Intelligence Hub*
+
+---
+
+## 🚫 FORBIDDEN CONNECTIONS
+| Service | Status | Reason |
+| :--- | :--- | :--- |
+| **Stitch** | **STRICTLY FORBIDDEN** | User mandate: "no foking stitch never". DO NOT CONNECT. |
+| **Netlify/Vercel** | **STRICTLY FORBIDDEN** | Mandate: "ONLY cPanel". |

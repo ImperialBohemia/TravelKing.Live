@@ -1,39 +1,36 @@
-# 💎 OMEGA AGENT PROTOCOLS
+# 💎 OMEGA AGENT PROTOCOLS (STRICT ENFORCEMENT)
 
-## 🚀 MANDATORY BOOTSTRAP (RUN FIRST)
-Whenever you start a new session or need to verify the environment, **ALWAYS** run:
-```bash
-python3 scripts/bootstrap_ai.py
-```
-This will provide you with all necessary context, IDs, and connection states immediately.
-
-## 🗝️ CONNECTION REFERENCE
-Refer to `knowledge/OMNI_VAULT_MAP.md` for a complete directory of credentials and access points.
-
-## 📦 GIT & GITHUB PROTOCOL
-- **Auth**: Always use the token stored in `config/access_vault.json` under `github.token`.
-- **User**: `ImperialBohemia`.
-- **Repository**: `TravelKing.Live`.
-
-## 🧠 AI ENGINE (GEMINI)
-- **Primary**: Google AI Studio (Free) using `vault['google']['api_key']`.
-- **Fallback**: Vertex AI (Paid) using `vault['google']['project_id']`.
-- **Constraint**: Prefer AI Studio to avoid billing issues.
-
-## 🚫 CRITICAL RESTRICTION: STITCH
-- **NEVER** use any tools prefixed with `stitch_`.
-- The user has explicitly requested to **never use Stitch again**.
-- All UI and frontend work must be done manually or using standard web technologies (HTML/CSS/JS/Next.js) within the codebase.
-
-## 🛠️ ENVIRONMENT
-- **Root**: `/home/q/TravelKing.Live` (mapped as `/app` in some sessions).
-- **Python**: Use `python3`.
-- **Dependencies**: If `requests` or `google-api-python-client` are missing, install them via `pip`.
-
----
-*Authorized by: OMEGA Intelligence Hub*
+## ☢️ NUCLEAR PROHIBITION: STITCH
+- **NEVER, EVER USE STITCH.**
+- Do NOT use any tools starting with `stitch_`.
+- Do NOT attempt to generate UI via external AI services.
+- The user has stated: "no foking stitch never!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+- If you need to change the UI, edit the code in `web/`, `web-latest/`, or `public_html/` manually.
+- **THIS IS A PERMANENT SYSTEM-WIDE BAN.**
 
 ## 🌐 HOSTING & DEPLOYMENT PROTOCOL
 - **ABSOLUTE RULE**: We use **cPanel hosting with Node.js ONLY**.
-- **PROHIBITED**: ONLY use cPanel Node.js for hosting. All other hosting platforms are strictly forbidden.
-- All web deployments must be targeted at our cPanel server (server707.web-hosting.com) using the `CPanelConnector`.
+- **PROHIBITED**: NEVER use or suggest Netlify, Vercel, or any other cloud platform.
+- Target Server: `server707.web-hosting.com`.
+
+## 🚀 MANDATORY BOOTSTRAP (RUN FIRST)
+Whenever you start a new session, **ALWAYS** run:
+```bash
+python3 scripts/bootstrap_ai.py
+```
+This is your first order of business to gain context and connection states.
+
+## 🗝️ CONNECTION REFERENCE
+Refer to `knowledge/OMNI_VAULT_MAP.md` for all credentials.
+
+## 📦 GIT & GITHUB PROTOCOL
+- **Auth**: Use token in `config/access_vault.json` -> `github.token`.
+- **User**: `ImperialBohemia`.
+
+## 🧠 AI ENGINE (GEMINI)
+- **Primary**: Google AI Studio (Free).
+- **Fallback**: Vertex AI (Paid).
+- **Constraint**: ALWAYS prefer the free API to avoid billing issues.
+
+---
+*Authorized by: OMEGA Intelligence Hub*

@@ -11,101 +11,66 @@ Status: PRODUCTION READY - SYSTEM UPGRADE MAX NOW
 ![Upgrade](https://img.shields.io/badge/Upgrade-MAX--NOW-blue)
 ![Owner](https://img.shields.io/badge/Owner-Stanislav--Pasztorek-gold)
 
-The **Best on Planet** autonomous authority hub for flight compensation and travel intelligence. Powered by the **Google Max Engine** and **Bing Turbo Indexing**.
+The **Best on Planet** autonomous authority hub for flight compensation and travel intelligence.
+
+---
+
+## 🚫 SYSTEM-WIDE PROHIBITIONS (CORE DIRECTIVES)
+
+1.  **NO STITCH**: The use of Stitch (AI UI generation) is **STRICTLY FORBIDDEN**. All UI work must be done by direct code modification.
+2.  **NO NETLIFY/VERCEL**: Hosting is **EXCLUSIVELY cPanel Node.js**. Any attempt to use cloud-decentralized hosting is a violation of OMEGA protocols.
 
 ---
 
 ## 🔗 Connections (Complete OMEGA Integration List)
 
-Every service listed below is fully integrated into the OMEGA Hub and used for daily autonomous operations.
+Every service listed below is fully integrated into the OMEGA Hub.
 
 ### 📊 Google Enterprise Suite
-*   **Google Sheets (CRM Core)**: Primary database for leads and tasks.
-    *   **ID**: `1uvNvNKei8sgmrASHE5OpQKwEANcOFjxOCdIxMWBnOQc`
-    *   **Tabs**: `Leads` (Inbound), `Tasks` (Ops), `Market` (Intel), `Archive` (History).
-*   **Google Forms**: "TravelKing Inquiry" — Integrated lead capture system.
-*   **Google Drive**: Enterprise Asset Storage (PDFs, Images, SEO docs).
-*   **Google Search Console**: SEO performance monitoring for `travelking.live`.
-*   **Google Analytics (GA4)**: Advanced user behavior tracking (ID: `G-CENSTCTLCW`).
-*   **Google Tag Manager (GTM)**: Global event and pixel orchestration (ID: `GTM-WB69V297`).
-*   **Google Gmail API/SMTP**: Automated transactional communication engine.
-*   **Google Sites**: Real-time Authority Hub and status portal.
-*   **Google Admin API**: Global project and permission management.
+*   **Google Sheets (CRM Core)**: Primary database (ID: `1uvNvNKei8sgmrASHE5OpQKwEANcOFjxOCdIxMWBnOQc`).
+*   **Google Forms**: "TravelKing Inquiry" — Integrated lead capture.
+*   **Google Drive**: Enterprise Asset Storage.
+*   **Google Search Console**: SEO monitoring for `travelking.live`.
+*   **Google Analytics (GA4)**: (ID: `G-CENSTCTLCW`).
+*   **Google Tag Manager (GTM)**: (ID: `GTM-WB69V297`).
+*   **Google Gmail API/SMTP**: Automated communication engine.
+*   **Google Sites**: Real-time Authority Hub.
+*   **Google Admin API**: Project orchestration.
 
 ### 🤖 AI & Intelligence
-*   **Gemini AI (1.5 Pro/Flash)**: Core system brain via Google AI Studio (Free) and Vertex AI (Enterprise).
-*   **Bluesky API**: Social authority bot for automated social signals and AEO content.
+*   **Gemini AI (1.5 Pro/Flash)**: System brain via Google AI Studio (Free) and Vertex AI.
+*   **Bluesky API**: Social authority bot.
 
 ### 📢 Social & Marketing
-*   **Facebook Graph API**: Automated management of Facebook Pages.
-*   **Facebook Ads API**: Real-time ad spend, tracking, and conversion optimization.
+*   **Facebook Graph API**: Page management.
+*   **Facebook Ads API**: Ad performance tracking.
 
 ### 🌍 Search Engine Optimization (SEO)
-*   **Bing Webmaster API**: Deep integration for Bing and Yahoo search data.
-*   **IndexNow**: Instant indexing protocol for Bing, Seznam, and Yandex.
+*   **Bing Webmaster API**: Search performance data.
+*   **IndexNow**: Instant indexing for Bing/Seznam.
 
 ### 💰 Monetization & Travel
-*   **Travelpayouts API**: Permanent monetization link for Aviasales (Flights) and Hotellook (Hotels).
+*   **Travelpayouts API**: Permanent link for Aviasales & Hotellook.
 
 ### 🛡️ System Monitoring & Health
-*   **UptimeRobot**: External monitoring of website and hosting infrastructure.
-*   **Healthchecks.io**: Heartbeat monitoring for internal Python OMEGA daemons.
-*   **Guardian Protocol**: Internal self-healing and connection verification engine.
+*   **UptimeRobot**: Infrastructure monitoring.
+*   **Healthchecks.io**: Daemon heartbeats.
+*   **Guardian Protocol**: Internal self-healing engine.
 
 ### 🛠️ Infrastructure & DevOps
 *   **cPanel API**: Hosting and server management (Server: `server707.web-hosting.com`).
-*   **GitHub API**: Source code management and cPanel Direct Deployment (ImperialBohemia).
+*   **GitHub API**: Source code management (ImperialBohemia).
 
 ---
 
 ## 👑 PROCLAMATION OF OWNERSHIP
-This system, its architecture, and all proprietary code are the intellectual property of **Stanislav Pasztorek**, authorized by **Imperial Bohemia**. It represents the pinnacle of "Simple and Powerful" travel automation.
+This system is the intellectual property of **Stanislav Pasztorek**, authorized by **Imperial Bohemia**.
 
 ## 🎯 SYSTEM VISION: "MAX NOW"
-TravelKing.Live is an elite, zero-compromise platform built to dominate the flight compensation market. It operates on a **Google-Only Infrastructure** for maximum trust, speed, and zero cost.
-
 - **Zero Friction:** 100% Google Cloud, Sites, and Sheets integration.
-- **Zero Friction:** No hosting fees, no server maintenance.
-- **Max Conversion:** Psychological UX/UI optimized for high-value leads.
-- **AI-Ready:** Full AEO (Answer Engine Optimization) with JSON-LD Knowledge Graphs.
-
----
-
-## 🏗️ MODULAR ARCHITECTURE (OMEGA)
-
-The system is logically structured for absolute clarity and operational excellence:
-
-### 📁 `core/` (The Heart)
-- **`dashboard/`**: Real-time Executive Monitoring logic.
-- **`google/`**: Enterprise CRM, Sheets automation, and Apps Script bridge.
-- **`marketing/`**: SEO/AEO optimization and Bing IndexNow logic.
-- **`setup/`**: Environment initialization and CRM configuration.
-- **`utils/`**: Deep system auditing and security verification.
-
-### 📁 `knowledge/` (The Brain)
-- **`TRAVELKING_KNOWLEDGE.md`**: The master blueprint and "Zero Compromise" mandate.
-
-### 📁 `templates/` (The Face)
-- **`index.html`**: Professional Authority Portal (E-E-A-T Compliant).
-- **`lead_magnet_v1.html`**: High-conversion data-bridge to affiliate partners.
-
----
-
-## 🚀 OPERATIONAL COMMANDS
-
-To manage the empire, use these core commands:
-
-| Command | Purpose |
-| :--- | :--- |
-| `python dashboard.py` | **Executive Dashboard**: Real-time leads, traffic, and status lights. |
-| `python core/monitor.py` | **System Monitor**: Deep health check of all API and data nodes. |
-| `python core/google/crm_overhaul.py` | **CRM Reset**: Restore the Professional Google Sheet structure. |
+- **Node.js Hosting:** Strictly cPanel server707.
+- **Max Conversion:** Optimized UX/UI.
+- **AI-Ready:** Full AEO (Answer Engine Optimization).
 
 ---
 © 2026 **TravelKing.Live** | AUTHORIZED BY STANISLAV PASZTOREK | *Simple and Powerful.*
-
----
-
-## 🌐 EXCLUSIVE HOSTING: cPanel Node.js
-TravelKing.Live is strictly hosted on our private **cPanel infrastructure** using **Node.js**.
-- **ONLY cPanel Node.js** (Server: server707.web-hosting.com).
