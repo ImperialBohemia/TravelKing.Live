@@ -161,16 +161,19 @@ class UptimeMonitor:
         
         # 1. List existing checks
         existing = self.list_all_checks()
-        logger.info(f"Found {len(existing)} existing checks")
+        active_count = len(existing)
+        logger.info(f"Found {active_count} existing checks")
         
         # 2. Create new checks if needed
         if not any("TravelKing.Live - Website" in c['display_name'] for c in existing):
-            self.create_web_uptime_check()
+            if self.create_web_uptime_check():
+                active_count += 1
         else:
             logger.info("Web check already exists, skipping...")
         
         if not any("cPanel" in c['display_name'] for c in existing):
-            self.create_cpanel_uptime_check()
+            if self.create_cpanel_uptime_check():
+                active_count += 1
         else:
             logger.info("cPanel check already exists, skipping...")
         
@@ -181,7 +184,7 @@ class UptimeMonitor:
         
         return {
             "status": "DEPLOYED",
-            "checks_active": len(self.list_all_checks()),
+            "checks_active": active_count,
             "monitoring_url": f"https://console.cloud.google.com/monitoring/uptime?project={self.project_id}"
         }
 
