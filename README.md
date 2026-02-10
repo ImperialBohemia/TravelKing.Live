@@ -15,6 +15,42 @@ The **Best on Planet** autonomous authority hub for flight compensation and trav
 
 ---
 
+## 🔌 TOOLS CONNECTED (The OMEGA Network)
+
+Every node in the system is permanently linked via the Enterprise Vault.
+
+### 📊 Google Workspace & Cloud
+*   **Google Sheets (CRM)**: Centralized Leads Database (Sheet ID: `1uvNvNKei8sgmrASHE5OpQKwEANcOFjxOCdIxMWBnOQc`).
+*   **Google Forms**: "TravelKing Inquiry" — High-conversion lead capture form linked to CRM.
+*   **Google Drive**: Enterprise Asset Management and site document storage.
+*   **Google Gmail (SMTP)**: Automated transactional email engine for lead responses.
+*   **Google Search Console**: Real-time SEO performance and indexing monitoring.
+*   **Google Sites**: Autonomous authority portal hosting.
+*   **Google Admin API**: Global project and permission orchestration.
+
+### 🤖 AI & Logic (The Brain)
+*   **Gemini AI (1.5 Pro)**: Advanced reasoning engine via Google AI Studio (Free Tier) and Vertex AI fallback.
+*   **Bluesky Bot**: Automated SEO/AEO content publisher for social authority building.
+
+### 📢 Marketing & Social
+*   **Facebook Graph API**: Direct page and content management.
+*   **Facebook Ads API**: Real-time advertising performance and ROI tracking.
+*   **Google Analytics (GA4)**: Traffic and behavioral analysis (ID: `G-CENSTCTLCW`).
+*   **Google Tag Manager (GTM)**: Universal script and event orchestration (ID: `GTM-WB69V297`).
+
+### 🌍 Search Engine Optimization (SEO)
+*   **Bing Webmaster API**: Deep integration for Bing search performance.
+*   **IndexNow Protocol**: Instant content indexing for Bing, Seznam, and other global engines.
+
+### 💰 Monetization (Affiliate)
+*   **Travelpayouts API**: Permanent link to Aviasales (Flights) and Hotellook (Hotels) for revenue generation.
+
+### 🛡️ Infrastructure & DevOps
+*   **cPanel (Hostinger)**: Enterprise hosting management (Server: `server707.web-hosting.com`).
+*   **GitHub**: Permanent source code repository and CI/CD (ImperialBohemia).
+
+---
+
 ## 👑 PROCLAMATION OF OWNERSHIP
 This system, its architecture, and all proprietary code are the intellectual property of **Stanislav Pasztorek**, authorized by **Imperial Bohemia**. It represents the pinnacle of "Simple and Powerful" travel automation.
 
@@ -57,18 +93,6 @@ To manage the empire, use these core commands:
 | `python dashboard.py` | **Executive Dashboard**: Real-time leads, traffic, and status lights. |
 | `python core/monitor.py` | **System Monitor**: Deep health check of all API and data nodes. |
 | `python core/google/crm_overhaul.py` | **CRM Reset**: Restore the Professional Google Sheet structure. |
-
----
-
-## ⚡ SEO & BING TURBO
-This system is hard-wired into the **Bing IndexNow API**. Every lead capture or content update triggers an instant indexing ping, ensuring the site remains at the top of both traditional search and AI answer engines.
-
----
-
-## 🛡️ GOVERNANCE
-- **Primary Authority**: Stanislav Pasztorek
-- **Support Project**: TravelKing (GCP ID: 1009428807876)
-- **Service Account**: `travelking@travelking.iam.gserviceaccount.com`
 
 ---
 © 2026 **TravelKing.Live** | AUTHORIZED BY STANISLAV PASZTOREK | *Simple and Powerful.*
