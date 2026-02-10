@@ -3,76 +3,69 @@
 import { useState } from "react";
 
 export default function SearchBox() {
-    const [form, setForm] = useState({
-        origin: "",
-        destination: "",
-        date: ""
-    });
+    const [from, setFrom] = useState("");
+    const [to, setTo] = useState("");
 
-    const handleSearch = (e) => {
-        e.preventDefault();
-        // In a real app, this would trigger our TravelpayoutsConnector
-        // For now, redirect to our affiliate search engine
-        const dateStr = form.date.replace(/-/g, "");
-        const url = `https://www.aviasales.com/search/${form.origin}${dateStr}${form.destination}1?marker=11089`;
+    const handleSearch = () => {
+        if (!from || !to) return;
+        const url = `https://www.jetradar.com/flights/?origin=${from}&destination=${to}&origin_name=${from}&destination_name=${to}&marker=532822&locale=en`;
         window.open(url, "_blank");
     };
 
     return (
-        <section id="search" className="py-24 px-6 relative">
-            <div className="max-w-6xl mx-auto">
-                <div className="glass-card p-8 md:p-12 glow-gold">
-                    <div className="flex flex-col md:flex-row md:items-end gap-6">
-                        <div className="flex-1">
-                            <label className="block text-xs uppercase tracking-widest text-slate-400 mb-3 font-bold">Origin</label>
+        <section id="search" className="py-20 px-6 -mt-20 relative z-20">
+            <div className="max-w-5xl mx-auto glass-pane p-1 shadow-2xl rounded-3xl">
+                <div className="bg-deep-space/60 rounded-[calc(1.5rem-2px)] p-8 md:p-12 relative overflow-hidden">
+                    {/* Subtle decoration */}
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-gold-bright/5 blur-3xl rounded-full -mr-32 -mt-32"></div>
+
+                    <div className="flex flex-col md:flex-row items-end gap-6 relative z-10">
+                        <div className="flex-1 w-full group">
+                            <label className="block text-[10px] uppercase font-black tracking-[0.2em] text-gold-soft mb-3 ml-1">Origin Port</label>
                             <input
                                 type="text"
-                                placeholder="From (e.g. PRG)"
-                                className="input-dark"
-                                value={form.origin}
-                                onChange={(e) => setForm({ ...form, origin: e.target.value.toUpperCase() })}
+                                placeholder="City or Airport (e.g. PRG)"
+                                className="w-full bg-white/5 border border-white/10 px-6 py-5 rounded-2xl text-white focus:outline-none focus:border-gold-bright transition-all placeholder:text-slate-600 font-display text-lg"
+                                value={from}
+                                onChange={(e) => setFrom(e.target.value.toUpperCase())}
                             />
                         </div>
-                        <div className="flex-1">
-                            <label className="block text-xs uppercase tracking-widest text-slate-400 mb-3 font-bold">Destination</label>
+
+                        <div className="flex items-center justify-center h-16 w-16 mb-2 hidden md:flex">
+                            <span className="text-2xl opacity-20 group-hover:opacity-100 transition-opacity">⇌</span>
+                        </div>
+
+                        <div className="flex-1 w-full">
+                            <label className="block text-[10px] uppercase font-black tracking-[0.2em] text-gold-soft mb-3 ml-1">Destination Target</label>
                             <input
                                 type="text"
-                                placeholder="To (e.g. DXB)"
-                                className="input-dark"
-                                value={form.destination}
-                                onChange={(e) => setForm({ ...form, destination: e.target.value.toUpperCase() })}
+                                placeholder="Target Destination (e.g. DXB)"
+                                className="w-full bg-white/5 border border-white/10 px-6 py-5 rounded-2xl text-white focus:outline-none focus:border-gold-bright transition-all placeholder:text-slate-600 font-display text-lg"
+                                value={to}
+                                onChange={(e) => setTo(e.target.value.toUpperCase())}
                             />
                         </div>
-                        <div className="flex-1">
-                            <label className="block text-xs uppercase tracking-widest text-slate-400 mb-3 font-bold">Travel Date</label>
-                            <input
-                                type="date"
-                                className="input-dark"
-                                value={form.date}
-                                onChange={(e) => setForm({ ...form, date: e.target.value })}
-                            />
-                        </div>
+
                         <button
                             onClick={handleSearch}
-                            className="btn-gold w-full md:w-auto px-10 h-[52px]"
+                            className="w-full md:w-auto noble-button !rounded-2xl h-[68px] mb-[2px] min-w-[180px]"
                         >
-                            Search Excellence
+                            Analyze Flights
                         </button>
                     </div>
 
-                    <div className="mt-8 flex flex-wrap gap-6 text-sm text-slate-400 items-center border-t border-white/5 pt-8">
-                        <span className="flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
-                            Live Pricing
-                        </span>
-                        <span className="flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                            Direct Carrier Deals
-                        </span>
-                        <span className="flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
-                            Business & First Class Priority
-                        </span>
+                    <div className="mt-8 flex items-center gap-6 text-[10px] font-bold text-slate-500 tracking-widest uppercase opacity-60">
+                        <div className="flex items-center gap-2">
+                            <span className="w-1 h-1 rounded-full bg-green-500"></span>
+                            Live Market Feed
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <span className="w-1 h-1 rounded-full bg-gold-bright"></span>
+                            Neural Pricing Active
+                        </div>
+                        <div className="ml-auto hidden sm:block">
+                            Provider Node: 532822
+                        </div>
                     </div>
                 </div>
             </div>

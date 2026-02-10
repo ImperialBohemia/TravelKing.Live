@@ -5,3 +5,9 @@
 {"ts": "2026-02-10T11:30:42.934130", "type": "google_oauth_dead", "message": "('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})"}
 {"ts": "2026-02-10T12:00:48.363094", "type": "google_oauth_dead", "message": "('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})"}
 {"ts": "2026-02-10T12:30:53.352957", "type": "google_oauth_dead", "message": "('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})"}
+{"ts": "2026-02-10T13:00:58.777348", "type": "google_oauth_dead", "message": "('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})"}
+{"ts": "2026-02-10T13:31:03.953127", "type": "google_oauth_dead", "message": "('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})"}
+{"ts": "2026-02-10T14:01:09.252326", "type": "google_oauth_dead", "message": "('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})"}
+{"ts": "2026-02-10T14:31:14.612629", "type": "google_oauth_dead", "message": "('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})"}
+{"ts": "2026-02-10T15:01:20.070167", "type": "google_oauth_dead", "message": "('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})"}
+{"ts": "2026-02-10T15:31:25.386429", "type": "google_oauth_dead", "message": "('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})"}

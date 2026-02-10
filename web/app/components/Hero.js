@@ -1,59 +1,66 @@
+"use client";
+
 export default function Hero() {
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-            {/* Background Video/Image Placeholder */}
+            {/* Dynamic Background */}
             <div
-                className="absolute inset-0 bg-cover bg-center scale-105 transition-transform duration-[10000ms] ease-out"
-                style={{
-                    backgroundImage: "url('https://images.unsplash.com/photo-1540339832862-4ec701633513?auto=format&fit=crop&q=80&w=2560')",
-                    animation: "zoom-out-slow 20s infinite alternate"
-                }}
-            />
-            <div className="hero-overlay" />
+                className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-[10000ms] hover:scale-110"
+                style={{ backgroundImage: "url('/hero-bg.png')" }}
+            >
+                <div className="absolute inset-0 bg-gradient-to-b from-deep-space/40 via-deep-space/60 to-deep-space"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-deep-space via-transparent to-transparent opacity-80"></div>
+            </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8 animate-fade-in">
-                    <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-                    <span className="text-xs font-bold tracking-widest text-amber-200 uppercase">Premium Travel Concierge</span>
-                </div>
-
-                <h1 className="text-5xl md:text-8xl font-black text-white mb-6 tracking-tight leading-[0.9] font-display">
-                    REDEFINE YOUR <br />
-                    <span className="text-gradient-gold">HORIZON.</span>
-                </h1>
-
-                <p className="max-w-2xl mx-auto text-lg md:text-xl text-slate-300 mb-10 font-light leading-relaxed">
-                    Elite flight solutions, expert EU261 compensation rescue, and access to the world's
-                    most exclusive destinations. Where logic meets luxury.
-                </p>
-
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#search" className="btn-gold">
-                        Explore Flight Deals
-                    </a>
-                    <a href="#compensation" className="btn-outline">
-                        EU261 Rescue Guide
-                    </a>
-                </div>
-
-                <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto border-t border-white/10 pt-10">
-                    <div className="text-center">
-                        <div className="stat-number text-white">4k+</div>
-                        <div className="text-xs uppercase tracking-widest text-slate-400 mt-2">Private Rescue Jets</div>
+            {/* Content */}
+            <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-20">
+                <div className="max-w-3xl">
+                    <div className="flex items-center gap-4 mb-8">
+                        <div className="h-[1px] w-12 bg-gold-bright"></div>
+                        <span className="text-gold-bright uppercase tracking-[0.5em] text-[10px] font-bold">Official Industry Leader</span>
                     </div>
-                    <div className="text-center">
-                        <div className="stat-number text-white">100%</div>
-                        <div className="text-xs uppercase tracking-widest text-slate-400 mt-2">Success Rate</div>
-                    </div>
-                    <div className="text-center">
-                        <div className="stat-number text-white">24/7</div>
-                        <div className="text-xs uppercase tracking-widest text-slate-400 mt-2">Elite Concierge</div>
-                    </div>
-                    <div className="text-center">
-                        <div className="stat-number text-white">€600</div>
-                        <div className="text-xs uppercase tracking-widest text-slate-400 mt-2">Max EU261 Claim</div>
+
+                    <h1 className="text-6xl md:text-8xl font-black text-white leading-none font-display mb-8">
+                        THE ART OF <br />
+                        <span className="text-gradient-gold">SUPREMACY.</span>
+                    </h1>
+
+                    <p className="text-xl md:text-2xl text-slate-300 mb-12 leading-relaxed font-light max-w-2xl">
+                        Experience travel without boundaries. From neural flight discovery to
+                        elite EC No 261/2004 protection, we define the orbit of modern luxury.
+                    </p>
+
+                    <div className="flex flex-wrap gap-6">
+                        <a href="#search" className="noble-button">
+                            Explore Missions
+                        </a>
+                        <button className="px-8 py-4 rounded-full border border-white/10 hover:border-gold-bright/30 text-white flex items-center gap-3 transition-all backdrop-blur-md">
+                            <span className="w-2 h-2 rounded-full bg-gold-bright animate-pulse"></span>
+                            Download Dossier
+                        </button>
                     </div>
                 </div>
+
+                {/* Enterprise Stats Panel */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 border-t border-white/5 pt-12">
+                    {[
+                        { label: "Missions Completed", value: "14,820+" },
+                        { label: "Recovered Assets", value: "€9.4M" },
+                        { label: "Global Presence", value: "192 CTIES" },
+                        { label: "Concierge Status", value: "ELITE" }
+                    ].map((stat, i) => (
+                        <div key={i} className="reveal-up active" style={{ transitionDelay: `${i * 100}ms` }}>
+                            <div className="text-2xl font-black text-white mb-1 font-display tracking-tight">{stat.value}</div>
+                            <div className="text-[10px] uppercase tracking-widest text-slate-500 font-bold">{stat.label}</div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Scroll indicator */}
+            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30">
+                <div className="w-[1px] h-20 bg-gradient-to-b from-gold-bright to-transparent"></div>
+                <span className="text-[10px] uppercase tracking-widest text-white rotate-90 mt-8">Scroll</span>
             </div>
         </section>
     );

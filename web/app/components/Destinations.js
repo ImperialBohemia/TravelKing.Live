@@ -1,34 +1,62 @@
-export default function Destinations() {
-    const items = [
-        { name: "Dubai", category: "Ultra Luxury", img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=800" },
-        { name: "Maldives", category: "Serene Private", img: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&q=80&w=800" },
-        { name: "St. Moritz", category: "Alpine Elite", img: "https://images.unsplash.com/photo-1502014822147-1aedfb0676e0?auto=format&fit=crop&q=80&w=800" },
-        { name: "Monaco", category: "Riviera Grand", img: "https://images.unsplash.com/photo-1559121225-4c96207671f2?auto=format&fit=crop&q=80&w=800" }
-    ];
+"use client";
 
+const destinations = [
+    {
+        title: "PRIVATE ISLANDS",
+        desc: "Discrete sanctuaries in French Polynesia and Maldives.",
+        tag: "Exclusive",
+        img: "https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=2000"
+    },
+    {
+        title: "ALPINE ESTATES",
+        desc: "Luxury chalets with private helipads in Courchevel.",
+        tag: "Summit",
+        img: "https://images.unsplash.com/photo-1517043583535-44a115a31bb2?q=80&w=2000"
+    },
+    {
+        title: "METROPOLIS OPS",
+        desc: "Penthouse command centers in Dubai and NYC.",
+        tag: "Urban",
+        img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2000"
+    }
+];
+
+export default function Destinations() {
     return (
-        <section className="py-32 px-6">
+        <section className="py-32 px-6 section-noble">
             <div className="max-w-7xl mx-auto">
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-                    <div>
-                        <h2 className="text-4xl font-black text-white mb-4 font-display">THE ULTIMATE <span className="text-gradient-gold">BUCKET LIST</span></h2>
-                        <p className="text-slate-500 max-w-lg">Vetted by the world's most discerning travelers. Discover destinations that define elite status.</p>
+                <div className="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
+                    <div className="max-w-xl">
+                        <h2 className="text-sm font-black text-gold-bright tracking-[0.5em] uppercase mb-4">World Network</h2>
+                        <h3 className="text-4xl md:text-5xl font-black text-white font-display uppercase tracking-tight">CURATED <span className="text-gradient-silver">TOP-TIER</span> DESTINATIONS</h3>
                     </div>
-                    <a href="#" className="btn-outline">View Global Map</a>
+                    <div className="text-slate-500 text-sm italic font-light border-l border-white/10 pl-8 hidden md:block">
+                        "We don't go where others go. <br /> We define the destination."
+                    </div>
                 </div>
 
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {items.map((item, idx) => (
-                        <div key={idx} className="group relative overflow-hidden rounded-2xl h-[450px] cursor-pointer">
-                            <img
-                                src={item.img}
-                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                alt={item.name}
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
-                            <div className="absolute bottom-0 left-0 p-8">
-                                <div className="text-xs uppercase tracking-[0.2em] text-amber-400 font-bold mb-2">{item.category}</div>
-                                <h3 className="text-2xl font-black text-white font-display tracking-tight">{item.name}</h3>
+                <div className="grid md:grid-cols-3 gap-8">
+                    {destinations.map((dest, i) => (
+                        <div key={i} className="group relative h-[600px] rounded-3xl overflow-hidden glass-pane border-white/5 cursor-pointer">
+                            <div
+                                className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
+                                style={{ backgroundImage: `url('${dest.img}')` }}
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-t from-deep-space via-deep-space/20 to-transparent"></div>
+                            </div>
+
+                            <div className="absolute top-6 left-6">
+                                <span className="px-4 py-1 rounded-full bg-white/10 backdrop-blur-md text-[10px] font-black uppercase tracking-widest text-white border border-white/10">
+                                    {dest.tag}
+                                </span>
+                            </div>
+
+                            <div className="absolute bottom-10 left-10 right-10">
+                                <h4 className="text-3xl font-black text-white mb-4 font-display group-hover:text-gold-bright transition-colors uppercase">{dest.title}</h4>
+                                <p className="text-slate-400 text-sm leading-relaxed mb-6 transform opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                                    {dest.desc}
+                                </p>
+                                <div className="w-12 h-1 bg-gold-bright/30 transition-all group-hover:w-full duration-500"></div>
                             </div>
                         </div>
                     ))}
