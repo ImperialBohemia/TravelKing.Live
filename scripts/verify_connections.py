@@ -3,8 +3,8 @@ import requests
 import os
 
 PATHS = [
-    '/home/q/TravelKing.Live/config/access_vault.json',
-    '/home/q/TravelKing.Live/data/config/access_vault_restored.json'
+    os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'config', 'access_vault.json'),
+    os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'config', 'access_vault_restored.json')
 ]
 
 def load_json(path):
@@ -31,8 +31,8 @@ def test_google(creds, label="Google"):
         print(f"⚠️ Google Access Token for {email} Expired or Invalid. Trying refresh...")
         refresh_token = creds.get('refresh_token')
         # We might need client_id/secret which is in the other file sometimes
-        client_id = creds.get('client_id') or "1009428807876-seopbefn13ev9fnot0sdsh1018fp00iu.apps.googleusercontent.com"
-        client_secret = creds.get('client_secret') or "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"
+        client_id = creds.get('client_id') or os.environ.get("GOOGLE_CLIENT_ID")
+        client_secret = creds.get('client_secret') or os.environ.get("GOOGLE_CLIENT_SECRET")
         
         if refresh_token:
             refresh_url = "https://oauth2.googleapis.com/token"
