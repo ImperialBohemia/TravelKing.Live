@@ -18,7 +18,7 @@ from typing import Dict, List
 from datetime import datetime
 
 # Add project root to path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from core.connectors.google import GoogleConnector
 from core.google.sheets import SheetsClient
@@ -29,19 +29,18 @@ from core.utils.notifications import Notifier
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler("logs/omega_bot.log"),
-        logging.StreamHandler()
-    ]
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
-logger = logging.getLogger('ConciergeBot')
+logger = logging.getLogger(__name__)
 
 
 class ConciergeBot:
-    """Main lead processing engine for TravelKing (Enterprise Edition)."""
+    """Enterprise-grade Concierge Bot for TravelKing."""
     
-    def __init__(self, vault_path: str = 'config/access_vault.json', sa_path: str = 'config/service_account.json'):
+    # Persistent state file
+    STATE_FILE = "data/concierge_state.json"
+
+    def __init__(self, vault_path: str = "config/access_vault.json", sa_path: str = "config/service_account.json"):
         """Initialize bot with credentials from vault."""
         # Ensure logs directory exists
         os.makedirs('logs', exist_ok=True)
@@ -59,9 +58,31 @@ class ConciergeBot:
         
         # Configuration
         self.sheet_id = self.vault['travelking']['sheet_id']
-        self.processed_emails = set()
+
+        # Load processed emails from persistent state
+        self.processed_emails = self._load_state()
         
         logger.info("🤖 OMEGA Concierge Bot (Enterprise) initialized")
+
+    def _load_state(self) -> set:
+        """Load processed emails from state file."""
+        if os.path.exists(self.STATE_FILE):
+            try:
+                with open(self.STATE_FILE, 'r') as f:
+                    return set(json.load(f))
+            except Exception as e:
+                logger.error(f"❌ Error loading state: {e}")
+        return set()
+
+    def _save_state(self):
+        """Save processed emails to state file."""
+        try:
+            # Ensure data directory exists
+            os.makedirs(os.path.dirname(self.STATE_FILE), exist_ok=True)
+            with open(self.STATE_FILE, 'w') as f:
+                json.dump(list(self.processed_emails), f)
+        except Exception as e:
+            logger.error(f"❌ Error saving state: {e}")
 
     @property
     def notifier(self):
@@ -138,6 +159,7 @@ class ConciergeBot:
             # Parse headers and rows
             headers = data[0]
             leads = []
+            current_run_emails = set()
             
             for row in data[1:]:
                 # Create lead dict
@@ -145,11 +167,11 @@ class ConciergeBot:
                 for i, header in enumerate(headers):
                     lead[header] = row[i] if i < len(row) else ""
                 
-                # Skip if already processed
+                # Skip if already processed or already in list for this run
                 email = lead.get('Email', '').strip()
-                if email and email not in self.processed_emails:
+                if email and email not in self.processed_emails and email not in current_run_emails:
                     leads.append(lead)
-                    self.processed_emails.add(email)
+                    current_run_emails.add(email)
             
             logger.info(f"✅ Found {len(leads)} new leads")
             return leads
@@ -194,7 +216,7 @@ class ConciergeBot:
             
             flight_html += f"""
             <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 8px;">
-                <h3 style="margin: 0 0 10px 0; color: #2563eb;">Option {i}: ${price}</h3>
+                <h3 style="margin: 0 0 10px 0; color: #2563eb;">Option {i}: </h3>
                 <p style="margin: 5px 0;"><strong>Airline:</strong> {airline}</p>
                 <p style="margin: 5px 0;"><strong>Departure:</strong> {departure}</p>
                 <a href="{link}" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: #2563eb; color: white; text-decoration: none; border-radius: 5px;">View Details →</a>
@@ -303,6 +325,8 @@ class ConciergeBot:
         for lead in leads[:max_leads]:
             if self.process_lead(lead):
                 processed += 1
+                self.processed_emails.add(lead['Email'])
+                self._save_state()
         
         logger.info(f"✅ Bot run complete: {processed}/{len(leads)} leads processed")
 
