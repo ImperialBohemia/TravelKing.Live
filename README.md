@@ -15,48 +15,46 @@ The **Best on Planet** autonomous authority hub for flight compensation and trav
 
 ---
 
-## 🔌 TOOLS CONNECTED (The OMEGA Network)
+## 🔗 Connections (Complete OMEGA Integration List)
 
-Every node in the system is permanently linked via the Enterprise Vault.
+Every service listed below is fully integrated into the OMEGA Hub and used for daily autonomous operations.
 
-### 📊 Google Workspace & Cloud
-*   **Google Sheets (CRM Core)**: Centralized Enterprise Database.
-    *   **Main Sheet**: `TravelKing CRM` (ID: `1uvNvNKei8sgmrASHE5OpQKwEANcOFjxOCdIxMWBnOQc`)
-    *   **Tab: Leads**: Automated form response processing.
-    *   **Tab: Tasks**: Technical orchestration and maintenance logs.
-    *   **Tab: Market**: Real-time keyword and trend intelligence.
-*   **Google Forms**: "TravelKing Inquiry" — High-conversion lead capture form. Directly synced to CRM `Leads` tab.
-*   **Google Drive**: Enterprise Asset Management. Automatic storage for generated PDFs, itineraries, and SEO documents.
-*   **Google Gmail (SMTP/API)**: Automated transactional email engine. Handles welcome sequences and AI-generated responses.
-*   **Google Search Console**: Real-time monitoring of SEO performance and indexing status for `travelking.live`.
-*   **Google Sites**: Autonomous Authority Portal. Self-updating status hub and knowledge base.
-*   **Google Admin API**: Global project and permission orchestration.
+### 📊 Google Enterprise Suite
+*   **Google Sheets (CRM Core)**: Primary database for leads and tasks.
+    *   **ID**: `1uvNvNKei8sgmrASHE5OpQKwEANcOFjxOCdIxMWBnOQc`
+    *   **Tabs**: `Leads` (Inbound), `Tasks` (Ops), `Market` (Intel), `Archive` (History).
+*   **Google Forms**: "TravelKing Inquiry" — Integrated lead capture system.
+*   **Google Drive**: Enterprise Asset Storage (PDFs, Images, SEO docs).
+*   **Google Search Console**: SEO performance monitoring for `travelking.live`.
+*   **Google Analytics (GA4)**: Advanced user behavior tracking (ID: `G-CENSTCTLCW`).
+*   **Google Tag Manager (GTM)**: Global event and pixel orchestration (ID: `GTM-WB69V297`).
+*   **Google Gmail API/SMTP**: Automated transactional communication engine.
+*   **Google Sites**: Real-time Authority Hub and status portal.
+*   **Google Admin API**: Global project and permission management.
 
-### 🤖 AI & Logic (The Brain)
-*   **Gemini AI (1.5 Pro)**: Advanced reasoning engine. Powering lead analysis, content generation, and flight disruption prediction.
-*   **Bluesky Bot**: Automated SEO/AEO content publisher for building social signals and domain authority.
+### 🤖 AI & Intelligence
+*   **Gemini AI (1.5 Pro/Flash)**: Core system brain via Google AI Studio (Free) and Vertex AI (Enterprise).
+*   **Bluesky API**: Social authority bot for automated social signals and AEO content.
 
-### 📢 Marketing & Social
-*   **Facebook Graph API**: Direct management of FB Pages and automated posting.
-*   **Facebook Ads API**: Precision tracking of advertising campaigns and conversion ROI.
-*   **Google Analytics (GA4)**: Enterprise traffic and user behavioral analysis (ID: `G-CENSTCTLCW`).
-*   **Google Tag Manager (GTM)**: Central orchestration for all universal tracking scripts (ID: `GTM-WB69V297`).
+### 📢 Social & Marketing
+*   **Facebook Graph API**: Automated management of Facebook Pages.
+*   **Facebook Ads API**: Real-time ad spend, tracking, and conversion optimization.
 
 ### 🌍 Search Engine Optimization (SEO)
-*   **Bing Webmaster API**: Deep integration with Bing search engine for rankings and crawl stats.
-*   **IndexNow Protocol**: Instant notification of content changes to Bing, Seznam, and global engines.
+*   **Bing Webmaster API**: Deep integration for Bing and Yahoo search data.
+*   **IndexNow**: Instant indexing protocol for Bing, Seznam, and Yandex.
 
-### 💰 Monetization (Affiliate)
-*   **Travelpayouts API**: Permanent high-value link to Aviasales (Flights) and Hotellook (Hotels).
+### 💰 Monetization & Travel
+*   **Travelpayouts API**: Permanent monetization link for Aviasales (Flights) and Hotellook (Hotels).
 
-### 🛡️ Monitoring & Health
-*   **UptimeRobot**: External HTTP/Port monitoring (Website, cPanel, Backup Sites).
-*   **Healthchecks.io**: Heartbeat monitoring for OMEGA Python daemons (Guardian Protocol).
-*   **Guardian Protocol**: Internal health monitoring and self-healing engine.
+### 🛡️ System Monitoring & Health
+*   **UptimeRobot**: External monitoring of website and hosting infrastructure.
+*   **Healthchecks.io**: Heartbeat monitoring for internal Python OMEGA daemons.
+*   **Guardian Protocol**: Internal self-healing and connection verification engine.
 
 ### 🛠️ Infrastructure & DevOps
-*   **cPanel (Hostinger)**: Enterprise hosting management (Server: `server707.web-hosting.com`).
-*   **GitHub**: Permanent code repository and decentralized CI/CD (ImperialBohemia).
+*   **cPanel API**: Hosting and server management (Server: `server707.web-hosting.com`).
+*   **GitHub API**: Source code management and decentralized CI/CD (ImperialBohemia).
 
 ---
 
