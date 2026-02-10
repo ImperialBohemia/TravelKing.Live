@@ -15,6 +15,49 @@ The **Best on Planet** autonomous authority hub for flight compensation and trav
 
 ---
 
+## 🔗 Connections (Complete OMEGA Integration List)
+
+Every service listed below is fully integrated into the OMEGA Hub and used for daily autonomous operations.
+
+### 📊 Google Enterprise Suite
+*   **Google Sheets (CRM Core)**: Primary database for leads and tasks.
+    *   **ID**: `1uvNvNKei8sgmrASHE5OpQKwEANcOFjxOCdIxMWBnOQc`
+    *   **Tabs**: `Leads` (Inbound), `Tasks` (Ops), `Market` (Intel), `Archive` (History).
+*   **Google Forms**: "TravelKing Inquiry" — Integrated lead capture system.
+*   **Google Drive**: Enterprise Asset Storage (PDFs, Images, SEO docs).
+*   **Google Search Console**: SEO performance monitoring for `travelking.live`.
+*   **Google Analytics (GA4)**: Advanced user behavior tracking (ID: `G-CENSTCTLCW`).
+*   **Google Tag Manager (GTM)**: Global event and pixel orchestration (ID: `GTM-WB69V297`).
+*   **Google Gmail API/SMTP**: Automated transactional communication engine.
+*   **Google Sites**: Real-time Authority Hub and status portal.
+*   **Google Admin API**: Global project and permission management.
+
+### 🤖 AI & Intelligence
+*   **Gemini AI (1.5 Pro/Flash)**: Core system brain via Google AI Studio (Free) and Vertex AI (Enterprise).
+*   **Bluesky API**: Social authority bot for automated social signals and AEO content.
+
+### 📢 Social & Marketing
+*   **Facebook Graph API**: Automated management of Facebook Pages.
+*   **Facebook Ads API**: Real-time ad spend, tracking, and conversion optimization.
+
+### 🌍 Search Engine Optimization (SEO)
+*   **Bing Webmaster API**: Deep integration for Bing and Yahoo search data.
+*   **IndexNow**: Instant indexing protocol for Bing, Seznam, and Yandex.
+
+### 💰 Monetization & Travel
+*   **Travelpayouts API**: Permanent monetization link for Aviasales (Flights) and Hotellook (Hotels).
+
+### 🛡️ System Monitoring & Health
+*   **UptimeRobot**: External monitoring of website and hosting infrastructure.
+*   **Healthchecks.io**: Heartbeat monitoring for internal Python OMEGA daemons.
+*   **Guardian Protocol**: Internal self-healing and connection verification engine.
+
+### 🛠️ Infrastructure & DevOps
+*   **cPanel API**: Hosting and server management (Server: `server707.web-hosting.com`).
+*   **GitHub API**: Source code management and decentralized CI/CD (ImperialBohemia).
+
+---
+
 ## 👑 PROCLAMATION OF OWNERSHIP
 This system, its architecture, and all proprietary code are the intellectual property of **Stanislav Pasztorek**, authorized by **Imperial Bohemia**. It represents the pinnacle of "Simple and Powerful" travel automation.
 
@@ -57,18 +100,6 @@ To manage the empire, use these core commands:
 | `python dashboard.py` | **Executive Dashboard**: Real-time leads, traffic, and status lights. |
 | `python core/monitor.py` | **System Monitor**: Deep health check of all API and data nodes. |
 | `python core/google/crm_overhaul.py` | **CRM Reset**: Restore the Professional Google Sheet structure. |
-
----
-
-## ⚡ SEO & BING TURBO
-This system is hard-wired into the **Bing IndexNow API**. Every lead capture or content update triggers an instant indexing ping, ensuring the site remains at the top of both traditional search and AI answer engines.
-
----
-
-## 🛡️ GOVERNANCE
-- **Primary Authority**: Stanislav Pasztorek
-- **Support Project**: TravelKing (GCP ID: 1009428807876)
-- **Service Account**: `travelking@travelking.iam.gserviceaccount.com`
 
 ---
 © 2026 **TravelKing.Live** | AUTHORIZED BY STANISLAV PASZTOREK | *Simple and Powerful.*
