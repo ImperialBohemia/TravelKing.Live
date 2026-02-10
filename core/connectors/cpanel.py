@@ -6,20 +6,19 @@ Auth: cPanel API Token
 """
 import logging
 import requests
-import urllib3
 
 from core.settings import load_vault
 
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 logger = logging.getLogger(__name__)
 
 
 class CPanelConnector:
     """cPanel UAPI bridge."""
 
-    def __init__(self, vault: dict = None):
+    def __init__(self, vault: dict = None, verify_ssl: bool = True):
         self.vault = vault or load_vault()
         cp_cfg = self.vault.get("cpanel", {})
+        self.verify_ssl = cp_cfg.get("verify_ssl", verify_ssl)
         self.host = cp_cfg.get("host", "")
         self.user = cp_cfg.get("user", "")
         self.api_token = cp_cfg.get("api_token", "")
@@ -34,7 +33,7 @@ class CPanelConnector:
         url = f"{self.base_url}/{module}/{function}"
         response = requests.get(
             url, headers=self.headers, params=params or {},
-            verify=False, timeout=15
+            verify=self.verify_ssl, timeout=15
         )
         response.raise_for_status()
         return response.json()
@@ -52,7 +51,7 @@ class CPanelConnector:
         )
         response = requests.get(
             url, headers=self.headers, params=params or {},
-            verify=False, timeout=15
+            verify=self.verify_ssl, timeout=15
         )
         response.raise_for_status()
         return response.json()
@@ -80,7 +79,7 @@ class CPanelConnector:
                 "content": content,
                 "from_charset": "utf-8",
             },
-            verify=False, timeout=15,
+            verify=self.verify_ssl, timeout=15,
         ).json()
 
     def upload_file(self, directory: str, filename: str, filepath: str) -> dict:
@@ -96,7 +95,7 @@ class CPanelConnector:
             }
             response = requests.post(
                 url, headers=self.headers, data=data, files=files,
-                verify=False, timeout=60
+                verify=self.verify_ssl, timeout=60
             )
         response.raise_for_status()
         return response.json()
