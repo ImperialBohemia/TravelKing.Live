@@ -30,7 +30,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
                 <header className="mb-16">
                     <span className="text-primary text-[10px] font-black uppercase tracking-[0.3em] mb-4 block">
-                        {post.category} // INTEL_REPORT
+                        {post.category} {"// INTEL_REPORT"}
                     </span>
                     <h1 className="text-4xl md:text-7xl mb-8 leading-tight">{post.title}</h1>
 
