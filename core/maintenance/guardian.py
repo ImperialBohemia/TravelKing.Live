@@ -82,10 +82,6 @@ class Guardian:
             logger.error(f"Guardian audit failed: {e}")
             return {"error": str(e)}
 
-    def update_dashboard(self, results):
-        """Dashboard update is now part of ConnectionFortress.run_full_check()."""
-        pass
-
     def _check_google_ai(self):
         """Checks Gemini AI connectivity."""
         try:
