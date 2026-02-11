@@ -1,6 +1,7 @@
 import trafilatura
 import logging
 import os
+import tempfile
 import subprocess
 from core.security.validator import Validator
 
@@ -55,15 +56,15 @@ async def run():
 if __name__ == "__main__":
     asyncio.run(run())
 """
-        tmp_script = "data/tmp_read.py"
-        os.makedirs("data", exist_ok=True)
-        with open(tmp_script, "w") as f:
-            f.write(script)
+        # Use a secure temporary file to avoid race conditions and improve security
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".py", delete=False) as tmp:
+            tmp.write(script)
+            tmp_path = tmp.name
 
         try:
             # Pass URL as a command line argument to avoid code injection
             res = subprocess.check_output(
-                [self.venv_python, tmp_script, url], stderr=subprocess.STDOUT, timeout=120
+                [self.venv_python, tmp_path, url], stderr=subprocess.STDOUT, timeout=120
             ).decode()
             # Feed raw HTML back to trafilatura for cleaning
             return trafilatura.extract(res)
@@ -74,8 +75,11 @@ if __name__ == "__main__":
             logging.error(f"Discovery: Headless failure: {e}")
             return None
         finally:
-            if os.path.exists(tmp_script):
-                os.remove(tmp_script)
+            if os.path.exists(tmp_path):
+                try:
+                    os.remove(tmp_path)
+                except Exception as e:
+                    logging.warning(f"Discovery: Failed to remove temp file {tmp_path}: {e}")
 
     def search_google_products(self, knowledge_manager=None):
         """Specific logic to keep Google Products knowledge updated."""
