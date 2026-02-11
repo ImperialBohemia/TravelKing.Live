@@ -1,19 +1,44 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Oswald, Azeret_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import { Header } from "../components/layout/Header";
+import { Footer } from "../components/layout/Footer";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const poppins = Poppins({
-  weight: ["400", "700", "900"],
+const oswald = Oswald({
   subsets: ["latin"],
-  variable: "--font-poppins"
+  variable: "--font-oswald",
+  display: "swap",
+});
+
+const azeret = Azeret_Mono({
+  subsets: ["latin"],
+  variable: "--font-azeret",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "TravelKing.Live | Travel Intelligence & Elite Logistics",
-  description: "Advanced flight hacks, safety intel, and elite travel logistics orchestration.",
-  robots: "noindex, nofollow", // As per user rules until 'Ready'
+  title: "TravelKing.Live | Elite Flight Intelligence",
+  description: "The autonomous authority for flight compensation and travel logistics. Powered by OMEGA.",
+  openGraph: {
+    title: "TravelKing.Live | Elite Flight Intelligence",
+    description: "The autonomous authority for flight compensation and travel logistics.",
+    url: "https://www.travelking.live",
+    siteName: "TravelKing",
+    locale: "en_US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -34,25 +59,22 @@ export default function RootLayout({
             })();
           `}
         </Script>
+        <Script id="google-analytics" strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-CENSTCTLCW" />
+        <Script id="ga-setup" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-CENSTCTLCW');
+          `}
+        </Script>
       </head>
-      <body className={`${inter.variable} ${poppins.variable} font-sans min-h-screen flex flex-col`}>
-        <nav className="sticky top-0 z-50 glass h-16 flex items-center px-4 md:px-8 justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-xl font-black italic tracking-tighter">TRAVELKING</span>
-            <span className="text-xl font-black text-primary animate-pulse-gold italic">.LIVE</span>
-          </div>
-          <div className="hidden md:flex gap-8 text-[10px] font-bold uppercase tracking-widest">
-            <a href="/" className="hover:text-primary transition-colors">Intelligence</a>
-            <a href="/about" className="hover:text-primary transition-colors">The Network</a>
-            <a href="/contact" className="hover:text-primary transition-colors">Contact Protocol</a>
-          </div>
-        </nav>
-        <main className="flex-1">
+      <body className={`${oswald.variable} ${azeret.variable} font-sans min-h-screen flex flex-col bg-background text-foreground antialiased`}>
+        <Header />
+        <main className="flex-1 w-full">
           {children}
         </main>
-        <footer className="py-12 border-t border-border bg-black text-center">
-          <p className="text-[10px] uppercase tracking-[0.4em] text-muted-foreground">© 2026 TRAVELKING OPERATIONAL INTELLIGENCE</p>
-        </footer>
+        <Footer />
       </body>
     </html>
   );
