@@ -11,7 +11,7 @@ def deploy_to(remote_root):
     print(f"--- STARTING DIRECT CPANEL DEPLOYMENT TO {remote_root} ---")
     cp = CPanelConnector()
     
-    local_root = "/home/q/TravelKing.Live/web-latest/out"
+    local_root = "/app/web-latest/out"
     
     print(f"Local Source: {local_root}")
     print(f"Remote Target: {remote_root}")
