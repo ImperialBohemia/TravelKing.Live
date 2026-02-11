@@ -1,4 +1,3 @@
-
 import requests
 import logging
 from abc import ABC, abstractmethod
@@ -10,7 +9,9 @@ class BaseConnector(ABC):
     """
     def __init__(self, name, config):
         self.name = name
-        self.config = config
+        self.config = config or {}
+        # Security: Default to True, allow config override
+        self.verify_ssl = self.config.get("verify_ssl", True)
         self.logger = logging.getLogger(f"OMEGA.{name}")
         self._setup_logging()
 
@@ -29,8 +30,13 @@ class BaseConnector(ABC):
 
     def call(self, method, url, **kwargs):
         """Unified request handler with logging."""
+        # Only add verify to kwargs if it's not the default (True)
+        # to avoid breaking legacy tests that expect no verify param.
+        if "verify" not in kwargs and self.verify_ssl is not True:
+            kwargs["verify"] = self.verify_ssl
+
         try:
-            self.logger.debug(f"{method} call to {url}")
+            self.logger.debug(f" {method} call to {url}")
             response = requests.request(method, url, **kwargs)
             response.raise_for_status()
             return response.json()
