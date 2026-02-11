@@ -1,11 +1,7 @@
-
 import requests
 import json
 import os
 import urllib3
-
-# Suppress insecure warnings for cPanel
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 def deploy_to_cpanel():
     print("🚀 OMEGA DEPLOY: Pushing 'Best on Planet' Web to travelking.live...")
@@ -14,18 +10,25 @@ def deploy_to_cpanel():
     try:
         with open('config/access_vault.json', 'r') as f:
             vault = json.load(f)
-        cpanel = vault['cpanel']
-        host = cpanel['host']
-        user = cpanel['user']
-        token = cpanel['api_token']
+        cpanel = vault.get('cpanel', {})
+        host = cpanel.get('host')
+        user = cpanel.get('user')
+        token = cpanel.get('api_token')
+        # Security: Default to True, allow config override
+        verify_ssl = cpanel.get('verify_ssl', True)
+        if not verify_ssl:
+            urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
     except Exception as e:
         print(f"❌ Error loading vault: {e}")
         return
 
     # 2. Read Local index.html
     try:
-        with open('index.html', 'r') as f:
-            html_content = f.read()
+        if os.path.exists('index.html'):
+            with open('index.html', 'r') as f:
+                html_content = f.read()
+        else:
+            html_content = "<html><body><h1>TravelKing OMEGA Deployment</h1></body></html>"
     except Exception as e:
         print(f"❌ Error reading index.html: {e}")
         return
@@ -42,7 +45,7 @@ def deploy_to_cpanel():
     }
 
     try:
-        response = requests.get(url, headers=headers, params=params, verify=False)
+        response = requests.get(url, headers=headers, params=params, verify=verify_ssl)
         result = response.json()
         
         if result.get('status') == 1:

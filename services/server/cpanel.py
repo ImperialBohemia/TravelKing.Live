@@ -4,10 +4,6 @@ import os
 import logging
 import urllib3
 
-# Disable warnings for server707 self-signed/unverified certs
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-
-
 class CPanelConnector:
     """Modular Service Layer for cPanel UAPI & API2 Interaction."""
 
@@ -23,8 +19,14 @@ class CPanelConnector:
             self.auth = {
                 "Authorization": f"cpanel {self.cfg['user']}:{self.cfg['api_token']}"
             }
+            # Security: Default to True, allow config override
+            self.verify_ssl = self.cfg.get("verify_ssl", True)
+            if not self.verify_ssl:
+                # Disable warnings only if user explicitly opted out of SSL verification
+                urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
         else:
             self.cfg = None
+            self.verify_ssl = True
 
     def call_uapi(self, module, func, params=None):
         """Execute modern UAPI functions."""
@@ -32,7 +34,7 @@ class CPanelConnector:
             return None
         url = f"{self.base}/execute/{module}/{func}"
         try:
-            res = requests.get(url, params=params, headers=self.auth, verify=False, timeout=30)
+            res = requests.get(url, params=params, headers=self.auth, verify=self.verify_ssl, timeout=30)
             return res.json()
         except Exception as e:
             logging.error(f"UAPI error: {e}")
@@ -50,7 +52,7 @@ class CPanelConnector:
             **(params or {}),
         }
         try:
-            res = requests.get(url, params=payload, headers=self.auth, verify=False, timeout=30)
+            res = requests.get(url, params=payload, headers=self.auth, verify=self.verify_ssl, timeout=30)
             return res.json()
         except Exception as e:
             logging.error(f"API2 error: {e}")

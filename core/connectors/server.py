@@ -23,7 +23,7 @@ class CPanelConnector(BaseConnector):
         """Standardized UAPI caller."""
         url = f"https://{self.host}:2083/execute/{module}/{function}"
         headers = {"Authorization": f"cpanel {self.user}:{self.api_token}"}
-        return self.call("GET", url, headers=headers, params=params, verify=False)
+        return self.call("GET", url, headers=headers, params=params)
 
 class BingConnector(BaseConnector):
     """
