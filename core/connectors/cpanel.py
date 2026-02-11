@@ -33,7 +33,7 @@ class CPanelConnector:
         url = f"{self.base_url}/{module}/{function}"
         response = requests.get(
             url, headers=self.headers, params=params or {},
-            verify=self.verify_ssl, timeout=15
+            verify=self.verify_ssl, timeout=60
         )
         response.raise_for_status()
         return response.json()
@@ -51,7 +51,7 @@ class CPanelConnector:
         )
         response = requests.get(
             url, headers=self.headers, params=params or {},
-            verify=self.verify_ssl, timeout=15
+            verify=self.verify_ssl, timeout=60
         )
         response.raise_for_status()
         return response.json()
@@ -79,7 +79,7 @@ class CPanelConnector:
                 "content": content,
                 "from_charset": "utf-8",
             },
-            verify=self.verify_ssl, timeout=15,
+            verify=self.verify_ssl, timeout=60,
         ).json()
 
     def upload_file(self, directory: str, filename: str, filepath: str) -> dict:
@@ -105,6 +105,15 @@ class CPanelConnector:
         # API2 Fileman::mkdir uses 'path' for parent directory
         return self.api2_call("Fileman", "mkdir", {
             "path": parent, "name": name
+        })
+
+    def delete_path(self, parent: str, name: str) -> dict:
+        """Delete a file or directory on cPanel (uses API2 Fileman::fileop)."""
+        return self.api2_call("Fileman", "fileop", {
+            "op": "unlink",
+            "sourcefiles": name,
+            "metadata": parent,
+            "doubledecode": 0
         })
 
     def get_domains(self) -> dict:
