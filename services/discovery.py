@@ -35,20 +35,25 @@ class DiscoveryService:
 
     def read_url_headless(self, url):
         """Uses playwright via a subprocess script to handle JS-heavy sites."""
-        script = f"""
+        script = """
 import asyncio
+import sys
 from playwright.async_api import async_playwright
 
 async def run():
+    if len(sys.argv) < 2:
+        return
+    url = sys.argv[1]
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
         page = await browser.new_page()
-        await page.goto("{url}", wait_until="networkidle")
+        await page.goto(url, wait_until="networkidle")
         content = await page.content()
         await browser.close()
         print(content)
 
-asyncio.run(run())
+if __name__ == "__main__":
+    asyncio.run(run())
 """
         tmp_script = "data/tmp_read.py"
         os.makedirs("data", exist_ok=True)
@@ -56,9 +61,9 @@ asyncio.run(run())
             f.write(script)
 
         try:
-            # Added timeout to subprocess call
+            # Pass URL as a command line argument to avoid code injection
             res = subprocess.check_output(
-                [self.venv_python, tmp_script], stderr=subprocess.STDOUT, timeout=120
+                [self.venv_python, tmp_script, url], stderr=subprocess.STDOUT, timeout=120
             ).decode()
             # Feed raw HTML back to trafilatura for cleaning
             return trafilatura.extract(res)
