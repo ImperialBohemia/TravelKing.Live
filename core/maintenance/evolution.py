@@ -1,4 +1,5 @@
 import subprocess
+import shutil
 import os
 import sys
 from loguru import logger
@@ -46,8 +47,10 @@ class EvolutionManager:
         logger.info("🩹 Healing codebase (Linting & Formatting)...")
         try:
             # Added timeout to prevent hanging
-            subprocess.run(["./venv/bin/ruff", "check", ".", "--fix"], capture_output=True, timeout=60)
-            subprocess.run(["./venv/bin/ruff", "format", "."], capture_output=True, timeout=60)
+                    # Find ruff: try PATH first, then fallback to current python environment bin
+            ruff_bin = shutil.which("ruff") or os.path.join(os.path.dirname(sys.executable), "ruff")
+            subprocess.run([ruff_bin, "check", ".", "--fix"], capture_output=True, timeout=60)
+            subprocess.run([ruff_bin, "format", "."], capture_output=True, timeout=60)
         except subprocess.TimeoutExpired:
             logger.warning("⚠️ Code healing timed out. Skipping.")
         except Exception as e:
