@@ -1,5 +1,6 @@
 import base64
 import json
+import logging
 import os
 import smtplib
 from email.mime.text import MIMEText
@@ -7,6 +8,7 @@ from email.mime.multipart import MIMEMultipart
 
 import requests
 
+logger = logging.getLogger(__name__)
 
 class GmailClient:
     """Send emails via Gmail API or SMTP."""
@@ -46,7 +48,10 @@ class GmailClient:
                     server.send_message(message)
                 return {"success": True, "method": "smtp"}
             except Exception as e:
-                return {"success": False, "error": str(e), "method": "smtp"}
+                logger.warning(f"SMTP sending failed: {e}")
+                if not self.token:
+                    return {"success": False, "error": str(e), "method": "smtp"}
+                logger.info("Falling back to Gmail API...")
 
         # Method 2: API Fallback
         raw = base64.urlsafe_b64encode(message.as_bytes()).decode("utf-8")
