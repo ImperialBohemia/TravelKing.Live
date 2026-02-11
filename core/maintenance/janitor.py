@@ -1,4 +1,5 @@
 import os
+import sys
 import shutil
 from loguru import logger
 
@@ -40,8 +41,9 @@ class Janitor:
         import subprocess
 
         try:
+            ruff_bin = shutil.which("ruff") or os.path.join(os.path.dirname(sys.executable), "ruff")
             res = subprocess.run(
-                ["./venv/bin/ruff", "check", self.root], capture_output=True, text=True
+                [ruff_bin, "check", self.root], capture_output=True, text=True
             )
             if res.returncode == 0:
                 return "Linting: Perfect. No issues found."
